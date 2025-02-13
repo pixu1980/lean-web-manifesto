@@ -1,3 +1,148 @@
 <section>
-  <!-- Here goes the talk slides -->
+  <section>
+    <h2>Lean Web: Meno è Meglio</h2>
+    <p>Ciao a tutti! Sono [Nome], il vostro amichevole UI/UX Engineer di Quartiere! Oggi parleremo di Lean Web.</p>
+    <aside class="notes">
+      Inizia il talk con energia e un tono amichevole per rompere il ghiaccio. Presentati rapidamente, sottolineando la tua esperienza nel settore e la tua passione per il miglioramento delle
+      performance web. Spiega che il focus del talk sarà su come rendere il web più leggero, veloce e sostenibile, coinvolgendo il pubblico con esempi pratici e domande interattive.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Perché il Lean Web?</h2>
+    <p>Quanti di voi si sono mai trovati a pensare: ‘Sto usando troppa roba per fare una cosa semplice?’</p>
+    <aside class="notes">
+      Invita il pubblico a riflettere su esperienze personali con framework troppo complessi o eccessive dipendenze. Fai un esempio personale di una situazione in cui hai utilizzato un framework
+      pesante per una funzionalità semplice, e chiedi al pubblico di condividere le loro esperienze. Questo aiuta a creare un legame con il pubblico e a far emergere il tema della complessità non
+      necessaria nello sviluppo web.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Cos'è il Lean Web?</h2>
+    <p>Il Lean Web è un cambio di paradigma culturale nello sviluppo web, derivato dalla Lean Manufacturing.</p>
+    <aside class="notes">
+      Definisci il concetto di Lean Web spiegando come sia nato dall'applicazione dei principi della Lean Manufacturing allo sviluppo software. Sottolinea che il Lean Web si concentra
+      sull'eliminazione degli sprechi, sull'ottimizzazione delle risorse e sul miglioramento continuo delle performance. Fornisci un breve confronto con approcci tradizionali più complessi per
+      evidenziare il valore dell'approccio lean.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Concetti Chiave del Lean Web</h2>
+    <ul>
+      <li>Riduzione del peso delle pagine</li>
+      <li>Ottimizzazione delle performance</li>
+      <li>Accessibilità e inclusività</li>
+      <li>Sostenibilità digitale</li>
+    </ul>
+    <blockquote>"Is there a conference for web developers that specifically caters to ‘Lean Web’ (don’t use JS if not necessary etc.)?" - Thomas Fuchs (2017)</blockquote>
+    <aside class="notes">
+      Spiega ciascuno dei concetti chiave del Lean Web con esempi pratici. Ad esempio, per la riduzione del peso delle pagine, menziona come eliminare librerie non necessarie possa migliorare i tempi
+      di caricamento. Cita Thomas Fuchs per mostrare come il concetto di Lean Web sia nato da un'esigenza reale nella community degli sviluppatori. Invita il pubblico a riflettere su quali di questi
+      concetti già applicano nei loro progetti.
+    </aside>
+  </section>
+
+  <section>
+    <h2>La Storia del Lean Web</h2>
+    <p>Il tweet di Thomas Fuchs ha catalizzato l'attenzione della community e dato inizio al movimento del Lean Web.</p>
+    <aside class="notes">
+      Racconta come un semplice tweet di Thomas Fuchs abbia acceso un dibattito nella community degli sviluppatori. Spiega che, anche se il tweet originale è stato cancellato, ha lasciato un'impronta
+      duratura e ha ispirato molti sviluppatori a riflettere su come semplificare il loro lavoro. Questo mostra come le idee innovative possano nascere da conversazioni spontanee nella community.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Perché il Lean Web è Importante Oggi</h2>
+    <p>La crescente complessità delle applicazioni moderne e l’impatto ambientale dello sviluppo web sono fattori chiave.</p>
+    <aside class="notes">
+      Parla dell'impatto ambientale delle applicazioni web e di come il settore IT contribuisca significativamente alle emissioni di CO2. Mostra dati concreti, come quelli di Website Carbon, per
+      supportare il tuo punto di vista. Sottolinea che ridurre la complessità delle applicazioni non solo migliora le performance, ma aiuta anche a ridurre l'impatto ambientale del nostro lavoro.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Il Costo di JavaScript</h2>
+    <p>JavaScript è la parte più "costosa" dello stack tecnologico in termini di performance.</p>
+    <blockquote>"Byte-for-byte, JavaScript is still the most expensive resource we send to mobile phones, because it can delay interactivity in large ways." - Addy Osmani</blockquote>
+    <aside class="notes">
+      Mostra come l'uso eccessivo di JavaScript possa rallentare le applicazioni, specialmente sui dispositivi mobili. Cita Addy Osmani per evidenziare l'impatto delle risorse JavaScript sulle
+      performance. Fornisci dati o benchmark che dimostrano come la riduzione del JavaScript possa migliorare i tempi di risposta e l'interattività delle applicazioni.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Il Mito del Virtual DOM</h2>
+    <p>Il Virtual DOM è utile in alcuni casi, ma spesso introduce un overhead non necessario.</p>
+    <aside class="notes">
+      Spiega quando il Virtual DOM è davvero utile e quando può essere evitato. Confronta le performance di applicazioni che utilizzano il Virtual DOM con quelle che usano metodi di rendering più
+      semplici. Sottolinea che, in molti casi, la complessità introdotta dal Virtual DOM non è giustificata dai benefici.
+    </aside>
+  </section>
+
+  <section>
+    <h2>L'Impatto della Complessità</h2>
+    <p>La complessità degli strumenti moderni spesso introduce costi nascosti.</p>
+    <blockquote>"15 minutes of writing code, 2 hours of appeasing the static type gods." - Kyle Shevlin</blockquote>
+    <aside class="notes">
+      Racconta come la complessità degli strumenti moderni possa rallentare lo sviluppo e aumentare i costi. Cita Kyle Shevlin per evidenziare quanto tempo possa essere sprecato cercando di far
+      funzionare strumenti complessi. Incoraggia il pubblico a riflettere su come possano semplificare i loro processi di sviluppo per evitare questi problemi.
+    </aside>
+  </section>
+
+  <section>
+    <h2>I Principi del Lean Web: Adozione della Piattaforma</h2>
+    <p>Sfruttare API native e metodi JavaScript è più semplice e performante rispetto all'uso di librerie esterne.</p>
+    <aside class="notes">
+      Mostra esempi concreti di come le API native del browser possano sostituire librerie esterne. Ad esempio, confronta l'uso di jQuery per il DOM manipulation con i metodi nativi di JavaScript
+      moderni. Spiega che adottare la piattaforma significa fidarsi degli strumenti forniti dal browser, riducendo la dipendenza da terze parti e migliorando le performance complessive.
+    </aside>
+  </section>
+
+  <section>
+    <h2>I Principi del Lean Web: Minimalismo</h2>
+    <p>Evitare l'uso eccessivo di framework, preferendo Vanilla JS, HTML e CSS.</p>
+    <blockquote>"What took 10 minutes in jQuery now takes hours in modern frameworks." - Brad Frost</blockquote>
+    <aside class="notes">
+      Spiega come il minimalismo nel codice possa semplificare lo sviluppo e ridurre i tempi di manutenzione. Cita Brad Frost per evidenziare quanto la complessità dei framework moderni possa
+      rallentare lo sviluppo. Fornisci un esempio pratico di un'applicazione che è stata semplificata riducendo l'uso di framework complessi.
+    </aside>
+  </section>
+
+  <section>
+    <h2>I Principi del Lean Web: Il Web è di Tutti</h2>
+    <p>Creare applicazioni accessibili significa garantire un'esperienza fluida per tutti.</p>
+    <aside class="notes">
+      Sottolinea l'importanza dell'accessibilità come parte integrante del Lean Web. Spiega che il web dovrebbe essere accessibile a tutti, indipendentemente dalle loro abilità o dai dispositivi che
+      utilizzano. Fornisci esempi di best practice per migliorare l'accessibilità, come l'uso corretto delle etichette ARIA o la progettazione di interfacce user-friendly.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Performance by Design</h2>
+    <p>Le performance devono essere integrate fin dall'inizio. Tecniche come lazy loading, minimizzazione del codice e uso di CDN.</p>
+    <aside class="notes">
+      Spiega l'importanza di considerare le performance fin dalle prime fasi di sviluppo. Descrivi tecniche specifiche come il lazy loading delle immagini, la minimizzazione del codice JavaScript e
+      CSS, e l'uso di CDN per distribuire i contenuti in modo più efficiente. Mostra esempi di come queste tecniche possano migliorare drasticamente i tempi di caricamento delle pagine.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Esempi di Aziende che Utilizzano il Lean Web</h2>
+    <p>GitHub, Netflix, MeetSpace, Airbnb: come hanno applicato i principi del Lean Web per migliorare le loro applicazioni.</p>
+    <aside class="notes">
+      Mostra esempi concreti di aziende che hanno beneficiato del Lean Web. Spiega come GitHub ha rimosso jQuery in favore di metodi nativi, come Netflix ha eliminato React dal caricamento frontend e
+      come MeetSpace ha costruito un'app di messaggistica completamente in Vanilla JS. Questi esempi dimostrano che il Lean Web è una pratica efficace e non solo una teoria.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Conclusione e Q&A</h2>
+    <p>Il Lean Web non è nostalgia, è una necessità. Meno è meglio. Creiamo applicazioni più performanti, accessibili e sostenibili.</p>
+    <aside class="notes">
+      Ringrazia il pubblico per l'attenzione e invita alle domande finali. Sii disponibile per discussioni post-talk e incoraggia i partecipanti a condividere le loro esperienze e sfide
+      nell'applicazione dei principi del Lean Web. Sottolinea che il futuro del web è leggero, sostenibile e accessibile, e che ogni sviluppatore ha un ruolo nel costruirlo.
+    </aside>
+  </section>
 </section>
