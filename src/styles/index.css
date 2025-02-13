@@ -1,0 +1,17 @@
+@import 'npm:reveal.js/dist/reset.css' layer(reveal);
+@import 'npm:reveal.js/dist/reveal.css' layer(reveal);
+@import 'npm:reveal.js/dist/theme/black.css' layer(reveal);
+@import 'npm:reveal.js/plugin/highlight/monokai.css' layer(reveal);
+
+@import './_reveal.css';
+
+@import './_reset.css' layer(talk);
+@import './_palette.css' layer(talk);
+@import './_typography.css' layer(talk);
+@import './_code.css' layer(talk);
+@import './_comparison.css' layer(talk);
+@import './_pixu.css' layer(talk);
+@import './intro/index.css' layer(talk);
+/* here goes the style of the talk slides */
+@import './outro/index.css' layer(talk);
+
