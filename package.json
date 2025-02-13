@@ -1,6 +1,6 @@
 {
   "name": "talk-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "clear:cache": "rm -rf .parcel-cache",
