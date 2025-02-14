@@ -2700,7 +2700,7 @@
       display: inline-block;
     }
 
-    blockquote, section > :where(h1, h2, h3, h4, h5, h6, p, blockquote, q) {
+    [balance] {
       text-wrap: balance;
     }
   }
@@ -3087,4 +3087,4 @@
     }
   }
 }
-/*# sourceMappingURL=index.553f6fd0.css.map */
+/*# sourceMappingURL=index.5d65751b.css.map */

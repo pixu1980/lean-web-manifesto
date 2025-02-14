@@ -1,0 +1,186 @@
+<section>
+  <section>
+    <h3>Quindi cos'è il <mark>Lean Web</mark>?</h3>
+  </section>
+  <section>
+    <p balance>È una <mark>proposta</mark>: un cambio di paradigma <mark>culturale</mark> nello sviluppo del web...</p>
+    <aside class="notes">
+      Definisci il concetto di Lean Web spiegando come sia nato dall'applicazione dei principi della Lean Manufacturing
+      allo sviluppo software. Sottolinea che il Lean Web si concentra sull'eliminazione degli sprechi,
+      sull'ottimizzazione delle risorse e sul miglioramento continuo delle performance. Fornisci un breve confronto con
+      approcci tradizionali più complessi per evidenziare il valore dell'approccio lean.
+    </aside>
+  </section>
+
+  <section>
+    <p>...o forse giusto <mark>un po' di consigli</mark> in merito.</p>
+  </section>
+
+  <section>
+    <h3>Princìpi del Lean Web</h3>
+    <ul>
+      <li class="fragment">Riduzione del peso dei prodotti digitali</li>
+      <li class="fragment">Ottimizzazione delle performance</li>
+      <li class="fragment">Accessibilità e inclusività</li>
+      <li class="fragment">Sostenibilità digitale</li>
+    </ul>
+    <aside class="notes">
+      Spiega ciascuno dei concetti chiave del Lean Web con esempi pratici. Ad esempio, per la riduzione del peso delle
+      pagine, menziona come eliminare librerie non necessarie possa migliorare i tempi di caricamento.
+    </aside>
+  </section>
+
+  <section>
+    <h3>
+      Perché il Lean Web <br />
+      è importante <mark>oggi</mark>?
+    </h3>
+  </section>
+
+  <section>
+    <q> Abbiamo tutta questa capacità di calcolo... <mark>che senso ha preoccuparsi</mark> delle performance? </q>
+  </section>
+
+  <section>
+    <q><mark> Sulla mia macchina</mark> funziona!</q>
+  </section>
+
+  <section>
+    <q>
+      Il mio smartphone potrebbe mandare l'Apollo 11 sulla Luna e nel frattempo risolvere equazioni differenziali
+      <mark>per non annoiarsi</mark>
+    </q>
+  </section>
+
+  <section>
+    <p>
+      La <mark>crescente complessità</mark> delle applicazioni moderne e l’<mark>impatto ambientale</mark> dello
+      sviluppo web sono fattori chiave.
+    </p>
+    <aside class="notes">
+      Parla dell'impatto ambientale delle applicazioni web e di come il settore IT contribuisca significativamente alle
+      emissioni di CO2. Mostra dati concreti, come quelli di Website Carbon, per supportare il tuo punto di vista.
+      Sottolinea che ridurre la complessità delle applicazioni non solo migliora le performance, ma aiuta anche a
+      ridurre l'impatto ambientale del nostro lavoro.
+    </aside>
+  </section>
+
+  <section>
+    <p>
+      Secondo uno studio della Royal Society di fine 2020 (fonte
+      <a
+        href="https://www.agi.it/innovazione/news/2022-05-28/dalle-email-alle-big-tech-quanto-inquina-internet-16892702/"
+        target="_blank"
+        >AGI.it</a
+      >) le tecnologie digitali contribuiscono ~6% delle <mark>emissioni globali</mark>
+    </p>
+  </section>
+
+  <section>
+    <h3>Il <mark>Costo</mark> di JavaScript</h3>
+  </section>
+
+  <section>
+    <p>JavaScript è la parte <mark>più "costosa"</mark> dello stack tecnologico in termini di performance.</p>
+  </section>
+
+  <section>
+    <blockquote>
+      "Byte-for-byte, JavaScript <mark>is still the most expensive</mark> resource we send to devices, because it can
+      delay interactivity in large ways."
+    </blockquote>
+    <small>
+      <cite>
+        Addy Osmani <br />
+        (<a href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4" target="_blank">post</a>
+        del 2018,
+        <a href="https://www.youtube.com/watch?v=ZKH3DLT4BKw" target="_blank">update talk</a>
+        del 2023)
+      </cite>
+    </small>
+    <aside class="notes">
+      Mostra come l'uso eccessivo di JavaScript possa rallentare le applicazioni, specialmente sui dispositivi mobili.
+      Cita Addy Osmani per evidenziare l'impatto delle risorse JavaScript sulle performance. Fornisci dati o benchmark
+      che dimostrano come la riduzione del JavaScript possa migliorare i tempi di risposta e l'interattività delle
+      applicazioni.
+    </aside>
+  </section>
+
+  <section>
+    <h3>Il <mark>"mito"</mark> del Virtual DOM</h3>
+  </section>
+
+  <section>
+    <p>
+      Il Virtual DOM sicuramente rappresenta un'utile strategia per
+      <mark>ottimizzare gli aggiornamenti</mark> dell'interfaccia in applicazioni complesse
+    </p>
+    <aside class="notes">
+      Spiega quando il Virtual DOM è davvero utile e quando può essere evitato. Confronta le performance di applicazioni
+      che utilizzano il Virtual DOM con quelle che usano metodi di rendering più semplici. Sottolinea che, in molti
+      casi, la complessità introdotta dal Virtual DOM non è giustificata dai benefici.
+    </aside>
+  </section>
+
+  <section>
+    <p>
+      In molti casi questo approccio introduce un <mark>overhead non necessario</mark> in contesti dove la manipolazione
+      diretta del DOM è già <mark>sufficientemente performante</mark>
+    </p>
+  </section>
+  <section>
+    <img src="./assets/depende.gif" width="540" alt="Immagine di Harabe de Palo nel video di 'Depende'" />
+    <p>
+      Come sempre, la risposta è <q><mark>Dipende</mark></q
+      >!
+    </p>
+  </section>
+  <section>
+    <p>
+      Se gli aggiornamenti sono minimi, se il sistema è configurato per un <mark>rendering diretto efficiente</mark>,
+      affidarsi al Virtual DOM potrebbe risultare <mark>più pesante che vantaggioso</mark>.
+    </p>
+  </section>
+  <section>
+    <h3>L'Impatto della <mark>Complessità</mark></h3>
+    <p>La complessità degli strumenti moderni spesso introduce costi nascosti.</p>
+  </section>
+  <section>
+    <blockquote>"What took 10 minutes in jQuery <mark>now takes hours</mark> in modern frameworks."</blockquote>
+    <small><cite>Brad Frost</cite> - Author of Atomic Design</small>
+  </section>
+  <section>
+    <blockquote>
+      "15 minutes of <mark>writing code</mark>, 2 hours of <mark>appeasing the static type gods</mark>."
+    </blockquote>
+    <small><cite>Kyle Shevlin</cite> - Speaker & Mentor @ egghead.io</small>
+    <aside class="notes">
+      Racconta come la complessità degli strumenti moderni possa rallentare lo sviluppo e aumentare i costi. Cita Kyle
+      Shevlin per evidenziare quanto tempo possa essere sprecato cercando di far funzionare strumenti complessi.
+      Incoraggia il pubblico a riflettere su come possano semplificare i loro processi di sviluppo per evitare questi
+      problemi.
+    </aside>
+  </section>
+  <section>
+    <p>
+      La complessità software genera, <br />
+      o può generare, <mark>costi indiretti</mark>
+    </p>
+  </section>
+  <section>
+    <p>Debugging infinito</p>
+    <q class="fragment">alla ricerca del bug perduto</q>
+  </section>
+  <section>
+    <p>Manutenzione evolutiva</p>
+    <q class="fragment">e mo come la faccio sta cosa?</q>
+  </section>
+  <section>
+    <p>Curve di apprendimento</p>
+    <q class="fragment">me nun potevo fa li c... mia?</q>
+  </section>
+  <section>
+    <p>Knowledge transfer</p>
+    <q class="fragment">e questa come je la racconto?</q>
+  </section>
+</section>
