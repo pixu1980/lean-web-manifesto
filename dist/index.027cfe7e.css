@@ -3092,9 +3092,9 @@
 
 body {
   & > img {
-    inline-size: 10rem;
+    inline-size: clamp(5rem, 5vw, 10rem);
     position: fixed;
     inset: auto auto 3rem 3rem;
   }
 }
-/*# sourceMappingURL=index.cced7571.css.map */
+/*# sourceMappingURL=index.027cfe7e.css.map */

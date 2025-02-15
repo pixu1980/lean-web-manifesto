@@ -18,7 +18,7 @@
 body {
   > img {
     position: fixed;
-    inline-size: 10rem;
+    inline-size: clamp(5rem, 5vw, 10rem);
     inset: auto auto 3rem 3rem;
   }
 }
