@@ -15,3 +15,10 @@
 /* here goes the style of the talk slides */
 @import './outro/index.css' layer(talk);
 
+body {
+  > img {
+    position: fixed;
+    inline-size: 10rem;
+    inset: auto auto 3rem 3rem;
+  }
+}

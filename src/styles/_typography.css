@@ -18,8 +18,10 @@
     vertical-align: baseline;
   }
 
-  [balance] {
-    text-wrap: balance;
+  .present {
+    [balance] {
+      text-wrap: balance;
+    }
   }
 
   section > :where(h1, h2, h3, h4, h5, h6, p, blockquote, q) {

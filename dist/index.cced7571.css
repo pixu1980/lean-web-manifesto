@@ -2700,8 +2700,10 @@
       display: inline-block;
     }
 
-    [balance] {
-      text-wrap: balance;
+    .present {
+      & [balance] {
+        text-wrap: balance;
+      }
     }
   }
 
@@ -3087,4 +3089,12 @@
     }
   }
 }
-/*# sourceMappingURL=index.5d65751b.css.map */
+
+body {
+  & > img {
+    inline-size: 10rem;
+    position: fixed;
+    inset: auto auto 3rem 3rem;
+  }
+}
+/*# sourceMappingURL=index.cced7571.css.map */
