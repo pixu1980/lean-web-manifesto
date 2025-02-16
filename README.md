@@ -1,6 +1,4 @@
-# talk-template
-Talk Template
+# the-lean-web-manifesto
+Il Manifesto del Lean Web @ RomaJS Special Edition #1
 
-Check the slides here
-
-[Talk Template](https://pixu1980.github.io/talk-template/)
+Slides -> [Il Manifesto del Lean Web](https://pixu1980.github.io/lean-web-manifesto/)
