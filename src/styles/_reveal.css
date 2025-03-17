@@ -2,31 +2,70 @@
   :root {
     --r-main-font-size: 4.5rem;
     --r-heading-color: #f0f0f0;
+    --r-heading-margin: 0;
     --r-heading-text-transform: none;
-    --r-link-color: #AD85D6;
-    --r-highlight-color: #AD85D6;
+    --r-link-color: #ad85d6;
+    --r-highlight-color: #ad85d6;
   }
 
   .reveal {
-    :is(h1, h2, h3, h4, h5, h6, p, blockquote, small, ul, ol) {
+    > :is(h1, h2, h3, h4, h5, h6, p, blockquote, small, ul, ol div) {
       margin-block: 0;
 
-      + :is(h1, h2, h3, h4, h5, h6, p, blockquote, small, ul, ol) {
+      + & {
         margin-block-start: 1.5rem;
       }
     }
 
     img {
+      max-inline-size: 100%;
       margin: 0;
     }
 
-    section > :is(p, blockquote, small) {
-      max-inline-size: 50ch;
-      margin-inline: auto;
+    figure {
+      display: inline-flex;
+      flex-flow: column;
+      place-content: center;
+      place-items: center;
+      gap: 0.5rem;
+
+      figcaption {
+        font-size: 0.6em;
+      }
     }
 
     blockquote {
-      padding: 1rem 0;
+      padding: 1.5rem;
+      margin-inline: auto;
+
+      font-size: 0.7em;
+      text-align: left;
+
+      &::before {
+        content: '“';
+      }
+
+      &::after {
+        content: '”';
+      }
+
+      figure {
+        float: left;
+
+        inline-size: 25%;
+        margin-inline-end: 0.7em;
+      }
+
+      img {
+        display: block;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+
+    section > :is(p, small) {
+      max-inline-size: 50ch;
+      margin-inline: auto;
     }
 
     li + li {

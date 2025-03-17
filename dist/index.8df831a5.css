@@ -2589,31 +2589,68 @@
   :root {
     --r-main-font-size: 4.5rem;
     --r-heading-color: #f0f0f0;
+    --r-heading-margin: 0;
     --r-heading-text-transform: none;
     --r-link-color: #ad85d6;
     --r-highlight-color: #ad85d6;
   }
 
   .reveal {
-    & :is(h1, h2, h3, h4, h5, h6, p, blockquote, small, ul, ol) {
+    & > :is(h1, h2, h3, h4, h5, h6, p, blockquote, small, ul, ol div) {
       margin-block: 0;
 
-      & + :is(h1, h2, h3, h4, h5, h6, p, blockquote, small, ul, ol) {
+      & + & {
         margin-block-start: 1.5rem;
       }
     }
 
     & img {
+      max-inline-size: 100%;
       margin: 0;
     }
 
-    & section > :is(p, blockquote, small) {
-      max-inline-size: 50ch;
-      margin-inline: auto;
+    & figure {
+      flex-flow: column;
+      place-content: center;
+      place-items: center;
+      gap: .5rem;
+      display: inline-flex;
+
+      & figcaption {
+        font-size: .6em;
+      }
     }
 
     & blockquote {
-      padding: 1rem 0;
+      text-align: left;
+      margin-inline: auto;
+      padding: 1.5rem;
+      font-size: .7em;
+
+      &:before {
+        content: "“";
+      }
+
+      &:after {
+        content: "”";
+      }
+
+      & figure {
+        float: left;
+        inline-size: 25%;
+        margin-inline-end: .7em;
+      }
+
+      & img {
+        aspect-ratio: 1;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    & section > :is(p, small) {
+      max-inline-size: 50ch;
+      margin-inline: auto;
     }
 
     & li + li {
@@ -2697,7 +2734,7 @@
 
     mark {
       vertical-align: baseline;
-      display: inline-block;
+      display: inline;
     }
 
     .present {
@@ -2735,7 +2772,7 @@
     comparison {
       place-content: center;
       place-items: start;
-      gap: 0;
+      gap: 2rem;
       inline-size: 100%;
       margin-block-start: 5rem;
       display: flex;
@@ -3089,12 +3126,4 @@
     }
   }
 }
-
-body {
-  & > img {
-    inline-size: clamp(5rem, 5vw, 10rem);
-    position: fixed;
-    inset: auto auto 3rem 3rem;
-  }
-}
-/*# sourceMappingURL=index.027cfe7e.css.map */
+/*# sourceMappingURL=index.8df831a5.css.map */
