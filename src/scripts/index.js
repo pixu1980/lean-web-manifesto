@@ -22,7 +22,7 @@ const slides = Reveal({
   respondToHashChanges: true,
   // Push each slide change to the browser history.  Implies `hash: true`
   history: true,
-  slideNumber: 'c/t'
+  // slideNumber: 'c/t'
 });
 
 // keyboard interaction configuration

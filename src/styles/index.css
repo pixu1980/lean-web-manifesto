@@ -12,13 +12,18 @@
 @import './_comparison.css' layer(talk);
 @import './_pixu.css' layer(talk);
 @import './intro/index.css' layer(talk);
+
 /* here goes the style of the talk slides */
+
 @import './outro/index.css' layer(talk);
 
-/* body {
-  > img {
-    position: fixed;
-    inline-size: clamp(5rem, 5vw, 10rem);
-    inset: auto auto 3rem 3rem;
-  }
-} */
+.codepen {
+  height: 400px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  margin: 1em 0;
+  padding: 1em;
+}

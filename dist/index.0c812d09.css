@@ -3126,4 +3126,15 @@
     }
   }
 }
-/*# sourceMappingURL=index.8df831a5.css.map */
+
+.codepen {
+  box-sizing: border-box;
+  border: 2px solid;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  margin: 1em 0;
+  padding: 1em;
+  display: flex;
+}
+/*# sourceMappingURL=index.0c812d09.css.map */

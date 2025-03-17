@@ -49396,8 +49396,7 @@ const $ce2ab6a3784a12d8$var$slides = (0, $ef6d0cb1bf5eee6a$export$2e2bcd8739ae03
     // Flags if we should monitor the hash and change slides accordingly
     respondToHashChanges: true,
     // Push each slide change to the browser history.  Implies `hash: true`
-    history: true,
-    slideNumber: 'c/t'
+    history: true
 });
 // keyboard interaction configuration
 $ce2ab6a3784a12d8$var$slides.configure({
@@ -49410,4 +49409,4 @@ $ce2ab6a3784a12d8$var$slides.configure({
 $ce2ab6a3784a12d8$var$slides.initialize();
 
 
-//# sourceMappingURL=index.646f508b.js.map
+//# sourceMappingURL=index.83447054.js.map
