@@ -2860,6 +2860,32 @@
       & img {
         border-radius: 50%;
       }
+
+      & comparison {
+        place-items: center;
+      }
+
+      & right {
+        flex-flow: column;
+        place-content: start;
+        place-items: start;
+        gap: 1.5rem;
+        display: flex;
+
+        & h6 {
+          text-align: left;
+          place-content: start;
+          place-items: center;
+          gap: 1rem;
+          font-size: .6em;
+          display: flex;
+
+          & img {
+            border-radius: 0;
+            inline-size: 4rem;
+          }
+        }
+      }
     }
   }
 }
@@ -3209,4 +3235,4 @@
   padding: 1em;
   display: flex;
 }
-/*# sourceMappingURL=lean-web-manifesto.db7e3837.css.map */
+/*# sourceMappingURL=lean-web-manifesto.65cb90a9.css.map */

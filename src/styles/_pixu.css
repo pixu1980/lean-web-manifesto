@@ -3,5 +3,33 @@
     img {
       border-radius: 50%;
     }
+
+    comparison {
+      place-items: center;
+    }
+
+    right {
+      display: flex;
+      flex-flow: column nowrap;
+      place-content: start;
+      place-items: start;
+      gap: 1.5rem;
+
+      h6 {
+        display: flex;
+        place-content: start;
+        place-items: center;
+
+        gap: 1rem;
+        font-size: 0.6em;
+        
+        text-align: left;
+
+        img {
+          inline-size: 4rem;
+          border-radius: 0;
+        }
+      }
+    }
   }
 }
