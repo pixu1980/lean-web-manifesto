@@ -1,7 +1,7 @@
 @import 'npm:@pixu-talks/fonts';
 @import 'npm:@pixu-talks/theme';
 
-@layer talk {
+@layer pixu-talk {
   @layer reveal {
     figure {
       display: inline-flex;
@@ -45,6 +45,7 @@
       }
     }
   }
+
   @layer codepen {
     .codepen {
       height: 400px;
@@ -55,6 +56,21 @@
       border: 2px solid;
       margin: 1em 0;
       padding: 1em;
+    }
+  }
+
+  @layer brand {
+    [brand] {
+      position: fixed;
+      inset: auto auto 3rem 3rem;
+
+      img {
+        inline-size: 15rem;
+        aspect-ratio: 1;
+
+        border: 2px rebeccapurple;
+        border-radius: 2rem;
+      }
     }
   }
 }

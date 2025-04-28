@@ -125,6 +125,73 @@
         }
       }
     }
+
+    figure {
+      flex-flow: column;
+      place-content: center;
+      place-items: center;
+      gap: .5rem;
+      display: inline-flex;
+
+      & figcaption {
+        margin-block-start: .5em;
+        font-size: .6em;
+      }
+    }
+
+    blockquote {
+      text-align: left;
+      margin-inline: auto;
+      padding: 1.5rem;
+      font-size: .7em;
+
+      &:before {
+        content: "“";
+      }
+
+      &:after {
+        content: "”";
+      }
+
+      & figure {
+        float: left;
+        inline-size: 25%;
+        margin-inline-end: .7em;
+      }
+
+      & img {
+        aspect-ratio: 1;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+
+  @layer codepen {
+    .codepen {
+      box-sizing: border-box;
+      border: 2px solid;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      margin: 1em 0;
+      padding: 1em;
+      display: flex;
+    }
+  }
+
+  @layer brand {
+    [brand] {
+      position: fixed;
+      inset: auto auto 3rem 3rem;
+
+      & img {
+        aspect-ratio: 1;
+        border: 2px #639;
+        border-radius: 2rem;
+        inline-size: 15rem;
+      }
+    }
   }
 }
 
@@ -15182,61 +15249,4 @@
     }
   }
 }
-
-@layer talk {
-  @layer reveal {
-    figure {
-      flex-flow: column;
-      place-content: center;
-      place-items: center;
-      gap: .5rem;
-      display: inline-flex;
-
-      & figcaption {
-        margin-block-start: .5em;
-        font-size: .6em;
-      }
-    }
-
-    blockquote {
-      text-align: left;
-      margin-inline: auto;
-      padding: 1.5rem;
-      font-size: .7em;
-
-      &:before {
-        content: "“";
-      }
-
-      &:after {
-        content: "”";
-      }
-
-      & figure {
-        float: left;
-        inline-size: 25%;
-        margin-inline-end: .7em;
-      }
-
-      & img {
-        aspect-ratio: 1;
-        object-fit: cover;
-        display: block;
-      }
-    }
-  }
-
-  @layer codepen {
-    .codepen {
-      box-sizing: border-box;
-      border: 2px solid;
-      justify-content: center;
-      align-items: center;
-      height: 400px;
-      margin: 1em 0;
-      padding: 1em;
-      display: flex;
-    }
-  }
-}
-/*# sourceMappingURL=lean-web-manifesto.2aff09d9.css.map */
+/*# sourceMappingURL=lean-web-manifesto.b8d7aaf5.css.map */
