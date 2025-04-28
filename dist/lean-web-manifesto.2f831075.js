@@ -2,18 +2,27 @@
 function $parcel$interopDefault(a) {
   return a && a.__esModule ? a.default : a;
 }
+!String.prototype.startsWith && (String.prototype.startsWith = function(searchString, position) {
+    return this.substr(position || 0, searchString.length) === searchString;
+});
+!String.prototype.endsWith && (String.prototype.endsWith = function(search, this_len) {
+    (this_len === undefined || this_len > this.length) && (this_len = this.length);
+    return this.substring(this_len - search.length, this_len) === search;
+});
+
+
 /*!
- * reveal.js 5.1.0
+ * reveal.js 5.2.0
  * https://revealjs.com
  * MIT licensed
  *
  * Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
- */ const $ef6d0cb1bf5eee6a$var$e = (e, t)=>{
+ */ const $346c5613899b7380$var$e = (e, t)=>{
     for(let i in t)e[i] = t[i];
     return e;
-}, $ef6d0cb1bf5eee6a$var$t = (e, t)=>Array.from(e.querySelectorAll(t)), $ef6d0cb1bf5eee6a$var$i = (e, t, i)=>{
+}, $346c5613899b7380$var$t = (e, t)=>Array.from(e.querySelectorAll(t)), $346c5613899b7380$var$i = (e, t, i)=>{
     i ? e.classList.add(t) : e.classList.remove(t);
-}, $ef6d0cb1bf5eee6a$var$s = (e)=>{
+}, $346c5613899b7380$var$s = (e)=>{
     if ("string" == typeof e) {
         if ("null" === e) return null;
         if ("true" === e) return !0;
@@ -21,42 +30,42 @@ function $parcel$interopDefault(a) {
         if (e.match(/^-?[\d\.]+$/)) return parseFloat(e);
     }
     return e;
-}, $ef6d0cb1bf5eee6a$var$a = (e, t)=>{
+}, $346c5613899b7380$var$a = (e, t)=>{
     e.style.transform = t;
-}, $ef6d0cb1bf5eee6a$var$n = (e, t)=>{
+}, $346c5613899b7380$var$n = (e, t)=>{
     let i = e.matches || e.matchesSelector || e.msMatchesSelector;
     return !(!i || !i.call(e, t));
-}, $ef6d0cb1bf5eee6a$var$r = (e, t)=>{
+}, $346c5613899b7380$var$r = (e, t)=>{
     if ("function" == typeof e.closest) return e.closest(t);
     for(; e;){
-        if ($ef6d0cb1bf5eee6a$var$n(e, t)) return e;
+        if ($346c5613899b7380$var$n(e, t)) return e;
         e = e.parentNode;
     }
     return null;
-}, $ef6d0cb1bf5eee6a$var$o = (e)=>{
+}, $346c5613899b7380$var$o = (e)=>{
     let t = (e = e || document.documentElement).requestFullscreen || e.webkitRequestFullscreen || e.webkitRequestFullScreen || e.mozRequestFullScreen || e.msRequestFullscreen;
     t && t.apply(e);
-}, $ef6d0cb1bf5eee6a$var$l = (e)=>{
+}, $346c5613899b7380$var$l = (e)=>{
     let t = document.createElement("style");
     return t.type = "text/css", e && e.length > 0 && (t.styleSheet ? t.styleSheet.cssText = e : t.appendChild(document.createTextNode(e))), document.head.appendChild(t), t;
-}, $ef6d0cb1bf5eee6a$var$d = ()=>{
+}, $346c5613899b7380$var$d = ()=>{
     let e = {};
     location.search.replace(/[A-Z0-9]+?=([\w\.%-]*)/gi, (t)=>{
         e[t.split("=").shift()] = t.split("=").pop();
     });
     for(let t in e){
         let i = e[t];
-        e[t] = $ef6d0cb1bf5eee6a$var$s(unescape(i));
+        e[t] = $346c5613899b7380$var$s(unescape(i));
     }
     return void 0 !== e.dependencies && delete e.dependencies, e;
-}, $ef6d0cb1bf5eee6a$var$c = {
+}, $346c5613899b7380$var$c = {
     mp4: "video/mp4",
     m4a: "video/mp4",
     ogv: "video/ogg",
     mpeg: "video/mpeg",
     webm: "video/webm"
-}, $ef6d0cb1bf5eee6a$var$h = navigator.userAgent, $ef6d0cb1bf5eee6a$var$u = /(iphone|ipod|ipad|android)/gi.test($ef6d0cb1bf5eee6a$var$h) || "MacIntel" === navigator.platform && navigator.maxTouchPoints > 1, $ef6d0cb1bf5eee6a$var$g = /android/gi.test($ef6d0cb1bf5eee6a$var$h);
-var $ef6d0cb1bf5eee6a$var$v = function(e) {
+}, $346c5613899b7380$var$h = navigator.userAgent, $346c5613899b7380$var$u = /(iphone|ipod|ipad|android)/gi.test($346c5613899b7380$var$h) || "MacIntel" === navigator.platform && navigator.maxTouchPoints > 1, $346c5613899b7380$var$g = /android/gi.test($346c5613899b7380$var$h);
+var $346c5613899b7380$var$v = function(e) {
     if (e) {
         var t = function(e) {
             return [].slice.call(e);
@@ -177,7 +186,7 @@ var $ef6d0cb1bf5eee6a$var$v = function(e) {
         ], i)[0];
     }
 }("undefined" == typeof window ? null : window);
-class $ef6d0cb1bf5eee6a$var$p {
+class $346c5613899b7380$var$p {
     constructor(e){
         this.Reveal = e, this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this);
     }
@@ -187,13 +196,13 @@ class $ef6d0cb1bf5eee6a$var$p {
         return "boolean" != typeof t && (t = e.hasAttribute("data-preload")), t;
     }
     load(e, i = {}) {
-        e.style.display = this.Reveal.getConfig().display, $ef6d0cb1bf5eee6a$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
+        e.style.display = this.Reveal.getConfig().display, $346c5613899b7380$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
             ("IFRAME" !== e.tagName || this.shouldPreload(e)) && (e.setAttribute("src", e.getAttribute("data-src")), e.setAttribute("data-lazy-loaded", ""), e.removeAttribute("data-src"));
-        }), $ef6d0cb1bf5eee6a$var$t(e, "video, audio").forEach((e)=>{
+        }), $346c5613899b7380$var$t(e, "video, audio").forEach((e)=>{
             let i = 0;
-            $ef6d0cb1bf5eee6a$var$t(e, "source[data-src]").forEach((e)=>{
+            $346c5613899b7380$var$t(e, "source[data-src]").forEach((e)=>{
                 e.setAttribute("src", e.getAttribute("data-src")), e.removeAttribute("data-src"), e.setAttribute("data-lazy-loaded", ""), i += 1;
-            }), $ef6d0cb1bf5eee6a$var$u && "VIDEO" === e.tagName && e.setAttribute("playsinline", ""), i > 0 && e.load();
+            }), $346c5613899b7380$var$u && "VIDEO" === e.tagName && e.setAttribute("playsinline", ""), i > 0 && e.load();
         });
         let s = e.slideBackgroundElement;
         if (s) {
@@ -205,10 +214,10 @@ class $ef6d0cb1bf5eee6a$var$p {
                 if (n) /^data:/.test(n.trim()) ? t.style.backgroundImage = `url(${n.trim()})` : t.style.backgroundImage = n.split(",").map((e)=>`url(${((e = "")=>encodeURI(e).replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[!'()*]/g, (e)=>`%${e.charCodeAt(0).toString(16).toUpperCase()}`))(decodeURI(e.trim()))})`).join(",");
                 else if (r) {
                     let e = document.createElement("video");
-                    o && e.setAttribute("loop", ""), (l || this.Reveal.isSpeakerNotes()) && (e.muted = !0), $ef6d0cb1bf5eee6a$var$u && (e.muted = !0, e.setAttribute("playsinline", "")), r.split(",").forEach((t)=>{
+                    o && e.setAttribute("loop", ""), (l || this.Reveal.isSpeakerNotes()) && (e.muted = !0), $346c5613899b7380$var$u && (e.muted = !0, e.setAttribute("playsinline", "")), r.split(",").forEach((t)=>{
                         const i = document.createElement("source");
                         i.setAttribute("src", t);
-                        let s = ((e = "")=>$ef6d0cb1bf5eee6a$var$c[e.split(".").pop()])(t);
+                        let s = ((e = "")=>$346c5613899b7380$var$c[e.split(".").pop()])(t);
                         s && i.setAttribute("type", s), e.appendChild(i);
                     }), t.appendChild(e);
                 } else if (a && !0 !== i.excludeIframes) {
@@ -223,7 +232,7 @@ class $ef6d0cb1bf5eee6a$var$p {
     }
     layout(e) {
         Array.from(e.querySelectorAll(".r-fit-text")).forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$v(e, {
+            $346c5613899b7380$var$v(e, {
                 minSize: 24,
                 maxSize: .8 * this.Reveal.getConfig().height,
                 observeMutations: !1,
@@ -234,17 +243,17 @@ class $ef6d0cb1bf5eee6a$var$p {
     unload(e) {
         e.style.display = "none";
         let i = this.Reveal.getSlideBackground(e);
-        i && (i.style.display = "none", $ef6d0cb1bf5eee6a$var$t(i, "iframe[src]").forEach((e)=>{
+        i && (i.style.display = "none", $346c5613899b7380$var$t(i, "iframe[src]").forEach((e)=>{
             e.removeAttribute("src");
-        })), $ef6d0cb1bf5eee6a$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
+        })), $346c5613899b7380$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
-        }), $ef6d0cb1bf5eee6a$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
+        }), $346c5613899b7380$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
         });
     }
     formatEmbeddedContent() {
         let e = (e, i, s)=>{
-            $ef6d0cb1bf5eee6a$var$t(this.Reveal.getSlidesElement(), "iframe[" + e + '*="' + i + '"]').forEach((t)=>{
+            $346c5613899b7380$var$t(this.Reveal.getSlidesElement(), "iframe[" + e + '*="' + i + '"]').forEach((t)=>{
                 let i = t.getAttribute(e);
                 i && -1 === i.indexOf(s) && t.setAttribute(e, i + (/\?/.test(i) ? "&" : "?") + s);
             });
@@ -254,17 +263,17 @@ class $ef6d0cb1bf5eee6a$var$p {
     startEmbeddedContent(e) {
         if (e) {
             const i = this.Reveal.isSpeakerNotes();
-            $ef6d0cb1bf5eee6a$var$t(e, 'img[src$=".gif"]').forEach((e)=>{
+            $346c5613899b7380$var$t(e, 'img[src$=".gif"]').forEach((e)=>{
                 e.setAttribute("src", e.getAttribute("src"));
-            }), $ef6d0cb1bf5eee6a$var$t(e, "video, audio").forEach((e)=>{
-                if ($ef6d0cb1bf5eee6a$var$r(e, ".fragment") && !$ef6d0cb1bf5eee6a$var$r(e, ".fragment.visible")) return;
+            }), $346c5613899b7380$var$t(e, "video, audio").forEach((e)=>{
+                if ($346c5613899b7380$var$r(e, ".fragment") && !$346c5613899b7380$var$r(e, ".fragment.visible")) return;
                 let t = this.Reveal.getConfig().autoPlayMedia;
-                if ("boolean" != typeof t && (t = e.hasAttribute("data-autoplay") || !!$ef6d0cb1bf5eee6a$var$r(e, ".slide-background")), t && "function" == typeof e.play) {
+                if ("boolean" != typeof t && (t = e.hasAttribute("data-autoplay") || !!$346c5613899b7380$var$r(e, ".slide-background")), t && "function" == typeof e.play) {
                     if (i && !e.muted) return;
                     if (e.readyState > 1) this.startEmbeddedMedia({
                         target: e
                     });
-                    else if ($ef6d0cb1bf5eee6a$var$u) {
+                    else if ($346c5613899b7380$var$u) {
                         let t = e.play();
                         t && "function" == typeof t.catch && !1 === e.controls && t.catch(()=>{
                             e.controls = !0, e.addEventListener("play", ()=>{
@@ -273,47 +282,47 @@ class $ef6d0cb1bf5eee6a$var$p {
                         });
                     } else e.removeEventListener("loadeddata", this.startEmbeddedMedia), e.addEventListener("loadeddata", this.startEmbeddedMedia);
                 }
-            }), i || ($ef6d0cb1bf5eee6a$var$t(e, "iframe[src]").forEach((e)=>{
-                $ef6d0cb1bf5eee6a$var$r(e, ".fragment") && !$ef6d0cb1bf5eee6a$var$r(e, ".fragment.visible") || this.startEmbeddedIframe({
+            }), i || ($346c5613899b7380$var$t(e, "iframe[src]").forEach((e)=>{
+                $346c5613899b7380$var$r(e, ".fragment") && !$346c5613899b7380$var$r(e, ".fragment.visible") || this.startEmbeddedIframe({
                     target: e
                 });
-            }), $ef6d0cb1bf5eee6a$var$t(e, "iframe[data-src]").forEach((e)=>{
-                $ef6d0cb1bf5eee6a$var$r(e, ".fragment") && !$ef6d0cb1bf5eee6a$var$r(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
+            }), $346c5613899b7380$var$t(e, "iframe[data-src]").forEach((e)=>{
+                $346c5613899b7380$var$r(e, ".fragment") && !$346c5613899b7380$var$r(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
             }));
         }
     }
     startEmbeddedMedia(e) {
-        let t = !!$ef6d0cb1bf5eee6a$var$r(e.target, "html"), i = !!$ef6d0cb1bf5eee6a$var$r(e.target, ".present");
+        let t = !!$346c5613899b7380$var$r(e.target, "html"), i = !!$346c5613899b7380$var$r(e.target, ".present");
         t && i && (e.target.paused || e.target.ended) && (e.target.currentTime = 0, e.target.play()), e.target.removeEventListener("loadeddata", this.startEmbeddedMedia);
     }
     startEmbeddedIframe(e) {
         let t = e.target;
         if (t && t.contentWindow) {
-            let i = !!$ef6d0cb1bf5eee6a$var$r(e.target, "html"), s = !!$ef6d0cb1bf5eee6a$var$r(e.target, ".present");
+            let i = !!$346c5613899b7380$var$r(e.target, "html"), s = !!$346c5613899b7380$var$r(e.target, ".present");
             if (i && s) {
                 let e = this.Reveal.getConfig().autoPlayMedia;
-                "boolean" != typeof e && (e = t.hasAttribute("data-autoplay") || !!$ef6d0cb1bf5eee6a$var$r(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"method":"play"}', "*") : t.contentWindow.postMessage("slide:start", "*");
+                "boolean" != typeof e && (e = t.hasAttribute("data-autoplay") || !!$346c5613899b7380$var$r(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"method":"play"}', "*") : t.contentWindow.postMessage("slide:start", "*");
             }
         }
     }
     stopEmbeddedContent(i, s = {}) {
-        s = $ef6d0cb1bf5eee6a$var$e({
+        s = $346c5613899b7380$var$e({
             unloadIframes: !0
-        }, s), i && i.parentNode && ($ef6d0cb1bf5eee6a$var$t(i, "video, audio").forEach((e)=>{
+        }, s), i && i.parentNode && ($346c5613899b7380$var$t(i, "video, audio").forEach((e)=>{
             e.hasAttribute("data-ignore") || "function" != typeof e.pause || (e.setAttribute("data-paused-by-reveal", ""), e.pause());
-        }), $ef6d0cb1bf5eee6a$var$t(i, "iframe").forEach((e)=>{
+        }), $346c5613899b7380$var$t(i, "iframe").forEach((e)=>{
             e.contentWindow && e.contentWindow.postMessage("slide:stop", "*"), e.removeEventListener("load", this.startEmbeddedIframe);
-        }), $ef6d0cb1bf5eee6a$var$t(i, 'iframe[src*="youtube.com/embed/"]').forEach((e)=>{
+        }), $346c5613899b7380$var$t(i, 'iframe[src*="youtube.com/embed/"]').forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && "function" == typeof e.contentWindow.postMessage && e.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', "*");
-        }), $ef6d0cb1bf5eee6a$var$t(i, 'iframe[src*="player.vimeo.com/"]').forEach((e)=>{
+        }), $346c5613899b7380$var$t(i, 'iframe[src*="player.vimeo.com/"]').forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && "function" == typeof e.contentWindow.postMessage && e.contentWindow.postMessage('{"method":"pause"}', "*");
-        }), !0 === s.unloadIframes && $ef6d0cb1bf5eee6a$var$t(i, "iframe[data-src]").forEach((e)=>{
+        }), !0 === s.unloadIframes && $346c5613899b7380$var$t(i, "iframe[data-src]").forEach((e)=>{
             e.setAttribute("src", "about:blank"), e.removeAttribute("src");
         }));
     }
 }
-const $ef6d0cb1bf5eee6a$var$m = ".slides section", $ef6d0cb1bf5eee6a$var$f = ".slides>section", $ef6d0cb1bf5eee6a$var$y = ".slides>section.present>section", $ef6d0cb1bf5eee6a$var$b = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview/;
-class $ef6d0cb1bf5eee6a$var$w {
+const $346c5613899b7380$var$m = ".slides section", $346c5613899b7380$var$f = ".slides>section", $346c5613899b7380$var$y = ".slides>section.present>section", $346c5613899b7380$var$b = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview/;
+class $346c5613899b7380$var$w {
     constructor(e){
         this.Reveal = e;
     }
@@ -357,7 +366,7 @@ class $ef6d0cb1bf5eee6a$var$w {
         this.element.remove();
     }
 }
-class $ef6d0cb1bf5eee6a$var$E {
+class $346c5613899b7380$var$E {
     constructor(e){
         this.Reveal = e, this.onInput = this.onInput.bind(this), this.onBlur = this.onBlur.bind(this), this.onKeyDown = this.onKeyDown.bind(this);
     }
@@ -413,7 +422,7 @@ class $ef6d0cb1bf5eee6a$var$E {
         setTimeout(()=>this.hide(), 1);
     }
 }
-const $ef6d0cb1bf5eee6a$var$S = (e)=>{
+const $346c5613899b7380$var$S = (e)=>{
     let t = e.match(/^#([0-9a-f]{3})$/i);
     if (t && t[1]) return t = t[1], {
         r: 17 * parseInt(t.charAt(0), 16),
@@ -440,7 +449,7 @@ const $ef6d0cb1bf5eee6a$var$S = (e)=>{
         a: parseFloat(a[4])
     } : null;
 };
-class $ef6d0cb1bf5eee6a$var$R {
+class $346c5613899b7380$var$R {
     constructor(e){
         this.Reveal = e;
     }
@@ -450,7 +459,7 @@ class $ef6d0cb1bf5eee6a$var$R {
     create() {
         this.element.innerHTML = "", this.element.classList.add("no-transition"), this.Reveal.getHorizontalSlides().forEach((e)=>{
             let i = this.createBackground(e, this.element);
-            $ef6d0cb1bf5eee6a$var$t(e, "section").forEach((e)=>{
+            $346c5613899b7380$var$t(e, "section").forEach((e)=>{
                 this.createBackground(e, i), i.classList.add("stack");
             });
         }), this.Reveal.getConfig().parallaxBackgroundImage ? (this.element.style.backgroundImage = 'url("' + this.Reveal.getConfig().parallaxBackgroundImage + '")', this.element.style.backgroundSize = this.Reveal.getConfig().parallaxBackgroundSize, this.element.style.backgroundRepeat = this.Reveal.getConfig().parallaxBackgroundRepeat, this.element.style.backgroundPosition = this.Reveal.getConfig().parallaxBackgroundPosition, setTimeout(()=>{
@@ -484,13 +493,13 @@ class $ef6d0cb1bf5eee6a$var$R {
     getContrastClass(e) {
         const t = e.slideBackgroundElement;
         let i = e.getAttribute("data-background-color");
-        if (!i || !$ef6d0cb1bf5eee6a$var$S(i)) {
+        if (!i || !$346c5613899b7380$var$S(i)) {
             let e = window.getComputedStyle(t);
             e && e.backgroundColor && (i = e.backgroundColor);
         }
         if (i) {
-            const e = $ef6d0cb1bf5eee6a$var$S(i);
-            if (e && 0 !== e.a) return "string" == typeof (s = i) && (s = $ef6d0cb1bf5eee6a$var$S(s)), (s ? (299 * s.r + 587 * s.g + 114 * s.b) / 1e3 : null) < 128 ? "has-dark-background" : "has-light-background";
+            const e = $346c5613899b7380$var$S(i);
+            if (e && 0 !== e.a) return "string" == typeof (s = i) && (s = $346c5613899b7380$var$S(s)), (s ? (299 * s.r + 587 * s.g + 114 * s.b) / 1e3 : null) < 128 ? "has-dark-background" : "has-light-background";
         }
         var s;
         return null;
@@ -506,7 +515,7 @@ class $ef6d0cb1bf5eee6a$var$R {
     update(e = !1) {
         let i = this.Reveal.getConfig(), s = this.Reveal.getCurrentSlide(), a = this.Reveal.getIndices(), n = null, r = i.rtl ? "future" : "past", o = i.rtl ? "past" : "future";
         if (Array.from(this.element.childNodes).forEach((i, s)=>{
-            i.classList.remove("past", "present", "future"), s < a.h ? i.classList.add(r) : s > a.h ? i.classList.add(o) : (i.classList.add("present"), n = i), (e || s === a.h) && $ef6d0cb1bf5eee6a$var$t(i, ".slide-background").forEach((e, t)=>{
+            i.classList.remove("past", "present", "future"), s < a.h ? i.classList.add(r) : s > a.h ? i.classList.add(o) : (i.classList.add("present"), n = i), (e || s === a.h) && $346c5613899b7380$var$t(i, ".slide-background").forEach((e, t)=>{
                 e.classList.remove("past", "present", "future");
                 const i = "number" == typeof a.v ? a.v : 0;
                 t < i ? e.classList.add("past") : t > i ? e.classList.add("future") : (e.classList.add("present"), s === a.h && (n = e));
@@ -553,8 +562,8 @@ class $ef6d0cb1bf5eee6a$var$R {
         this.element.remove();
     }
 }
-let $ef6d0cb1bf5eee6a$var$A = 0;
-class $ef6d0cb1bf5eee6a$var$k {
+let $346c5613899b7380$var$A = 0;
+class $346c5613899b7380$var$k {
     constructor(e){
         this.Reveal = e;
     }
@@ -562,17 +571,17 @@ class $ef6d0cb1bf5eee6a$var$k {
         this.reset();
         let i = this.Reveal.getSlides(), s = i.indexOf(t), a = i.indexOf(e);
         if (e && t && e.hasAttribute("data-auto-animate") && t.hasAttribute("data-auto-animate") && e.getAttribute("data-auto-animate-id") === t.getAttribute("data-auto-animate-id") && !(s > a ? t : e).hasAttribute("data-auto-animate-restart")) {
-            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $ef6d0cb1bf5eee6a$var$l();
+            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $346c5613899b7380$var$l();
             let i = this.getAutoAnimateOptions(t);
             e.dataset.autoAnimate = "pending", t.dataset.autoAnimate = "pending", i.slideDirection = s > a ? "forward" : "backward";
             let n = "none" === e.style.display;
             n && (e.style.display = this.Reveal.getConfig().display);
-            let r = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, i, $ef6d0cb1bf5eee6a$var$A++));
+            let r = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, i, $346c5613899b7380$var$A++));
             if (n && (e.style.display = "none"), "false" !== t.dataset.autoAnimateUnmatched && !0 === this.Reveal.getConfig().autoAnimateUnmatched) {
                 let e = .8 * i.duration, s = .2 * i.duration;
                 this.getUnmatchedAutoAnimateElements(t).forEach((e)=>{
                     let t = this.getAutoAnimateOptions(e, i), s = "unmatched";
-                    t.duration === i.duration && t.delay === i.delay || (s = "unmatched-" + $ef6d0cb1bf5eee6a$var$A++, r.push(`[data-auto-animate="running"] [data-auto-animate-target="${s}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = s;
+                    t.duration === i.duration && t.delay === i.delay || (s = "unmatched-" + $346c5613899b7380$var$A++, r.push(`[data-auto-animate="running"] [data-auto-animate-target="${s}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = s;
                 }, this), r.push(`[data-auto-animate="running"] [data-auto-animate-target="unmatched"] { transition: opacity ${e}s ease ${s}s; }`);
             }
             this.autoAnimateStyleSheet.innerHTML = r.join(""), requestAnimationFrame(()=>{
@@ -588,9 +597,9 @@ class $ef6d0cb1bf5eee6a$var$k {
         }
     }
     reset() {
-        $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), '[data-auto-animate]:not([data-auto-animate=""])').forEach((e)=>{
+        $346c5613899b7380$var$t(this.Reveal.getRevealElement(), '[data-auto-animate]:not([data-auto-animate=""])').forEach((e)=>{
             e.dataset.autoAnimate = "";
-        }), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
+        }), $346c5613899b7380$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
             delete e.dataset.autoAnimateTarget;
         }), this.autoAnimateStyleSheet && this.autoAnimateStyleSheet.parentNode && (this.autoAnimateStyleSheet.parentNode.removeChild(this.autoAnimateStyleSheet), this.autoAnimateStyleSheet = null);
     }
@@ -627,8 +636,8 @@ class $ef6d0cb1bf5eee6a$var$k {
             duration: this.Reveal.getConfig().autoAnimateDuration,
             delay: 0
         };
-        if (s = $ef6d0cb1bf5eee6a$var$e(s, i), t.parentNode) {
-            let e = $ef6d0cb1bf5eee6a$var$r(t.parentNode, "[data-auto-animate-target]");
+        if (s = $346c5613899b7380$var$e(s, i), t.parentNode) {
+            let e = $346c5613899b7380$var$r(t.parentNode, "[data-auto-animate-target]");
             e && (s = this.getAutoAnimateOptions(e, s));
         }
         return t.dataset.autoAnimateEasing && (s.easing = t.dataset.autoAnimateEasing), t.dataset.autoAnimateDuration && (s.duration = parseFloat(t.dataset.autoAnimateDuration)), t.dataset.autoAnimateDelay && (s.delay = parseFloat(t.dataset.autoAnimateDelay)), s;
@@ -676,9 +685,9 @@ class $ef6d0cb1bf5eee6a$var$k {
         let i = [];
         const s = "h1, h2, h3, h4, h5, h6, p, li";
         return this.findAutoAnimateMatches(i, e, t, "[data-id]", (e)=>e.nodeName + ":::" + e.getAttribute("data-id")), this.findAutoAnimateMatches(i, e, t, s, (e)=>e.nodeName + ":::" + e.textContent.trim()), this.findAutoAnimateMatches(i, e, t, "img, video, iframe", (e)=>e.nodeName + ":::" + (e.getAttribute("src") || e.getAttribute("data-src"))), this.findAutoAnimateMatches(i, e, t, "pre", (e)=>e.nodeName + ":::" + e.textContent.trim()), i.forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$n(e.from, s) ? e.options = {
+            $346c5613899b7380$var$n(e.from, s) ? e.options = {
                 scale: !1
-            } : $ef6d0cb1bf5eee6a$var$n(e.from, "pre") && (e.options = {
+            } : $346c5613899b7380$var$n(e.from, "pre") && (e.options = {
                 scale: !1,
                 styles: [
                     "width",
@@ -732,7 +741,7 @@ class $ef6d0cb1bf5eee6a$var$k {
         }, []);
     }
 }
-class $ef6d0cb1bf5eee6a$var$L {
+class $346c5613899b7380$var$L {
     constructor(e){
         this.Reveal = e, this.active = !1, this.activatedCallbacks = [], this.onScroll = this.onScroll.bind(this);
     }
@@ -740,7 +749,7 @@ class $ef6d0cb1bf5eee6a$var$L {
         if (this.active) return;
         const e = this.Reveal.getState();
         this.active = !0, this.slideHTMLBeforeActivation = this.Reveal.getSlidesElement().innerHTML;
-        const i = $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$f), s = $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), ".backgrounds>.slide-background");
+        const i = $346c5613899b7380$var$t(this.Reveal.getRevealElement(), $346c5613899b7380$var$f), s = $346c5613899b7380$var$t(this.Reveal.getRevealElement(), ".backgrounds>.slide-background");
         let a;
         this.viewportElement.classList.add("loading-scroll-mode", "reveal-scroll");
         const n = window.getComputedStyle(this.viewportElement);
@@ -765,7 +774,7 @@ class $ef6d0cb1bf5eee6a$var$L {
             this.Reveal.isVerticalStack(e) ? e.querySelectorAll("section").forEach((e, i)=>{
                 d(e, t, i, !0);
             }) : d(e, t, 0);
-        }, this), this.createProgressBar(), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), r.forEach((e)=>o.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
+        }, this), this.createProgressBar(), $346c5613899b7380$var$t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), r.forEach((e)=>o.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
             passive: !0
         });
     }
@@ -969,13 +978,13 @@ class $ef6d0cb1bf5eee6a$var$L {
         return this.Reveal.getViewportElement();
     }
 }
-class $ef6d0cb1bf5eee6a$var$C {
+class $346c5613899b7380$var$C {
     constructor(e){
         this.Reveal = e;
     }
     async activate() {
-        const e = this.Reveal.getConfig(), i = $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$m), s = e.slideNumber && /all|print/i.test(e.showSlideNumber), a = this.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), n = Math.floor(a.width * (1 + e.margin)), r = Math.floor(a.height * (1 + e.margin)), o = a.width, d = a.height;
-        await new Promise(requestAnimationFrame), $ef6d0cb1bf5eee6a$var$l("@page{size:" + n + "px " + r + "px; margin: 0px;}"), $ef6d0cb1bf5eee6a$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + o + "px; max-height:" + d + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = n + "px", document.body.style.height = r + "px";
+        const e = this.Reveal.getConfig(), i = $346c5613899b7380$var$t(this.Reveal.getRevealElement(), $346c5613899b7380$var$m), s = e.slideNumber && /all|print/i.test(e.showSlideNumber), a = this.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), n = Math.floor(a.width * (1 + e.margin)), r = Math.floor(a.height * (1 + e.margin)), o = a.width, d = a.height;
+        await new Promise(requestAnimationFrame), $346c5613899b7380$var$l("@page{size:" + n + "px " + r + "px; margin: 0px;}"), $346c5613899b7380$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + o + "px; max-height:" + d + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = n + "px", document.body.style.height = r + "px";
         const c = this.Reveal.getViewportElement();
         let h;
         if (c) {
@@ -1023,7 +1032,7 @@ class $ef6d0cb1bf5eee6a$var$C {
                             e.classList.remove("visible", "current-fragment");
                         });
                     });
-                } else $ef6d0cb1bf5eee6a$var$t(f, ".fragment:not(.fade-out)").forEach(function(e) {
+                } else $346c5613899b7380$var$t(f, ".fragment:not(.fade-out)").forEach(function(e) {
                     e.classList.add("visible");
                 });
             }
@@ -1035,7 +1044,7 @@ class $ef6d0cb1bf5eee6a$var$C {
         return "print" === this.Reveal.getConfig().view;
     }
 }
-class $ef6d0cb1bf5eee6a$var$P {
+class $346c5613899b7380$var$x {
     constructor(e){
         this.Reveal = e;
     }
@@ -1043,12 +1052,12 @@ class $ef6d0cb1bf5eee6a$var$P {
         !1 === e.fragments ? this.disable() : !1 === t.fragments && this.enable();
     }
     disable() {
-        $ef6d0cb1bf5eee6a$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        $346c5613899b7380$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     enable() {
-        $ef6d0cb1bf5eee6a$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        $346c5613899b7380$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.remove("visible"), e.classList.remove("current-fragment");
         });
     }
@@ -1086,7 +1095,7 @@ class $ef6d0cb1bf5eee6a$var$P {
     }
     sortAll() {
         this.Reveal.getHorizontalSlides().forEach((e)=>{
-            let i = $ef6d0cb1bf5eee6a$var$t(e, "section");
+            let i = $346c5613899b7380$var$t(e, "section");
             i.forEach((e, t)=>{
                 this.sort(e.querySelectorAll(".fragment"));
             }, this), 0 === i.length && this.sort(e.querySelectorAll(".fragment"));
@@ -1161,13 +1170,13 @@ class $ef6d0cb1bf5eee6a$var$P {
         return this.goto(null, -1);
     }
 }
-class $ef6d0cb1bf5eee6a$var$x {
+class $346c5613899b7380$var$P {
     constructor(e){
         this.Reveal = e, this.active = !1, this.onSlideClicked = this.onSlideClicked.bind(this);
     }
     activate() {
         if (this.Reveal.getConfig().overview && !this.Reveal.isScrollView() && !this.isActive()) {
-            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$m).forEach((e)=>{
+            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $346c5613899b7380$var$t(this.Reveal.getRevealElement(), $346c5613899b7380$var$m).forEach((e)=>{
                 e.classList.contains("stack") || e.addEventListener("click", this.onSlideClicked, !0);
             });
             const e = 70, i = this.Reveal.getComputedSlideSize();
@@ -1185,12 +1194,12 @@ class $ef6d0cb1bf5eee6a$var$x {
     }
     layout() {
         this.Reveal.getHorizontalSlides().forEach((e, i)=>{
-            e.setAttribute("data-index-h", i), $ef6d0cb1bf5eee6a$var$a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $ef6d0cb1bf5eee6a$var$t(e, "section").forEach((e, t)=>{
-                e.setAttribute("data-index-h", i), e.setAttribute("data-index-v", t), $ef6d0cb1bf5eee6a$var$a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            e.setAttribute("data-index-h", i), $346c5613899b7380$var$a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $346c5613899b7380$var$t(e, "section").forEach((e, t)=>{
+                e.setAttribute("data-index-h", i), e.setAttribute("data-index-v", t), $346c5613899b7380$var$a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         }), Array.from(this.Reveal.getBackgroundsElement().childNodes).forEach((e, i)=>{
-            $ef6d0cb1bf5eee6a$var$a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), $ef6d0cb1bf5eee6a$var$t(e, ".slide-background").forEach((e, t)=>{
-                $ef6d0cb1bf5eee6a$var$a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            $346c5613899b7380$var$a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), $346c5613899b7380$var$t(e, ".slide-background").forEach((e, t)=>{
+                $346c5613899b7380$var$a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         });
     }
@@ -1208,10 +1217,10 @@ class $ef6d0cb1bf5eee6a$var$x {
         if (this.Reveal.getConfig().overview) {
             this.active = !1, this.Reveal.getRevealElement().classList.remove("overview"), this.Reveal.getRevealElement().classList.add("overview-deactivating"), setTimeout(()=>{
                 this.Reveal.getRevealElement().classList.remove("overview-deactivating");
-            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$m).forEach((e)=>{
-                $ef6d0cb1bf5eee6a$var$a(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
-            }), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
-                $ef6d0cb1bf5eee6a$var$a(e, "");
+            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $346c5613899b7380$var$t(this.Reveal.getRevealElement(), $346c5613899b7380$var$m).forEach((e)=>{
+                $346c5613899b7380$var$a(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
+            }), $346c5613899b7380$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
+                $346c5613899b7380$var$a(e, "");
             }), this.Reveal.transformSlides({
                 overview: ""
             });
@@ -1244,7 +1253,7 @@ class $ef6d0cb1bf5eee6a$var$x {
         }
     }
 }
-class $ef6d0cb1bf5eee6a$var$T {
+class $346c5613899b7380$var$T {
     constructor(e){
         this.Reveal = e, this.shortcuts = {}, this.bindings = {}, this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
     }
@@ -1311,6 +1320,13 @@ class $ef6d0cb1bf5eee6a$var$T {
             112
         ];
         if ("object" == typeof t.keyboard) for(d in t.keyboard)"togglePause" === t.keyboard[d] && c.push(parseInt(d, 10));
+        if (this.Reveal.isOverlayOpen() && ![
+            "Escape",
+            "f",
+            "c",
+            "b",
+            "."
+        ].includes(e.key)) return !1;
         if (this.Reveal.isPaused() && -1 === c.indexOf(i)) return !1;
         let h = "linear" === t.navigationMode || !this.Reveal.hasHorizontalSlides() || !this.Reveal.hasVerticalSlides(), u = !1;
         if ("object" == typeof t.keyboard) {
@@ -1363,10 +1379,10 @@ class $ef6d0cb1bf5eee6a$var$T {
             66,
             86,
             190
-        ].includes(i) || 191 === i && !e.shiftKey ? this.Reveal.togglePause() : 70 === i ? $ef6d0cb1bf5eee6a$var$o(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : 65 === i ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(s) : 71 === i ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : 63 !== i && 191 !== i || !e.shiftKey ? 112 === i ? this.Reveal.toggleHelp() : u = !1 : this.Reveal.toggleHelp()), u ? e.preventDefault && e.preventDefault() : 27 !== i && 79 !== i || (!1 === this.Reveal.closeOverlay() && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
+        ].includes(i) || 191 === i && !e.shiftKey ? this.Reveal.togglePause() : 70 === i ? $346c5613899b7380$var$o(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : 65 === i ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(s) : 71 === i ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : 67 === i && this.Reveal.isOverlayOpen() ? this.Reveal.closeOverlay() : 63 !== i && 191 !== i || !e.shiftKey ? 112 === i ? this.Reveal.toggleHelp() : u = !1 : this.Reveal.toggleHelp()), u ? e.preventDefault && e.preventDefault() : 27 !== i && 79 !== i || (!1 === this.Reveal.closeOverlay() && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
     }
 }
-class $ef6d0cb1bf5eee6a$var$N {
+class $346c5613899b7380$var$N {
     MAX_REPLACE_STATE_FREQUENCY = 1e3;
     constructor(e){
         this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
@@ -1434,13 +1450,13 @@ class $ef6d0cb1bf5eee6a$var$N {
         this.readURL();
     }
 }
-class $ef6d0cb1bf5eee6a$var$M {
+class $346c5613899b7380$var$I {
     constructor(e){
         this.Reveal = e, this.onNavigateLeftClicked = this.onNavigateLeftClicked.bind(this), this.onNavigateRightClicked = this.onNavigateRightClicked.bind(this), this.onNavigateUpClicked = this.onNavigateUpClicked.bind(this), this.onNavigateDownClicked = this.onNavigateDownClicked.bind(this), this.onNavigatePrevClicked = this.onNavigatePrevClicked.bind(this), this.onNavigateNextClicked = this.onNavigateNextClicked.bind(this), this.onEnterFullscreen = this.onEnterFullscreen.bind(this);
     }
     render() {
         const e = this.Reveal.getConfig().rtl, i = this.Reveal.getRevealElement();
-        this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = `<button class="navigate-left" aria-label="${e ? "next slide" : "previous slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-right" aria-label="${e ? "previous slide" : "next slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-left"), this.controlsRight = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-right"), this.controlsUp = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-up"), this.controlsDown = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-down"), this.controlsPrev = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-prev"), this.controlsNext = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-next"), this.controlsFullscreen = $ef6d0cb1bf5eee6a$var$t(i, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
+        this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = `<button class="navigate-left" aria-label="${e ? "next slide" : "previous slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-right" aria-label="${e ? "previous slide" : "next slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $346c5613899b7380$var$t(i, ".navigate-left"), this.controlsRight = $346c5613899b7380$var$t(i, ".navigate-right"), this.controlsUp = $346c5613899b7380$var$t(i, ".navigate-up"), this.controlsDown = $346c5613899b7380$var$t(i, ".navigate-down"), this.controlsPrev = $346c5613899b7380$var$t(i, ".navigate-prev"), this.controlsNext = $346c5613899b7380$var$t(i, ".navigate-next"), this.controlsFullscreen = $346c5613899b7380$var$t(i, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
     }
     configure(e, t) {
         this.element.style.display = e.controls && ("speaker-only" !== e.controls || this.Reveal.isSpeakerNotes()) ? "block" : "none", this.element.setAttribute("data-controls-layout", e.controlsLayout), this.element.setAttribute("data-controls-back-arrows", e.controlsBackArrows);
@@ -1450,7 +1466,7 @@ class $ef6d0cb1bf5eee6a$var$M {
             "touchstart",
             "click"
         ];
-        $ef6d0cb1bf5eee6a$var$g && (e = [
+        $346c5613899b7380$var$g && (e = [
             "touchstart"
         ]), e.forEach((e)=>{
             this.controlsLeft.forEach((t)=>t.addEventListener(e, this.onNavigateLeftClicked, !1)), this.controlsRight.forEach((t)=>t.addEventListener(e, this.onNavigateRightClicked, !1)), this.controlsUp.forEach((t)=>t.addEventListener(e, this.onNavigateUpClicked, !1)), this.controlsDown.forEach((t)=>t.addEventListener(e, this.onNavigateDownClicked, !1)), this.controlsPrev.forEach((t)=>t.addEventListener(e, this.onNavigatePrevClicked, !1)), this.controlsNext.forEach((t)=>t.addEventListener(e, this.onNavigateNextClicked, !1)), this.controlsFullscreen.forEach((t)=>t.addEventListener(e, this.onEnterFullscreen, !1));
@@ -1535,10 +1551,10 @@ class $ef6d0cb1bf5eee6a$var$M {
     }
     onEnterFullscreen(e) {
         const t = this.Reveal.getConfig(), i = this.Reveal.getViewportElement();
-        $ef6d0cb1bf5eee6a$var$o(t.embedded ? i : i.parentElement);
+        $346c5613899b7380$var$o(t.embedded ? i : i.parentElement);
     }
 }
-class $ef6d0cb1bf5eee6a$var$I {
+class $346c5613899b7380$var$M {
     constructor(e){
         this.Reveal = e, this.onProgressClicked = this.onProgressClicked.bind(this);
     }
@@ -1574,7 +1590,7 @@ class $ef6d0cb1bf5eee6a$var$I {
         this.element.remove();
     }
 }
-class $ef6d0cb1bf5eee6a$var$B {
+class $346c5613899b7380$var$B {
     constructor(e){
         this.Reveal = e, this.lastMouseWheelStep = 0, this.cursorHidden = !1, this.cursorInactiveTimeout = 0, this.onDocumentCursorActive = this.onDocumentCursorActive.bind(this), this.onDocumentMouseScroll = this.onDocumentMouseScroll.bind(this);
     }
@@ -1601,7 +1617,7 @@ class $ef6d0cb1bf5eee6a$var$B {
         }
     }
 }
-const $ef6d0cb1bf5eee6a$var$H = (e, t)=>{
+const $346c5613899b7380$var$H = (e, t)=>{
     const i = document.createElement("script");
     i.type = "text/javascript", i.async = !1, i.defer = !1, i.src = e, "function" == typeof t && (i.onload = i.onreadystatechange = (e)=>{
         ("load" === e.type || /loaded|complete/.test(i.readyState)) && (i.onload = i.onreadystatechange = i.onerror = null, t());
@@ -1611,7 +1627,7 @@ const $ef6d0cb1bf5eee6a$var$H = (e, t)=>{
     const s = document.querySelector("head");
     s.insertBefore(i, s.lastChild);
 };
-class $ef6d0cb1bf5eee6a$var$D {
+class $346c5613899b7380$var$D {
     constructor(e){
         this.Reveal = e, this.state = "idle", this.registeredPlugins = {}, this.asyncDependencies = [];
     }
@@ -1626,7 +1642,7 @@ class $ef6d0cb1bf5eee6a$var$D {
                     t && "function" == typeof t.callback && t.callback(), 0 == --s && this.initPlugins().then(e);
                 };
                 i.forEach((e)=>{
-                    "string" == typeof e.id ? (this.registerPlugin(e), t(e)) : "string" == typeof e.src ? $ef6d0cb1bf5eee6a$var$H(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
+                    "string" == typeof e.id ? (this.registerPlugin(e), t(e)) : "string" == typeof e.src ? $346c5613899b7380$var$H(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
                 });
             } else this.initPlugins().then(e);
         });
@@ -1651,7 +1667,7 @@ class $ef6d0cb1bf5eee6a$var$D {
     }
     loadAsync() {
         return this.state = "loaded", this.asyncDependencies.length && this.asyncDependencies.forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$H(e.src, e.callback);
+            $346c5613899b7380$var$H(e.src, e.callback);
         }), Promise.resolve();
     }
     registerPlugin(e) {
@@ -1674,35 +1690,48 @@ class $ef6d0cb1bf5eee6a$var$D {
         }), this.registeredPlugins = {}, this.asyncDependencies = [];
     }
 }
-class $ef6d0cb1bf5eee6a$var$F {
+class $346c5613899b7380$var$F {
     constructor(e){
-        this.Reveal = e, this.onSlidesClicked = this.onSlidesClicked.bind(this), this.linkPreviewSelector = null, this.mediaPreviewSelector = "[data-preview-image], [data-preview-video]";
+        this.Reveal = e, this.onSlidesClicked = this.onSlidesClicked.bind(this), this.iframeTriggerSelector = null, this.mediaTriggerSelector = "[data-preview-image], [data-preview-video]", this.stateProps = [
+            "previewIframe",
+            "previewImage",
+            "previewVideo",
+            "previewFit"
+        ], this.state = {};
     }
     update() {
-        this.Reveal.getConfig().previewLinks ? this.linkPreviewSelector = "a[href]:not([data-preview-link=false])" : this.linkPreviewSelector = "[data-preview-link]:not([data-preview-link=false])", this.hasLinkPreviews = this.Reveal.getSlidesElement().querySelectorAll(this.linkPreviewSelector).length > 0, this.hasMediaPreviews = this.Reveal.getSlidesElement().querySelectorAll(this.mediaPreviewSelector).length > 0, this.hasLinkPreviews || this.hasMediaPreviews ? this.Reveal.getSlidesElement().addEventListener("click", this.onSlidesClicked, !1) : this.Reveal.getSlidesElement().removeEventListener("click", this.onSlidesClicked, !1);
+        this.Reveal.getConfig().previewLinks ? this.iframeTriggerSelector = "a[href]:not([data-preview-link=false]), [data-preview-link]:not(a):not([data-preview-link=false])" : this.iframeTriggerSelector = "[data-preview-link]:not([data-preview-link=false])";
+        const e = this.Reveal.getSlidesElement().querySelectorAll(this.iframeTriggerSelector).length > 0, t = this.Reveal.getSlidesElement().querySelectorAll(this.mediaTriggerSelector).length > 0;
+        e || t ? this.Reveal.getSlidesElement().addEventListener("click", this.onSlidesClicked, !1) : this.Reveal.getSlidesElement().removeEventListener("click", this.onSlidesClicked, !1);
     }
     createOverlay(e) {
         this.dom = document.createElement("div"), this.dom.classList.add("r-overlay"), this.dom.classList.add(e), this.viewport = document.createElement("div"), this.viewport.classList.add("r-overlay-viewport"), this.dom.appendChild(this.viewport), this.Reveal.getRevealElement().appendChild(this.dom);
     }
-    showIframePreview(e) {
-        this.close(), this.createOverlay("r-overlay-preview"), this.dom.dataset.state = "loading", this.viewport.innerHTML = `<header class="r-overlay-header">\n\t\t\t\t<a class="r-overlay-button r-overlay-external" href="${e}" target="_blank"><span class="icon"></span></a>\n\t\t\t\t<button class="r-overlay-button r-overlay-close"><span class="icon"></span></button>\n\t\t\t</header>\n\t\t\t<div class="r-overlay-spinner"></div>\n\t\t\t<div class="r-overlay-content">\n\t\t\t\t<iframe src="${e}"></iframe>\n\t\t\t\t<small class="r-overlay-content-inner">\n\t\t\t\t\t<span class="r-overlay-error x-frame-error">Unable to load iframe. This is likely due to the site's policy (x-frame-options).</span>\n\t\t\t\t</small>\n\t\t\t</div>`, this.dom.querySelector("iframe").addEventListener("load", (e)=>{
+    previewIframe(e) {
+        this.close(), this.state = {
+            previewIframe: e
+        }, this.createOverlay("r-overlay-preview"), this.dom.dataset.state = "loading", this.viewport.innerHTML = `<header class="r-overlay-header">\n\t\t\t\t<a class="r-overlay-button r-overlay-external" href="${e}" target="_blank"><span class="icon"></span></a>\n\t\t\t\t<button class="r-overlay-button r-overlay-close"><span class="icon"></span></button>\n\t\t\t</header>\n\t\t\t<div class="r-overlay-spinner"></div>\n\t\t\t<div class="r-overlay-content">\n\t\t\t\t<iframe src="${e}"></iframe>\n\t\t\t\t<small class="r-overlay-content-inner">\n\t\t\t\t\t<span class="r-overlay-error x-frame-error">Unable to load iframe. This is likely due to the site's policy (x-frame-options).</span>\n\t\t\t\t</small>\n\t\t\t</div>`, this.dom.querySelector("iframe").addEventListener("load", (e)=>{
             this.dom.dataset.state = "loaded";
         }, !1), this.dom.querySelector(".r-overlay-close").addEventListener("click", (e)=>{
             this.close(), e.preventDefault();
         }, !1), this.dom.querySelector(".r-overlay-external").addEventListener("click", (e)=>{
             this.close();
         }, !1), this.Reveal.dispatchEvent({
-            type: "showiframepreview",
+            type: "previewiframe",
             data: {
                 url: e
             }
         });
     }
-    showMediaPreview(e, t, i) {
+    previewMedia(e, t, i) {
         if ("image" !== t && "video" !== t) return void console.warn("Please specify a valid media type to preview (image|video)");
-        this.close(), this.createOverlay("r-overlay-preview"), this.dom.dataset.state = "loading", this.dom.dataset.previewFit = i && i.dataset.previewFit || "scale-down", this.viewport.innerHTML = '<header class="r-overlay-header">\n\t\t\t\t<button class="r-overlay-button r-overlay-close">Esc <span class="icon"></span></button>\n\t\t\t</header>\n\t\t\t<div class="r-overlay-spinner"></div>\n\t\t\t<div class="r-overlay-content"></div>';
+        this.close(), i = i || "scale-down", this.createOverlay("r-overlay-preview"), this.dom.dataset.state = "loading", this.dom.dataset.previewFit = i, this.viewport.innerHTML = '<header class="r-overlay-header">\n\t\t\t\t<button class="r-overlay-button r-overlay-close">Esc <span class="icon"></span></button>\n\t\t\t</header>\n\t\t\t<div class="r-overlay-spinner"></div>\n\t\t\t<div class="r-overlay-content"></div>';
         const s = this.dom.querySelector(".r-overlay-content");
         if ("image" === t) {
+            this.state = {
+                previewImage: e,
+                previewFit: i
+            };
             const t = document.createElement("img", {});
             t.src = e, s.appendChild(t), t.addEventListener("load", ()=>{
                 this.dom.dataset.state = "loaded";
@@ -1710,28 +1739,41 @@ class $ef6d0cb1bf5eee6a$var$F {
                 this.dom.dataset.state = "error", s.innerHTML = '<span class="r-overlay-error">Unable to load image.</span>';
             }, !1), this.dom.style.cursor = "zoom-out", this.dom.addEventListener("click", (e)=>{
                 this.close();
-            }, !1);
+            }, !1), this.Reveal.dispatchEvent({
+                type: "previewimage",
+                data: {
+                    url: e
+                }
+            });
         } else {
             if ("video" !== t) throw new Error("Please specify a valid media type to preview");
             {
+                this.state = {
+                    previewVideo: e,
+                    previewFit: i
+                };
                 const t = document.createElement("video");
                 t.autoplay = "false" !== this.dom.dataset.previewAutoplay, t.controls = "false" !== this.dom.dataset.previewControls, t.loop = "true" === this.dom.dataset.previewLoop, t.muted = "true" === this.dom.dataset.previewMuted, t.playsInline = !0, t.src = e, s.appendChild(t), t.addEventListener("loadeddata", ()=>{
                     this.dom.dataset.state = "loaded";
                 }, !1), t.addEventListener("error", ()=>{
                     this.dom.dataset.state = "error", s.innerHTML = '<span class="r-overlay-error">Unable to load video.</span>';
-                }, !1);
+                }, !1), this.Reveal.dispatchEvent({
+                    type: "previewvideo",
+                    data: {
+                        url: e
+                    }
+                });
             }
         }
         this.dom.querySelector(".r-overlay-close").addEventListener("click", (e)=>{
             this.close(), e.preventDefault();
-        }, !1), this.Reveal.dispatchEvent({
-            type: "showmediapreview",
-            data: {
-                mediaType: t,
-                url: e,
-                trigger: i
-            }
-        });
+        }, !1);
+    }
+    previewImage(e, t) {
+        this.previewMedia(e, "image", t);
+    }
+    previewVideo(e, t) {
+        this.previewMedia(e, "video", t);
     }
     toggleHelp(e) {
         "boolean" == typeof e ? e ? this.showHelp() : this.close() : this.dom ? this.close() : this.showHelp();
@@ -1754,24 +1796,33 @@ class $ef6d0cb1bf5eee6a$var$F {
         return !!this.dom;
     }
     close() {
-        return !!this.dom && (this.dom.remove(), this.dom = null, !0);
+        return !!this.dom && (this.dom.remove(), this.dom = null, this.state = {}, this.Reveal.dispatchEvent({
+            type: "closeoverlay"
+        }), !0);
+    }
+    getState() {
+        return this.state;
+    }
+    setState(e) {
+        this.stateProps.every((t)=>this.state[t] === e[t]) || (e.previewIframe ? this.previewIframe(e.previewIframe) : e.previewImage ? this.previewImage(e.previewImage, e.previewFit) : e.previewVideo ? this.previewVideo(e.previewVideo, e.previewFit) : this.close());
     }
     onSlidesClicked(e) {
-        const t = e.target, i = t.closest(this.linkPreviewSelector), s = t.closest(this.mediaPreviewSelector);
+        const t = e.target, i = t.closest(this.iframeTriggerSelector), s = t.closest(this.mediaTriggerSelector);
         if (i) {
-            let t = i.getAttribute("href");
-            t && (this.showIframePreview(t), e.preventDefault());
+            if (e.metaKey || e.shiftKey || e.altKey) return;
+            let t = i.getAttribute("href") || i.getAttribute("data-preview-link");
+            t && (this.previewIframe(t), e.preventDefault());
         } else if (s) {
             if (s.hasAttribute("data-preview-image")) {
                 let t = s.dataset.previewImage || s.getAttribute("src");
-                t && (this.showMediaPreview(t, "image", s), e.preventDefault());
+                t && (this.previewImage(t, s.dataset.previewFit), e.preventDefault());
             } else if (s.hasAttribute("data-preview-video")) {
                 let t = s.dataset.previewVideo || s.getAttribute("src");
                 if (!t) {
                     let e = s.querySelector("source");
                     e && (t = e.getAttribute("src"));
                 }
-                t && (this.showMediaPreview(t, "video", s), e.preventDefault());
+                t && (this.previewVideo(t, s.dataset.previewFit), e.preventDefault());
             }
         }
     }
@@ -1779,7 +1830,7 @@ class $ef6d0cb1bf5eee6a$var$F {
         this.close();
     }
 }
-class $ef6d0cb1bf5eee6a$var$z {
+class $346c5613899b7380$var$z {
     constructor(e){
         this.Reveal = e, this.touchStartX = 0, this.touchStartY = 0, this.touchStartCount = 0, this.touchCaptured = !1, this.onPointerDown = this.onPointerDown.bind(this), this.onPointerMove = this.onPointerMove.bind(this), this.onPointerUp = this.onPointerUp.bind(this), this.onTouchStart = this.onTouchStart.bind(this), this.onTouchMove = this.onTouchMove.bind(this), this.onTouchEnd = this.onTouchEnd.bind(this);
     }
@@ -1792,7 +1843,7 @@ class $ef6d0cb1bf5eee6a$var$z {
         e.removeEventListener("pointerdown", this.onPointerDown, !1), e.removeEventListener("pointermove", this.onPointerMove, !1), e.removeEventListener("pointerup", this.onPointerUp, !1), e.removeEventListener("MSPointerDown", this.onPointerDown, !1), e.removeEventListener("MSPointerMove", this.onPointerMove, !1), e.removeEventListener("MSPointerUp", this.onPointerUp, !1), e.removeEventListener("touchstart", this.onTouchStart, !1), e.removeEventListener("touchmove", this.onTouchMove, !1), e.removeEventListener("touchend", this.onTouchEnd, !1);
     }
     isSwipePrevented(e) {
-        if ($ef6d0cb1bf5eee6a$var$n(e, "video[controls], audio[controls]")) return !0;
+        if ($346c5613899b7380$var$n(e, "video[controls], audio[controls]")) return !0;
         for(; e && "function" == typeof e.hasAttribute;){
             if (e.hasAttribute("data-prevent-swipe")) return !0;
             e = e.parentNode;
@@ -1806,7 +1857,7 @@ class $ef6d0cb1bf5eee6a$var$z {
     onTouchMove(e) {
         if (this.isSwipePrevented(e.target)) return !0;
         let t = this.Reveal.getConfig();
-        if (this.touchCaptured) $ef6d0cb1bf5eee6a$var$g && e.preventDefault();
+        if (this.touchCaptured) $346c5613899b7380$var$g && e.preventDefault();
         else {
             this.Reveal.onUserInput(e);
             let i = e.touches[0].clientX, s = e.touches[0].clientY;
@@ -1846,8 +1897,8 @@ class $ef6d0cb1bf5eee6a$var$z {
         ], this.onTouchEnd(e));
     }
 }
-const $ef6d0cb1bf5eee6a$var$q = "focus", $ef6d0cb1bf5eee6a$var$O = "blur";
-class $ef6d0cb1bf5eee6a$var$U {
+const $346c5613899b7380$var$q = "focus", $346c5613899b7380$var$O = "blur";
+class $346c5613899b7380$var$V {
     constructor(e){
         this.Reveal = e, this.onRevealPointerDown = this.onRevealPointerDown.bind(this), this.onDocumentPointerDown = this.onDocumentPointerDown.bind(this);
     }
@@ -1861,13 +1912,13 @@ class $ef6d0cb1bf5eee6a$var$U {
         this.Reveal.getRevealElement().removeEventListener("pointerdown", this.onRevealPointerDown, !1), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1);
     }
     focus() {
-        this.state !== $ef6d0cb1bf5eee6a$var$q && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $ef6d0cb1bf5eee6a$var$q;
+        this.state !== $346c5613899b7380$var$q && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $346c5613899b7380$var$q;
     }
     blur() {
-        this.state !== $ef6d0cb1bf5eee6a$var$O && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $ef6d0cb1bf5eee6a$var$O;
+        this.state !== $346c5613899b7380$var$O && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $346c5613899b7380$var$O;
     }
     isFocused() {
-        return this.state === $ef6d0cb1bf5eee6a$var$q;
+        return this.state === $346c5613899b7380$var$q;
     }
     destroy() {
         this.Reveal.getRevealElement().classList.remove("focused");
@@ -1876,11 +1927,11 @@ class $ef6d0cb1bf5eee6a$var$U {
         this.focus();
     }
     onDocumentPointerDown(e) {
-        let t = $ef6d0cb1bf5eee6a$var$r(e.target, ".reveal");
+        let t = $346c5613899b7380$var$r(e.target, ".reveal");
         t && t === this.Reveal.getRevealElement() || this.blur();
     }
 }
-class $ef6d0cb1bf5eee6a$var$W {
+class $346c5613899b7380$var$U {
     constructor(e){
         this.Reveal = e;
     }
@@ -1911,7 +1962,7 @@ class $ef6d0cb1bf5eee6a$var$W {
         this.element.remove();
     }
 }
-class $ef6d0cb1bf5eee6a$var$V {
+class $346c5613899b7380$var$W {
     constructor(e, t){
         this.diameter = 100, this.diameter2 = this.diameter / 2, this.thickness = 6, this.playing = !1, this.progress = 0, this.progressOffset = 1, this.container = e, this.progressCheck = t, this.canvas = document.createElement("canvas"), this.canvas.className = "playback", this.canvas.width = this.diameter, this.canvas.height = this.diameter, this.canvas.style.width = this.diameter2 + "px", this.canvas.style.height = this.diameter2 + "px", this.context = this.canvas.getContext("2d"), this.container.appendChild(this.canvas), this.render();
     }
@@ -1939,7 +1990,7 @@ class $ef6d0cb1bf5eee6a$var$V {
         this.playing = !1, this.canvas.parentNode && this.container.removeChild(this.canvas);
     }
 }
-var $ef6d0cb1bf5eee6a$var$j = {
+var $346c5613899b7380$var$j = {
     width: 960,
     height: 700,
     margin: .04,
@@ -2030,8 +2081,8 @@ var $ef6d0cb1bf5eee6a$var$j = {
     dependencies: [],
     plugins: []
 };
-const $ef6d0cb1bf5eee6a$var$K = "5.2.0";
-function $ef6d0cb1bf5eee6a$var$$(n, o) {
+const $346c5613899b7380$var$K = "5.2.1";
+function $346c5613899b7380$var$$(n, o) {
     arguments.length < 2 && (o = arguments[0], n = document.querySelector(".reveal"));
     const l = {};
     let c, h, g, v, S, A = {}, H = !1, q = !1, O = {
@@ -2040,13 +2091,13 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
     }, $ = [], X = 1, Y = {
         layout: "",
         overview: ""
-    }, _ = {}, J = "idle", G = 0, Q = 0, Z = -1, ee = !1, te = new $ef6d0cb1bf5eee6a$var$p(l), ie = new $ef6d0cb1bf5eee6a$var$w(l), se = new $ef6d0cb1bf5eee6a$var$E(l), ae = new $ef6d0cb1bf5eee6a$var$k(l), ne = new $ef6d0cb1bf5eee6a$var$R(l), re = new $ef6d0cb1bf5eee6a$var$L(l), oe = new $ef6d0cb1bf5eee6a$var$C(l), le = new $ef6d0cb1bf5eee6a$var$P(l), de = new $ef6d0cb1bf5eee6a$var$x(l), ce = new $ef6d0cb1bf5eee6a$var$T(l), he = new $ef6d0cb1bf5eee6a$var$N(l), ue = new $ef6d0cb1bf5eee6a$var$M(l), ge = new $ef6d0cb1bf5eee6a$var$I(l), ve = new $ef6d0cb1bf5eee6a$var$B(l), pe = new $ef6d0cb1bf5eee6a$var$D(l), me = new $ef6d0cb1bf5eee6a$var$F(l), fe = new $ef6d0cb1bf5eee6a$var$U(l), ye = new $ef6d0cb1bf5eee6a$var$z(l), be = new $ef6d0cb1bf5eee6a$var$W(l);
+    }, _ = {}, J = "idle", G = 0, Q = 0, Z = -1, ee = !1, te = new $346c5613899b7380$var$p(l), ie = new $346c5613899b7380$var$w(l), se = new $346c5613899b7380$var$E(l), ae = new $346c5613899b7380$var$k(l), ne = new $346c5613899b7380$var$R(l), re = new $346c5613899b7380$var$L(l), oe = new $346c5613899b7380$var$C(l), le = new $346c5613899b7380$var$x(l), de = new $346c5613899b7380$var$P(l), ce = new $346c5613899b7380$var$T(l), he = new $346c5613899b7380$var$N(l), ue = new $346c5613899b7380$var$I(l), ge = new $346c5613899b7380$var$M(l), ve = new $346c5613899b7380$var$B(l), pe = new $346c5613899b7380$var$D(l), me = new $346c5613899b7380$var$F(l), fe = new $346c5613899b7380$var$V(l), ye = new $346c5613899b7380$var$z(l), be = new $346c5613899b7380$var$U(l);
     function we() {
-        !1 !== H && (q = !0, A.showHiddenSlides || $ef6d0cb1bf5eee6a$var$t(_.wrapper, 'section[data-visibility="hidden"]').forEach((e)=>{
+        !1 !== H && (q = !0, A.showHiddenSlides || $346c5613899b7380$var$t(_.wrapper, 'section[data-visibility="hidden"]').forEach((e)=>{
             const t = e.parentNode;
             1 === t.childElementCount && /section/i.test(t.nodeName) ? t.remove() : e.remove();
         }), function() {
-            _.slides.classList.add("no-transition"), $ef6d0cb1bf5eee6a$var$u ? _.wrapper.classList.add("no-hover") : _.wrapper.classList.remove("no-hover");
+            _.slides.classList.add("no-transition"), $346c5613899b7380$var$u ? _.wrapper.classList.add("no-hover") : _.wrapper.classList.remove("no-hover");
             ne.render(), ie.render(), se.render(), ue.render(), ge.render(), be.render(), _.pauseOverlay = ((e, t, i, s = "")=>{
                 let a = e.querySelectorAll("." + i);
                 for(let t = 0; t < a.length; t++){
@@ -2063,14 +2114,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }(), A.postMessage && window.addEventListener("message", wt, !1), setInterval(()=>{
             (!re.isActive() && 0 !== _.wrapper.scrollTop || 0 !== _.wrapper.scrollLeft) && (_.wrapper.scrollTop = 0, _.wrapper.scrollLeft = 0);
         }, 1e3), document.addEventListener("fullscreenchange", kt), document.addEventListener("webkitfullscreenchange", kt), st().forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$t(e, "section").forEach((e, t)=>{
+            $346c5613899b7380$var$t(e, "section").forEach((e, t)=>{
                 t > 0 && (e.classList.remove("present"), e.classList.remove("past"), e.classList.add("future"), e.setAttribute("aria-hidden", "true"));
             });
         }), Re(), ne.update(!0), function() {
             const e = "print" === A.view, t = "scroll" === A.view || "reader" === A.view;
             (e || t) && (e ? ke() : ye.unbind(), _.viewport.classList.add("loading-scroll-mode"), e ? "complete" === document.readyState ? oe.activate() : window.addEventListener("load", ()=>oe.activate()) : re.activate());
         }(), he.readURL(), setTimeout(()=>{
-            _.slides.classList.remove("no-transition"), _.wrapper.classList.add("ready"), xe({
+            _.slides.classList.remove("no-transition"), _.wrapper.classList.add("ready"), Pe({
                 type: "ready",
                 data: {
                     indexh: c,
@@ -2098,15 +2149,15 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         const s = {
             ...A
         };
-        if ("object" == typeof t && $ef6d0cb1bf5eee6a$var$e(A, t), !1 === l.isReady()) return;
-        const a = _.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$m).length;
-        _.wrapper.classList.remove(s.transition), _.wrapper.classList.add(A.transition), _.wrapper.setAttribute("data-transition-speed", A.transitionSpeed), _.wrapper.setAttribute("data-background-transition", A.backgroundTransition), _.viewport.style.setProperty("--slide-width", "string" == typeof A.width ? A.width : A.width + "px"), _.viewport.style.setProperty("--slide-height", "string" == typeof A.height ? A.height : A.height + "px"), A.shuffle && Ye(), $ef6d0cb1bf5eee6a$var$i(_.wrapper, "embedded", A.embedded), $ef6d0cb1bf5eee6a$var$i(_.wrapper, "rtl", A.rtl), $ef6d0cb1bf5eee6a$var$i(_.wrapper, "center", A.center), !1 === A.pause && We(), ae.reset(), S && (S.destroy(), S = null), a > 1 && A.autoSlide && A.autoSlideStoppable && (S = new $ef6d0cb1bf5eee6a$var$V(_.wrapper, ()=>Math.min(Math.max((Date.now() - Z) / G, 0), 1)), S.on("click", Lt), ee = !1), "default" !== A.navigationMode ? _.wrapper.setAttribute("data-navigation-mode", A.navigationMode) : _.wrapper.removeAttribute("data-navigation-mode"), be.configure(A, s), fe.configure(A, s), ve.configure(A, s), ue.configure(A, s), ge.configure(A, s), ce.configure(A, s), le.configure(A, s), ie.configure(A, s), Xe();
+        if ("object" == typeof t && $346c5613899b7380$var$e(A, t), !1 === l.isReady()) return;
+        const a = _.wrapper.querySelectorAll($346c5613899b7380$var$m).length;
+        _.wrapper.classList.remove(s.transition), _.wrapper.classList.add(A.transition), _.wrapper.setAttribute("data-transition-speed", A.transitionSpeed), _.wrapper.setAttribute("data-background-transition", A.backgroundTransition), _.viewport.style.setProperty("--slide-width", "string" == typeof A.width ? A.width : A.width + "px"), _.viewport.style.setProperty("--slide-height", "string" == typeof A.height ? A.height : A.height + "px"), A.shuffle && Ye(), $346c5613899b7380$var$i(_.wrapper, "embedded", A.embedded), $346c5613899b7380$var$i(_.wrapper, "rtl", A.rtl), $346c5613899b7380$var$i(_.wrapper, "center", A.center), !1 === A.pause && Ue(), ae.reset(), S && (S.destroy(), S = null), a > 1 && A.autoSlide && A.autoSlideStoppable && (S = new $346c5613899b7380$var$W(_.wrapper, ()=>Math.min(Math.max((Date.now() - Z) / G, 0), 1)), S.on("click", Lt), ee = !1), "default" !== A.navigationMode ? _.wrapper.setAttribute("data-navigation-mode", A.navigationMode) : _.wrapper.removeAttribute("data-navigation-mode"), be.configure(A, s), fe.configure(A, s), ve.configure(A, s), ue.configure(A, s), ge.configure(A, s), ce.configure(A, s), le.configure(A, s), ie.configure(A, s), Xe();
     }
     function Ae() {
-        window.addEventListener("resize", Rt, !1), A.touch && ye.bind(), A.keyboard && ce.bind(), A.progress && ge.bind(), A.respondToHashChanges && he.bind(), ue.bind(), fe.bind(), _.slides.addEventListener("click", St, !1), _.slides.addEventListener("transitionend", Et, !1), _.pauseOverlay.addEventListener("click", We, !1), A.focusBodyOnPageVisibilityChange && document.addEventListener("visibilitychange", At, !1);
+        window.addEventListener("resize", Rt, !1), A.touch && ye.bind(), A.keyboard && ce.bind(), A.progress && ge.bind(), A.respondToHashChanges && he.bind(), ue.bind(), fe.bind(), _.slides.addEventListener("click", St, !1), _.slides.addEventListener("transitionend", Et, !1), _.pauseOverlay.addEventListener("click", Ue, !1), A.focusBodyOnPageVisibilityChange && document.addEventListener("visibilitychange", At, !1);
     }
     function ke() {
-        ye.unbind(), fe.unbind(), ce.unbind(), ue.unbind(), ge.unbind(), he.unbind(), window.removeEventListener("resize", Rt, !1), _.slides.removeEventListener("click", St, !1), _.slides.removeEventListener("transitionend", Et, !1), _.pauseOverlay.removeEventListener("click", We, !1);
+        ye.unbind(), fe.unbind(), ce.unbind(), ue.unbind(), ge.unbind(), he.unbind(), window.removeEventListener("resize", Rt, !1), _.slides.removeEventListener("click", St, !1), _.slides.removeEventListener("transitionend", Et, !1), _.pauseOverlay.removeEventListener("click", Ue, !1);
     }
     function Le(e, t, i) {
         n.addEventListener(e, t, i);
@@ -2114,15 +2165,15 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
     function Ce(e, t, i) {
         n.removeEventListener(e, t, i);
     }
-    function Pe(e) {
-        "string" == typeof e.layout && (Y.layout = e.layout), "string" == typeof e.overview && (Y.overview = e.overview), Y.layout ? $ef6d0cb1bf5eee6a$var$a(_.slides, Y.layout + " " + Y.overview) : $ef6d0cb1bf5eee6a$var$a(_.slides, Y.overview);
+    function xe(e) {
+        "string" == typeof e.layout && (Y.layout = e.layout), "string" == typeof e.overview && (Y.overview = e.overview), Y.layout ? $346c5613899b7380$var$a(_.slides, Y.layout + " " + Y.overview) : $346c5613899b7380$var$a(_.slides, Y.overview);
     }
-    function xe({ target: t = _.wrapper, type: i, data: s, bubbles: a = !0 }) {
+    function Pe({ target: t = _.wrapper, type: i, data: s, bubbles: a = !0 }) {
         let n = document.createEvent("HTMLEvents", 1, 2);
-        return n.initEvent(i, a, !0), $ef6d0cb1bf5eee6a$var$e(n, s), t.dispatchEvent(n), t === _.wrapper && Ne(i), n;
+        return n.initEvent(i, a, !0), $346c5613899b7380$var$e(n, s), t.dispatchEvent(n), t === _.wrapper && Ne(i), n;
     }
     function Te(e) {
-        xe({
+        Pe({
             type: "slidechanged",
             data: {
                 indexh: c,
@@ -2140,26 +2191,26 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
                 eventName: t,
                 state: dt()
             };
-            $ef6d0cb1bf5eee6a$var$e(s, i), window.parent.postMessage(JSON.stringify(s), "*");
+            $346c5613899b7380$var$e(s, i), window.parent.postMessage(JSON.stringify(s), "*");
         }
     }
-    function Me() {
+    function Ie() {
         if (_.wrapper && !oe.isActive()) {
             const e = _.viewport.offsetWidth, t = _.viewport.offsetHeight;
             if (!A.disableLayout) {
-                $ef6d0cb1bf5eee6a$var$u && !A.embedded && document.documentElement.style.setProperty("--vh", .01 * window.innerHeight + "px");
+                $346c5613899b7380$var$u && !A.embedded && document.documentElement.style.setProperty("--vh", .01 * window.innerHeight + "px");
                 const i = re.isActive() ? Be(e, t) : Be(), s = X;
-                Ie(A.width, A.height), _.slides.style.width = i.width + "px", _.slides.style.height = i.height + "px", X = Math.min(i.presentationWidth / i.width, i.presentationHeight / i.height), X = Math.max(X, A.minScale), X = Math.min(X, A.maxScale), 1 === X || re.isActive() ? (_.slides.style.zoom = "", _.slides.style.left = "", _.slides.style.top = "", _.slides.style.bottom = "", _.slides.style.right = "", Pe({
+                Me(A.width, A.height), _.slides.style.width = i.width + "px", _.slides.style.height = i.height + "px", X = Math.min(i.presentationWidth / i.width, i.presentationHeight / i.height), X = Math.max(X, A.minScale), X = Math.min(X, A.maxScale), 1 === X || re.isActive() ? (_.slides.style.zoom = "", _.slides.style.left = "", _.slides.style.top = "", _.slides.style.bottom = "", _.slides.style.right = "", xe({
                     layout: ""
-                })) : (_.slides.style.zoom = "", _.slides.style.left = "50%", _.slides.style.top = "50%", _.slides.style.bottom = "auto", _.slides.style.right = "auto", Pe({
+                })) : (_.slides.style.zoom = "", _.slides.style.left = "50%", _.slides.style.top = "50%", _.slides.style.bottom = "auto", _.slides.style.right = "auto", xe({
                     layout: "translate(-50%, -50%) scale(" + X + ")"
                 }));
-                const a = Array.from(_.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$m));
+                const a = Array.from(_.wrapper.querySelectorAll($346c5613899b7380$var$m));
                 for(let e = 0, t = a.length; e < t; e++){
                     const t = a[e];
                     "none" !== t.style.display && (A.center || t.classList.contains("center") ? t.classList.contains("stack") ? t.style.top = 0 : t.style.top = Math.max((i.height - t.scrollHeight) / 2, 0) + "px" : t.style.top = "");
                 }
-                s !== X && xe({
+                s !== X && Pe({
                     type: "resize",
                     data: {
                         oldScale: s,
@@ -2176,8 +2227,8 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             }(), _.viewport.style.setProperty("--slide-scale", X), _.viewport.style.setProperty("--viewport-width", e + "px"), _.viewport.style.setProperty("--viewport-height", t + "px"), re.layout(), ge.update(), ne.updateParallax(), de.isActive() && de.update();
         }
     }
-    function Ie(e, i) {
-        $ef6d0cb1bf5eee6a$var$t(_.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
+    function Me(e, i) {
+        $346c5613899b7380$var$t(_.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
             let s = ((e, t = 0)=>{
                 if (e) {
                     let i, s = e.style.height;
@@ -2224,28 +2275,28 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
     function Oe() {
         return !!v && !v.nextElementSibling && (!Fe(v) || !v.parentNode.nextElementSibling);
     }
-    function Ue() {
+    function Ve() {
         if (A.pause) {
             const e = _.wrapper.classList.contains("paused");
-            ht(), _.wrapper.classList.add("paused"), !1 === e && xe({
+            ht(), _.wrapper.classList.add("paused"), !1 === e && Pe({
                 type: "paused"
             });
         }
     }
-    function We() {
+    function Ue() {
         const e = _.wrapper.classList.contains("paused");
-        _.wrapper.classList.remove("paused"), ct(), e && xe({
+        _.wrapper.classList.remove("paused"), ct(), e && Pe({
             type: "resumed"
         });
     }
-    function Ve(e) {
-        "boolean" == typeof e ? e ? Ue() : We() : je() ? We() : Ue();
+    function We(e) {
+        "boolean" == typeof e ? e ? Ve() : Ue() : je() ? Ue() : Ve();
     }
     function je() {
         return _.wrapper.classList.contains("paused");
     }
     function Ke(e, i, s, a) {
-        if (xe({
+        if (Pe({
             type: "beforeslidechange",
             data: {
                 indexh: void 0 === e ? c : e,
@@ -2254,7 +2305,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             }
         }).defaultPrevented) return;
         g = v;
-        const r = _.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$f);
+        const r = _.wrapper.querySelectorAll($346c5613899b7380$var$f);
         if (re.isActive()) {
             const t = re.getSlideByIndices(e, i);
             return void (t && re.scrollToSlide(t));
@@ -2264,14 +2315,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         const o = $.concat();
         $.length = 0;
         let l = c || 0, d = h || 0;
-        c = _e($ef6d0cb1bf5eee6a$var$f, void 0 === e ? c : e), h = _e($ef6d0cb1bf5eee6a$var$y, void 0 === i ? h : i);
+        c = _e($346c5613899b7380$var$f, void 0 === e ? c : e), h = _e($346c5613899b7380$var$y, void 0 === i ? h : i);
         let u = c !== l || h !== d;
         u || (g = null);
         let p = r[c], m = p.querySelectorAll("section");
         n.classList.toggle("is-vertical-slide", m.length > 1), v = m[h] || p;
         let b = !1;
-        u && g && v && !de.isActive() && (J = "running", b = $e(g, v, l, d), b && _.slides.classList.add("disable-slide-transitions")), Qe(), Me(), de.isActive() && de.update(), void 0 !== s && le.goto(s), g && g !== v && (g.classList.remove("present"), g.setAttribute("aria-hidden", "true"), qe() && setTimeout(()=>{
-            $ef6d0cb1bf5eee6a$var$t(_.wrapper, $ef6d0cb1bf5eee6a$var$f + ".stack").forEach((e)=>{
+        u && g && v && !de.isActive() && (J = "running", b = $e(g, v, l, d), b && _.slides.classList.add("disable-slide-transitions")), Qe(), Ie(), de.isActive() && de.update(), void 0 !== s && le.goto(s), g && g !== v && (g.classList.remove("present"), g.setAttribute("aria-hidden", "true"), qe() && setTimeout(()=>{
+            $346c5613899b7380$var$t(_.wrapper, $346c5613899b7380$var$f + ".stack").forEach((e)=>{
                 He(e, 0);
             });
         }, 0));
@@ -2280,7 +2331,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
                 o.splice(t, 1);
                 continue e;
             }
-            _.viewport.classList.add($[e]), xe({
+            _.viewport.classList.add($[e]), Pe({
                 type: $[e]
             });
         }
@@ -2295,7 +2346,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         return e.hasAttribute("data-auto-animate") && t.hasAttribute("data-auto-animate") && e.getAttribute("data-auto-animate-id") === t.getAttribute("data-auto-animate-id") && !(c > i || h > s ? t : e).hasAttribute("data-auto-animate-restart");
     }
     function Xe() {
-        ke(), Ae(), Me(), G = A.autoSlide, ct(), ne.create(), he.writeURL(), !0 === A.sortFragmentsOnSync && le.sortAll(), ue.update(), ge.update(), Qe(), be.update(), be.updateVisibility(), me.update(), ne.update(!0), ie.update(), te.formatEmbeddedContent(), !1 === A.autoPlayMedia ? te.stopEmbeddedContent(v, {
+        ke(), Ae(), Ie(), G = A.autoSlide, ct(), ne.create(), he.writeURL(), !0 === A.sortFragmentsOnSync && le.sortAll(), ue.update(), ge.update(), Qe(), be.update(), be.updateVisibility(), me.update(), ne.update(!0), ie.update(), te.formatEmbeddedContent(), !1 === A.autoPlayMedia ? te.stopEmbeddedContent(v, {
             unloadIframes: !1
         }) : te.startEmbeddedContent(v), de.isActive() && de.layout();
     }
@@ -2308,7 +2359,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         });
     }
     function _e(e, i) {
-        let s = $ef6d0cb1bf5eee6a$var$t(_.wrapper, e), a = s.length, n = re.isActive() || oe.isActive(), r = !1, o = !1;
+        let s = $346c5613899b7380$var$t(_.wrapper, e), a = s.length, n = re.isActive() || oe.isActive(), r = !1, o = !1;
         if (a) {
             A.loop && (i >= a && (r = !0), (i %= a) < 0 && (i = a + i, o = !0)), i = Math.max(Math.min(i, a - 1), 0);
             for(let e = 0; e < a; e++){
@@ -2316,7 +2367,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
                 t.classList.remove("past"), t.classList.remove("present"), t.classList.remove("future"), t.setAttribute("hidden", ""), t.setAttribute("aria-hidden", "true"), t.querySelector("section") && t.classList.add("stack"), n ? t.classList.add("present") : e < i ? (t.classList.add(a ? "future" : "past"), A.fragments && Je(t)) : e > i ? (t.classList.add(a ? "past" : "future"), A.fragments && Ge(t)) : e === i && A.fragments && (r ? Ge(t) : o && Je(t));
             }
             let e = s[i], t = e.classList.contains("present");
-            e.classList.add("present"), e.removeAttribute("hidden"), e.removeAttribute("aria-hidden"), t || xe({
+            e.classList.add("present"), e.removeAttribute("hidden"), e.removeAttribute("aria-hidden"), t || Pe({
                 target: e,
                 type: "visible",
                 bubbles: !1
@@ -2327,12 +2378,12 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         return i;
     }
     function Je(e) {
-        $ef6d0cb1bf5eee6a$var$t(e, ".fragment").forEach((e)=>{
+        $346c5613899b7380$var$t(e, ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     function Ge(e) {
-        $ef6d0cb1bf5eee6a$var$t(e, ".fragment.visible").forEach((e)=>{
+        $346c5613899b7380$var$t(e, ".fragment.visible").forEach((e)=>{
             e.classList.remove("visible", "current-fragment");
         });
     }
@@ -2340,9 +2391,9 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         let e, i, s = st(), a = s.length;
         if (a && void 0 !== c) {
             let n = de.isActive() ? 10 : A.viewDistance;
-            $ef6d0cb1bf5eee6a$var$u && (n = de.isActive() ? 6 : A.mobileViewDistance), oe.isActive() && (n = Number.MAX_VALUE);
+            $346c5613899b7380$var$u && (n = de.isActive() ? 6 : A.mobileViewDistance), oe.isActive() && (n = Number.MAX_VALUE);
             for(let r = 0; r < a; r++){
-                let o = s[r], l = $ef6d0cb1bf5eee6a$var$t(o, "section"), d = l.length;
+                let o = s[r], l = $346c5613899b7380$var$t(o, "section"), d = l.length;
                 if (e = Math.abs((c || 0) - r) || 0, A.loop && (e = Math.abs(((c || 0) - r) % (a - n)) || 0), e < n ? te.load(o) : te.unload(o), d) {
                     let t = De(o);
                     for(let s = 0; s < d; s++){
@@ -2355,7 +2406,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }
     }
     function Ze({ includeFragments: e = !1 } = {}) {
-        let t = _.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$f), i = _.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$y), s = {
+        let t = _.wrapper.querySelectorAll($346c5613899b7380$var$f), i = _.wrapper.querySelectorAll($346c5613899b7380$var$y), s = {
             left: c > 0,
             right: c < t.length - 1,
             up: h > 0,
@@ -2390,7 +2441,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             if (re.isActive()) s = parseInt(e.getAttribute("data-index-h"), 10), e.getAttribute("data-index-v") && (a = parseInt(e.getAttribute("data-index-v"), 10));
             else {
                 let i = Fe(e), n = i ? e.parentNode : e, r = st();
-                s = Math.max(r.indexOf(n), 0), a = void 0, i && (a = Math.max($ef6d0cb1bf5eee6a$var$t(e.parentNode, "section").indexOf(e), 0));
+                s = Math.max(r.indexOf(n), 0), a = void 0, i && (a = Math.max($346c5613899b7380$var$t(e.parentNode, "section").indexOf(e), 0));
             }
         }
         if (!e && v) {
@@ -2406,13 +2457,13 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         };
     }
     function it() {
-        return $ef6d0cb1bf5eee6a$var$t(_.wrapper, $ef6d0cb1bf5eee6a$var$m + ':not(.stack):not([data-visibility="uncounted"])');
+        return $346c5613899b7380$var$t(_.wrapper, $346c5613899b7380$var$m + ':not(.stack):not([data-visibility="uncounted"])');
     }
     function st() {
-        return $ef6d0cb1bf5eee6a$var$t(_.wrapper, $ef6d0cb1bf5eee6a$var$f);
+        return $346c5613899b7380$var$t(_.wrapper, $346c5613899b7380$var$f);
     }
     function at() {
-        return $ef6d0cb1bf5eee6a$var$t(_.wrapper, ".slides>section>section");
+        return $346c5613899b7380$var$t(_.wrapper, ".slides>section>section");
     }
     function nt() {
         return st().length > 1;
@@ -2434,13 +2485,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             indexv: e.v,
             indexf: e.f,
             paused: je(),
-            overview: de.isActive()
+            overview: de.isActive(),
+            ...me.getState()
         };
     }
     function ct() {
         if (ht(), v && !1 !== A.autoSlide) {
             let e = v.querySelector(".current-fragment[data-autoslide]"), i = e ? e.getAttribute("data-autoslide") : null, s = v.parentNode ? v.parentNode.getAttribute("data-autoslide") : null, a = v.getAttribute("data-autoslide");
-            i ? G = parseInt(i, 10) : a ? G = parseInt(a, 10) : s ? G = parseInt(s, 10) : (G = A.autoSlide, 0 === v.querySelectorAll(".fragment").length && $ef6d0cb1bf5eee6a$var$t(v, "video, audio").forEach((e)=>{
+            i ? G = parseInt(i, 10) : a ? G = parseInt(a, 10) : s ? G = parseInt(s, 10) : (G = A.autoSlide, 0 === v.querySelectorAll(".fragment").length && $346c5613899b7380$var$t(v, "video, audio").forEach((e)=>{
                 e.hasAttribute("data-autoplay") && G && 1e3 * e.duration / e.playbackRate > G && (G = 1e3 * e.duration / e.playbackRate + 1e3);
             })), !G || ee || je() || de.isActive() || Oe() && !le.availableRoutes().next && !0 !== A.loop || (Q = setTimeout(()=>{
                 "function" == typeof A.autoSlideMethod ? A.autoSlideMethod() : bt(), ct();
@@ -2451,12 +2503,12 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         clearTimeout(Q), Q = -1;
     }
     function ut() {
-        G && !ee && (ee = !0, xe({
+        G && !ee && (ee = !0, Pe({
             type: "autoslidepaused"
         }), clearTimeout(Q), S && S.setPlaying(!1));
     }
     function gt() {
-        G && ee && (ee = !1, xe({
+        G && ee && (ee = !1, Pe({
             type: "autoslideresumed"
         }), ct());
     }
@@ -2484,7 +2536,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             });
             else {
                 let i;
-                if (i = A.rtl ? $ef6d0cb1bf5eee6a$var$t(_.wrapper, $ef6d0cb1bf5eee6a$var$f + ".future").pop() : $ef6d0cb1bf5eee6a$var$t(_.wrapper, $ef6d0cb1bf5eee6a$var$f + ".past").pop(), i && i.classList.contains("stack")) {
+                if (i = A.rtl ? $346c5613899b7380$var$t(_.wrapper, $346c5613899b7380$var$f + ".future").pop() : $346c5613899b7380$var$t(_.wrapper, $346c5613899b7380$var$f + ".past").pop(), i && i.classList.contains("stack")) {
                     let e = i.querySelectorAll("section").length - 1 || void 0;
                     Ke(c - 1, e);
                 } else A.rtl ? pt({
@@ -2511,7 +2563,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
     function wt(e) {
         let t = e.data;
         if ("string" == typeof t && "{" === t.charAt(0) && "}" === t.charAt(t.length - 1) && (t = JSON.parse(t), t.method && "function" == typeof l[t.method])) {
-            if (!1 === $ef6d0cb1bf5eee6a$var$b.test(t.method)) {
+            if (!1 === $346c5613899b7380$var$b.test(t.method)) {
                 const e = l[t.method].apply(l, t.args);
                 Ne("callback", {
                     method: t.method,
@@ -2521,7 +2573,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }
     }
     function Et(e) {
-        "running" === J && /section/gi.test(e.target.nodeName) && (J = "idle", xe({
+        "running" === J && /section/gi.test(e.target.nodeName) && (J = "idle", Pe({
             type: "slidetransitionend",
             data: {
                 indexh: c,
@@ -2532,14 +2584,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }));
     }
     function St(e) {
-        const t = $ef6d0cb1bf5eee6a$var$r(e.target, 'a[href^="#"]');
+        const t = $346c5613899b7380$var$r(e.target, 'a[href^="#"]');
         if (t) {
             const i = t.getAttribute("href"), s = he.getIndicesFromHash(i);
             s && (l.slide(s.h, s.v, s.f), e.preventDefault());
         }
     }
     function Rt(e) {
-        Me();
+        Ie();
     }
     function At(e) {
         !1 === document.hidden && document.activeElement !== document.body && ("function" == typeof document.activeElement.blur && document.activeElement.blur(), document.body.focus());
@@ -2553,25 +2605,25 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         Oe() && !1 === A.loop ? (Ke(0, 0), gt()) : ee ? gt() : ut();
     }
     const Ct = {
-        VERSION: $ef6d0cb1bf5eee6a$var$K,
+        VERSION: $346c5613899b7380$var$K,
         initialize: function(e) {
             if (!n) throw 'Unable to find presentation root (<div class="reveal">).';
             if (H) throw "Reveal.js has already been initialized.";
             if (H = !0, _.wrapper = n, _.slides = n.querySelector(".slides"), !_.slides) throw 'Unable to find slides container (<div class="slides">).';
             return A = {
-                ...$ef6d0cb1bf5eee6a$var$j,
+                ...$346c5613899b7380$var$j,
                 ...A,
                 ...o,
                 ...e,
-                ...$ef6d0cb1bf5eee6a$var$d()
+                ...$346c5613899b7380$var$d()
             }, /print-pdf/gi.test(window.location.search) && (A.view = "print"), function() {
-                !0 === A.embedded ? _.viewport = $ef6d0cb1bf5eee6a$var$r(n, ".reveal-viewport") || n : (_.viewport = document.body, document.documentElement.classList.add("reveal-full-page"));
+                !0 === A.embedded ? _.viewport = $346c5613899b7380$var$r(n, ".reveal-viewport") || n : (_.viewport = document.body, document.documentElement.classList.add("reveal-full-page"));
                 _.viewport.classList.add("reveal-viewport");
-            }(), window.addEventListener("load", Me, !1), pe.load(A.plugins, A.dependencies).then(we), new Promise((e)=>l.on("ready", e));
+            }(), window.addEventListener("load", Ie, !1), pe.load(A.plugins, A.dependencies).then(we), new Promise((e)=>l.on("ready", e));
         },
         configure: Re,
         destroy: function() {
-            H = !1, !1 !== q && (ke(), ht(), be.destroy(), fe.destroy(), me.destroy(), pe.destroy(), ve.destroy(), ue.destroy(), ge.destroy(), ne.destroy(), ie.destroy(), se.destroy(), document.removeEventListener("fullscreenchange", kt), document.removeEventListener("webkitfullscreenchange", kt), document.removeEventListener("visibilitychange", At, !1), window.removeEventListener("message", wt, !1), window.removeEventListener("load", Me, !1), _.pauseOverlay && _.pauseOverlay.remove(), _.statusElement && _.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), _.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), _.wrapper.removeAttribute("data-transition-speed"), _.wrapper.removeAttribute("data-background-transition"), _.viewport.classList.remove("reveal-viewport"), _.viewport.style.removeProperty("--slide-width"), _.viewport.style.removeProperty("--slide-height"), _.slides.style.removeProperty("width"), _.slides.style.removeProperty("height"), _.slides.style.removeProperty("zoom"), _.slides.style.removeProperty("left"), _.slides.style.removeProperty("top"), _.slides.style.removeProperty("bottom"), _.slides.style.removeProperty("right"), _.slides.style.removeProperty("transform"), Array.from(_.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$m)).forEach((e)=>{
+            H = !1, !1 !== q && (ke(), ht(), be.destroy(), fe.destroy(), me.destroy(), pe.destroy(), ve.destroy(), ue.destroy(), ge.destroy(), ne.destroy(), ie.destroy(), se.destroy(), document.removeEventListener("fullscreenchange", kt), document.removeEventListener("webkitfullscreenchange", kt), document.removeEventListener("visibilitychange", At, !1), window.removeEventListener("message", wt, !1), window.removeEventListener("load", Ie, !1), _.pauseOverlay && _.pauseOverlay.remove(), _.statusElement && _.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), _.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), _.wrapper.removeAttribute("data-transition-speed"), _.wrapper.removeAttribute("data-background-transition"), _.viewport.classList.remove("reveal-viewport"), _.viewport.style.removeProperty("--slide-width"), _.viewport.style.removeProperty("--slide-height"), _.slides.style.removeProperty("width"), _.slides.style.removeProperty("height"), _.slides.style.removeProperty("zoom"), _.slides.style.removeProperty("left"), _.slides.style.removeProperty("top"), _.slides.style.removeProperty("bottom"), _.slides.style.removeProperty("right"), _.slides.style.removeProperty("transform"), Array.from(_.wrapper.querySelectorAll($346c5613899b7380$var$m)).forEach((e)=>{
                 e.style.removeProperty("display"), e.style.removeProperty("top"), e.removeAttribute("hidden"), e.removeAttribute("aria-hidden");
             }));
         },
@@ -2600,14 +2652,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         off: Ce,
         addEventListener: Le,
         removeEventListener: Ce,
-        layout: Me,
+        layout: Ie,
         shuffle: Ye,
         availableRoutes: Ze,
         availableFragments: le.availableRoutes.bind(le),
         toggleHelp: me.toggleHelp.bind(me),
         toggleOverview: de.toggle.bind(de),
         toggleScrollView: re.toggle.bind(re),
-        togglePause: Ve,
+        togglePause: We,
         toggleAutoSlide: function(e) {
             "boolean" == typeof e ? e ? gt() : ut() : ee ? gt() : ut();
         },
@@ -2638,19 +2690,20 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         stopEmbeddedContent: ()=>te.stopEmbeddedContent(v, {
                 unloadIframes: !1
             }),
-        showIframePreview: me.showIframePreview.bind(me),
-        showMediaPreview: me.showMediaPreview.bind(me),
-        showPreview: me.showIframePreview.bind(me),
+        previewIframe: me.previewIframe.bind(me),
+        previewImage: me.previewImage.bind(me),
+        previewVideo: me.previewVideo.bind(me),
+        showPreview: me.previewIframe.bind(me),
         hidePreview: me.close.bind(me),
         addEventListeners: Ae,
         removeEventListeners: ke,
-        dispatchEvent: xe,
+        dispatchEvent: Pe,
         getState: dt,
         setState: function(e) {
             if ("object" == typeof e) {
-                Ke($ef6d0cb1bf5eee6a$var$s(e.indexh), $ef6d0cb1bf5eee6a$var$s(e.indexv), $ef6d0cb1bf5eee6a$var$s(e.indexf));
-                let t = $ef6d0cb1bf5eee6a$var$s(e.paused), i = $ef6d0cb1bf5eee6a$var$s(e.overview);
-                "boolean" == typeof t && t !== je() && Ve(t), "boolean" == typeof i && i !== de.isActive() && de.toggle(i);
+                Ke($346c5613899b7380$var$s(e.indexh), $346c5613899b7380$var$s(e.indexv), $346c5613899b7380$var$s(e.indexf));
+                let t = $346c5613899b7380$var$s(e.paused), i = $346c5613899b7380$var$s(e.overview);
+                "boolean" == typeof t && t !== je() && We(t), "boolean" == typeof i && i !== de.isActive() && de.toggle(i), me.setState(e);
             }
         },
         getProgress: function() {
@@ -2708,7 +2761,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         },
         getScale: ()=>X,
         getConfig: ()=>A,
-        getQueryHash: $ef6d0cb1bf5eee6a$var$d,
+        getQueryHash: $346c5613899b7380$var$d,
         getSlidePath: he.getHash.bind(he),
         getRevealElement: ()=>n,
         getSlidesElement: ()=>_.slides,
@@ -2719,7 +2772,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         getPlugin: pe.getPlugin.bind(pe),
         getPlugins: pe.getRegisteredPlugins.bind(pe)
     };
-    return $ef6d0cb1bf5eee6a$var$e(l, {
+    return $346c5613899b7380$var$e(l, {
         ...Ct,
         announceStatus: Ee,
         getStatusText: Se,
@@ -2739,14 +2792,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         },
         closeOverlay: me.close.bind(me),
         updateSlidesVisibility: Qe,
-        layoutSlideContents: Ie,
-        transformSlides: Pe,
+        layoutSlideContents: Me,
+        transformSlides: xe,
         cueAutoSlide: ct,
         cancelAutoSlide: ht
     }), Ct;
 }
-let $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039 = $ef6d0cb1bf5eee6a$var$$, $ef6d0cb1bf5eee6a$var$Y = [];
-$ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.initialize = (e)=>(Object.assign($ef6d0cb1bf5eee6a$export$2e2bcd8739ae039, new $ef6d0cb1bf5eee6a$var$$(document.querySelector(".reveal"), e)), $ef6d0cb1bf5eee6a$var$Y.map((e)=>e($ef6d0cb1bf5eee6a$export$2e2bcd8739ae039)), $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.initialize()), [
+let $346c5613899b7380$export$2e2bcd8739ae039 = $346c5613899b7380$var$$, $346c5613899b7380$var$Y = [];
+$346c5613899b7380$export$2e2bcd8739ae039.initialize = (e)=>(Object.assign($346c5613899b7380$export$2e2bcd8739ae039, new $346c5613899b7380$var$$(document.querySelector(".reveal"), e)), $346c5613899b7380$var$Y.map((e)=>e($346c5613899b7380$export$2e2bcd8739ae039)), $346c5613899b7380$export$2e2bcd8739ae039.initialize()), [
     "configure",
     "on",
     "off",
@@ -2754,1328 +2807,16 @@ $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.initialize = (e)=>(Object.assign($ef6d0
     "removeEventListener",
     "registerPlugin"
 ].forEach((e)=>{
-    $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039[e] = (...t)=>{
-        $ef6d0cb1bf5eee6a$var$Y.push((i)=>i[e].call(null, ...t));
+    $346c5613899b7380$export$2e2bcd8739ae039[e] = (...t)=>{
+        $346c5613899b7380$var$Y.push((i)=>i[e].call(null, ...t));
     };
-}), $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.isReady = ()=>!1, $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.VERSION = $ef6d0cb1bf5eee6a$var$K;
+}), $346c5613899b7380$export$2e2bcd8739ae039.isReady = ()=>!1, $346c5613899b7380$export$2e2bcd8739ae039.VERSION = $346c5613899b7380$var$K;
 
 
-var $d16eb09acf14544d$exports = {};
-!function(t, e) {
-    $d16eb09acf14544d$exports = e();
-}($d16eb09acf14544d$exports, function() {
-    "use strict";
-    function t() {
-        return {
-            async: !1,
-            baseUrl: null,
-            breaks: !1,
-            extensions: null,
-            gfm: !0,
-            headerIds: !0,
-            headerPrefix: "",
-            highlight: null,
-            hooks: null,
-            langPrefix: "language-",
-            mangle: !0,
-            pedantic: !1,
-            renderer: null,
-            sanitize: !1,
-            sanitizer: null,
-            silent: !1,
-            smartypants: !1,
-            tokenizer: null,
-            walkTokens: null,
-            xhtml: !1
-        };
-    }
-    let e = {
-        async: !1,
-        baseUrl: null,
-        breaks: !1,
-        extensions: null,
-        gfm: !0,
-        headerIds: !0,
-        headerPrefix: "",
-        highlight: null,
-        hooks: null,
-        langPrefix: "language-",
-        mangle: !0,
-        pedantic: !1,
-        renderer: null,
-        sanitize: !1,
-        sanitizer: null,
-        silent: !1,
-        smartypants: !1,
-        tokenizer: null,
-        walkTokens: null,
-        xhtml: !1
-    };
-    const n = /[&<>"']/, i = new RegExp(n.source, "g"), s = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/, r = new RegExp(s.source, "g"), a = {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;"
-    }, o = (t)=>a[t];
-    function l(t, e) {
-        if (e) {
-            if (n.test(t)) return t.replace(i, o);
-        } else if (s.test(t)) return t.replace(r, o);
-        return t;
-    }
-    const c = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/gi;
-    function p(t) {
-        return t.replace(c, (t, e)=>"colon" === (e = e.toLowerCase()) ? ":" : "#" === e.charAt(0) ? "x" === e.charAt(1) ? String.fromCharCode(parseInt(e.substring(2), 16)) : String.fromCharCode(+e.substring(1)) : "");
-    }
-    const u = /(^|[^\[])\^/g;
-    function d(t, e) {
-        t = "string" == typeof t ? t : t.source, e = e || "";
-        const n = {
-            replace: (e, i)=>(i = (i = i.source || i).replace(u, "$1"), t = t.replace(e, i), n),
-            getRegex: ()=>new RegExp(t, e)
-        };
-        return n;
-    }
-    const h = /[^\w:]/g, g = /^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;
-    function m(t, e, n) {
-        if (t) {
-            let t;
-            try {
-                t = decodeURIComponent(p(n)).replace(h, "").toLowerCase();
-            } catch (t) {
-                return null;
-            }
-            if (0 === t.indexOf("javascript:") || 0 === t.indexOf("vbscript:") || 0 === t.indexOf("data:")) return null;
-        }
-        e && !g.test(n) && (n = function(t, e) {
-            f[" " + t] || (k.test(t) ? f[" " + t] = t + "/" : f[" " + t] = v(t, "/", !0));
-            t = f[" " + t];
-            const n = -1 === t.indexOf(":");
-            return "//" === e.substring(0, 2) ? n ? e : t.replace(w, "$1") + e : "/" === e.charAt(0) ? n ? e : t.replace(x, "$1") + e : t + e;
-        }(e, n));
-        try {
-            n = encodeURI(n).replace(/%25/g, "%");
-        } catch (t) {
-            return null;
-        }
-        return n;
-    }
-    const f = {}, k = /^[^:]+:\/*[^/]*$/, w = /^([^:]+:)[\s\S]*$/, x = /^([^:]+:\/*[^/]*)[\s\S]*$/;
-    const b = {
-        exec: function() {}
-    };
-    function y(t, e) {
-        const n = t.replace(/\|/g, (t, e, n)=>{
-            let i = !1, s = e;
-            for(; --s >= 0 && "\\" === n[s];)i = !i;
-            return i ? "|" : " |";
-        }).split(/ \|/);
-        let i = 0;
-        if (n[0].trim() || n.shift(), n.length > 0 && !n[n.length - 1].trim() && n.pop(), n.length > e) n.splice(e);
-        else for(; n.length < e;)n.push("");
-        for(; i < n.length; i++)n[i] = n[i].trim().replace(/\\\|/g, "|");
-        return n;
-    }
-    function v(t, e, n) {
-        const i = t.length;
-        if (0 === i) return "";
-        let s = 0;
-        for(; s < i;){
-            const r = t.charAt(i - s - 1);
-            if (r !== e || n) {
-                if (r === e || !n) break;
-                s++;
-            } else s++;
-        }
-        return t.slice(0, i - s);
-    }
-    function S(t, e) {
-        if (e < 1) return "";
-        let n = "";
-        for(; e > 1;)1 & e && (n += t), e >>= 1, t += t;
-        return n + t;
-    }
-    function T(t, e, n, i) {
-        const s = e.href, r = e.title ? l(e.title) : null, a = t[1].replace(/\\([\[\]])/g, "$1");
-        if ("!" !== t[0].charAt(0)) {
-            i.state.inLink = !0;
-            const t = {
-                type: "link",
-                raw: n,
-                href: s,
-                title: r,
-                text: a,
-                tokens: i.inlineTokens(a)
-            };
-            return i.state.inLink = !1, t;
-        }
-        return {
-            type: "image",
-            raw: n,
-            href: s,
-            title: r,
-            text: l(a)
-        };
-    }
-    class _ {
-        constructor(t){
-            this.options = t || e;
-        }
-        space(t) {
-            const e = this.rules.block.newline.exec(t);
-            if (e && e[0].length > 0) return {
-                type: "space",
-                raw: e[0]
-            };
-        }
-        code(t) {
-            const e = this.rules.block.code.exec(t);
-            if (e) {
-                const t = e[0].replace(/^ {1,4}/gm, "");
-                return {
-                    type: "code",
-                    raw: e[0],
-                    codeBlockStyle: "indented",
-                    text: this.options.pedantic ? t : v(t, "\n")
-                };
-            }
-        }
-        fences(t) {
-            const e = this.rules.block.fences.exec(t);
-            if (e) {
-                const t = e[0], n = function(t, e) {
-                    const n = t.match(/^(\s+)(?:```)/);
-                    if (null === n) return e;
-                    const i = n[1];
-                    return e.split("\n").map((t)=>{
-                        const e = t.match(/^\s+/);
-                        if (null === e) return t;
-                        const [n] = e;
-                        return n.length >= i.length ? t.slice(i.length) : t;
-                    }).join("\n");
-                }(t, e[3] || "");
-                return {
-                    type: "code",
-                    raw: t,
-                    lang: e[2] ? e[2].trim().replace(this.rules.inline._escapes, "$1") : e[2],
-                    text: n
-                };
-            }
-        }
-        heading(t) {
-            const e = this.rules.block.heading.exec(t);
-            if (e) {
-                let t = e[2].trim();
-                if (/#$/.test(t)) {
-                    const e = v(t, "#");
-                    this.options.pedantic ? t = e.trim() : e && !/ $/.test(e) || (t = e.trim());
-                }
-                return {
-                    type: "heading",
-                    raw: e[0],
-                    depth: e[1].length,
-                    text: t,
-                    tokens: this.lexer.inline(t)
-                };
-            }
-        }
-        hr(t) {
-            const e = this.rules.block.hr.exec(t);
-            if (e) return {
-                type: "hr",
-                raw: e[0]
-            };
-        }
-        blockquote(t) {
-            const e = this.rules.block.blockquote.exec(t);
-            if (e) {
-                const t = e[0].replace(/^ *>[ \t]?/gm, ""), n = this.lexer.state.top;
-                this.lexer.state.top = !0;
-                const i = this.lexer.blockTokens(t);
-                return this.lexer.state.top = n, {
-                    type: "blockquote",
-                    raw: e[0],
-                    tokens: i,
-                    text: t
-                };
-            }
-        }
-        list(t) {
-            let e = this.rules.block.list.exec(t);
-            if (e) {
-                let n, i, s, r, a, o, l, c, p, u, d, h, g = e[1].trim();
-                const m = g.length > 1, f = {
-                    type: "list",
-                    raw: "",
-                    ordered: m,
-                    start: m ? +g.slice(0, -1) : "",
-                    loose: !1,
-                    items: []
-                };
-                g = m ? `\\d{1,9}\\${g.slice(-1)}` : `\\${g}`, this.options.pedantic && (g = m ? g : "[*+-]");
-                const k = new RegExp(`^( {0,3}${g})((?:[\t ][^\\n]*)?(?:\\n|$))`);
-                for(; t && (h = !1, e = k.exec(t)) && !this.rules.block.hr.test(t);){
-                    if (n = e[0], t = t.substring(n.length), c = e[2].split("\n", 1)[0].replace(/^\t+/, (t)=>" ".repeat(3 * t.length)), p = t.split("\n", 1)[0], this.options.pedantic ? (r = 2, d = c.trimLeft()) : (r = e[2].search(/[^ ]/), r = r > 4 ? 1 : r, d = c.slice(r), r += e[1].length), o = !1, !c && /^ *$/.test(p) && (n += p + "\n", t = t.substring(p.length + 1), h = !0), !h) {
-                        const e = new RegExp(`^ {0,${Math.min(3, r - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ \t][^\\n]*)?(?:\\n|$))`), i = new RegExp(`^ {0,${Math.min(3, r - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`), s = new RegExp(`^ {0,${Math.min(3, r - 1)}}(?:\`\`\`|~~~)`), a = new RegExp(`^ {0,${Math.min(3, r - 1)}}#`);
-                        for(; t && (u = t.split("\n", 1)[0], p = u, this.options.pedantic && (p = p.replace(/^ {1,4}(?=( {4})*[^ ])/g, "  ")), !s.test(p)) && !a.test(p) && !e.test(p) && !i.test(t);){
-                            if (p.search(/[^ ]/) >= r || !p.trim()) d += "\n" + p.slice(r);
-                            else {
-                                if (o) break;
-                                if (c.search(/[^ ]/) >= 4) break;
-                                if (s.test(c)) break;
-                                if (a.test(c)) break;
-                                if (i.test(c)) break;
-                                d += "\n" + p;
-                            }
-                            o || p.trim() || (o = !0), n += u + "\n", t = t.substring(u.length + 1), c = p.slice(r);
-                        }
-                    }
-                    f.loose || (l ? f.loose = !0 : /\n *\n *$/.test(n) && (l = !0)), this.options.gfm && (i = /^\[[ xX]\] /.exec(d), i && (s = "[ ] " !== i[0], d = d.replace(/^\[[ xX]\] +/, ""))), f.items.push({
-                        type: "list_item",
-                        raw: n,
-                        task: !!i,
-                        checked: s,
-                        loose: !1,
-                        text: d
-                    }), f.raw += n;
-                }
-                f.items[f.items.length - 1].raw = n.trimRight(), f.items[f.items.length - 1].text = d.trimRight(), f.raw = f.raw.trimRight();
-                const w = f.items.length;
-                for(a = 0; a < w; a++)if (this.lexer.state.top = !1, f.items[a].tokens = this.lexer.blockTokens(f.items[a].text, []), !f.loose) {
-                    const t = f.items[a].tokens.filter((t)=>"space" === t.type), e = t.length > 0 && t.some((t)=>/\n.*\n/.test(t.raw));
-                    f.loose = e;
-                }
-                if (f.loose) for(a = 0; a < w; a++)f.items[a].loose = !0;
-                return f;
-            }
-        }
-        html(t) {
-            const e = this.rules.block.html.exec(t);
-            if (e) {
-                const t = {
-                    type: "html",
-                    raw: e[0],
-                    pre: !this.options.sanitizer && ("pre" === e[1] || "script" === e[1] || "style" === e[1]),
-                    text: e[0]
-                };
-                if (this.options.sanitize) {
-                    const n = this.options.sanitizer ? this.options.sanitizer(e[0]) : l(e[0]);
-                    t.type = "paragraph", t.text = n, t.tokens = this.lexer.inline(n);
-                }
-                return t;
-            }
-        }
-        def(t) {
-            const e = this.rules.block.def.exec(t);
-            if (e) {
-                const t = e[1].toLowerCase().replace(/\s+/g, " "), n = e[2] ? e[2].replace(/^<(.*)>$/, "$1").replace(this.rules.inline._escapes, "$1") : "", i = e[3] ? e[3].substring(1, e[3].length - 1).replace(this.rules.inline._escapes, "$1") : e[3];
-                return {
-                    type: "def",
-                    tag: t,
-                    raw: e[0],
-                    href: n,
-                    title: i
-                };
-            }
-        }
-        table(t) {
-            const e = this.rules.block.table.exec(t);
-            if (e) {
-                const t = {
-                    type: "table",
-                    header: y(e[1]).map((t)=>({
-                            text: t
-                        })),
-                    align: e[2].replace(/^ *|\| *$/g, "").split(/ *\| */),
-                    rows: e[3] && e[3].trim() ? e[3].replace(/\n[ \t]*$/, "").split("\n") : []
-                };
-                if (t.header.length === t.align.length) {
-                    t.raw = e[0];
-                    let n, i, s, r, a = t.align.length;
-                    for(n = 0; n < a; n++)/^ *-+: *$/.test(t.align[n]) ? t.align[n] = "right" : /^ *:-+: *$/.test(t.align[n]) ? t.align[n] = "center" : /^ *:-+ *$/.test(t.align[n]) ? t.align[n] = "left" : t.align[n] = null;
-                    for(a = t.rows.length, n = 0; n < a; n++)t.rows[n] = y(t.rows[n], t.header.length).map((t)=>({
-                            text: t
-                        }));
-                    for(a = t.header.length, i = 0; i < a; i++)t.header[i].tokens = this.lexer.inline(t.header[i].text);
-                    for(a = t.rows.length, i = 0; i < a; i++)for(r = t.rows[i], s = 0; s < r.length; s++)r[s].tokens = this.lexer.inline(r[s].text);
-                    return t;
-                }
-            }
-        }
-        lheading(t) {
-            const e = this.rules.block.lheading.exec(t);
-            if (e) return {
-                type: "heading",
-                raw: e[0],
-                depth: "=" === e[2].charAt(0) ? 1 : 2,
-                text: e[1],
-                tokens: this.lexer.inline(e[1])
-            };
-        }
-        paragraph(t) {
-            const e = this.rules.block.paragraph.exec(t);
-            if (e) {
-                const t = "\n" === e[1].charAt(e[1].length - 1) ? e[1].slice(0, -1) : e[1];
-                return {
-                    type: "paragraph",
-                    raw: e[0],
-                    text: t,
-                    tokens: this.lexer.inline(t)
-                };
-            }
-        }
-        text(t) {
-            const e = this.rules.block.text.exec(t);
-            if (e) return {
-                type: "text",
-                raw: e[0],
-                text: e[0],
-                tokens: this.lexer.inline(e[0])
-            };
-        }
-        escape(t) {
-            const e = this.rules.inline.escape.exec(t);
-            if (e) return {
-                type: "escape",
-                raw: e[0],
-                text: l(e[1])
-            };
-        }
-        tag(t) {
-            const e = this.rules.inline.tag.exec(t);
-            if (e) return !this.lexer.state.inLink && /^<a /i.test(e[0]) ? this.lexer.state.inLink = !0 : this.lexer.state.inLink && /^<\/a>/i.test(e[0]) && (this.lexer.state.inLink = !1), !this.lexer.state.inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(e[0]) ? this.lexer.state.inRawBlock = !0 : this.lexer.state.inRawBlock && /^<\/(pre|code|kbd|script)(\s|>)/i.test(e[0]) && (this.lexer.state.inRawBlock = !1), {
-                type: this.options.sanitize ? "text" : "html",
-                raw: e[0],
-                inLink: this.lexer.state.inLink,
-                inRawBlock: this.lexer.state.inRawBlock,
-                text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(e[0]) : l(e[0]) : e[0]
-            };
-        }
-        link(t) {
-            const e = this.rules.inline.link.exec(t);
-            if (e) {
-                const t = e[2].trim();
-                if (!this.options.pedantic && /^</.test(t)) {
-                    if (!/>$/.test(t)) return;
-                    const e = v(t.slice(0, -1), "\\");
-                    if ((t.length - e.length) % 2 == 0) return;
-                } else {
-                    const t = function(t, e) {
-                        if (-1 === t.indexOf(e[1])) return -1;
-                        const n = t.length;
-                        let i = 0, s = 0;
-                        for(; s < n; s++)if ("\\" === t[s]) s++;
-                        else if (t[s] === e[0]) i++;
-                        else if (t[s] === e[1] && (i--, i < 0)) return s;
-                        return -1;
-                    }(e[2], "()");
-                    if (t > -1) {
-                        const n = (0 === e[0].indexOf("!") ? 5 : 4) + e[1].length + t;
-                        e[2] = e[2].substring(0, t), e[0] = e[0].substring(0, n).trim(), e[3] = "";
-                    }
-                }
-                let n = e[2], i = "";
-                if (this.options.pedantic) {
-                    const t = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(n);
-                    t && (n = t[1], i = t[3]);
-                } else i = e[3] ? e[3].slice(1, -1) : "";
-                return n = n.trim(), /^</.test(n) && (n = this.options.pedantic && !/>$/.test(t) ? n.slice(1) : n.slice(1, -1)), T(e, {
-                    href: n ? n.replace(this.rules.inline._escapes, "$1") : n,
-                    title: i ? i.replace(this.rules.inline._escapes, "$1") : i
-                }, e[0], this.lexer);
-            }
-        }
-        reflink(t, e) {
-            let n;
-            if ((n = this.rules.inline.reflink.exec(t)) || (n = this.rules.inline.nolink.exec(t))) {
-                let t = (n[2] || n[1]).replace(/\s+/g, " ");
-                if (t = e[t.toLowerCase()], !t) {
-                    const t = n[0].charAt(0);
-                    return {
-                        type: "text",
-                        raw: t,
-                        text: t
-                    };
-                }
-                return T(n, t, n[0], this.lexer);
-            }
-        }
-        emStrong(t, e, n = "") {
-            let i = this.rules.inline.emStrong.lDelim.exec(t);
-            if (!i) return;
-            if (i[3] && n.match(/[\p{L}\p{N}]/u)) return;
-            const s = i[1] || i[2] || "";
-            if (!s || s && ("" === n || this.rules.inline.punctuation.exec(n))) {
-                const n = i[0].length - 1;
-                let s, r, a = n, o = 0;
-                const l = "*" === i[0][0] ? this.rules.inline.emStrong.rDelimAst : this.rules.inline.emStrong.rDelimUnd;
-                for(l.lastIndex = 0, e = e.slice(-1 * t.length + n); null != (i = l.exec(e));){
-                    if (s = i[1] || i[2] || i[3] || i[4] || i[5] || i[6], !s) continue;
-                    if (r = s.length, i[3] || i[4]) {
-                        a += r;
-                        continue;
-                    }
-                    if ((i[5] || i[6]) && n % 3 && !((n + r) % 3)) {
-                        o += r;
-                        continue;
-                    }
-                    if (a -= r, a > 0) continue;
-                    r = Math.min(r, r + a + o);
-                    const e = t.slice(0, n + i.index + (i[0].length - s.length) + r);
-                    if (Math.min(n, r) % 2) {
-                        const t = e.slice(1, -1);
-                        return {
-                            type: "em",
-                            raw: e,
-                            text: t,
-                            tokens: this.lexer.inlineTokens(t)
-                        };
-                    }
-                    const l = e.slice(2, -2);
-                    return {
-                        type: "strong",
-                        raw: e,
-                        text: l,
-                        tokens: this.lexer.inlineTokens(l)
-                    };
-                }
-            }
-        }
-        codespan(t) {
-            const e = this.rules.inline.code.exec(t);
-            if (e) {
-                let t = e[2].replace(/\n/g, " ");
-                const n = /[^ ]/.test(t), i = /^ /.test(t) && / $/.test(t);
-                return n && i && (t = t.substring(1, t.length - 1)), t = l(t, !0), {
-                    type: "codespan",
-                    raw: e[0],
-                    text: t
-                };
-            }
-        }
-        br(t) {
-            const e = this.rules.inline.br.exec(t);
-            if (e) return {
-                type: "br",
-                raw: e[0]
-            };
-        }
-        del(t) {
-            const e = this.rules.inline.del.exec(t);
-            if (e) return {
-                type: "del",
-                raw: e[0],
-                text: e[2],
-                tokens: this.lexer.inlineTokens(e[2])
-            };
-        }
-        autolink(t, e) {
-            const n = this.rules.inline.autolink.exec(t);
-            if (n) {
-                let t, i;
-                return "@" === n[2] ? (t = l(this.options.mangle ? e(n[1]) : n[1]), i = "mailto:" + t) : (t = l(n[1]), i = t), {
-                    type: "link",
-                    raw: n[0],
-                    text: t,
-                    href: i,
-                    tokens: [
-                        {
-                            type: "text",
-                            raw: t,
-                            text: t
-                        }
-                    ]
-                };
-            }
-        }
-        url(t, e) {
-            let n;
-            if (n = this.rules.inline.url.exec(t)) {
-                let t, i;
-                if ("@" === n[2]) t = l(this.options.mangle ? e(n[0]) : n[0]), i = "mailto:" + t;
-                else {
-                    let e;
-                    do e = n[0], n[0] = this.rules.inline._backpedal.exec(n[0])[0];
-                    while (e !== n[0]);
-                    t = l(n[0]), i = "www." === n[1] ? "http://" + n[0] : n[0];
-                }
-                return {
-                    type: "link",
-                    raw: n[0],
-                    text: t,
-                    href: i,
-                    tokens: [
-                        {
-                            type: "text",
-                            raw: t,
-                            text: t
-                        }
-                    ]
-                };
-            }
-        }
-        inlineText(t, e) {
-            const n = this.rules.inline.text.exec(t);
-            if (n) {
-                let t;
-                return t = this.lexer.state.inRawBlock ? this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(n[0]) : l(n[0]) : n[0] : l(this.options.smartypants ? e(n[0]) : n[0]), {
-                    type: "text",
-                    raw: n[0],
-                    text: t
-                };
-            }
-        }
-    }
-    const z = {
-        newline: /^(?: *(?:\n|$))+/,
-        code: /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,
-        fences: /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,
-        hr: /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,
-        heading: /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
-        blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
-        list: /^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/,
-        html: "^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))",
-        def: /^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/,
-        table: b,
-        lheading: /^((?:.|\n(?!\n))+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
-        _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,
-        text: /^[^\n]+/,
-        _label: /(?!\s*\])(?:\\.|[^\[\]\\])+/,
-        _title: /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/
-    };
-    z.def = d(z.def).replace("label", z._label).replace("title", z._title).getRegex(), z.bullet = /(?:[*+-]|\d{1,9}[.)])/, z.listItemStart = d(/^( *)(bull) */).replace("bull", z.bullet).getRegex(), z.list = d(z.list).replace(/bull/g, z.bullet).replace("hr", "\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))").replace("def", "\\n+(?=" + z.def.source + ")").getRegex(), z._tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul", z._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/, z.html = d(z.html, "i").replace("comment", z._comment).replace("tag", z._tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex(), z.paragraph = d(z._paragraph).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", z._tag).getRegex(), z.blockquote = d(z.blockquote).replace("paragraph", z.paragraph).getRegex(), z.normal = {
-        ...z
-    }, z.gfm = {
-        ...z.normal,
-        table: "^ *([^\\n ].*\\|.*)\\n {0,3}(?:\\| *)?(:?-+:? *(?:\\| *:?-+:? *)*)(?:\\| *)?(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)"
-    }, z.gfm.table = d(z.gfm.table).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", z._tag).getRegex(), z.gfm.paragraph = d(z._paragraph).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("table", z.gfm.table).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", z._tag).getRegex(), z.pedantic = {
-        ...z.normal,
-        html: d("^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:\"[^\"]*\"|'[^']*'|\\s[^'\"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))").replace("comment", z._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
-        def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
-        heading: /^(#{1,6})(.*)(?:\n+|$)/,
-        fences: b,
-        lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
-        paragraph: d(z.normal._paragraph).replace("hr", z.hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", z.lheading).replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").getRegex()
-    };
-    const $ = {
-        escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
-        autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
-        url: b,
-        tag: "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>",
-        link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
-        reflink: /^!?\[(label)\]\[(ref)\]/,
-        nolink: /^!?\[(ref)\](?:\[\])?/,
-        reflinkSearch: "reflink|nolink(?!\\()",
-        emStrong: {
-            lDelim: /^(?:\*+(?:([punct_])|[^\s*]))|^_+(?:([punct*])|([^\s_]))/,
-            rDelimAst: /^(?:[^_*\\]|\\.)*?\_\_(?:[^_*\\]|\\.)*?\*(?:[^_*\\]|\\.)*?(?=\_\_)|(?:[^*\\]|\\.)+(?=[^*])|[punct_](\*+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\*+)(?=[punct_\s]|$)|[punct_\s](\*+)(?=[^punct*_\s])|[\s](\*+)(?=[punct_])|[punct_](\*+)(?=[punct_])|(?:[^punct*_\s\\]|\\.)(\*+)(?=[^punct*_\s])/,
-            rDelimUnd: /^(?:[^_*\\]|\\.)*?\*\*(?:[^_*\\]|\\.)*?\_(?:[^_*\\]|\\.)*?(?=\*\*)|(?:[^_\\]|\\.)+(?=[^_])|[punct*](\_+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\_+)(?=[punct*\s]|$)|[punct*\s](\_+)(?=[^punct*_\s])|[\s](\_+)(?=[punct*])|[punct*](\_+)(?=[punct*])/
-        },
-        code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
-        br: /^( {2,}|\\)\n(?!\s*$)/,
-        del: b,
-        text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
-        punctuation: /^([\spunctuation])/
-    };
-    function E(t) {
-        return t.replace(/---/g, "\u2014").replace(/--/g, "\u2013").replace(/(^|[-\u2014/(\[{"\s])'/g, "$1\u2018").replace(/'/g, "\u2019").replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1\u201C").replace(/"/g, "\u201D").replace(/\.{3}/g, "\u2026");
-    }
-    function A(t) {
-        let e, n, i = "";
-        const s = t.length;
-        for(e = 0; e < s; e++)n = t.charCodeAt(e), Math.random() > .5 && (n = "x" + n.toString(16)), i += "&#" + n + ";";
-        return i;
-    }
-    $._punctuation = "!\"#$%&'()+\\-.,/:;<=>?@\\[\\]`^{|}~", $.punctuation = d($.punctuation).replace(/punctuation/g, $._punctuation).getRegex(), $.blockSkip = /\[[^\]]*?\]\([^\)]*?\)|`[^`]*?`|<[^>]*?>/g, $.escapedEmSt = /(?:^|[^\\])(?:\\\\)*\\[*_]/g, $._comment = d(z._comment).replace("(?:--\x3e|$)", "--\x3e").getRegex(), $.emStrong.lDelim = d($.emStrong.lDelim).replace(/punct/g, $._punctuation).getRegex(), $.emStrong.rDelimAst = d($.emStrong.rDelimAst, "g").replace(/punct/g, $._punctuation).getRegex(), $.emStrong.rDelimUnd = d($.emStrong.rDelimUnd, "g").replace(/punct/g, $._punctuation).getRegex(), $._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g, $._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/, $._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/, $.autolink = d($.autolink).replace("scheme", $._scheme).replace("email", $._email).getRegex(), $._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/, $.tag = d($.tag).replace("comment", $._comment).replace("attribute", $._attribute).getRegex(), $._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/, $._href = /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/, $._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/, $.link = d($.link).replace("label", $._label).replace("href", $._href).replace("title", $._title).getRegex(), $.reflink = d($.reflink).replace("label", $._label).replace("ref", z._label).getRegex(), $.nolink = d($.nolink).replace("ref", z._label).getRegex(), $.reflinkSearch = d($.reflinkSearch, "g").replace("reflink", $.reflink).replace("nolink", $.nolink).getRegex(), $.normal = {
-        ...$
-    }, $.pedantic = {
-        ...$.normal,
-        strong: {
-            start: /^__|\*\*/,
-            middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
-            endAst: /\*\*(?!\*)/g,
-            endUnd: /__(?!_)/g
-        },
-        em: {
-            start: /^_|\*/,
-            middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,
-            endAst: /\*(?!\*)/g,
-            endUnd: /_(?!_)/g
-        },
-        link: d(/^!?\[(label)\]\((.*?)\)/).replace("label", $._label).getRegex(),
-        reflink: d(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", $._label).getRegex()
-    }, $.gfm = {
-        ...$.normal,
-        escape: d($.escape).replace("])", "~|])").getRegex(),
-        _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
-        url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
-        _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
-        del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
-        text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
-    }, $.gfm.url = d($.gfm.url, "i").replace("email", $.gfm._extended_email).getRegex(), $.breaks = {
-        ...$.gfm,
-        br: d($.br).replace("{2,}", "*").getRegex(),
-        text: d($.gfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
-    };
-    class R {
-        constructor(t){
-            this.tokens = [], this.tokens.links = Object.create(null), this.options = t || e, this.options.tokenizer = this.options.tokenizer || new _, this.tokenizer = this.options.tokenizer, this.tokenizer.options = this.options, this.tokenizer.lexer = this, this.inlineQueue = [], this.state = {
-                inLink: !1,
-                inRawBlock: !1,
-                top: !0
-            };
-            const n = {
-                block: z.normal,
-                inline: $.normal
-            };
-            this.options.pedantic ? (n.block = z.pedantic, n.inline = $.pedantic) : this.options.gfm && (n.block = z.gfm, this.options.breaks ? n.inline = $.breaks : n.inline = $.gfm), this.tokenizer.rules = n;
-        }
-        static get rules() {
-            return {
-                block: z,
-                inline: $
-            };
-        }
-        static lex(t, e) {
-            return new R(e).lex(t);
-        }
-        static lexInline(t, e) {
-            return new R(e).inlineTokens(t);
-        }
-        lex(t) {
-            let e;
-            for(t = t.replace(/\r\n|\r/g, "\n"), this.blockTokens(t, this.tokens); e = this.inlineQueue.shift();)this.inlineTokens(e.src, e.tokens);
-            return this.tokens;
-        }
-        blockTokens(t, e = []) {
-            let n, i, s, r;
-            for(t = this.options.pedantic ? t.replace(/\t/g, "    ").replace(/^ +$/gm, "") : t.replace(/^( *)(\t+)/gm, (t, e, n)=>e + "    ".repeat(n.length)); t;)if (!(this.options.extensions && this.options.extensions.block && this.options.extensions.block.some((i)=>!!(n = i.call({
-                    lexer: this
-                }, t, e)) && (t = t.substring(n.raw.length), e.push(n), !0)))) {
-                if (n = this.tokenizer.space(t)) t = t.substring(n.raw.length), 1 === n.raw.length && e.length > 0 ? e[e.length - 1].raw += "\n" : e.push(n);
-                else if (n = this.tokenizer.code(t)) t = t.substring(n.raw.length), i = e[e.length - 1], !i || "paragraph" !== i.type && "text" !== i.type ? e.push(n) : (i.raw += "\n" + n.raw, i.text += "\n" + n.text, this.inlineQueue[this.inlineQueue.length - 1].src = i.text);
-                else if (n = this.tokenizer.fences(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.heading(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.hr(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.blockquote(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.list(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.html(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.def(t)) t = t.substring(n.raw.length), i = e[e.length - 1], !i || "paragraph" !== i.type && "text" !== i.type ? this.tokens.links[n.tag] || (this.tokens.links[n.tag] = {
-                    href: n.href,
-                    title: n.title
-                }) : (i.raw += "\n" + n.raw, i.text += "\n" + n.raw, this.inlineQueue[this.inlineQueue.length - 1].src = i.text);
-                else if (n = this.tokenizer.table(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.lheading(t)) t = t.substring(n.raw.length), e.push(n);
-                else {
-                    if (s = t, this.options.extensions && this.options.extensions.startBlock) {
-                        let e = 1 / 0;
-                        const n = t.slice(1);
-                        let i;
-                        this.options.extensions.startBlock.forEach(function(t) {
-                            i = t.call({
-                                lexer: this
-                            }, n), "number" == typeof i && i >= 0 && (e = Math.min(e, i));
-                        }), e < 1 / 0 && e >= 0 && (s = t.substring(0, e + 1));
-                    }
-                    if (this.state.top && (n = this.tokenizer.paragraph(s))) i = e[e.length - 1], r && "paragraph" === i.type ? (i.raw += "\n" + n.raw, i.text += "\n" + n.text, this.inlineQueue.pop(), this.inlineQueue[this.inlineQueue.length - 1].src = i.text) : e.push(n), r = s.length !== t.length, t = t.substring(n.raw.length);
-                    else if (n = this.tokenizer.text(t)) t = t.substring(n.raw.length), i = e[e.length - 1], i && "text" === i.type ? (i.raw += "\n" + n.raw, i.text += "\n" + n.text, this.inlineQueue.pop(), this.inlineQueue[this.inlineQueue.length - 1].src = i.text) : e.push(n);
-                    else if (t) {
-                        const e = "Infinite loop on byte: " + t.charCodeAt(0);
-                        if (this.options.silent) {
-                            console.error(e);
-                            break;
-                        }
-                        throw new Error(e);
-                    }
-                }
-            }
-            return this.state.top = !0, e;
-        }
-        inline(t, e = []) {
-            return this.inlineQueue.push({
-                src: t,
-                tokens: e
-            }), e;
-        }
-        inlineTokens(t, e = []) {
-            let n, i, s, r, a, o, l = t;
-            if (this.tokens.links) {
-                const t = Object.keys(this.tokens.links);
-                if (t.length > 0) for(; null != (r = this.tokenizer.rules.inline.reflinkSearch.exec(l));)t.includes(r[0].slice(r[0].lastIndexOf("[") + 1, -1)) && (l = l.slice(0, r.index) + "[" + S("a", r[0].length - 2) + "]" + l.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex));
-            }
-            for(; null != (r = this.tokenizer.rules.inline.blockSkip.exec(l));)l = l.slice(0, r.index) + "[" + S("a", r[0].length - 2) + "]" + l.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
-            for(; null != (r = this.tokenizer.rules.inline.escapedEmSt.exec(l));)l = l.slice(0, r.index + r[0].length - 2) + "++" + l.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex), this.tokenizer.rules.inline.escapedEmSt.lastIndex--;
-            for(; t;)if (a || (o = ""), a = !1, !(this.options.extensions && this.options.extensions.inline && this.options.extensions.inline.some((i)=>!!(n = i.call({
-                    lexer: this
-                }, t, e)) && (t = t.substring(n.raw.length), e.push(n), !0)))) {
-                if (n = this.tokenizer.escape(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.tag(t)) t = t.substring(n.raw.length), i = e[e.length - 1], i && "text" === n.type && "text" === i.type ? (i.raw += n.raw, i.text += n.text) : e.push(n);
-                else if (n = this.tokenizer.link(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.reflink(t, this.tokens.links)) t = t.substring(n.raw.length), i = e[e.length - 1], i && "text" === n.type && "text" === i.type ? (i.raw += n.raw, i.text += n.text) : e.push(n);
-                else if (n = this.tokenizer.emStrong(t, l, o)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.codespan(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.br(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.del(t)) t = t.substring(n.raw.length), e.push(n);
-                else if (n = this.tokenizer.autolink(t, A)) t = t.substring(n.raw.length), e.push(n);
-                else if (this.state.inLink || !(n = this.tokenizer.url(t, A))) {
-                    if (s = t, this.options.extensions && this.options.extensions.startInline) {
-                        let e = 1 / 0;
-                        const n = t.slice(1);
-                        let i;
-                        this.options.extensions.startInline.forEach(function(t) {
-                            i = t.call({
-                                lexer: this
-                            }, n), "number" == typeof i && i >= 0 && (e = Math.min(e, i));
-                        }), e < 1 / 0 && e >= 0 && (s = t.substring(0, e + 1));
-                    }
-                    if (n = this.tokenizer.inlineText(s, E)) t = t.substring(n.raw.length), "_" !== n.raw.slice(-1) && (o = n.raw.slice(-1)), a = !0, i = e[e.length - 1], i && "text" === i.type ? (i.raw += n.raw, i.text += n.text) : e.push(n);
-                    else if (t) {
-                        const e = "Infinite loop on byte: " + t.charCodeAt(0);
-                        if (this.options.silent) {
-                            console.error(e);
-                            break;
-                        }
-                        throw new Error(e);
-                    }
-                } else t = t.substring(n.raw.length), e.push(n);
-            }
-            return e;
-        }
-    }
-    class L {
-        constructor(t){
-            this.options = t || e;
-        }
-        code(t, e, n) {
-            const i = (e || "").match(/\S*/)[0];
-            if (this.options.highlight) {
-                const e = this.options.highlight(t, i);
-                null != e && e !== t && (n = !0, t = e);
-            }
-            return t = t.replace(/\n$/, "") + "\n", i ? '<pre><code class="' + this.options.langPrefix + l(i) + '">' + (n ? t : l(t, !0)) + "</code></pre>\n" : "<pre><code>" + (n ? t : l(t, !0)) + "</code></pre>\n";
-        }
-        blockquote(t) {
-            return `<blockquote>\n${t}</blockquote>\n`;
-        }
-        html(t) {
-            return t;
-        }
-        heading(t, e, n, i) {
-            if (this.options.headerIds) return `<h${e} id="${this.options.headerPrefix + i.slug(n)}">${t}</h${e}>\n`;
-            return `<h${e}>${t}</h${e}>\n`;
-        }
-        hr() {
-            return this.options.xhtml ? "<hr/>\n" : "<hr>\n";
-        }
-        list(t, e, n) {
-            const i = e ? "ol" : "ul";
-            return "<" + i + (e && 1 !== n ? ' start="' + n + '"' : "") + ">\n" + t + "</" + i + ">\n";
-        }
-        listitem(t) {
-            return `<li>${t}</li>\n`;
-        }
-        checkbox(t) {
-            return "<input " + (t ? 'checked="" ' : "") + 'disabled="" type="checkbox"' + (this.options.xhtml ? " /" : "") + "> ";
-        }
-        paragraph(t) {
-            return `<p>${t}</p>\n`;
-        }
-        table(t, e) {
-            return e && (e = `<tbody>${e}</tbody>`), "<table>\n<thead>\n" + t + "</thead>\n" + e + "</table>\n";
-        }
-        tablerow(t) {
-            return `<tr>\n${t}</tr>\n`;
-        }
-        tablecell(t, e) {
-            const n = e.header ? "th" : "td";
-            return (e.align ? `<${n} align="${e.align}">` : `<${n}>`) + t + `</${n}>\n`;
-        }
-        strong(t) {
-            return `<strong>${t}</strong>`;
-        }
-        em(t) {
-            return `<em>${t}</em>`;
-        }
-        codespan(t) {
-            return `<code>${t}</code>`;
-        }
-        br() {
-            return this.options.xhtml ? "<br/>" : "<br>";
-        }
-        del(t) {
-            return `<del>${t}</del>`;
-        }
-        link(t, e, n) {
-            if (null === (t = m(this.options.sanitize, this.options.baseUrl, t))) return n;
-            let i = '<a href="' + t + '"';
-            return e && (i += ' title="' + e + '"'), i += ">" + n + "</a>", i;
-        }
-        image(t, e, n) {
-            if (null === (t = m(this.options.sanitize, this.options.baseUrl, t))) return n;
-            let i = `<img src="${t}" alt="${n}"`;
-            return e && (i += ` title="${e}"`), i += this.options.xhtml ? "/>" : ">", i;
-        }
-        text(t) {
-            return t;
-        }
-    }
-    class I {
-        strong(t) {
-            return t;
-        }
-        em(t) {
-            return t;
-        }
-        codespan(t) {
-            return t;
-        }
-        del(t) {
-            return t;
-        }
-        html(t) {
-            return t;
-        }
-        text(t) {
-            return t;
-        }
-        link(t, e, n) {
-            return "" + n;
-        }
-        image(t, e, n) {
-            return "" + n;
-        }
-        br() {
-            return "";
-        }
-    }
-    class M {
-        constructor(){
-            this.seen = {};
-        }
-        serialize(t) {
-            return t.toLowerCase().trim().replace(/<[!\/a-z].*?>/gi, "").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, "").replace(/\s/g, "-");
-        }
-        getNextSafeSlug(t, e) {
-            let n = t, i = 0;
-            if (this.seen.hasOwnProperty(n)) {
-                i = this.seen[t];
-                do i++, n = t + "-" + i;
-                while (this.seen.hasOwnProperty(n));
-            }
-            return e || (this.seen[t] = i, this.seen[n] = 0), n;
-        }
-        slug(t, e = {}) {
-            const n = this.serialize(t);
-            return this.getNextSafeSlug(n, e.dryrun);
-        }
-    }
-    class C {
-        constructor(t){
-            this.options = t || e, this.options.renderer = this.options.renderer || new L, this.renderer = this.options.renderer, this.renderer.options = this.options, this.textRenderer = new I, this.slugger = new M;
-        }
-        static parse(t, e) {
-            return new C(e).parse(t);
-        }
-        static parseInline(t, e) {
-            return new C(e).parseInline(t);
-        }
-        parse(t, e = !0) {
-            let n, i, s, r, a, o, l, c, u, d, h, g, m, f, k, w, x, b, y, v = "";
-            const S = t.length;
-            for(n = 0; n < S; n++)if (d = t[n], this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[d.type] && (y = this.options.extensions.renderers[d.type].call({
-                parser: this
-            }, d), !1 !== y || ![
-                "space",
-                "hr",
-                "heading",
-                "code",
-                "table",
-                "blockquote",
-                "list",
-                "html",
-                "paragraph",
-                "text"
-            ].includes(d.type))) v += y || "";
-            else switch(d.type){
-                case "space":
-                    continue;
-                case "hr":
-                    v += this.renderer.hr();
-                    continue;
-                case "heading":
-                    v += this.renderer.heading(this.parseInline(d.tokens), d.depth, p(this.parseInline(d.tokens, this.textRenderer)), this.slugger);
-                    continue;
-                case "code":
-                    v += this.renderer.code(d.text, d.lang, d.escaped);
-                    continue;
-                case "table":
-                    for(c = "", l = "", r = d.header.length, i = 0; i < r; i++)l += this.renderer.tablecell(this.parseInline(d.header[i].tokens), {
-                        header: !0,
-                        align: d.align[i]
-                    });
-                    for(c += this.renderer.tablerow(l), u = "", r = d.rows.length, i = 0; i < r; i++){
-                        for(o = d.rows[i], l = "", a = o.length, s = 0; s < a; s++)l += this.renderer.tablecell(this.parseInline(o[s].tokens), {
-                            header: !1,
-                            align: d.align[s]
-                        });
-                        u += this.renderer.tablerow(l);
-                    }
-                    v += this.renderer.table(c, u);
-                    continue;
-                case "blockquote":
-                    u = this.parse(d.tokens), v += this.renderer.blockquote(u);
-                    continue;
-                case "list":
-                    for(h = d.ordered, g = d.start, m = d.loose, r = d.items.length, u = "", i = 0; i < r; i++)k = d.items[i], w = k.checked, x = k.task, f = "", k.task && (b = this.renderer.checkbox(w), m ? k.tokens.length > 0 && "paragraph" === k.tokens[0].type ? (k.tokens[0].text = b + " " + k.tokens[0].text, k.tokens[0].tokens && k.tokens[0].tokens.length > 0 && "text" === k.tokens[0].tokens[0].type && (k.tokens[0].tokens[0].text = b + " " + k.tokens[0].tokens[0].text)) : k.tokens.unshift({
-                        type: "text",
-                        text: b
-                    }) : f += b), f += this.parse(k.tokens, m), u += this.renderer.listitem(f, x, w);
-                    v += this.renderer.list(u, h, g);
-                    continue;
-                case "html":
-                    v += this.renderer.html(d.text);
-                    continue;
-                case "paragraph":
-                    v += this.renderer.paragraph(this.parseInline(d.tokens));
-                    continue;
-                case "text":
-                    for(u = d.tokens ? this.parseInline(d.tokens) : d.text; n + 1 < S && "text" === t[n + 1].type;)d = t[++n], u += "\n" + (d.tokens ? this.parseInline(d.tokens) : d.text);
-                    v += e ? this.renderer.paragraph(u) : u;
-                    continue;
-                default:
-                    {
-                        const t = 'Token with "' + d.type + '" type was not found.';
-                        if (this.options.silent) return void console.error(t);
-                        throw new Error(t);
-                    }
-            }
-            return v;
-        }
-        parseInline(t, e) {
-            e = e || this.renderer;
-            let n, i, s, r = "";
-            const a = t.length;
-            for(n = 0; n < a; n++)if (i = t[n], this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[i.type] && (s = this.options.extensions.renderers[i.type].call({
-                parser: this
-            }, i), !1 !== s || ![
-                "escape",
-                "html",
-                "link",
-                "image",
-                "strong",
-                "em",
-                "codespan",
-                "br",
-                "del",
-                "text"
-            ].includes(i.type))) r += s || "";
-            else switch(i.type){
-                case "escape":
-                case "text":
-                    r += e.text(i.text);
-                    break;
-                case "html":
-                    r += e.html(i.text);
-                    break;
-                case "link":
-                    r += e.link(i.href, i.title, this.parseInline(i.tokens, e));
-                    break;
-                case "image":
-                    r += e.image(i.href, i.title, i.text);
-                    break;
-                case "strong":
-                    r += e.strong(this.parseInline(i.tokens, e));
-                    break;
-                case "em":
-                    r += e.em(this.parseInline(i.tokens, e));
-                    break;
-                case "codespan":
-                    r += e.codespan(i.text);
-                    break;
-                case "br":
-                    r += e.br();
-                    break;
-                case "del":
-                    r += e.del(this.parseInline(i.tokens, e));
-                    break;
-                default:
-                    {
-                        const t = 'Token with "' + i.type + '" type was not found.';
-                        if (this.options.silent) return void console.error(t);
-                        throw new Error(t);
-                    }
-            }
-            return r;
-        }
-    }
-    class q {
-        constructor(t){
-            this.options = t || e;
-        }
-        static passThroughHooks = new Set([
-            "preprocess",
-            "postprocess"
-        ]);
-        preprocess(t) {
-            return t;
-        }
-        postprocess(t) {
-            return t;
-        }
-    }
-    function P(t, e) {
-        return (n, i, s)=>{
-            "function" == typeof i && (s = i, i = null);
-            const r = {
-                ...i
-            }, a = function(t, e, n) {
-                return (i)=>{
-                    if (i.message += "\nPlease report this to https://github.com/markedjs/marked.", t) {
-                        const t = "<p>An error occurred:</p><pre>" + l(i.message + "", !0) + "</pre>";
-                        return e ? Promise.resolve(t) : n ? void n(null, t) : t;
-                    }
-                    if (e) return Promise.reject(i);
-                    if (!n) throw i;
-                    n(i);
-                };
-            }((i = {
-                ...N.defaults,
-                ...r
-            }).silent, i.async, s);
-            if (null == n) return a(new Error("marked(): input parameter is undefined or null"));
-            if ("string" != typeof n) return a(new Error("marked(): input parameter is of type " + Object.prototype.toString.call(n) + ", string expected"));
-            if (function(t) {
-                t && t.sanitize && !t.silent && console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options");
-            }(i), i.hooks && (i.hooks.options = i), s) {
-                const r = i.highlight;
-                let o;
-                try {
-                    i.hooks && (n = i.hooks.preprocess(n)), o = t(n, i);
-                } catch (t) {
-                    return a(t);
-                }
-                const l = function(t) {
-                    let n;
-                    if (!t) try {
-                        i.walkTokens && N.walkTokens(o, i.walkTokens), n = e(o, i), i.hooks && (n = i.hooks.postprocess(n));
-                    } catch (e) {
-                        t = e;
-                    }
-                    return i.highlight = r, t ? a(t) : s(null, n);
-                };
-                if (!r || r.length < 3) return l();
-                if (delete i.highlight, !o.length) return l();
-                let c = 0;
-                return N.walkTokens(o, function(t) {
-                    "code" === t.type && (c++, setTimeout(()=>{
-                        r(t.text, t.lang, function(e, n) {
-                            if (e) return l(e);
-                            null != n && n !== t.text && (t.text = n, t.escaped = !0), c--, 0 === c && l();
-                        });
-                    }, 0));
-                }), void (0 === c && l());
-            }
-            if (i.async) return Promise.resolve(i.hooks ? i.hooks.preprocess(n) : n).then((e)=>t(e, i)).then((t)=>i.walkTokens ? Promise.all(N.walkTokens(t, i.walkTokens)).then(()=>t) : t).then((t)=>e(t, i)).then((t)=>i.hooks ? i.hooks.postprocess(t) : t).catch(a);
-            try {
-                i.hooks && (n = i.hooks.preprocess(n));
-                const s = t(n, i);
-                i.walkTokens && N.walkTokens(s, i.walkTokens);
-                let r = e(s, i);
-                return i.hooks && (r = i.hooks.postprocess(r)), r;
-            } catch (t) {
-                return a(t);
-            }
-        };
-    }
-    function N(t, e, n) {
-        return P(R.lex, C.parse)(t, e, n);
-    }
-    N.options = N.setOptions = function(t) {
-        var n;
-        return N.defaults = {
-            ...N.defaults,
-            ...t
-        }, n = N.defaults, e = n, N;
-    }, N.getDefaults = t, N.defaults = e, N.use = function(...t) {
-        const e = N.defaults.extensions || {
-            renderers: {},
-            childTokens: {}
-        };
-        t.forEach((t)=>{
-            const n = {
-                ...t
-            };
-            if (n.async = N.defaults.async || n.async || !1, t.extensions && (t.extensions.forEach((t)=>{
-                if (!t.name) throw new Error("extension name required");
-                if (t.renderer) {
-                    const n = e.renderers[t.name];
-                    e.renderers[t.name] = n ? function(...e) {
-                        let i = t.renderer.apply(this, e);
-                        return !1 === i && (i = n.apply(this, e)), i;
-                    } : t.renderer;
-                }
-                if (t.tokenizer) {
-                    if (!t.level || "block" !== t.level && "inline" !== t.level) throw new Error("extension level must be 'block' or 'inline'");
-                    e[t.level] ? e[t.level].unshift(t.tokenizer) : e[t.level] = [
-                        t.tokenizer
-                    ], t.start && ("block" === t.level ? e.startBlock ? e.startBlock.push(t.start) : e.startBlock = [
-                        t.start
-                    ] : "inline" === t.level && (e.startInline ? e.startInline.push(t.start) : e.startInline = [
-                        t.start
-                    ]));
-                }
-                t.childTokens && (e.childTokens[t.name] = t.childTokens);
-            }), n.extensions = e), t.renderer) {
-                const e = N.defaults.renderer || new L;
-                for(const n in t.renderer){
-                    const i = e[n];
-                    e[n] = (...s)=>{
-                        let r = t.renderer[n].apply(e, s);
-                        return !1 === r && (r = i.apply(e, s)), r;
-                    };
-                }
-                n.renderer = e;
-            }
-            if (t.tokenizer) {
-                const e = N.defaults.tokenizer || new _;
-                for(const n in t.tokenizer){
-                    const i = e[n];
-                    e[n] = (...s)=>{
-                        let r = t.tokenizer[n].apply(e, s);
-                        return !1 === r && (r = i.apply(e, s)), r;
-                    };
-                }
-                n.tokenizer = e;
-            }
-            if (t.hooks) {
-                const e = N.defaults.hooks || new q;
-                for(const n in t.hooks){
-                    const i = e[n];
-                    q.passThroughHooks.has(n) ? e[n] = (s)=>{
-                        if (N.defaults.async) return Promise.resolve(t.hooks[n].call(e, s)).then((t)=>i.call(e, t));
-                        const r = t.hooks[n].call(e, s);
-                        return i.call(e, r);
-                    } : e[n] = (...s)=>{
-                        let r = t.hooks[n].apply(e, s);
-                        return !1 === r && (r = i.apply(e, s)), r;
-                    };
-                }
-                n.hooks = e;
-            }
-            if (t.walkTokens) {
-                const e = N.defaults.walkTokens;
-                n.walkTokens = function(n) {
-                    let i = [];
-                    return i.push(t.walkTokens.call(this, n)), e && (i = i.concat(e.call(this, n))), i;
-                };
-            }
-            N.setOptions(n);
-        });
-    }, N.walkTokens = function(t, e) {
-        let n = [];
-        for (const i of t)switch(n = n.concat(e.call(N, i)), i.type){
-            case "table":
-                for (const t of i.header)n = n.concat(N.walkTokens(t.tokens, e));
-                for (const t of i.rows)for (const i of t)n = n.concat(N.walkTokens(i.tokens, e));
-                break;
-            case "list":
-                n = n.concat(N.walkTokens(i.items, e));
-                break;
-            default:
-                N.defaults.extensions && N.defaults.extensions.childTokens && N.defaults.extensions.childTokens[i.type] ? N.defaults.extensions.childTokens[i.type].forEach(function(t) {
-                    n = n.concat(N.walkTokens(i[t], e));
-                }) : i.tokens && (n = n.concat(N.walkTokens(i.tokens, e)));
-        }
-        return n;
-    }, N.parseInline = P(R.lexInline, C.parseInline), N.Parser = C, N.parser = C.parse, N.Renderer = L, N.TextRenderer = I, N.Lexer = R, N.lexer = R.lex, N.Tokenizer = _, N.Slugger = M, N.Hooks = q, N.parse = N, N.options, N.setOptions, N.use, N.walkTokens, N.parseInline, C.parse, R.lex;
-    return ()=>{
-        let t, e, n = null;
-        function i() {
-            if (n && !n.closed) n.focus();
-            else {
-                if (n = window.open("about:blank", "reveal.js - Notes", "width=1100,height=700"), n.marked = N, n.document.write("<!--\n	NOTE: You need to build the notes plugin after making changes to this file.\n-->\n<html lang=\"en\">\n	<head>\n		<meta charset=\"utf-8\">\n\n		<title>reveal.js - Speaker View</title>\n\n		<style>\n			body {\n				font-family: Helvetica;\n				font-size: 18px;\n			}\n\n			#current-slide,\n			#upcoming-slide,\n			#speaker-controls {\n				padding: 6px;\n				box-sizing: border-box;\n				-moz-box-sizing: border-box;\n			}\n\n			#current-slide iframe,\n			#upcoming-slide iframe {\n				width: 100%;\n				height: 100%;\n				border: 1px solid #ddd;\n			}\n\n			#current-slide .label,\n			#upcoming-slide .label {\n				position: absolute;\n				top: 10px;\n				left: 10px;\n				z-index: 2;\n			}\n\n			#connection-status {\n				position: absolute;\n				top: 0;\n				left: 0;\n				width: 100%;\n				height: 100%;\n				z-index: 20;\n				padding: 30% 20% 20% 20%;\n				font-size: 18px;\n				color: #222;\n				background: #fff;\n				text-align: center;\n				box-sizing: border-box;\n				line-height: 1.4;\n			}\n\n			.overlay-element {\n				height: 34px;\n				line-height: 34px;\n				padding: 0 10px;\n				text-shadow: none;\n				background: rgba( 220, 220, 220, 0.8 );\n				color: #222;\n				font-size: 14px;\n			}\n\n			.overlay-element.interactive:hover {\n				background: rgba( 220, 220, 220, 1 );\n			}\n\n			#current-slide {\n				position: absolute;\n				width: 60%;\n				height: 100%;\n				top: 0;\n				left: 0;\n				padding-right: 0;\n			}\n\n			#upcoming-slide {\n				position: absolute;\n				width: 40%;\n				height: 40%;\n				right: 0;\n				top: 0;\n			}\n\n			/* Speaker controls */\n			#speaker-controls {\n				position: absolute;\n				top: 40%;\n				right: 0;\n				width: 40%;\n				height: 60%;\n				overflow: auto;\n				font-size: 18px;\n			}\n\n				.speaker-controls-time.hidden,\n				.speaker-controls-notes.hidden {\n					display: none;\n				}\n\n				.speaker-controls-time .label,\n				.speaker-controls-pace .label,\n				.speaker-controls-notes .label {\n					text-transform: uppercase;\n					font-weight: normal;\n					font-size: 0.66em;\n					color: #666;\n					margin: 0;\n				}\n\n				.speaker-controls-time, .speaker-controls-pace {\n					border-bottom: 1px solid rgba( 200, 200, 200, 0.5 );\n					margin-bottom: 10px;\n					padding: 10px 16px;\n					padding-bottom: 20px;\n					cursor: pointer;\n				}\n\n				.speaker-controls-time .reset-button {\n					opacity: 0;\n					float: right;\n					color: #666;\n					text-decoration: none;\n				}\n				.speaker-controls-time:hover .reset-button {\n					opacity: 1;\n				}\n\n				.speaker-controls-time .timer,\n				.speaker-controls-time .clock {\n					width: 50%;\n				}\n\n				.speaker-controls-time .timer,\n				.speaker-controls-time .clock,\n				.speaker-controls-time .pacing .hours-value,\n				.speaker-controls-time .pacing .minutes-value,\n				.speaker-controls-time .pacing .seconds-value {\n					font-size: 1.9em;\n				}\n\n				.speaker-controls-time .timer {\n					float: left;\n				}\n\n				.speaker-controls-time .clock {\n					float: right;\n					text-align: right;\n				}\n\n				.speaker-controls-time span.mute {\n					opacity: 0.3;\n				}\n\n				.speaker-controls-time .pacing-title {\n					margin-top: 5px;\n				}\n\n				.speaker-controls-time .pacing.ahead {\n					color: blue;\n				}\n\n				.speaker-controls-time .pacing.on-track {\n					color: green;\n				}\n\n				.speaker-controls-time .pacing.behind {\n					color: red;\n				}\n\n				.speaker-controls-notes {\n					padding: 10px 16px;\n				}\n\n				.speaker-controls-notes .value {\n					margin-top: 5px;\n					line-height: 1.4;\n					font-size: 1.2em;\n				}\n\n			/* Layout selector\xa0*/\n			#speaker-layout {\n				position: absolute;\n				top: 10px;\n				right: 10px;\n				color: #222;\n				z-index: 10;\n			}\n				#speaker-layout select {\n					position: absolute;\n					width: 100%;\n					height: 100%;\n					top: 0;\n					left: 0;\n					border: 0;\n					box-shadow: 0;\n					cursor: pointer;\n					opacity: 0;\n\n					font-size: 1em;\n					background-color: transparent;\n\n					-moz-appearance: none;\n					-webkit-appearance: none;\n					-webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n				}\n\n				#speaker-layout select:focus {\n					outline: none;\n					box-shadow: none;\n				}\n\n			.clear {\n				clear: both;\n			}\n\n			/* Speaker layout: Wide */\n			body[data-speaker-layout=\"wide\"] #current-slide,\n			body[data-speaker-layout=\"wide\"] #upcoming-slide {\n				width: 50%;\n				height: 45%;\n				padding: 6px;\n			}\n\n			body[data-speaker-layout=\"wide\"] #current-slide {\n				top: 0;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"wide\"] #upcoming-slide {\n				top: 0;\n				left: 50%;\n			}\n\n			body[data-speaker-layout=\"wide\"] #speaker-controls {\n				top: 45%;\n				left: 0;\n				width: 100%;\n				height: 50%;\n				font-size: 1.25em;\n			}\n\n			/* Speaker layout: Tall */\n			body[data-speaker-layout=\"tall\"] #current-slide,\n			body[data-speaker-layout=\"tall\"] #upcoming-slide {\n				width: 45%;\n				height: 50%;\n				padding: 6px;\n			}\n\n			body[data-speaker-layout=\"tall\"] #current-slide {\n				top: 0;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"tall\"] #upcoming-slide {\n				top: 50%;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"tall\"] #speaker-controls {\n				padding-top: 40px;\n				top: 0;\n				left: 45%;\n				width: 55%;\n				height: 100%;\n				font-size: 1.25em;\n			}\n\n			/* Speaker layout: Notes only */\n			body[data-speaker-layout=\"notes-only\"] #current-slide,\n			body[data-speaker-layout=\"notes-only\"] #upcoming-slide {\n				display: none;\n			}\n\n			body[data-speaker-layout=\"notes-only\"] #speaker-controls {\n				padding-top: 40px;\n				top: 0;\n				left: 0;\n				width: 100%;\n				height: 100%;\n				font-size: 1.25em;\n			}\n\n			@media screen and (max-width: 1080px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 16px;\n				}\n			}\n\n			@media screen and (max-width: 900px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 14px;\n				}\n			}\n\n			@media screen and (max-width: 800px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 12px;\n				}\n			}\n\n		</style>\n	</head>\n\n	<body>\n\n		<div id=\"connection-status\">Loading speaker view...</div>\n\n		<div id=\"current-slide\"></div>\n		<div id=\"upcoming-slide\"><span class=\"overlay-element label\">Upcoming</span></div>\n		<div id=\"speaker-controls\">\n			<div class=\"speaker-controls-time\">\n				<h4 class=\"label\">Time <span class=\"reset-button\">Click to Reset</span></h4>\n				<div class=\"clock\">\n					<span class=\"clock-value\">0:00 AM</span>\n				</div>\n				<div class=\"timer\">\n					<span class=\"hours-value\">00</span><span class=\"minutes-value\">:00</span><span class=\"seconds-value\">:00</span>\n				</div>\n				<div class=\"clear\"></div>\n\n				<h4 class=\"label pacing-title\" style=\"display: none\">Pacing \u2013 Time to finish current slide</h4>\n				<div class=\"pacing\" style=\"display: none\">\n					<span class=\"hours-value\">00</span><span class=\"minutes-value\">:00</span><span class=\"seconds-value\">:00</span>\n				</div>\n			</div>\n\n			<div class=\"speaker-controls-notes hidden\">\n				<h4 class=\"label\">Notes</h4>\n				<div class=\"value\"></div>\n			</div>\n		</div>\n		<div id=\"speaker-layout\" class=\"overlay-element interactive\">\n			<span class=\"speaker-layout-label\"></span>\n			<select class=\"speaker-layout-dropdown\"></select>\n		</div>\n\n		<script>\n\n			(function() {\n\n				var notes,\n					notesValue,\n					currentState,\n					currentSlide,\n					upcomingSlide,\n					layoutLabel,\n					layoutDropdown,\n					pendingCalls = {},\n					lastRevealApiCallId = 0,\n					connected = false\n\n				var connectionStatus = document.querySelector( '#connection-status' );\n\n				var SPEAKER_LAYOUTS = {\n					'default': 'Default',\n					'wide': 'Wide',\n					'tall': 'Tall',\n					'notes-only': 'Notes only'\n				};\n\n				setupLayout();\n\n				let openerOrigin;\n\n				try {\n					openerOrigin = window.opener.location.origin;\n				}\n				catch ( error ) { console.warn( error ) }\n\n				// In order to prevent XSS, the speaker view will only run if its\n				// opener has the same origin as itself\n				if( window.location.origin !== openerOrigin ) {\n					connectionStatus.innerHTML = 'Cross origin error.<br>The speaker window can only be opened from the same origin.';\n					return;\n				}\n\n				var connectionTimeout = setTimeout( function() {\n					connectionStatus.innerHTML = 'Error connecting to main window.<br>Please try closing and reopening the speaker view.';\n				}, 5000 );\n\n				window.addEventListener( 'message', function( event ) {\n\n					// Validate the origin of all messages to avoid parsing messages\n					// that aren't meant for us. Ignore when running off file:// so\n					// that the speaker view continues to work without a web server.\n					if( window.location.origin !== event.origin && window.location.origin !== 'file://' ) {\n						return\n					}\n\n					clearTimeout( connectionTimeout );\n					connectionStatus.style.display = 'none';\n\n					var data = JSON.parse( event.data );\n\n					// The overview mode is only useful to the reveal.js instance\n					// where navigation occurs so we don't sync it\n					if( data.state ) delete data.state.overview;\n\n					// Messages sent by the notes plugin inside of the main window\n					if( data && data.namespace === 'reveal-notes' ) {\n						if( data.type === 'connect' ) {\n							handleConnectMessage( data );\n						}\n						else if( data.type === 'state' ) {\n							handleStateMessage( data );\n						}\n						else if( data.type === 'return' ) {\n							pendingCalls[data.callId](data.result);\n							delete pendingCalls[data.callId];\n						}\n					}\n					// Messages sent by the reveal.js inside of the current slide preview\n					else if( data && data.namespace === 'reveal' ) {\n						if( /ready/.test( data.eventName ) ) {\n							// Send a message back to notify that the handshake is complete\n							window.opener.postMessage( JSON.stringify({ namespace: 'reveal-notes', type: 'connected'} ), '*' );\n						}\n						else if( /slidechanged|fragmentshown|fragmenthidden|paused|resumed/.test( data.eventName ) && currentState !== JSON.stringify( data.state ) ) {\n\n							dispatchStateToMainWindow( data.state );\n\n						}\n					}\n\n				} );\n\n				/**\n				 * Updates the presentation in the main window to match the state\n				 * of the presentation in the notes window.\n				 */\n				const dispatchStateToMainWindow = debounce(( state ) => {\n					window.opener.postMessage( JSON.stringify({ method: 'setState', args: [ state ]} ), '*' );\n				}, 500);\n\n				/**\n				 * Asynchronously calls the Reveal.js API of the main frame.\n				 */\n				function callRevealApi( methodName, methodArguments, callback ) {\n\n					var callId = ++lastRevealApiCallId;\n					pendingCalls[callId] = callback;\n					window.opener.postMessage( JSON.stringify( {\n						namespace: 'reveal-notes',\n						type: 'call',\n						callId: callId,\n						methodName: methodName,\n						arguments: methodArguments\n					} ), '*' );\n\n				}\n\n				/**\n				 * Called when the main window is trying to establish a\n				 * connection.\n				 */\n				function handleConnectMessage( data ) {\n\n					if( connected === false ) {\n						connected = true;\n\n						setupIframes( data );\n						setupKeyboard();\n						setupNotes();\n						setupTimer();\n						setupHeartbeat();\n					}\n\n				}\n\n				/**\n				 * Called when the main window sends an updated state.\n				 */\n				function handleStateMessage( data ) {\n\n					// Store the most recently set state to avoid circular loops\n					// applying the same state\n					currentState = JSON.stringify( data.state );\n\n					// No need for updating the notes in case of fragment changes\n					if ( data.notes ) {\n						notes.classList.remove( 'hidden' );\n						notesValue.style.whiteSpace = data.whitespace;\n						if( data.markdown ) {\n							notesValue.innerHTML = marked( data.notes );\n						}\n						else {\n							notesValue.innerHTML = data.notes;\n						}\n					}\n					else {\n						notes.classList.add( 'hidden' );\n					}\n\n					// Update the note slides\n					currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ data.state ] }), '*' );\n					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ data.state ] }), '*' );\n					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'next' }), '*' );\n\n				}\n\n				// Limit to max one state update per X ms\n				handleStateMessage = debounce( handleStateMessage, 200 );\n\n				/**\n				 * Forward keyboard events to the current slide window.\n				 * This enables keyboard events to work even if focus\n				 * isn't set on the current slide iframe.\n				 *\n				 * Block F5 default handling, it reloads and disconnects\n				 * the speaker notes window.\n				 */\n				function setupKeyboard() {\n\n					document.addEventListener( 'keydown', function( event ) {\n						if( event.keyCode === 116 || ( event.metaKey && event.keyCode === 82 ) ) {\n							event.preventDefault();\n							return false;\n						}\n						currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );\n					} );\n\n				}\n\n				/**\n				 * Creates the preview iframes.\n				 */\n				function setupIframes( data ) {\n\n					var params = [\n						'receiver',\n						'progress=false',\n						'history=false',\n						'transition=none',\n						'autoSlide=0',\n						'backgroundTransition=none'\n					].join( '&' );\n\n					var urlSeparator = /\\?/.test(data.url) ? '&' : '?';\n					var hash = '#/' + data.state.indexh + '/' + data.state.indexv;\n					var currentURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&postMessageEvents=true' + hash;\n					var upcomingURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&controls=false' + hash;\n\n					currentSlide = document.createElement( 'iframe' );\n					currentSlide.setAttribute( 'width', 1280 );\n					currentSlide.setAttribute( 'height', 1024 );\n					currentSlide.setAttribute( 'src', currentURL );\n					document.querySelector( '#current-slide' ).appendChild( currentSlide );\n\n					upcomingSlide = document.createElement( 'iframe' );\n					upcomingSlide.setAttribute( 'width', 640 );\n					upcomingSlide.setAttribute( 'height', 512 );\n					upcomingSlide.setAttribute( 'src', upcomingURL );\n					document.querySelector( '#upcoming-slide' ).appendChild( upcomingSlide );\n\n				}\n\n				/**\n				 * Setup the notes UI.\n				 */\n				function setupNotes() {\n\n					notes = document.querySelector( '.speaker-controls-notes' );\n					notesValue = document.querySelector( '.speaker-controls-notes .value' );\n\n				}\n\n				/**\n				 * We send out a heartbeat at all times to ensure we can\n				 * reconnect with the main presentation window after reloads.\n				 */\n				function setupHeartbeat() {\n\n					setInterval( () => {\n						window.opener.postMessage( JSON.stringify({ namespace: 'reveal-notes', type: 'heartbeat'} ), '*' );\n					}, 1000 );\n\n				}\n\n				function getTimings( callback ) {\n\n					callRevealApi( 'getSlidesAttributes', [], function ( slideAttributes ) {\n						callRevealApi( 'getConfig', [], function ( config ) {\n							var totalTime = config.totalTime;\n							var minTimePerSlide = config.minimumTimePerSlide || 0;\n							var defaultTiming = config.defaultTiming;\n							if ((defaultTiming == null) && (totalTime == null)) {\n								callback(null);\n								return;\n							}\n							// Setting totalTime overrides defaultTiming\n							if (totalTime) {\n								defaultTiming = 0;\n							}\n							var timings = [];\n							for ( var i in slideAttributes ) {\n								var slide = slideAttributes[ i ];\n								var timing = defaultTiming;\n								if( slide.hasOwnProperty( 'data-timing' )) {\n									var t = slide[ 'data-timing' ];\n									timing = parseInt(t);\n									if( isNaN(timing) ) {\n										console.warn(\"Could not parse timing '\" + t + \"' of slide \" + i + \"; using default of \" + defaultTiming);\n										timing = defaultTiming;\n									}\n								}\n								timings.push(timing);\n							}\n							if ( totalTime ) {\n								// After we've allocated time to individual slides, we summarize it and\n								// subtract it from the total time\n								var remainingTime = totalTime - timings.reduce( function(a, b) { return a + b; }, 0 );\n								// The remaining time is divided by the number of slides that have 0 seconds\n								// allocated at the moment, giving the average time-per-slide on the remaining slides\n								var remainingSlides = (timings.filter( function(x) { return x == 0 }) ).length\n								var timePerSlide = Math.round( remainingTime / remainingSlides, 0 )\n								// And now we replace every zero-value timing with that average\n								timings = timings.map( function(x) { return (x==0 ? timePerSlide : x) } );\n							}\n							var slidesUnderMinimum = timings.filter( function(x) { return (x < minTimePerSlide) } ).length\n							if ( slidesUnderMinimum ) {\n								message = \"The pacing time for \" + slidesUnderMinimum + \" slide(s) is under the configured minimum of \" + minTimePerSlide + \" seconds. Check the data-timing attribute on individual slides, or consider increasing the totalTime or minimumTimePerSlide configuration options (or removing some slides).\";\n								alert(message);\n							}\n							callback( timings );\n						} );\n					} );\n\n				}\n\n				/**\n				 * Return the number of seconds allocated for presenting\n				 * all slides up to and including this one.\n				 */\n				function getTimeAllocated( timings, callback ) {\n\n					callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n						var allocated = 0;\n						for (var i in timings.slice(0, currentSlide + 1)) {\n							allocated += timings[i];\n						}\n						callback( allocated );\n					} );\n\n				}\n\n				/**\n				 * Create the timer and clock and start updating them\n				 * at an interval.\n				 */\n				function setupTimer() {\n\n					var start = new Date(),\n					timeEl = document.querySelector( '.speaker-controls-time' ),\n					clockEl = timeEl.querySelector( '.clock-value' ),\n					hoursEl = timeEl.querySelector( '.hours-value' ),\n					minutesEl = timeEl.querySelector( '.minutes-value' ),\n					secondsEl = timeEl.querySelector( '.seconds-value' ),\n					pacingTitleEl = timeEl.querySelector( '.pacing-title' ),\n					pacingEl = timeEl.querySelector( '.pacing' ),\n					pacingHoursEl = pacingEl.querySelector( '.hours-value' ),\n					pacingMinutesEl = pacingEl.querySelector( '.minutes-value' ),\n					pacingSecondsEl = pacingEl.querySelector( '.seconds-value' );\n\n					var timings = null;\n					getTimings( function ( _timings ) {\n\n						timings = _timings;\n						if (_timings !== null) {\n							pacingTitleEl.style.removeProperty('display');\n							pacingEl.style.removeProperty('display');\n						}\n\n						// Update once directly\n						_updateTimer();\n\n						// Then update every second\n						setInterval( _updateTimer, 1000 );\n\n					} );\n\n\n					function _resetTimer() {\n\n						if (timings == null) {\n							start = new Date();\n							_updateTimer();\n						}\n						else {\n							// Reset timer to beginning of current slide\n							getTimeAllocated( timings, function ( slideEndTimingSeconds ) {\n								var slideEndTiming = slideEndTimingSeconds * 1000;\n								callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n									var currentSlideTiming = timings[currentSlide] * 1000;\n									var previousSlidesTiming = slideEndTiming - currentSlideTiming;\n									var now = new Date();\n									start = new Date(now.getTime() - previousSlidesTiming);\n									_updateTimer();\n								} );\n							} );\n						}\n\n					}\n\n					timeEl.addEventListener( 'click', function() {\n						_resetTimer();\n						return false;\n					} );\n\n					function _displayTime( hrEl, minEl, secEl, time) {\n\n						var sign = Math.sign(time) == -1 ? \"-\" : \"\";\n						time = Math.abs(Math.round(time / 1000));\n						var seconds = time % 60;\n						var minutes = Math.floor( time / 60 ) % 60 ;\n						var hours = Math.floor( time / ( 60 * 60 )) ;\n						hrEl.innerHTML = sign + zeroPadInteger( hours );\n						if (hours == 0) {\n							hrEl.classList.add( 'mute' );\n						}\n						else {\n							hrEl.classList.remove( 'mute' );\n						}\n						minEl.innerHTML = ':' + zeroPadInteger( minutes );\n						if (hours == 0 && minutes == 0) {\n							minEl.classList.add( 'mute' );\n						}\n						else {\n							minEl.classList.remove( 'mute' );\n						}\n						secEl.innerHTML = ':' + zeroPadInteger( seconds );\n					}\n\n					function _updateTimer() {\n\n						var diff, hours, minutes, seconds,\n						now = new Date();\n\n						diff = now.getTime() - start.getTime();\n\n						clockEl.innerHTML = now.toLocaleTimeString( 'en-US', { hour12: true, hour: '2-digit', minute:'2-digit' } );\n						_displayTime( hoursEl, minutesEl, secondsEl, diff );\n						if (timings !== null) {\n							_updatePacing(diff);\n						}\n\n					}\n\n					function _updatePacing(diff) {\n\n						getTimeAllocated( timings, function ( slideEndTimingSeconds ) {\n							var slideEndTiming = slideEndTimingSeconds * 1000;\n\n							callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n								var currentSlideTiming = timings[currentSlide] * 1000;\n								var timeLeftCurrentSlide = slideEndTiming - diff;\n								if (timeLeftCurrentSlide < 0) {\n									pacingEl.className = 'pacing behind';\n								}\n								else if (timeLeftCurrentSlide < currentSlideTiming) {\n									pacingEl.className = 'pacing on-track';\n								}\n								else {\n									pacingEl.className = 'pacing ahead';\n								}\n								_displayTime( pacingHoursEl, pacingMinutesEl, pacingSecondsEl, timeLeftCurrentSlide );\n							} );\n						} );\n					}\n\n				}\n\n				/**\n				 * Sets up the speaker view layout and layout selector.\n				 */\n				function setupLayout() {\n\n					layoutDropdown = document.querySelector( '.speaker-layout-dropdown' );\n					layoutLabel = document.querySelector( '.speaker-layout-label' );\n\n					// Render the list of available layouts\n					for( var id in SPEAKER_LAYOUTS ) {\n						var option = document.createElement( 'option' );\n						option.setAttribute( 'value', id );\n						option.textContent = SPEAKER_LAYOUTS[ id ];\n						layoutDropdown.appendChild( option );\n					}\n\n					// Monitor the dropdown for changes\n					layoutDropdown.addEventListener( 'change', function( event ) {\n\n						setLayout( layoutDropdown.value );\n\n					}, false );\n\n					// Restore any currently persisted layout\n					setLayout( getLayout() );\n\n				}\n\n				/**\n				 * Sets a new speaker view layout. The layout is persisted\n				 * in local storage.\n				 */\n				function setLayout( value ) {\n\n					var title = SPEAKER_LAYOUTS[ value ];\n\n					layoutLabel.innerHTML = 'Layout' + ( title ? ( ': ' + title ) : '' );\n					layoutDropdown.value = value;\n\n					document.body.setAttribute( 'data-speaker-layout', value );\n\n					// Persist locally\n					if( supportsLocalStorage() ) {\n						window.localStorage.setItem( 'reveal-speaker-layout', value );\n					}\n\n				}\n\n				/**\n				 * Returns the ID of the most recently set speaker layout\n				 * or our default layout if none has been set.\n				 */\n				function getLayout() {\n\n					if( supportsLocalStorage() ) {\n						var layout = window.localStorage.getItem( 'reveal-speaker-layout' );\n						if( layout ) {\n							return layout;\n						}\n					}\n\n					// Default to the first record in the layouts hash\n					for( var id in SPEAKER_LAYOUTS ) {\n						return id;\n					}\n\n				}\n\n				function supportsLocalStorage() {\n\n					try {\n						localStorage.setItem('test', 'test');\n						localStorage.removeItem('test');\n						return true;\n					}\n					catch( e ) {\n						return false;\n					}\n\n				}\n\n				function zeroPadInteger( num ) {\n\n					var str = '00' + parseInt( num );\n					return str.substring( str.length - 2 );\n\n				}\n\n				/**\n				 * Limits the frequency at which a function can be called.\n				 */\n				function debounce( fn, ms ) {\n\n					var lastTime = 0,\n						timeout;\n\n					return function() {\n\n						var args = arguments;\n						var context = this;\n\n						clearTimeout( timeout );\n\n						var timeSinceLastCall = Date.now() - lastTime;\n						if( timeSinceLastCall > ms ) {\n							fn.apply( context, args );\n							lastTime = Date.now();\n						}\n						else {\n							timeout = setTimeout( function() {\n								fn.apply( context, args );\n								lastTime = Date.now();\n							}, ms - timeSinceLastCall );\n						}\n\n					}\n\n				}\n\n			})();\n\n		</script>\n	</body>\n</html>"), !n) return void alert("Speaker view popup failed to open. Please make sure popups are allowed and reopen the speaker view.");
-                !function() {
-                    const i = e.getConfig().url, s = "string" == typeof i ? i : window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search;
-                    t = setInterval(function() {
-                        n.postMessage(JSON.stringify({
-                            namespace: "reveal-notes",
-                            type: "connect",
-                            state: e.getState(),
-                            url: s
-                        }), "*");
-                    }, 500), window.addEventListener("message", r);
-                }();
-            }
-        }
-        function s(t) {
-            let i = e.getCurrentSlide(), s = i.querySelectorAll("aside.notes"), r = i.querySelector(".current-fragment"), a = {
-                namespace: "reveal-notes",
-                type: "state",
-                notes: "",
-                markdown: !1,
-                whitespace: "normal",
-                state: e.getState()
-            };
-            if (i.hasAttribute("data-notes") && (a.notes = i.getAttribute("data-notes"), a.whitespace = "pre-wrap"), r) {
-                let t = r.querySelector("aside.notes");
-                t ? (a.notes = t.innerHTML, a.markdown = "string" == typeof t.getAttribute("data-markdown"), s = null) : r.hasAttribute("data-notes") && (a.notes = r.getAttribute("data-notes"), a.whitespace = "pre-wrap", s = null);
-            }
-            s && s.length && (s = Array.from(s).filter((t)=>null === t.closest(".fragment")), a.notes = s.map((t)=>t.innerHTML).join("\n"), a.markdown = s[0] && "string" == typeof s[0].getAttribute("data-markdown")), n.postMessage(JSON.stringify(a), "*");
-        }
-        function r(i) {
-            if (function(t) {
-                try {
-                    return window.location.origin === t.source.location.origin;
-                } catch (t) {
-                    return !1;
-                }
-            }(i)) try {
-                let s = JSON.parse(i.data);
-                s && "reveal-notes" === s.namespace && "connected" === s.type ? (clearInterval(t), a()) : s && "reveal-notes" === s.namespace && "call" === s.type && function(t, i, s) {
-                    let r = e[t].apply(e, i);
-                    n.postMessage(JSON.stringify({
-                        namespace: "reveal-notes",
-                        type: "return",
-                        result: r,
-                        callId: s
-                    }), "*");
-                }(s.methodName, s.arguments, s.callId);
-            } catch (t) {}
-        }
-        function a() {
-            e.on("slidechanged", s), e.on("fragmentshown", s), e.on("fragmenthidden", s), e.on("overviewhidden", s), e.on("overviewshown", s), e.on("paused", s), e.on("resumed", s), s();
-        }
-        return {
-            id: "notes",
-            init: function(t) {
-                e = t, /receiver/i.test(window.location.search) || (null !== window.location.search.match(/(\?|\&)notes/gi) ? i() : window.addEventListener("message", (t)=>{
-                    if (!n && "string" == typeof t.data) {
-                        let i;
-                        try {
-                            i = JSON.parse(t.data);
-                        } catch (t) {}
-                        i && "reveal-notes" === i.namespace && "heartbeat" === i.type && (e = t.source, n && !n.closed ? n.focus() : (n = e, window.addEventListener("message", r), a()));
-                    }
-                    var e;
-                }), e.addKeyBinding({
-                    keyCode: 83,
-                    key: "S",
-                    description: "Speaker notes view"
-                }, function() {
-                    i();
-                }));
-            },
-            open: i
-        };
-    };
-});
-
-
-var $64e7f54992ce4b7d$exports = {};
+var $ad596da0cb293269$exports = {};
 !function(e, t) {
-    $64e7f54992ce4b7d$exports = t();
-}($64e7f54992ce4b7d$exports, function() {
+    $ad596da0cb293269$exports = t();
+}($ad596da0cb293269$exports, function() {
     "use strict";
     function e(e) {
         return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
@@ -49419,6 +48160,3725 @@ var $64e7f54992ce4b7d$exports = {};
 });
 
 
+var $6830dfd5316b79a6$exports = {};
+!function(e, t) {
+    $6830dfd5316b79a6$exports = t();
+}($6830dfd5316b79a6$exports, function() {
+    "use strict";
+    function e() {
+        return {
+            async: !1,
+            baseUrl: null,
+            breaks: !1,
+            extensions: null,
+            gfm: !0,
+            headerIds: !0,
+            headerPrefix: "",
+            highlight: null,
+            hooks: null,
+            langPrefix: "language-",
+            mangle: !0,
+            pedantic: !1,
+            renderer: null,
+            sanitize: !1,
+            sanitizer: null,
+            silent: !1,
+            smartypants: !1,
+            tokenizer: null,
+            walkTokens: null,
+            xhtml: !1
+        };
+    }
+    let t = {
+        async: !1,
+        baseUrl: null,
+        breaks: !1,
+        extensions: null,
+        gfm: !0,
+        headerIds: !0,
+        headerPrefix: "",
+        highlight: null,
+        hooks: null,
+        langPrefix: "language-",
+        mangle: !0,
+        pedantic: !1,
+        renderer: null,
+        sanitize: !1,
+        sanitizer: null,
+        silent: !1,
+        smartypants: !1,
+        tokenizer: null,
+        walkTokens: null,
+        xhtml: !1
+    };
+    const n = /[&<>"']/, s = new RegExp(n.source, "g"), r = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/, i = new RegExp(r.source, "g"), l = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    }, o = (e)=>l[e];
+    function a(e, t) {
+        if (t) {
+            if (n.test(e)) return e.replace(s, o);
+        } else if (r.test(e)) return e.replace(i, o);
+        return e;
+    }
+    const c = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/gi;
+    function h(e) {
+        return e.replace(c, (e, t)=>"colon" === (t = t.toLowerCase()) ? ":" : "#" === t.charAt(0) ? "x" === t.charAt(1) ? String.fromCharCode(parseInt(t.substring(2), 16)) : String.fromCharCode(+t.substring(1)) : "");
+    }
+    const p = /(^|[^\[])\^/g;
+    function u(e, t) {
+        e = "string" == typeof e ? e : e.source, t = t || "";
+        const n = {
+            replace: (t, s)=>(s = (s = s.source || s).replace(p, "$1"), e = e.replace(t, s), n),
+            getRegex: ()=>new RegExp(e, t)
+        };
+        return n;
+    }
+    const g = /[^\w:]/g, d = /^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;
+    function f(e, t, n) {
+        if (e) {
+            let e;
+            try {
+                e = decodeURIComponent(h(n)).replace(g, "").toLowerCase();
+            } catch (e) {
+                return null;
+            }
+            if (0 === e.indexOf("javascript:") || 0 === e.indexOf("vbscript:") || 0 === e.indexOf("data:")) return null;
+        }
+        t && !d.test(n) && (n = function(e, t) {
+            k[" " + e] || (x.test(e) ? k[" " + e] = e + "/" : k[" " + e] = _(e, "/", !0));
+            e = k[" " + e];
+            const n = -1 === e.indexOf(":");
+            return "//" === t.substring(0, 2) ? n ? t : e.replace(m, "$1") + t : "/" === t.charAt(0) ? n ? t : e.replace(b, "$1") + t : e + t;
+        }(t, n));
+        try {
+            n = encodeURI(n).replace(/%25/g, "%");
+        } catch (e) {
+            return null;
+        }
+        return n;
+    }
+    const k = {}, x = /^[^:]+:\/*[^/]*$/, m = /^([^:]+:)[\s\S]*$/, b = /^([^:]+:\/*[^/]*)[\s\S]*$/;
+    const w = {
+        exec: function() {}
+    };
+    function y(e, t) {
+        const n = e.replace(/\|/g, (e, t, n)=>{
+            let s = !1, r = t;
+            for(; --r >= 0 && "\\" === n[r];)s = !s;
+            return s ? "|" : " |";
+        }).split(/ \|/);
+        let s = 0;
+        if (n[0].trim() || n.shift(), n.length > 0 && !n[n.length - 1].trim() && n.pop(), n.length > t) n.splice(t);
+        else for(; n.length < t;)n.push("");
+        for(; s < n.length; s++)n[s] = n[s].trim().replace(/\\\|/g, "|");
+        return n;
+    }
+    function _(e, t, n) {
+        const s = e.length;
+        if (0 === s) return "";
+        let r = 0;
+        for(; r < s;){
+            const i = e.charAt(s - r - 1);
+            if (i !== t || n) {
+                if (i === t || !n) break;
+                r++;
+            } else r++;
+        }
+        return e.slice(0, s - r);
+    }
+    function $(e, t) {
+        if (t < 1) return "";
+        let n = "";
+        for(; t > 1;)1 & t && (n += e), t >>= 1, e += e;
+        return n + e;
+    }
+    function z(e, t, n, s) {
+        const r = t.href, i = t.title ? a(t.title) : null, l = e[1].replace(/\\([\[\]])/g, "$1");
+        if ("!" !== e[0].charAt(0)) {
+            s.state.inLink = !0;
+            const e = {
+                type: "link",
+                raw: n,
+                href: r,
+                title: i,
+                text: l,
+                tokens: s.inlineTokens(l)
+            };
+            return s.state.inLink = !1, e;
+        }
+        return {
+            type: "image",
+            raw: n,
+            href: r,
+            title: i,
+            text: a(l)
+        };
+    }
+    class S {
+        constructor(e){
+            this.options = e || t;
+        }
+        space(e) {
+            const t = this.rules.block.newline.exec(e);
+            if (t && t[0].length > 0) return {
+                type: "space",
+                raw: t[0]
+            };
+        }
+        code(e) {
+            const t = this.rules.block.code.exec(e);
+            if (t) {
+                const e = t[0].replace(/^ {1,4}/gm, "");
+                return {
+                    type: "code",
+                    raw: t[0],
+                    codeBlockStyle: "indented",
+                    text: this.options.pedantic ? e : _(e, "\n")
+                };
+            }
+        }
+        fences(e) {
+            const t = this.rules.block.fences.exec(e);
+            if (t) {
+                const e = t[0], n = function(e, t) {
+                    const n = e.match(/^(\s+)(?:```)/);
+                    if (null === n) return t;
+                    const s = n[1];
+                    return t.split("\n").map((e)=>{
+                        const t = e.match(/^\s+/);
+                        if (null === t) return e;
+                        const [n] = t;
+                        return n.length >= s.length ? e.slice(s.length) : e;
+                    }).join("\n");
+                }(e, t[3] || "");
+                return {
+                    type: "code",
+                    raw: e,
+                    lang: t[2] ? t[2].trim().replace(this.rules.inline._escapes, "$1") : t[2],
+                    text: n
+                };
+            }
+        }
+        heading(e) {
+            const t = this.rules.block.heading.exec(e);
+            if (t) {
+                let e = t[2].trim();
+                if (/#$/.test(e)) {
+                    const t = _(e, "#");
+                    this.options.pedantic ? e = t.trim() : t && !/ $/.test(t) || (e = t.trim());
+                }
+                return {
+                    type: "heading",
+                    raw: t[0],
+                    depth: t[1].length,
+                    text: e,
+                    tokens: this.lexer.inline(e)
+                };
+            }
+        }
+        hr(e) {
+            const t = this.rules.block.hr.exec(e);
+            if (t) return {
+                type: "hr",
+                raw: t[0]
+            };
+        }
+        blockquote(e) {
+            const t = this.rules.block.blockquote.exec(e);
+            if (t) {
+                const e = t[0].replace(/^ *>[ \t]?/gm, ""), n = this.lexer.state.top;
+                this.lexer.state.top = !0;
+                const s = this.lexer.blockTokens(e);
+                return this.lexer.state.top = n, {
+                    type: "blockquote",
+                    raw: t[0],
+                    tokens: s,
+                    text: e
+                };
+            }
+        }
+        list(e) {
+            let t = this.rules.block.list.exec(e);
+            if (t) {
+                let n, s, r, i, l, o, a, c, h, p, u, g, d = t[1].trim();
+                const f = d.length > 1, k = {
+                    type: "list",
+                    raw: "",
+                    ordered: f,
+                    start: f ? +d.slice(0, -1) : "",
+                    loose: !1,
+                    items: []
+                };
+                d = f ? `\\d{1,9}\\${d.slice(-1)}` : `\\${d}`, this.options.pedantic && (d = f ? d : "[*+-]");
+                const x = new RegExp(`^( {0,3}${d})((?:[\t ][^\\n]*)?(?:\\n|$))`);
+                for(; e && (g = !1, t = x.exec(e)) && !this.rules.block.hr.test(e);){
+                    if (n = t[0], e = e.substring(n.length), c = t[2].split("\n", 1)[0].replace(/^\t+/, (e)=>" ".repeat(3 * e.length)), h = e.split("\n", 1)[0], this.options.pedantic ? (i = 2, u = c.trimLeft()) : (i = t[2].search(/[^ ]/), i = i > 4 ? 1 : i, u = c.slice(i), i += t[1].length), o = !1, !c && /^ *$/.test(h) && (n += h + "\n", e = e.substring(h.length + 1), g = !0), !g) {
+                        const t = new RegExp(`^ {0,${Math.min(3, i - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ \t][^\\n]*)?(?:\\n|$))`), s = new RegExp(`^ {0,${Math.min(3, i - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`), r = new RegExp(`^ {0,${Math.min(3, i - 1)}}(?:\`\`\`|~~~)`), l = new RegExp(`^ {0,${Math.min(3, i - 1)}}#`);
+                        for(; e && (p = e.split("\n", 1)[0], h = p, this.options.pedantic && (h = h.replace(/^ {1,4}(?=( {4})*[^ ])/g, "  ")), !r.test(h)) && !l.test(h) && !t.test(h) && !s.test(e);){
+                            if (h.search(/[^ ]/) >= i || !h.trim()) u += "\n" + h.slice(i);
+                            else {
+                                if (o) break;
+                                if (c.search(/[^ ]/) >= 4) break;
+                                if (r.test(c)) break;
+                                if (l.test(c)) break;
+                                if (s.test(c)) break;
+                                u += "\n" + h;
+                            }
+                            o || h.trim() || (o = !0), n += p + "\n", e = e.substring(p.length + 1), c = h.slice(i);
+                        }
+                    }
+                    k.loose || (a ? k.loose = !0 : /\n *\n *$/.test(n) && (a = !0)), this.options.gfm && (s = /^\[[ xX]\] /.exec(u), s && (r = "[ ] " !== s[0], u = u.replace(/^\[[ xX]\] +/, ""))), k.items.push({
+                        type: "list_item",
+                        raw: n,
+                        task: !!s,
+                        checked: r,
+                        loose: !1,
+                        text: u
+                    }), k.raw += n;
+                }
+                k.items[k.items.length - 1].raw = n.trimRight(), k.items[k.items.length - 1].text = u.trimRight(), k.raw = k.raw.trimRight();
+                const m = k.items.length;
+                for(l = 0; l < m; l++)if (this.lexer.state.top = !1, k.items[l].tokens = this.lexer.blockTokens(k.items[l].text, []), !k.loose) {
+                    const e = k.items[l].tokens.filter((e)=>"space" === e.type), t = e.length > 0 && e.some((e)=>/\n.*\n/.test(e.raw));
+                    k.loose = t;
+                }
+                if (k.loose) for(l = 0; l < m; l++)k.items[l].loose = !0;
+                return k;
+            }
+        }
+        html(e) {
+            const t = this.rules.block.html.exec(e);
+            if (t) {
+                const e = {
+                    type: "html",
+                    raw: t[0],
+                    pre: !this.options.sanitizer && ("pre" === t[1] || "script" === t[1] || "style" === t[1]),
+                    text: t[0]
+                };
+                if (this.options.sanitize) {
+                    const n = this.options.sanitizer ? this.options.sanitizer(t[0]) : a(t[0]);
+                    e.type = "paragraph", e.text = n, e.tokens = this.lexer.inline(n);
+                }
+                return e;
+            }
+        }
+        def(e) {
+            const t = this.rules.block.def.exec(e);
+            if (t) {
+                const e = t[1].toLowerCase().replace(/\s+/g, " "), n = t[2] ? t[2].replace(/^<(.*)>$/, "$1").replace(this.rules.inline._escapes, "$1") : "", s = t[3] ? t[3].substring(1, t[3].length - 1).replace(this.rules.inline._escapes, "$1") : t[3];
+                return {
+                    type: "def",
+                    tag: e,
+                    raw: t[0],
+                    href: n,
+                    title: s
+                };
+            }
+        }
+        table(e) {
+            const t = this.rules.block.table.exec(e);
+            if (t) {
+                const e = {
+                    type: "table",
+                    header: y(t[1]).map((e)=>({
+                            text: e
+                        })),
+                    align: t[2].replace(/^ *|\| *$/g, "").split(/ *\| */),
+                    rows: t[3] && t[3].trim() ? t[3].replace(/\n[ \t]*$/, "").split("\n") : []
+                };
+                if (e.header.length === e.align.length) {
+                    e.raw = t[0];
+                    let n, s, r, i, l = e.align.length;
+                    for(n = 0; n < l; n++)/^ *-+: *$/.test(e.align[n]) ? e.align[n] = "right" : /^ *:-+: *$/.test(e.align[n]) ? e.align[n] = "center" : /^ *:-+ *$/.test(e.align[n]) ? e.align[n] = "left" : e.align[n] = null;
+                    for(l = e.rows.length, n = 0; n < l; n++)e.rows[n] = y(e.rows[n], e.header.length).map((e)=>({
+                            text: e
+                        }));
+                    for(l = e.header.length, s = 0; s < l; s++)e.header[s].tokens = this.lexer.inline(e.header[s].text);
+                    for(l = e.rows.length, s = 0; s < l; s++)for(i = e.rows[s], r = 0; r < i.length; r++)i[r].tokens = this.lexer.inline(i[r].text);
+                    return e;
+                }
+            }
+        }
+        lheading(e) {
+            const t = this.rules.block.lheading.exec(e);
+            if (t) return {
+                type: "heading",
+                raw: t[0],
+                depth: "=" === t[2].charAt(0) ? 1 : 2,
+                text: t[1],
+                tokens: this.lexer.inline(t[1])
+            };
+        }
+        paragraph(e) {
+            const t = this.rules.block.paragraph.exec(e);
+            if (t) {
+                const e = "\n" === t[1].charAt(t[1].length - 1) ? t[1].slice(0, -1) : t[1];
+                return {
+                    type: "paragraph",
+                    raw: t[0],
+                    text: e,
+                    tokens: this.lexer.inline(e)
+                };
+            }
+        }
+        text(e) {
+            const t = this.rules.block.text.exec(e);
+            if (t) return {
+                type: "text",
+                raw: t[0],
+                text: t[0],
+                tokens: this.lexer.inline(t[0])
+            };
+        }
+        escape(e) {
+            const t = this.rules.inline.escape.exec(e);
+            if (t) return {
+                type: "escape",
+                raw: t[0],
+                text: a(t[1])
+            };
+        }
+        tag(e) {
+            const t = this.rules.inline.tag.exec(e);
+            if (t) return !this.lexer.state.inLink && /^<a /i.test(t[0]) ? this.lexer.state.inLink = !0 : this.lexer.state.inLink && /^<\/a>/i.test(t[0]) && (this.lexer.state.inLink = !1), !this.lexer.state.inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(t[0]) ? this.lexer.state.inRawBlock = !0 : this.lexer.state.inRawBlock && /^<\/(pre|code|kbd|script)(\s|>)/i.test(t[0]) && (this.lexer.state.inRawBlock = !1), {
+                type: this.options.sanitize ? "text" : "html",
+                raw: t[0],
+                inLink: this.lexer.state.inLink,
+                inRawBlock: this.lexer.state.inRawBlock,
+                text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(t[0]) : a(t[0]) : t[0]
+            };
+        }
+        link(e) {
+            const t = this.rules.inline.link.exec(e);
+            if (t) {
+                const e = t[2].trim();
+                if (!this.options.pedantic && /^</.test(e)) {
+                    if (!/>$/.test(e)) return;
+                    const t = _(e.slice(0, -1), "\\");
+                    if ((e.length - t.length) % 2 == 0) return;
+                } else {
+                    const e = function(e, t) {
+                        if (-1 === e.indexOf(t[1])) return -1;
+                        const n = e.length;
+                        let s = 0, r = 0;
+                        for(; r < n; r++)if ("\\" === e[r]) r++;
+                        else if (e[r] === t[0]) s++;
+                        else if (e[r] === t[1] && (s--, s < 0)) return r;
+                        return -1;
+                    }(t[2], "()");
+                    if (e > -1) {
+                        const n = (0 === t[0].indexOf("!") ? 5 : 4) + t[1].length + e;
+                        t[2] = t[2].substring(0, e), t[0] = t[0].substring(0, n).trim(), t[3] = "";
+                    }
+                }
+                let n = t[2], s = "";
+                if (this.options.pedantic) {
+                    const e = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(n);
+                    e && (n = e[1], s = e[3]);
+                } else s = t[3] ? t[3].slice(1, -1) : "";
+                return n = n.trim(), /^</.test(n) && (n = this.options.pedantic && !/>$/.test(e) ? n.slice(1) : n.slice(1, -1)), z(t, {
+                    href: n ? n.replace(this.rules.inline._escapes, "$1") : n,
+                    title: s ? s.replace(this.rules.inline._escapes, "$1") : s
+                }, t[0], this.lexer);
+            }
+        }
+        reflink(e, t) {
+            let n;
+            if ((n = this.rules.inline.reflink.exec(e)) || (n = this.rules.inline.nolink.exec(e))) {
+                let e = (n[2] || n[1]).replace(/\s+/g, " ");
+                if (e = t[e.toLowerCase()], !e) {
+                    const e = n[0].charAt(0);
+                    return {
+                        type: "text",
+                        raw: e,
+                        text: e
+                    };
+                }
+                return z(n, e, n[0], this.lexer);
+            }
+        }
+        emStrong(e, t, n = "") {
+            let s = this.rules.inline.emStrong.lDelim.exec(e);
+            if (!s) return;
+            if (s[3] && n.match(/[\p{L}\p{N}]/u)) return;
+            const r = s[1] || s[2] || "";
+            if (!r || r && ("" === n || this.rules.inline.punctuation.exec(n))) {
+                const n = s[0].length - 1;
+                let r, i, l = n, o = 0;
+                const a = "*" === s[0][0] ? this.rules.inline.emStrong.rDelimAst : this.rules.inline.emStrong.rDelimUnd;
+                for(a.lastIndex = 0, t = t.slice(-1 * e.length + n); null != (s = a.exec(t));){
+                    if (r = s[1] || s[2] || s[3] || s[4] || s[5] || s[6], !r) continue;
+                    if (i = r.length, s[3] || s[4]) {
+                        l += i;
+                        continue;
+                    }
+                    if ((s[5] || s[6]) && n % 3 && !((n + i) % 3)) {
+                        o += i;
+                        continue;
+                    }
+                    if (l -= i, l > 0) continue;
+                    i = Math.min(i, i + l + o);
+                    const t = e.slice(0, n + s.index + (s[0].length - r.length) + i);
+                    if (Math.min(n, i) % 2) {
+                        const e = t.slice(1, -1);
+                        return {
+                            type: "em",
+                            raw: t,
+                            text: e,
+                            tokens: this.lexer.inlineTokens(e)
+                        };
+                    }
+                    const a = t.slice(2, -2);
+                    return {
+                        type: "strong",
+                        raw: t,
+                        text: a,
+                        tokens: this.lexer.inlineTokens(a)
+                    };
+                }
+            }
+        }
+        codespan(e) {
+            const t = this.rules.inline.code.exec(e);
+            if (t) {
+                let e = t[2].replace(/\n/g, " ");
+                const n = /[^ ]/.test(e), s = /^ /.test(e) && / $/.test(e);
+                return n && s && (e = e.substring(1, e.length - 1)), e = a(e, !0), {
+                    type: "codespan",
+                    raw: t[0],
+                    text: e
+                };
+            }
+        }
+        br(e) {
+            const t = this.rules.inline.br.exec(e);
+            if (t) return {
+                type: "br",
+                raw: t[0]
+            };
+        }
+        del(e) {
+            const t = this.rules.inline.del.exec(e);
+            if (t) return {
+                type: "del",
+                raw: t[0],
+                text: t[2],
+                tokens: this.lexer.inlineTokens(t[2])
+            };
+        }
+        autolink(e, t) {
+            const n = this.rules.inline.autolink.exec(e);
+            if (n) {
+                let e, s;
+                return "@" === n[2] ? (e = a(this.options.mangle ? t(n[1]) : n[1]), s = "mailto:" + e) : (e = a(n[1]), s = e), {
+                    type: "link",
+                    raw: n[0],
+                    text: e,
+                    href: s,
+                    tokens: [
+                        {
+                            type: "text",
+                            raw: e,
+                            text: e
+                        }
+                    ]
+                };
+            }
+        }
+        url(e, t) {
+            let n;
+            if (n = this.rules.inline.url.exec(e)) {
+                let e, s;
+                if ("@" === n[2]) e = a(this.options.mangle ? t(n[0]) : n[0]), s = "mailto:" + e;
+                else {
+                    let t;
+                    do t = n[0], n[0] = this.rules.inline._backpedal.exec(n[0])[0];
+                    while (t !== n[0]);
+                    e = a(n[0]), s = "www." === n[1] ? "http://" + n[0] : n[0];
+                }
+                return {
+                    type: "link",
+                    raw: n[0],
+                    text: e,
+                    href: s,
+                    tokens: [
+                        {
+                            type: "text",
+                            raw: e,
+                            text: e
+                        }
+                    ]
+                };
+            }
+        }
+        inlineText(e, t) {
+            const n = this.rules.inline.text.exec(e);
+            if (n) {
+                let e;
+                return e = this.lexer.state.inRawBlock ? this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(n[0]) : a(n[0]) : n[0] : a(this.options.smartypants ? t(n[0]) : n[0]), {
+                    type: "text",
+                    raw: n[0],
+                    text: e
+                };
+            }
+        }
+    }
+    const T = {
+        newline: /^(?: *(?:\n|$))+/,
+        code: /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,
+        fences: /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,
+        hr: /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,
+        heading: /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
+        blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
+        list: /^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/,
+        html: "^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))",
+        def: /^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/,
+        table: w,
+        lheading: /^((?:.|\n(?!\n))+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+        _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,
+        text: /^[^\n]+/,
+        _label: /(?!\s*\])(?:\\.|[^\[\]\\])+/,
+        _title: /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/
+    };
+    T.def = u(T.def).replace("label", T._label).replace("title", T._title).getRegex(), T.bullet = /(?:[*+-]|\d{1,9}[.)])/, T.listItemStart = u(/^( *)(bull) */).replace("bull", T.bullet).getRegex(), T.list = u(T.list).replace(/bull/g, T.bullet).replace("hr", "\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))").replace("def", "\\n+(?=" + T.def.source + ")").getRegex(), T._tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul", T._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/, T.html = u(T.html, "i").replace("comment", T._comment).replace("tag", T._tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex(), T.paragraph = u(T._paragraph).replace("hr", T.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", T._tag).getRegex(), T.blockquote = u(T.blockquote).replace("paragraph", T.paragraph).getRegex(), T.normal = {
+        ...T
+    }, T.gfm = {
+        ...T.normal,
+        table: "^ *([^\\n ].*\\|.*)\\n {0,3}(?:\\| *)?(:?-+:? *(?:\\| *:?-+:? *)*)(?:\\| *)?(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)"
+    }, T.gfm.table = u(T.gfm.table).replace("hr", T.hr).replace("heading", " {0,3}#{1,6} ").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", T._tag).getRegex(), T.gfm.paragraph = u(T._paragraph).replace("hr", T.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("table", T.gfm.table).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", T._tag).getRegex(), T.pedantic = {
+        ...T.normal,
+        html: u("^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:\"[^\"]*\"|'[^']*'|\\s[^'\"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))").replace("comment", T._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+        def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+        heading: /^(#{1,6})(.*)(?:\n+|$)/,
+        fences: w,
+        lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+        paragraph: u(T.normal._paragraph).replace("hr", T.hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", T.lheading).replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").getRegex()
+    };
+    const R = {
+        escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
+        autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
+        url: w,
+        tag: "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>",
+        link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
+        reflink: /^!?\[(label)\]\[(ref)\]/,
+        nolink: /^!?\[(ref)\](?:\[\])?/,
+        reflinkSearch: "reflink|nolink(?!\\()",
+        emStrong: {
+            lDelim: /^(?:\*+(?:([punct_])|[^\s*]))|^_+(?:([punct*])|([^\s_]))/,
+            rDelimAst: /^(?:[^_*\\]|\\.)*?\_\_(?:[^_*\\]|\\.)*?\*(?:[^_*\\]|\\.)*?(?=\_\_)|(?:[^*\\]|\\.)+(?=[^*])|[punct_](\*+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\*+)(?=[punct_\s]|$)|[punct_\s](\*+)(?=[^punct*_\s])|[\s](\*+)(?=[punct_])|[punct_](\*+)(?=[punct_])|(?:[^punct*_\s\\]|\\.)(\*+)(?=[^punct*_\s])/,
+            rDelimUnd: /^(?:[^_*\\]|\\.)*?\*\*(?:[^_*\\]|\\.)*?\_(?:[^_*\\]|\\.)*?(?=\*\*)|(?:[^_\\]|\\.)+(?=[^_])|[punct*](\_+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\_+)(?=[punct*\s]|$)|[punct*\s](\_+)(?=[^punct*_\s])|[\s](\_+)(?=[punct*])|[punct*](\_+)(?=[punct*])/
+        },
+        code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
+        br: /^( {2,}|\\)\n(?!\s*$)/,
+        del: w,
+        text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
+        punctuation: /^([\spunctuation])/
+    };
+    function A(e) {
+        return e.replace(/---/g, "\u2014").replace(/--/g, "\u2013").replace(/(^|[-\u2014/(\[{"\s])'/g, "$1\u2018").replace(/'/g, "\u2019").replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1\u201C").replace(/"/g, "\u201D").replace(/\.{3}/g, "\u2026");
+    }
+    function E(e) {
+        let t, n, s = "";
+        const r = e.length;
+        for(t = 0; t < r; t++)n = e.charCodeAt(t), Math.random() > .5 && (n = "x" + n.toString(16)), s += "&#" + n + ";";
+        return s;
+    }
+    R._punctuation = "!\"#$%&'()+\\-.,/:;<=>?@\\[\\]`^{|}~", R.punctuation = u(R.punctuation).replace(/punctuation/g, R._punctuation).getRegex(), R.blockSkip = /\[[^\]]*?\]\([^\)]*?\)|`[^`]*?`|<[^>]*?>/g, R.escapedEmSt = /(?:^|[^\\])(?:\\\\)*\\[*_]/g, R._comment = u(T._comment).replace("(?:--\x3e|$)", "--\x3e").getRegex(), R.emStrong.lDelim = u(R.emStrong.lDelim).replace(/punct/g, R._punctuation).getRegex(), R.emStrong.rDelimAst = u(R.emStrong.rDelimAst, "g").replace(/punct/g, R._punctuation).getRegex(), R.emStrong.rDelimUnd = u(R.emStrong.rDelimUnd, "g").replace(/punct/g, R._punctuation).getRegex(), R._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g, R._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/, R._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/, R.autolink = u(R.autolink).replace("scheme", R._scheme).replace("email", R._email).getRegex(), R._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/, R.tag = u(R.tag).replace("comment", R._comment).replace("attribute", R._attribute).getRegex(), R._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/, R._href = /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/, R._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/, R.link = u(R.link).replace("label", R._label).replace("href", R._href).replace("title", R._title).getRegex(), R.reflink = u(R.reflink).replace("label", R._label).replace("ref", T._label).getRegex(), R.nolink = u(R.nolink).replace("ref", T._label).getRegex(), R.reflinkSearch = u(R.reflinkSearch, "g").replace("reflink", R.reflink).replace("nolink", R.nolink).getRegex(), R.normal = {
+        ...R
+    }, R.pedantic = {
+        ...R.normal,
+        strong: {
+            start: /^__|\*\*/,
+            middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
+            endAst: /\*\*(?!\*)/g,
+            endUnd: /__(?!_)/g
+        },
+        em: {
+            start: /^_|\*/,
+            middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,
+            endAst: /\*(?!\*)/g,
+            endUnd: /_(?!_)/g
+        },
+        link: u(/^!?\[(label)\]\((.*?)\)/).replace("label", R._label).getRegex(),
+        reflink: u(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", R._label).getRegex()
+    }, R.gfm = {
+        ...R.normal,
+        escape: u(R.escape).replace("])", "~|])").getRegex(),
+        _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
+        url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
+        _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+        del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
+        text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
+    }, R.gfm.url = u(R.gfm.url, "i").replace("email", R.gfm._extended_email).getRegex(), R.breaks = {
+        ...R.gfm,
+        br: u(R.br).replace("{2,}", "*").getRegex(),
+        text: u(R.gfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+    };
+    class v {
+        constructor(e){
+            this.tokens = [], this.tokens.links = Object.create(null), this.options = e || t, this.options.tokenizer = this.options.tokenizer || new S, this.tokenizer = this.options.tokenizer, this.tokenizer.options = this.options, this.tokenizer.lexer = this, this.inlineQueue = [], this.state = {
+                inLink: !1,
+                inRawBlock: !1,
+                top: !0
+            };
+            const n = {
+                block: T.normal,
+                inline: R.normal
+            };
+            this.options.pedantic ? (n.block = T.pedantic, n.inline = R.pedantic) : this.options.gfm && (n.block = T.gfm, this.options.breaks ? n.inline = R.breaks : n.inline = R.gfm), this.tokenizer.rules = n;
+        }
+        static get rules() {
+            return {
+                block: T,
+                inline: R
+            };
+        }
+        static lex(e, t) {
+            return new v(t).lex(e);
+        }
+        static lexInline(e, t) {
+            return new v(t).inlineTokens(e);
+        }
+        lex(e) {
+            let t;
+            for(e = e.replace(/\r\n|\r/g, "\n"), this.blockTokens(e, this.tokens); t = this.inlineQueue.shift();)this.inlineTokens(t.src, t.tokens);
+            return this.tokens;
+        }
+        blockTokens(e, t = []) {
+            let n, s, r, i;
+            for(e = this.options.pedantic ? e.replace(/\t/g, "    ").replace(/^ +$/gm, "") : e.replace(/^( *)(\t+)/gm, (e, t, n)=>t + "    ".repeat(n.length)); e;)if (!(this.options.extensions && this.options.extensions.block && this.options.extensions.block.some((s)=>!!(n = s.call({
+                    lexer: this
+                }, e, t)) && (e = e.substring(n.raw.length), t.push(n), !0)))) {
+                if (n = this.tokenizer.space(e)) e = e.substring(n.raw.length), 1 === n.raw.length && t.length > 0 ? t[t.length - 1].raw += "\n" : t.push(n);
+                else if (n = this.tokenizer.code(e)) e = e.substring(n.raw.length), s = t[t.length - 1], !s || "paragraph" !== s.type && "text" !== s.type ? t.push(n) : (s.raw += "\n" + n.raw, s.text += "\n" + n.text, this.inlineQueue[this.inlineQueue.length - 1].src = s.text);
+                else if (n = this.tokenizer.fences(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.heading(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.hr(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.blockquote(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.list(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.html(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.def(e)) e = e.substring(n.raw.length), s = t[t.length - 1], !s || "paragraph" !== s.type && "text" !== s.type ? this.tokens.links[n.tag] || (this.tokens.links[n.tag] = {
+                    href: n.href,
+                    title: n.title
+                }) : (s.raw += "\n" + n.raw, s.text += "\n" + n.raw, this.inlineQueue[this.inlineQueue.length - 1].src = s.text);
+                else if (n = this.tokenizer.table(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.lheading(e)) e = e.substring(n.raw.length), t.push(n);
+                else {
+                    if (r = e, this.options.extensions && this.options.extensions.startBlock) {
+                        let t = 1 / 0;
+                        const n = e.slice(1);
+                        let s;
+                        this.options.extensions.startBlock.forEach(function(e) {
+                            s = e.call({
+                                lexer: this
+                            }, n), "number" == typeof s && s >= 0 && (t = Math.min(t, s));
+                        }), t < 1 / 0 && t >= 0 && (r = e.substring(0, t + 1));
+                    }
+                    if (this.state.top && (n = this.tokenizer.paragraph(r))) s = t[t.length - 1], i && "paragraph" === s.type ? (s.raw += "\n" + n.raw, s.text += "\n" + n.text, this.inlineQueue.pop(), this.inlineQueue[this.inlineQueue.length - 1].src = s.text) : t.push(n), i = r.length !== e.length, e = e.substring(n.raw.length);
+                    else if (n = this.tokenizer.text(e)) e = e.substring(n.raw.length), s = t[t.length - 1], s && "text" === s.type ? (s.raw += "\n" + n.raw, s.text += "\n" + n.text, this.inlineQueue.pop(), this.inlineQueue[this.inlineQueue.length - 1].src = s.text) : t.push(n);
+                    else if (e) {
+                        const t = "Infinite loop on byte: " + e.charCodeAt(0);
+                        if (this.options.silent) {
+                            console.error(t);
+                            break;
+                        }
+                        throw new Error(t);
+                    }
+                }
+            }
+            return this.state.top = !0, t;
+        }
+        inline(e, t = []) {
+            return this.inlineQueue.push({
+                src: e,
+                tokens: t
+            }), t;
+        }
+        inlineTokens(e, t = []) {
+            let n, s, r, i, l, o, a = e;
+            if (this.tokens.links) {
+                const e = Object.keys(this.tokens.links);
+                if (e.length > 0) for(; null != (i = this.tokenizer.rules.inline.reflinkSearch.exec(a));)e.includes(i[0].slice(i[0].lastIndexOf("[") + 1, -1)) && (a = a.slice(0, i.index) + "[" + $("a", i[0].length - 2) + "]" + a.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex));
+            }
+            for(; null != (i = this.tokenizer.rules.inline.blockSkip.exec(a));)a = a.slice(0, i.index) + "[" + $("a", i[0].length - 2) + "]" + a.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+            for(; null != (i = this.tokenizer.rules.inline.escapedEmSt.exec(a));)a = a.slice(0, i.index + i[0].length - 2) + "++" + a.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex), this.tokenizer.rules.inline.escapedEmSt.lastIndex--;
+            for(; e;)if (l || (o = ""), l = !1, !(this.options.extensions && this.options.extensions.inline && this.options.extensions.inline.some((s)=>!!(n = s.call({
+                    lexer: this
+                }, e, t)) && (e = e.substring(n.raw.length), t.push(n), !0)))) {
+                if (n = this.tokenizer.escape(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.tag(e)) e = e.substring(n.raw.length), s = t[t.length - 1], s && "text" === n.type && "text" === s.type ? (s.raw += n.raw, s.text += n.text) : t.push(n);
+                else if (n = this.tokenizer.link(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.reflink(e, this.tokens.links)) e = e.substring(n.raw.length), s = t[t.length - 1], s && "text" === n.type && "text" === s.type ? (s.raw += n.raw, s.text += n.text) : t.push(n);
+                else if (n = this.tokenizer.emStrong(e, a, o)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.codespan(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.br(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.del(e)) e = e.substring(n.raw.length), t.push(n);
+                else if (n = this.tokenizer.autolink(e, E)) e = e.substring(n.raw.length), t.push(n);
+                else if (this.state.inLink || !(n = this.tokenizer.url(e, E))) {
+                    if (r = e, this.options.extensions && this.options.extensions.startInline) {
+                        let t = 1 / 0;
+                        const n = e.slice(1);
+                        let s;
+                        this.options.extensions.startInline.forEach(function(e) {
+                            s = e.call({
+                                lexer: this
+                            }, n), "number" == typeof s && s >= 0 && (t = Math.min(t, s));
+                        }), t < 1 / 0 && t >= 0 && (r = e.substring(0, t + 1));
+                    }
+                    if (n = this.tokenizer.inlineText(r, A)) e = e.substring(n.raw.length), "_" !== n.raw.slice(-1) && (o = n.raw.slice(-1)), l = !0, s = t[t.length - 1], s && "text" === s.type ? (s.raw += n.raw, s.text += n.text) : t.push(n);
+                    else if (e) {
+                        const t = "Infinite loop on byte: " + e.charCodeAt(0);
+                        if (this.options.silent) {
+                            console.error(t);
+                            break;
+                        }
+                        throw new Error(t);
+                    }
+                } else e = e.substring(n.raw.length), t.push(n);
+            }
+            return t;
+        }
+    }
+    class I {
+        constructor(e){
+            this.options = e || t;
+        }
+        code(e, t, n) {
+            const s = (t || "").match(/\S*/)[0];
+            if (this.options.highlight) {
+                const t = this.options.highlight(e, s);
+                null != t && t !== e && (n = !0, e = t);
+            }
+            return e = e.replace(/\n$/, "") + "\n", s ? '<pre><code class="' + this.options.langPrefix + a(s) + '">' + (n ? e : a(e, !0)) + "</code></pre>\n" : "<pre><code>" + (n ? e : a(e, !0)) + "</code></pre>\n";
+        }
+        blockquote(e) {
+            return `<blockquote>\n${e}</blockquote>\n`;
+        }
+        html(e) {
+            return e;
+        }
+        heading(e, t, n, s) {
+            if (this.options.headerIds) return `<h${t} id="${this.options.headerPrefix + s.slug(n)}">${e}</h${t}>\n`;
+            return `<h${t}>${e}</h${t}>\n`;
+        }
+        hr() {
+            return this.options.xhtml ? "<hr/>\n" : "<hr>\n";
+        }
+        list(e, t, n) {
+            const s = t ? "ol" : "ul";
+            return "<" + s + (t && 1 !== n ? ' start="' + n + '"' : "") + ">\n" + e + "</" + s + ">\n";
+        }
+        listitem(e) {
+            return `<li>${e}</li>\n`;
+        }
+        checkbox(e) {
+            return "<input " + (e ? 'checked="" ' : "") + 'disabled="" type="checkbox"' + (this.options.xhtml ? " /" : "") + "> ";
+        }
+        paragraph(e) {
+            return `<p>${e}</p>\n`;
+        }
+        table(e, t) {
+            return t && (t = `<tbody>${t}</tbody>`), "<table>\n<thead>\n" + e + "</thead>\n" + t + "</table>\n";
+        }
+        tablerow(e) {
+            return `<tr>\n${e}</tr>\n`;
+        }
+        tablecell(e, t) {
+            const n = t.header ? "th" : "td";
+            return (t.align ? `<${n} align="${t.align}">` : `<${n}>`) + e + `</${n}>\n`;
+        }
+        strong(e) {
+            return `<strong>${e}</strong>`;
+        }
+        em(e) {
+            return `<em>${e}</em>`;
+        }
+        codespan(e) {
+            return `<code>${e}</code>`;
+        }
+        br() {
+            return this.options.xhtml ? "<br/>" : "<br>";
+        }
+        del(e) {
+            return `<del>${e}</del>`;
+        }
+        link(e, t, n) {
+            if (null === (e = f(this.options.sanitize, this.options.baseUrl, e))) return n;
+            let s = '<a href="' + e + '"';
+            return t && (s += ' title="' + t + '"'), s += ">" + n + "</a>", s;
+        }
+        image(e, t, n) {
+            if (null === (e = f(this.options.sanitize, this.options.baseUrl, e))) return n;
+            let s = `<img src="${e}" alt="${n}"`;
+            return t && (s += ` title="${t}"`), s += this.options.xhtml ? "/>" : ">", s;
+        }
+        text(e) {
+            return e;
+        }
+    }
+    class q {
+        strong(e) {
+            return e;
+        }
+        em(e) {
+            return e;
+        }
+        codespan(e) {
+            return e;
+        }
+        del(e) {
+            return e;
+        }
+        html(e) {
+            return e;
+        }
+        text(e) {
+            return e;
+        }
+        link(e, t, n) {
+            return "" + n;
+        }
+        image(e, t, n) {
+            return "" + n;
+        }
+        br() {
+            return "";
+        }
+    }
+    class L {
+        constructor(){
+            this.seen = {};
+        }
+        serialize(e) {
+            return e.toLowerCase().trim().replace(/<[!\/a-z].*?>/gi, "").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, "").replace(/\s/g, "-");
+        }
+        getNextSafeSlug(e, t) {
+            let n = e, s = 0;
+            if (this.seen.hasOwnProperty(n)) {
+                s = this.seen[e];
+                do s++, n = e + "-" + s;
+                while (this.seen.hasOwnProperty(n));
+            }
+            return t || (this.seen[e] = s, this.seen[n] = 0), n;
+        }
+        slug(e, t = {}) {
+            const n = this.serialize(e);
+            return this.getNextSafeSlug(n, t.dryrun);
+        }
+    }
+    class C {
+        constructor(e){
+            this.options = e || t, this.options.renderer = this.options.renderer || new I, this.renderer = this.options.renderer, this.renderer.options = this.options, this.textRenderer = new q, this.slugger = new L;
+        }
+        static parse(e, t) {
+            return new C(t).parse(e);
+        }
+        static parseInline(e, t) {
+            return new C(t).parseInline(e);
+        }
+        parse(e, t = !0) {
+            let n, s, r, i, l, o, a, c, p, u, g, d, f, k, x, m, b, w, y, _ = "";
+            const $ = e.length;
+            for(n = 0; n < $; n++)if (u = e[n], this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[u.type] && (y = this.options.extensions.renderers[u.type].call({
+                parser: this
+            }, u), !1 !== y || ![
+                "space",
+                "hr",
+                "heading",
+                "code",
+                "table",
+                "blockquote",
+                "list",
+                "html",
+                "paragraph",
+                "text"
+            ].includes(u.type))) _ += y || "";
+            else switch(u.type){
+                case "space":
+                    continue;
+                case "hr":
+                    _ += this.renderer.hr();
+                    continue;
+                case "heading":
+                    _ += this.renderer.heading(this.parseInline(u.tokens), u.depth, h(this.parseInline(u.tokens, this.textRenderer)), this.slugger);
+                    continue;
+                case "code":
+                    _ += this.renderer.code(u.text, u.lang, u.escaped);
+                    continue;
+                case "table":
+                    for(c = "", a = "", i = u.header.length, s = 0; s < i; s++)a += this.renderer.tablecell(this.parseInline(u.header[s].tokens), {
+                        header: !0,
+                        align: u.align[s]
+                    });
+                    for(c += this.renderer.tablerow(a), p = "", i = u.rows.length, s = 0; s < i; s++){
+                        for(o = u.rows[s], a = "", l = o.length, r = 0; r < l; r++)a += this.renderer.tablecell(this.parseInline(o[r].tokens), {
+                            header: !1,
+                            align: u.align[r]
+                        });
+                        p += this.renderer.tablerow(a);
+                    }
+                    _ += this.renderer.table(c, p);
+                    continue;
+                case "blockquote":
+                    p = this.parse(u.tokens), _ += this.renderer.blockquote(p);
+                    continue;
+                case "list":
+                    for(g = u.ordered, d = u.start, f = u.loose, i = u.items.length, p = "", s = 0; s < i; s++)x = u.items[s], m = x.checked, b = x.task, k = "", x.task && (w = this.renderer.checkbox(m), f ? x.tokens.length > 0 && "paragraph" === x.tokens[0].type ? (x.tokens[0].text = w + " " + x.tokens[0].text, x.tokens[0].tokens && x.tokens[0].tokens.length > 0 && "text" === x.tokens[0].tokens[0].type && (x.tokens[0].tokens[0].text = w + " " + x.tokens[0].tokens[0].text)) : x.tokens.unshift({
+                        type: "text",
+                        text: w
+                    }) : k += w), k += this.parse(x.tokens, f), p += this.renderer.listitem(k, b, m);
+                    _ += this.renderer.list(p, g, d);
+                    continue;
+                case "html":
+                    _ += this.renderer.html(u.text);
+                    continue;
+                case "paragraph":
+                    _ += this.renderer.paragraph(this.parseInline(u.tokens));
+                    continue;
+                case "text":
+                    for(p = u.tokens ? this.parseInline(u.tokens) : u.text; n + 1 < $ && "text" === e[n + 1].type;)u = e[++n], p += "\n" + (u.tokens ? this.parseInline(u.tokens) : u.text);
+                    _ += t ? this.renderer.paragraph(p) : p;
+                    continue;
+                default:
+                    {
+                        const e = 'Token with "' + u.type + '" type was not found.';
+                        if (this.options.silent) return void console.error(e);
+                        throw new Error(e);
+                    }
+            }
+            return _;
+        }
+        parseInline(e, t) {
+            t = t || this.renderer;
+            let n, s, r, i = "";
+            const l = e.length;
+            for(n = 0; n < l; n++)if (s = e[n], this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[s.type] && (r = this.options.extensions.renderers[s.type].call({
+                parser: this
+            }, s), !1 !== r || ![
+                "escape",
+                "html",
+                "link",
+                "image",
+                "strong",
+                "em",
+                "codespan",
+                "br",
+                "del",
+                "text"
+            ].includes(s.type))) i += r || "";
+            else switch(s.type){
+                case "escape":
+                case "text":
+                    i += t.text(s.text);
+                    break;
+                case "html":
+                    i += t.html(s.text);
+                    break;
+                case "link":
+                    i += t.link(s.href, s.title, this.parseInline(s.tokens, t));
+                    break;
+                case "image":
+                    i += t.image(s.href, s.title, s.text);
+                    break;
+                case "strong":
+                    i += t.strong(this.parseInline(s.tokens, t));
+                    break;
+                case "em":
+                    i += t.em(this.parseInline(s.tokens, t));
+                    break;
+                case "codespan":
+                    i += t.codespan(s.text);
+                    break;
+                case "br":
+                    i += t.br();
+                    break;
+                case "del":
+                    i += t.del(this.parseInline(s.tokens, t));
+                    break;
+                default:
+                    {
+                        const e = 'Token with "' + s.type + '" type was not found.';
+                        if (this.options.silent) return void console.error(e);
+                        throw new Error(e);
+                    }
+            }
+            return i;
+        }
+    }
+    class Z {
+        constructor(e){
+            this.options = e || t;
+        }
+        static passThroughHooks = new Set([
+            "preprocess",
+            "postprocess"
+        ]);
+        preprocess(e) {
+            return e;
+        }
+        postprocess(e) {
+            return e;
+        }
+    }
+    function M(e, t) {
+        return (n, s, r)=>{
+            "function" == typeof s && (r = s, s = null);
+            const i = {
+                ...s
+            }, l = function(e, t, n) {
+                return (s)=>{
+                    if (s.message += "\nPlease report this to https://github.com/markedjs/marked.", e) {
+                        const e = "<p>An error occurred:</p><pre>" + a(s.message + "", !0) + "</pre>";
+                        return t ? Promise.resolve(e) : n ? void n(null, e) : e;
+                    }
+                    if (t) return Promise.reject(s);
+                    if (!n) throw s;
+                    n(s);
+                };
+            }((s = {
+                ...P.defaults,
+                ...i
+            }).silent, s.async, r);
+            if (null == n) return l(new Error("marked(): input parameter is undefined or null"));
+            if ("string" != typeof n) return l(new Error("marked(): input parameter is of type " + Object.prototype.toString.call(n) + ", string expected"));
+            if (function(e) {
+                e && e.sanitize && !e.silent && console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options");
+            }(s), s.hooks && (s.hooks.options = s), r) {
+                const i = s.highlight;
+                let o;
+                try {
+                    s.hooks && (n = s.hooks.preprocess(n)), o = e(n, s);
+                } catch (e) {
+                    return l(e);
+                }
+                const a = function(e) {
+                    let n;
+                    if (!e) try {
+                        s.walkTokens && P.walkTokens(o, s.walkTokens), n = t(o, s), s.hooks && (n = s.hooks.postprocess(n));
+                    } catch (t) {
+                        e = t;
+                    }
+                    return s.highlight = i, e ? l(e) : r(null, n);
+                };
+                if (!i || i.length < 3) return a();
+                if (delete s.highlight, !o.length) return a();
+                let c = 0;
+                return P.walkTokens(o, function(e) {
+                    "code" === e.type && (c++, setTimeout(()=>{
+                        i(e.text, e.lang, function(t, n) {
+                            if (t) return a(t);
+                            null != n && n !== e.text && (e.text = n, e.escaped = !0), c--, 0 === c && a();
+                        });
+                    }, 0));
+                }), void (0 === c && a());
+            }
+            if (s.async) return Promise.resolve(s.hooks ? s.hooks.preprocess(n) : n).then((t)=>e(t, s)).then((e)=>s.walkTokens ? Promise.all(P.walkTokens(e, s.walkTokens)).then(()=>e) : e).then((e)=>t(e, s)).then((e)=>s.hooks ? s.hooks.postprocess(e) : e).catch(l);
+            try {
+                s.hooks && (n = s.hooks.preprocess(n));
+                const r = e(n, s);
+                s.walkTokens && P.walkTokens(r, s.walkTokens);
+                let i = t(r, s);
+                return s.hooks && (i = s.hooks.postprocess(i)), i;
+            } catch (e) {
+                return l(e);
+            }
+        };
+    }
+    function P(e, t, n) {
+        return M(v.lex, C.parse)(e, t, n);
+    }
+    P.options = P.setOptions = function(e) {
+        var n;
+        return P.defaults = {
+            ...P.defaults,
+            ...e
+        }, n = P.defaults, t = n, P;
+    }, P.getDefaults = e, P.defaults = t, P.use = function(...e) {
+        const t = P.defaults.extensions || {
+            renderers: {},
+            childTokens: {}
+        };
+        e.forEach((e)=>{
+            const n = {
+                ...e
+            };
+            if (n.async = P.defaults.async || n.async || !1, e.extensions && (e.extensions.forEach((e)=>{
+                if (!e.name) throw new Error("extension name required");
+                if (e.renderer) {
+                    const n = t.renderers[e.name];
+                    t.renderers[e.name] = n ? function(...t) {
+                        let s = e.renderer.apply(this, t);
+                        return !1 === s && (s = n.apply(this, t)), s;
+                    } : e.renderer;
+                }
+                if (e.tokenizer) {
+                    if (!e.level || "block" !== e.level && "inline" !== e.level) throw new Error("extension level must be 'block' or 'inline'");
+                    t[e.level] ? t[e.level].unshift(e.tokenizer) : t[e.level] = [
+                        e.tokenizer
+                    ], e.start && ("block" === e.level ? t.startBlock ? t.startBlock.push(e.start) : t.startBlock = [
+                        e.start
+                    ] : "inline" === e.level && (t.startInline ? t.startInline.push(e.start) : t.startInline = [
+                        e.start
+                    ]));
+                }
+                e.childTokens && (t.childTokens[e.name] = e.childTokens);
+            }), n.extensions = t), e.renderer) {
+                const t = P.defaults.renderer || new I;
+                for(const n in e.renderer){
+                    const s = t[n];
+                    t[n] = (...r)=>{
+                        let i = e.renderer[n].apply(t, r);
+                        return !1 === i && (i = s.apply(t, r)), i;
+                    };
+                }
+                n.renderer = t;
+            }
+            if (e.tokenizer) {
+                const t = P.defaults.tokenizer || new S;
+                for(const n in e.tokenizer){
+                    const s = t[n];
+                    t[n] = (...r)=>{
+                        let i = e.tokenizer[n].apply(t, r);
+                        return !1 === i && (i = s.apply(t, r)), i;
+                    };
+                }
+                n.tokenizer = t;
+            }
+            if (e.hooks) {
+                const t = P.defaults.hooks || new Z;
+                for(const n in e.hooks){
+                    const s = t[n];
+                    Z.passThroughHooks.has(n) ? t[n] = (r)=>{
+                        if (P.defaults.async) return Promise.resolve(e.hooks[n].call(t, r)).then((e)=>s.call(t, e));
+                        const i = e.hooks[n].call(t, r);
+                        return s.call(t, i);
+                    } : t[n] = (...r)=>{
+                        let i = e.hooks[n].apply(t, r);
+                        return !1 === i && (i = s.apply(t, r)), i;
+                    };
+                }
+                n.hooks = t;
+            }
+            if (e.walkTokens) {
+                const t = P.defaults.walkTokens;
+                n.walkTokens = function(n) {
+                    let s = [];
+                    return s.push(e.walkTokens.call(this, n)), t && (s = s.concat(t.call(this, n))), s;
+                };
+            }
+            P.setOptions(n);
+        });
+    }, P.walkTokens = function(e, t) {
+        let n = [];
+        for (const s of e)switch(n = n.concat(t.call(P, s)), s.type){
+            case "table":
+                for (const e of s.header)n = n.concat(P.walkTokens(e.tokens, t));
+                for (const e of s.rows)for (const s of e)n = n.concat(P.walkTokens(s.tokens, t));
+                break;
+            case "list":
+                n = n.concat(P.walkTokens(s.items, t));
+                break;
+            default:
+                P.defaults.extensions && P.defaults.extensions.childTokens && P.defaults.extensions.childTokens[s.type] ? P.defaults.extensions.childTokens[s.type].forEach(function(e) {
+                    n = n.concat(P.walkTokens(s[e], t));
+                }) : s.tokens && (n = n.concat(P.walkTokens(s.tokens, t)));
+        }
+        return n;
+    }, P.parseInline = M(v.lexInline, C.parseInline), P.Parser = C, P.parser = C.parse, P.Renderer = I, P.TextRenderer = q, P.Lexer = v, P.lexer = v.lex, P.Tokenizer = S, P.Slugger = L, P.Hooks = Z, P.parse = P, P.options, P.setOptions, P.use, P.walkTokens, P.parseInline, C.parse, v.lex;
+    /*!
+   * The reveal.js markdown plugin. Handles parsing of
+   * markdown inside of presentations as well as loading
+   * of external markdown documents.
+   */ const N = "__SCRIPT_END__", O = /\[\s*((\d*):)?\s*([\s\d,|-]*)\]/, D = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    };
+    return ()=>{
+        let e;
+        function t(e) {
+            let t = (e.querySelector("[data-template]") || e.querySelector("script") || e).textContent;
+            t = t.replace(new RegExp(N, "g"), "<\/script>");
+            const n = t.match(/^\n?(\s*)/)[1].length, s = t.match(/^\n?(\t*)/)[1].length;
+            return s > 0 ? t = t.replace(new RegExp("\\n?\\t{" + s + "}(.*)", "g"), function(e, t) {
+                return "\n" + t;
+            }) : n > 1 && (t = t.replace(new RegExp("\\n? {" + n + "}(.*)", "g"), function(e, t) {
+                return "\n" + t;
+            })), t;
+        }
+        function n(e) {
+            const t = e.attributes, n = [];
+            for(let e = 0, s = t.length; e < s; e++){
+                const s = t[e].name, r = t[e].value;
+                /data\-(markdown|separator|vertical|notes)/gi.test(s) || (r ? n.push(s + '="' + r + '"') : n.push(s));
+            }
+            return n.join(" ");
+        }
+        function s(t) {
+            const n = e?.getConfig?.().markdown;
+            return (t = t || {}).separator = t.separator || n?.separator || "\r?\n---\r?\n", t.verticalSeparator = t.verticalSeparator || n?.verticalSeparator || null, t.notesSeparator = t.notesSeparator || n?.notesSeparator || "^s*notes?:", t.attributes = t.attributes || "", t;
+        }
+        function r(e, t) {
+            t = s(t);
+            const n = e.split(new RegExp(t.notesSeparator, "mgi"));
+            return 2 === n.length && (e = n[0] + '<aside class="notes">' + P(n[1].trim()) + "</aside>"), '<script type="text/template">' + (e = e.replace(/<\/script>/g, N)) + "<\/script>";
+        }
+        function i(e, t) {
+            t = s(t);
+            const n = new RegExp(t.separator + (t.verticalSeparator ? "|" + t.verticalSeparator : ""), "mg"), i = new RegExp(t.separator);
+            let l, o, a, c = 0, h = !0, p = [];
+            for(; l = n.exec(e);)o = i.test(l[0]), !o && h && p.push([]), a = e.substring(c, l.index), o && h ? p.push(a) : p[p.length - 1].push(a), c = n.lastIndex, h = o;
+            (h ? p : p[p.length - 1]).push(e.substring(c));
+            let u = "";
+            for(let e = 0, n = p.length; e < n; e++)p[e] instanceof Array ? (u += "<section " + t.attributes + ">", p[e].forEach(function(e) {
+                u += "<section data-markdown>" + r(e, t) + "</section>";
+            }), u += "</section>") : u += "<section " + t.attributes + " data-markdown>" + r(p[e], t) + "</section>";
+            return u;
+        }
+        function l(e) {
+            return new Promise(function(s) {
+                const r = [];
+                [].slice.call(e.querySelectorAll("section[data-markdown]:not([data-markdown-parsed])")).forEach(function(e, s) {
+                    e.getAttribute("data-markdown").length ? r.push((function(e) {
+                        return new Promise(function(t, n) {
+                            const s = new XMLHttpRequest, r = e.getAttribute("data-markdown"), i = e.getAttribute("data-charset");
+                            null !== i && "" !== i && s.overrideMimeType("text/html; charset=" + i), s.onreadystatechange = (function(e, s) {
+                                4 === s.readyState && (s.status >= 200 && s.status < 300 || 0 === s.status ? t(s, r) : n(s, r));
+                            }).bind(this, e, s), s.open("GET", r, !0);
+                            try {
+                                s.send();
+                            } catch (e) {
+                                console.warn("Failed to get the Markdown file " + r + ". Make sure that the presentation and the file are served by a HTTP server and the file can be found there. " + e), t(s, r);
+                            }
+                        });
+                    })(e).then(function(t, s) {
+                        e.outerHTML = i(t.responseText, {
+                            separator: e.getAttribute("data-separator"),
+                            verticalSeparator: e.getAttribute("data-separator-vertical"),
+                            notesSeparator: e.getAttribute("data-separator-notes"),
+                            attributes: n(e)
+                        });
+                    }, function(t, n) {
+                        e.outerHTML = '<section data-state="alert">ERROR: The attempt to fetch ' + n + " failed with HTTP status " + t.status + ".Check your browser's JavaScript console for more details.<p>Remember that you need to serve the presentation HTML from a HTTP server.</p></section>";
+                    })) : e.outerHTML = i(t(e), {
+                        separator: e.getAttribute("data-separator"),
+                        verticalSeparator: e.getAttribute("data-separator-vertical"),
+                        notesSeparator: e.getAttribute("data-separator-notes"),
+                        attributes: n(e)
+                    });
+                }), Promise.all(r).then(s);
+            });
+        }
+        function o(e, t, n) {
+            const s = new RegExp(n, "mg"), r = new RegExp('([^"= ]+?)="([^"]+?)"|(data-[^"= ]+?)(?=[" ])', "mg");
+            let i, l, o = e.nodeValue;
+            if (i = s.exec(o)) {
+                const n = i[1];
+                for(o = o.substring(0, i.index) + o.substring(s.lastIndex), e.nodeValue = o; l = r.exec(n);)l[2] ? t.setAttribute(l[1], l[2]) : t.setAttribute(l[3], "");
+                return !0;
+            }
+            return !1;
+        }
+        function a(e, t, n, s, r) {
+            if (null !== t && void 0 !== t.childNodes && t.childNodes.length > 0) {
+                let n = t;
+                for(let i = 0; i < t.childNodes.length; i++){
+                    const l = t.childNodes[i];
+                    if (i > 0) {
+                        let e = i - 1;
+                        for(; e >= 0;){
+                            const s = t.childNodes[e];
+                            if ("function" == typeof s.setAttribute && "BR" !== s.tagName) {
+                                n = s;
+                                break;
+                            }
+                            e -= 1;
+                        }
+                    }
+                    let o = e;
+                    "section" === l.nodeName && (o = l, n = l), "function" != typeof l.setAttribute && l.nodeType !== Node.COMMENT_NODE || a(o, l, n, s, r);
+                }
+            }
+            t.nodeType === Node.COMMENT_NODE && !1 === o(t, n, s) && o(t, e, r);
+        }
+        function c() {
+            const n = e.getRevealElement().querySelectorAll("[data-markdown]:not([data-markdown-parsed])");
+            return [].slice.call(n).forEach(function(e) {
+                e.setAttribute("data-markdown-parsed", !0);
+                const n = e.querySelector("aside.notes"), s = t(e);
+                e.innerHTML = P(s), a(e, e, null, e.getAttribute("data-element-attributes") || e.parentNode.getAttribute("data-element-attributes") || "\\.element\\s*?(.+?)$", e.getAttribute("data-attributes") || e.parentNode.getAttribute("data-attributes") || "\\.slide:\\s*?(\\S.+?)$"), n && e.appendChild(n);
+            }), Promise.resolve();
+        }
+        return {
+            id: "markdown",
+            init: function(t) {
+                e = t;
+                let { renderer: n, animateLists: s, ...r } = e.getConfig().markdown || {};
+                return n || (n = new P.Renderer, n.code = (e, t)=>{
+                    let n = "", s = "";
+                    if (O.test(t)) {
+                        let e = t.match(O)[2];
+                        e && (n = `data-ln-start-from="${e.trim()}"`), s = t.match(O)[3].trim(), s = `data-line-numbers="${s}"`, t = t.replace(O, "").trim();
+                    }
+                    return `<pre><code ${s} ${n} class="${t}">${e = e.replace(/([&<>'"])/g, (e)=>D[e])}</code></pre>`;
+                }), !0 === s && (n.listitem = (e)=>`<li class="fragment">${e}</li>`), P.setOptions({
+                    renderer: n,
+                    ...r
+                }), l(e.getRevealElement()).then(c);
+            },
+            processSlides: l,
+            convertSlides: c,
+            slidify: i,
+            marked: P
+        };
+    };
+});
+
+
+var $572835421783e995$exports = {};
+!function(e, t) {
+    $572835421783e995$exports = t();
+}($572835421783e995$exports, function() {
+    "use strict";
+    /*!
+	 * reveal.js Zoom plugin
+	 */ const e = {
+        id: "zoom",
+        init: function(e) {
+            e.getRevealElement().addEventListener("mousedown", function(o) {
+                var n = /Linux/.test(window.navigator.platform) ? "ctrl" : "alt", i = (e.getConfig().zoomKey ? e.getConfig().zoomKey : n) + "Key", d = e.getConfig().zoomLevel ? e.getConfig().zoomLevel : 2;
+                o[i] && !e.isOverview() && (o.preventDefault(), t.to({
+                    x: o.clientX,
+                    y: o.clientY,
+                    scale: d,
+                    pan: !1
+                }));
+            });
+        },
+        destroy: ()=>{
+            t.reset();
+        }
+    };
+    var t = function() {
+        var e = 1, o = 0, n = 0, i = -1, d = -1, l = "transform" in document.body.style;
+        function s(t, o) {
+            var n = r();
+            if (t.width = t.width || 1, t.height = t.height || 1, t.x -= (window.innerWidth - t.width * o) / 2, t.y -= (window.innerHeight - t.height * o) / 2, l) {
+                if (1 === o) document.body.style.transform = "";
+                else {
+                    var i = n.x + "px " + n.y + "px", d = "translate(" + -t.x + "px," + -t.y + "px) scale(" + o + ")";
+                    document.body.style.transformOrigin = i, document.body.style.transform = d;
+                }
+            } else 1 === o ? (document.body.style.position = "", document.body.style.left = "", document.body.style.top = "", document.body.style.width = "", document.body.style.height = "", document.body.style.zoom = "") : (document.body.style.position = "relative", document.body.style.left = -(n.x + t.x) / o + "px", document.body.style.top = -(n.y + t.y) / o + "px", document.body.style.width = 100 * o + "%", document.body.style.height = 100 * o + "%", document.body.style.zoom = o);
+            e = o, document.documentElement.classList && (1 !== e ? document.documentElement.classList.add("zoomed") : document.documentElement.classList.remove("zoomed"));
+        }
+        function c() {
+            var t = .12 * window.innerWidth, i = .12 * window.innerHeight, d = r();
+            n < i ? window.scroll(d.x, d.y - 14 / e * (1 - n / i)) : n > window.innerHeight - i && window.scroll(d.x, d.y + (1 - (window.innerHeight - n) / i) * (14 / e)), o < t ? window.scroll(d.x - 14 / e * (1 - o / t), d.y) : o > window.innerWidth - t && window.scroll(d.x + (1 - (window.innerWidth - o) / t) * (14 / e), d.y);
+        }
+        function r() {
+            return {
+                x: void 0 !== window.scrollX ? window.scrollX : window.pageXOffset,
+                y: void 0 !== window.scrollY ? window.scrollY : window.pageYOffset
+            };
+        }
+        return l && (document.body.style.transition = "transform 0.8s ease"), document.addEventListener("keyup", function(o) {
+            1 !== e && 27 === o.keyCode && t.out();
+        }), document.addEventListener("mousemove", function(t) {
+            1 !== e && (o = t.clientX, n = t.clientY);
+        }), {
+            to: function(o) {
+                if (1 !== e) t.out();
+                else {
+                    if (o.x = o.x || 0, o.y = o.y || 0, o.element) {
+                        var n = o.element.getBoundingClientRect();
+                        o.x = n.left - 20, o.y = n.top - 20, o.width = n.width + 40, o.height = n.height + 40;
+                    }
+                    void 0 !== o.width && void 0 !== o.height && (o.scale = Math.max(Math.min(window.innerWidth / o.width, window.innerHeight / o.height), 1)), o.scale > 1 && (o.x *= o.scale, o.y *= o.scale, s(o, o.scale), !1 !== o.pan && (i = setTimeout(function() {
+                        d = setInterval(c, 1e3 / 60);
+                    }, 800)));
+                }
+            },
+            out: function() {
+                clearTimeout(i), clearInterval(d), s({
+                    x: 0,
+                    y: 0
+                }, 1), e = 1;
+            },
+            magnify: function(e) {
+                this.to(e);
+            },
+            reset: function() {
+                this.out();
+            },
+            zoomLevel: function() {
+                return e;
+            }
+        };
+    }();
+    /*!
+	 * zoom.js 0.3 (modified for use with reveal.js)
+	 * http://lab.hakim.se/zoom-js
+	 * MIT licensed
+	 *
+	 * Copyright (C) 2011-2014 Hakim El Hattab, http://hakim.se
+	 */ return ()=>e;
+});
+
+
+var $15a5915d96260513$exports = {};
+!function(t, e) {
+    $15a5915d96260513$exports = e();
+}($15a5915d96260513$exports, function() {
+    "use strict";
+    function t() {
+        return {
+            async: !1,
+            baseUrl: null,
+            breaks: !1,
+            extensions: null,
+            gfm: !0,
+            headerIds: !0,
+            headerPrefix: "",
+            highlight: null,
+            hooks: null,
+            langPrefix: "language-",
+            mangle: !0,
+            pedantic: !1,
+            renderer: null,
+            sanitize: !1,
+            sanitizer: null,
+            silent: !1,
+            smartypants: !1,
+            tokenizer: null,
+            walkTokens: null,
+            xhtml: !1
+        };
+    }
+    let e = {
+        async: !1,
+        baseUrl: null,
+        breaks: !1,
+        extensions: null,
+        gfm: !0,
+        headerIds: !0,
+        headerPrefix: "",
+        highlight: null,
+        hooks: null,
+        langPrefix: "language-",
+        mangle: !0,
+        pedantic: !1,
+        renderer: null,
+        sanitize: !1,
+        sanitizer: null,
+        silent: !1,
+        smartypants: !1,
+        tokenizer: null,
+        walkTokens: null,
+        xhtml: !1
+    };
+    const n = /[&<>"']/, i = new RegExp(n.source, "g"), s = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/, r = new RegExp(s.source, "g"), a = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    }, o = (t)=>a[t];
+    function l(t, e) {
+        if (e) {
+            if (n.test(t)) return t.replace(i, o);
+        } else if (s.test(t)) return t.replace(r, o);
+        return t;
+    }
+    const c = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/gi;
+    function p(t) {
+        return t.replace(c, (t, e)=>"colon" === (e = e.toLowerCase()) ? ":" : "#" === e.charAt(0) ? "x" === e.charAt(1) ? String.fromCharCode(parseInt(e.substring(2), 16)) : String.fromCharCode(+e.substring(1)) : "");
+    }
+    const u = /(^|[^\[])\^/g;
+    function d(t, e) {
+        t = "string" == typeof t ? t : t.source, e = e || "";
+        const n = {
+            replace: (e, i)=>(i = (i = i.source || i).replace(u, "$1"), t = t.replace(e, i), n),
+            getRegex: ()=>new RegExp(t, e)
+        };
+        return n;
+    }
+    const h = /[^\w:]/g, g = /^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;
+    function m(t, e, n) {
+        if (t) {
+            let t;
+            try {
+                t = decodeURIComponent(p(n)).replace(h, "").toLowerCase();
+            } catch (t) {
+                return null;
+            }
+            if (0 === t.indexOf("javascript:") || 0 === t.indexOf("vbscript:") || 0 === t.indexOf("data:")) return null;
+        }
+        e && !g.test(n) && (n = function(t, e) {
+            f[" " + t] || (k.test(t) ? f[" " + t] = t + "/" : f[" " + t] = v(t, "/", !0));
+            t = f[" " + t];
+            const n = -1 === t.indexOf(":");
+            return "//" === e.substring(0, 2) ? n ? e : t.replace(w, "$1") + e : "/" === e.charAt(0) ? n ? e : t.replace(x, "$1") + e : t + e;
+        }(e, n));
+        try {
+            n = encodeURI(n).replace(/%25/g, "%");
+        } catch (t) {
+            return null;
+        }
+        return n;
+    }
+    const f = {}, k = /^[^:]+:\/*[^/]*$/, w = /^([^:]+:)[\s\S]*$/, x = /^([^:]+:\/*[^/]*)[\s\S]*$/;
+    const b = {
+        exec: function() {}
+    };
+    function y(t, e) {
+        const n = t.replace(/\|/g, (t, e, n)=>{
+            let i = !1, s = e;
+            for(; --s >= 0 && "\\" === n[s];)i = !i;
+            return i ? "|" : " |";
+        }).split(/ \|/);
+        let i = 0;
+        if (n[0].trim() || n.shift(), n.length > 0 && !n[n.length - 1].trim() && n.pop(), n.length > e) n.splice(e);
+        else for(; n.length < e;)n.push("");
+        for(; i < n.length; i++)n[i] = n[i].trim().replace(/\\\|/g, "|");
+        return n;
+    }
+    function v(t, e, n) {
+        const i = t.length;
+        if (0 === i) return "";
+        let s = 0;
+        for(; s < i;){
+            const r = t.charAt(i - s - 1);
+            if (r !== e || n) {
+                if (r === e || !n) break;
+                s++;
+            } else s++;
+        }
+        return t.slice(0, i - s);
+    }
+    function S(t, e) {
+        if (e < 1) return "";
+        let n = "";
+        for(; e > 1;)1 & e && (n += t), e >>= 1, t += t;
+        return n + t;
+    }
+    function T(t, e, n, i) {
+        const s = e.href, r = e.title ? l(e.title) : null, a = t[1].replace(/\\([\[\]])/g, "$1");
+        if ("!" !== t[0].charAt(0)) {
+            i.state.inLink = !0;
+            const t = {
+                type: "link",
+                raw: n,
+                href: s,
+                title: r,
+                text: a,
+                tokens: i.inlineTokens(a)
+            };
+            return i.state.inLink = !1, t;
+        }
+        return {
+            type: "image",
+            raw: n,
+            href: s,
+            title: r,
+            text: l(a)
+        };
+    }
+    class _ {
+        constructor(t){
+            this.options = t || e;
+        }
+        space(t) {
+            const e = this.rules.block.newline.exec(t);
+            if (e && e[0].length > 0) return {
+                type: "space",
+                raw: e[0]
+            };
+        }
+        code(t) {
+            const e = this.rules.block.code.exec(t);
+            if (e) {
+                const t = e[0].replace(/^ {1,4}/gm, "");
+                return {
+                    type: "code",
+                    raw: e[0],
+                    codeBlockStyle: "indented",
+                    text: this.options.pedantic ? t : v(t, "\n")
+                };
+            }
+        }
+        fences(t) {
+            const e = this.rules.block.fences.exec(t);
+            if (e) {
+                const t = e[0], n = function(t, e) {
+                    const n = t.match(/^(\s+)(?:```)/);
+                    if (null === n) return e;
+                    const i = n[1];
+                    return e.split("\n").map((t)=>{
+                        const e = t.match(/^\s+/);
+                        if (null === e) return t;
+                        const [n] = e;
+                        return n.length >= i.length ? t.slice(i.length) : t;
+                    }).join("\n");
+                }(t, e[3] || "");
+                return {
+                    type: "code",
+                    raw: t,
+                    lang: e[2] ? e[2].trim().replace(this.rules.inline._escapes, "$1") : e[2],
+                    text: n
+                };
+            }
+        }
+        heading(t) {
+            const e = this.rules.block.heading.exec(t);
+            if (e) {
+                let t = e[2].trim();
+                if (/#$/.test(t)) {
+                    const e = v(t, "#");
+                    this.options.pedantic ? t = e.trim() : e && !/ $/.test(e) || (t = e.trim());
+                }
+                return {
+                    type: "heading",
+                    raw: e[0],
+                    depth: e[1].length,
+                    text: t,
+                    tokens: this.lexer.inline(t)
+                };
+            }
+        }
+        hr(t) {
+            const e = this.rules.block.hr.exec(t);
+            if (e) return {
+                type: "hr",
+                raw: e[0]
+            };
+        }
+        blockquote(t) {
+            const e = this.rules.block.blockquote.exec(t);
+            if (e) {
+                const t = e[0].replace(/^ *>[ \t]?/gm, ""), n = this.lexer.state.top;
+                this.lexer.state.top = !0;
+                const i = this.lexer.blockTokens(t);
+                return this.lexer.state.top = n, {
+                    type: "blockquote",
+                    raw: e[0],
+                    tokens: i,
+                    text: t
+                };
+            }
+        }
+        list(t) {
+            let e = this.rules.block.list.exec(t);
+            if (e) {
+                let n, i, s, r, a, o, l, c, p, u, d, h, g = e[1].trim();
+                const m = g.length > 1, f = {
+                    type: "list",
+                    raw: "",
+                    ordered: m,
+                    start: m ? +g.slice(0, -1) : "",
+                    loose: !1,
+                    items: []
+                };
+                g = m ? `\\d{1,9}\\${g.slice(-1)}` : `\\${g}`, this.options.pedantic && (g = m ? g : "[*+-]");
+                const k = new RegExp(`^( {0,3}${g})((?:[\t ][^\\n]*)?(?:\\n|$))`);
+                for(; t && (h = !1, e = k.exec(t)) && !this.rules.block.hr.test(t);){
+                    if (n = e[0], t = t.substring(n.length), c = e[2].split("\n", 1)[0].replace(/^\t+/, (t)=>" ".repeat(3 * t.length)), p = t.split("\n", 1)[0], this.options.pedantic ? (r = 2, d = c.trimLeft()) : (r = e[2].search(/[^ ]/), r = r > 4 ? 1 : r, d = c.slice(r), r += e[1].length), o = !1, !c && /^ *$/.test(p) && (n += p + "\n", t = t.substring(p.length + 1), h = !0), !h) {
+                        const e = new RegExp(`^ {0,${Math.min(3, r - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ \t][^\\n]*)?(?:\\n|$))`), i = new RegExp(`^ {0,${Math.min(3, r - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`), s = new RegExp(`^ {0,${Math.min(3, r - 1)}}(?:\`\`\`|~~~)`), a = new RegExp(`^ {0,${Math.min(3, r - 1)}}#`);
+                        for(; t && (u = t.split("\n", 1)[0], p = u, this.options.pedantic && (p = p.replace(/^ {1,4}(?=( {4})*[^ ])/g, "  ")), !s.test(p)) && !a.test(p) && !e.test(p) && !i.test(t);){
+                            if (p.search(/[^ ]/) >= r || !p.trim()) d += "\n" + p.slice(r);
+                            else {
+                                if (o) break;
+                                if (c.search(/[^ ]/) >= 4) break;
+                                if (s.test(c)) break;
+                                if (a.test(c)) break;
+                                if (i.test(c)) break;
+                                d += "\n" + p;
+                            }
+                            o || p.trim() || (o = !0), n += u + "\n", t = t.substring(u.length + 1), c = p.slice(r);
+                        }
+                    }
+                    f.loose || (l ? f.loose = !0 : /\n *\n *$/.test(n) && (l = !0)), this.options.gfm && (i = /^\[[ xX]\] /.exec(d), i && (s = "[ ] " !== i[0], d = d.replace(/^\[[ xX]\] +/, ""))), f.items.push({
+                        type: "list_item",
+                        raw: n,
+                        task: !!i,
+                        checked: s,
+                        loose: !1,
+                        text: d
+                    }), f.raw += n;
+                }
+                f.items[f.items.length - 1].raw = n.trimRight(), f.items[f.items.length - 1].text = d.trimRight(), f.raw = f.raw.trimRight();
+                const w = f.items.length;
+                for(a = 0; a < w; a++)if (this.lexer.state.top = !1, f.items[a].tokens = this.lexer.blockTokens(f.items[a].text, []), !f.loose) {
+                    const t = f.items[a].tokens.filter((t)=>"space" === t.type), e = t.length > 0 && t.some((t)=>/\n.*\n/.test(t.raw));
+                    f.loose = e;
+                }
+                if (f.loose) for(a = 0; a < w; a++)f.items[a].loose = !0;
+                return f;
+            }
+        }
+        html(t) {
+            const e = this.rules.block.html.exec(t);
+            if (e) {
+                const t = {
+                    type: "html",
+                    raw: e[0],
+                    pre: !this.options.sanitizer && ("pre" === e[1] || "script" === e[1] || "style" === e[1]),
+                    text: e[0]
+                };
+                if (this.options.sanitize) {
+                    const n = this.options.sanitizer ? this.options.sanitizer(e[0]) : l(e[0]);
+                    t.type = "paragraph", t.text = n, t.tokens = this.lexer.inline(n);
+                }
+                return t;
+            }
+        }
+        def(t) {
+            const e = this.rules.block.def.exec(t);
+            if (e) {
+                const t = e[1].toLowerCase().replace(/\s+/g, " "), n = e[2] ? e[2].replace(/^<(.*)>$/, "$1").replace(this.rules.inline._escapes, "$1") : "", i = e[3] ? e[3].substring(1, e[3].length - 1).replace(this.rules.inline._escapes, "$1") : e[3];
+                return {
+                    type: "def",
+                    tag: t,
+                    raw: e[0],
+                    href: n,
+                    title: i
+                };
+            }
+        }
+        table(t) {
+            const e = this.rules.block.table.exec(t);
+            if (e) {
+                const t = {
+                    type: "table",
+                    header: y(e[1]).map((t)=>({
+                            text: t
+                        })),
+                    align: e[2].replace(/^ *|\| *$/g, "").split(/ *\| */),
+                    rows: e[3] && e[3].trim() ? e[3].replace(/\n[ \t]*$/, "").split("\n") : []
+                };
+                if (t.header.length === t.align.length) {
+                    t.raw = e[0];
+                    let n, i, s, r, a = t.align.length;
+                    for(n = 0; n < a; n++)/^ *-+: *$/.test(t.align[n]) ? t.align[n] = "right" : /^ *:-+: *$/.test(t.align[n]) ? t.align[n] = "center" : /^ *:-+ *$/.test(t.align[n]) ? t.align[n] = "left" : t.align[n] = null;
+                    for(a = t.rows.length, n = 0; n < a; n++)t.rows[n] = y(t.rows[n], t.header.length).map((t)=>({
+                            text: t
+                        }));
+                    for(a = t.header.length, i = 0; i < a; i++)t.header[i].tokens = this.lexer.inline(t.header[i].text);
+                    for(a = t.rows.length, i = 0; i < a; i++)for(r = t.rows[i], s = 0; s < r.length; s++)r[s].tokens = this.lexer.inline(r[s].text);
+                    return t;
+                }
+            }
+        }
+        lheading(t) {
+            const e = this.rules.block.lheading.exec(t);
+            if (e) return {
+                type: "heading",
+                raw: e[0],
+                depth: "=" === e[2].charAt(0) ? 1 : 2,
+                text: e[1],
+                tokens: this.lexer.inline(e[1])
+            };
+        }
+        paragraph(t) {
+            const e = this.rules.block.paragraph.exec(t);
+            if (e) {
+                const t = "\n" === e[1].charAt(e[1].length - 1) ? e[1].slice(0, -1) : e[1];
+                return {
+                    type: "paragraph",
+                    raw: e[0],
+                    text: t,
+                    tokens: this.lexer.inline(t)
+                };
+            }
+        }
+        text(t) {
+            const e = this.rules.block.text.exec(t);
+            if (e) return {
+                type: "text",
+                raw: e[0],
+                text: e[0],
+                tokens: this.lexer.inline(e[0])
+            };
+        }
+        escape(t) {
+            const e = this.rules.inline.escape.exec(t);
+            if (e) return {
+                type: "escape",
+                raw: e[0],
+                text: l(e[1])
+            };
+        }
+        tag(t) {
+            const e = this.rules.inline.tag.exec(t);
+            if (e) return !this.lexer.state.inLink && /^<a /i.test(e[0]) ? this.lexer.state.inLink = !0 : this.lexer.state.inLink && /^<\/a>/i.test(e[0]) && (this.lexer.state.inLink = !1), !this.lexer.state.inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(e[0]) ? this.lexer.state.inRawBlock = !0 : this.lexer.state.inRawBlock && /^<\/(pre|code|kbd|script)(\s|>)/i.test(e[0]) && (this.lexer.state.inRawBlock = !1), {
+                type: this.options.sanitize ? "text" : "html",
+                raw: e[0],
+                inLink: this.lexer.state.inLink,
+                inRawBlock: this.lexer.state.inRawBlock,
+                text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(e[0]) : l(e[0]) : e[0]
+            };
+        }
+        link(t) {
+            const e = this.rules.inline.link.exec(t);
+            if (e) {
+                const t = e[2].trim();
+                if (!this.options.pedantic && /^</.test(t)) {
+                    if (!/>$/.test(t)) return;
+                    const e = v(t.slice(0, -1), "\\");
+                    if ((t.length - e.length) % 2 == 0) return;
+                } else {
+                    const t = function(t, e) {
+                        if (-1 === t.indexOf(e[1])) return -1;
+                        const n = t.length;
+                        let i = 0, s = 0;
+                        for(; s < n; s++)if ("\\" === t[s]) s++;
+                        else if (t[s] === e[0]) i++;
+                        else if (t[s] === e[1] && (i--, i < 0)) return s;
+                        return -1;
+                    }(e[2], "()");
+                    if (t > -1) {
+                        const n = (0 === e[0].indexOf("!") ? 5 : 4) + e[1].length + t;
+                        e[2] = e[2].substring(0, t), e[0] = e[0].substring(0, n).trim(), e[3] = "";
+                    }
+                }
+                let n = e[2], i = "";
+                if (this.options.pedantic) {
+                    const t = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(n);
+                    t && (n = t[1], i = t[3]);
+                } else i = e[3] ? e[3].slice(1, -1) : "";
+                return n = n.trim(), /^</.test(n) && (n = this.options.pedantic && !/>$/.test(t) ? n.slice(1) : n.slice(1, -1)), T(e, {
+                    href: n ? n.replace(this.rules.inline._escapes, "$1") : n,
+                    title: i ? i.replace(this.rules.inline._escapes, "$1") : i
+                }, e[0], this.lexer);
+            }
+        }
+        reflink(t, e) {
+            let n;
+            if ((n = this.rules.inline.reflink.exec(t)) || (n = this.rules.inline.nolink.exec(t))) {
+                let t = (n[2] || n[1]).replace(/\s+/g, " ");
+                if (t = e[t.toLowerCase()], !t) {
+                    const t = n[0].charAt(0);
+                    return {
+                        type: "text",
+                        raw: t,
+                        text: t
+                    };
+                }
+                return T(n, t, n[0], this.lexer);
+            }
+        }
+        emStrong(t, e, n = "") {
+            let i = this.rules.inline.emStrong.lDelim.exec(t);
+            if (!i) return;
+            if (i[3] && n.match(/[\p{L}\p{N}]/u)) return;
+            const s = i[1] || i[2] || "";
+            if (!s || s && ("" === n || this.rules.inline.punctuation.exec(n))) {
+                const n = i[0].length - 1;
+                let s, r, a = n, o = 0;
+                const l = "*" === i[0][0] ? this.rules.inline.emStrong.rDelimAst : this.rules.inline.emStrong.rDelimUnd;
+                for(l.lastIndex = 0, e = e.slice(-1 * t.length + n); null != (i = l.exec(e));){
+                    if (s = i[1] || i[2] || i[3] || i[4] || i[5] || i[6], !s) continue;
+                    if (r = s.length, i[3] || i[4]) {
+                        a += r;
+                        continue;
+                    }
+                    if ((i[5] || i[6]) && n % 3 && !((n + r) % 3)) {
+                        o += r;
+                        continue;
+                    }
+                    if (a -= r, a > 0) continue;
+                    r = Math.min(r, r + a + o);
+                    const e = t.slice(0, n + i.index + (i[0].length - s.length) + r);
+                    if (Math.min(n, r) % 2) {
+                        const t = e.slice(1, -1);
+                        return {
+                            type: "em",
+                            raw: e,
+                            text: t,
+                            tokens: this.lexer.inlineTokens(t)
+                        };
+                    }
+                    const l = e.slice(2, -2);
+                    return {
+                        type: "strong",
+                        raw: e,
+                        text: l,
+                        tokens: this.lexer.inlineTokens(l)
+                    };
+                }
+            }
+        }
+        codespan(t) {
+            const e = this.rules.inline.code.exec(t);
+            if (e) {
+                let t = e[2].replace(/\n/g, " ");
+                const n = /[^ ]/.test(t), i = /^ /.test(t) && / $/.test(t);
+                return n && i && (t = t.substring(1, t.length - 1)), t = l(t, !0), {
+                    type: "codespan",
+                    raw: e[0],
+                    text: t
+                };
+            }
+        }
+        br(t) {
+            const e = this.rules.inline.br.exec(t);
+            if (e) return {
+                type: "br",
+                raw: e[0]
+            };
+        }
+        del(t) {
+            const e = this.rules.inline.del.exec(t);
+            if (e) return {
+                type: "del",
+                raw: e[0],
+                text: e[2],
+                tokens: this.lexer.inlineTokens(e[2])
+            };
+        }
+        autolink(t, e) {
+            const n = this.rules.inline.autolink.exec(t);
+            if (n) {
+                let t, i;
+                return "@" === n[2] ? (t = l(this.options.mangle ? e(n[1]) : n[1]), i = "mailto:" + t) : (t = l(n[1]), i = t), {
+                    type: "link",
+                    raw: n[0],
+                    text: t,
+                    href: i,
+                    tokens: [
+                        {
+                            type: "text",
+                            raw: t,
+                            text: t
+                        }
+                    ]
+                };
+            }
+        }
+        url(t, e) {
+            let n;
+            if (n = this.rules.inline.url.exec(t)) {
+                let t, i;
+                if ("@" === n[2]) t = l(this.options.mangle ? e(n[0]) : n[0]), i = "mailto:" + t;
+                else {
+                    let e;
+                    do e = n[0], n[0] = this.rules.inline._backpedal.exec(n[0])[0];
+                    while (e !== n[0]);
+                    t = l(n[0]), i = "www." === n[1] ? "http://" + n[0] : n[0];
+                }
+                return {
+                    type: "link",
+                    raw: n[0],
+                    text: t,
+                    href: i,
+                    tokens: [
+                        {
+                            type: "text",
+                            raw: t,
+                            text: t
+                        }
+                    ]
+                };
+            }
+        }
+        inlineText(t, e) {
+            const n = this.rules.inline.text.exec(t);
+            if (n) {
+                let t;
+                return t = this.lexer.state.inRawBlock ? this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(n[0]) : l(n[0]) : n[0] : l(this.options.smartypants ? e(n[0]) : n[0]), {
+                    type: "text",
+                    raw: n[0],
+                    text: t
+                };
+            }
+        }
+    }
+    const z = {
+        newline: /^(?: *(?:\n|$))+/,
+        code: /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,
+        fences: /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,
+        hr: /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,
+        heading: /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
+        blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
+        list: /^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/,
+        html: "^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))",
+        def: /^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/,
+        table: b,
+        lheading: /^((?:.|\n(?!\n))+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+        _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,
+        text: /^[^\n]+/,
+        _label: /(?!\s*\])(?:\\.|[^\[\]\\])+/,
+        _title: /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/
+    };
+    z.def = d(z.def).replace("label", z._label).replace("title", z._title).getRegex(), z.bullet = /(?:[*+-]|\d{1,9}[.)])/, z.listItemStart = d(/^( *)(bull) */).replace("bull", z.bullet).getRegex(), z.list = d(z.list).replace(/bull/g, z.bullet).replace("hr", "\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))").replace("def", "\\n+(?=" + z.def.source + ")").getRegex(), z._tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul", z._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/, z.html = d(z.html, "i").replace("comment", z._comment).replace("tag", z._tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex(), z.paragraph = d(z._paragraph).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", z._tag).getRegex(), z.blockquote = d(z.blockquote).replace("paragraph", z.paragraph).getRegex(), z.normal = {
+        ...z
+    }, z.gfm = {
+        ...z.normal,
+        table: "^ *([^\\n ].*\\|.*)\\n {0,3}(?:\\| *)?(:?-+:? *(?:\\| *:?-+:? *)*)(?:\\| *)?(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)"
+    }, z.gfm.table = d(z.gfm.table).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", z._tag).getRegex(), z.gfm.paragraph = d(z._paragraph).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("table", z.gfm.table).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", z._tag).getRegex(), z.pedantic = {
+        ...z.normal,
+        html: d("^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:\"[^\"]*\"|'[^']*'|\\s[^'\"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))").replace("comment", z._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+        def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+        heading: /^(#{1,6})(.*)(?:\n+|$)/,
+        fences: b,
+        lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+        paragraph: d(z.normal._paragraph).replace("hr", z.hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", z.lheading).replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").getRegex()
+    };
+    const $ = {
+        escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
+        autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
+        url: b,
+        tag: "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>",
+        link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
+        reflink: /^!?\[(label)\]\[(ref)\]/,
+        nolink: /^!?\[(ref)\](?:\[\])?/,
+        reflinkSearch: "reflink|nolink(?!\\()",
+        emStrong: {
+            lDelim: /^(?:\*+(?:([punct_])|[^\s*]))|^_+(?:([punct*])|([^\s_]))/,
+            rDelimAst: /^(?:[^_*\\]|\\.)*?\_\_(?:[^_*\\]|\\.)*?\*(?:[^_*\\]|\\.)*?(?=\_\_)|(?:[^*\\]|\\.)+(?=[^*])|[punct_](\*+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\*+)(?=[punct_\s]|$)|[punct_\s](\*+)(?=[^punct*_\s])|[\s](\*+)(?=[punct_])|[punct_](\*+)(?=[punct_])|(?:[^punct*_\s\\]|\\.)(\*+)(?=[^punct*_\s])/,
+            rDelimUnd: /^(?:[^_*\\]|\\.)*?\*\*(?:[^_*\\]|\\.)*?\_(?:[^_*\\]|\\.)*?(?=\*\*)|(?:[^_\\]|\\.)+(?=[^_])|[punct*](\_+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\_+)(?=[punct*\s]|$)|[punct*\s](\_+)(?=[^punct*_\s])|[\s](\_+)(?=[punct*])|[punct*](\_+)(?=[punct*])/
+        },
+        code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
+        br: /^( {2,}|\\)\n(?!\s*$)/,
+        del: b,
+        text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
+        punctuation: /^([\spunctuation])/
+    };
+    function E(t) {
+        return t.replace(/---/g, "\u2014").replace(/--/g, "\u2013").replace(/(^|[-\u2014/(\[{"\s])'/g, "$1\u2018").replace(/'/g, "\u2019").replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1\u201C").replace(/"/g, "\u201D").replace(/\.{3}/g, "\u2026");
+    }
+    function A(t) {
+        let e, n, i = "";
+        const s = t.length;
+        for(e = 0; e < s; e++)n = t.charCodeAt(e), Math.random() > .5 && (n = "x" + n.toString(16)), i += "&#" + n + ";";
+        return i;
+    }
+    $._punctuation = "!\"#$%&'()+\\-.,/:;<=>?@\\[\\]`^{|}~", $.punctuation = d($.punctuation).replace(/punctuation/g, $._punctuation).getRegex(), $.blockSkip = /\[[^\]]*?\]\([^\)]*?\)|`[^`]*?`|<[^>]*?>/g, $.escapedEmSt = /(?:^|[^\\])(?:\\\\)*\\[*_]/g, $._comment = d(z._comment).replace("(?:--\x3e|$)", "--\x3e").getRegex(), $.emStrong.lDelim = d($.emStrong.lDelim).replace(/punct/g, $._punctuation).getRegex(), $.emStrong.rDelimAst = d($.emStrong.rDelimAst, "g").replace(/punct/g, $._punctuation).getRegex(), $.emStrong.rDelimUnd = d($.emStrong.rDelimUnd, "g").replace(/punct/g, $._punctuation).getRegex(), $._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g, $._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/, $._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/, $.autolink = d($.autolink).replace("scheme", $._scheme).replace("email", $._email).getRegex(), $._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/, $.tag = d($.tag).replace("comment", $._comment).replace("attribute", $._attribute).getRegex(), $._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/, $._href = /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/, $._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/, $.link = d($.link).replace("label", $._label).replace("href", $._href).replace("title", $._title).getRegex(), $.reflink = d($.reflink).replace("label", $._label).replace("ref", z._label).getRegex(), $.nolink = d($.nolink).replace("ref", z._label).getRegex(), $.reflinkSearch = d($.reflinkSearch, "g").replace("reflink", $.reflink).replace("nolink", $.nolink).getRegex(), $.normal = {
+        ...$
+    }, $.pedantic = {
+        ...$.normal,
+        strong: {
+            start: /^__|\*\*/,
+            middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
+            endAst: /\*\*(?!\*)/g,
+            endUnd: /__(?!_)/g
+        },
+        em: {
+            start: /^_|\*/,
+            middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,
+            endAst: /\*(?!\*)/g,
+            endUnd: /_(?!_)/g
+        },
+        link: d(/^!?\[(label)\]\((.*?)\)/).replace("label", $._label).getRegex(),
+        reflink: d(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", $._label).getRegex()
+    }, $.gfm = {
+        ...$.normal,
+        escape: d($.escape).replace("])", "~|])").getRegex(),
+        _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
+        url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
+        _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+        del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
+        text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
+    }, $.gfm.url = d($.gfm.url, "i").replace("email", $.gfm._extended_email).getRegex(), $.breaks = {
+        ...$.gfm,
+        br: d($.br).replace("{2,}", "*").getRegex(),
+        text: d($.gfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+    };
+    class R {
+        constructor(t){
+            this.tokens = [], this.tokens.links = Object.create(null), this.options = t || e, this.options.tokenizer = this.options.tokenizer || new _, this.tokenizer = this.options.tokenizer, this.tokenizer.options = this.options, this.tokenizer.lexer = this, this.inlineQueue = [], this.state = {
+                inLink: !1,
+                inRawBlock: !1,
+                top: !0
+            };
+            const n = {
+                block: z.normal,
+                inline: $.normal
+            };
+            this.options.pedantic ? (n.block = z.pedantic, n.inline = $.pedantic) : this.options.gfm && (n.block = z.gfm, this.options.breaks ? n.inline = $.breaks : n.inline = $.gfm), this.tokenizer.rules = n;
+        }
+        static get rules() {
+            return {
+                block: z,
+                inline: $
+            };
+        }
+        static lex(t, e) {
+            return new R(e).lex(t);
+        }
+        static lexInline(t, e) {
+            return new R(e).inlineTokens(t);
+        }
+        lex(t) {
+            let e;
+            for(t = t.replace(/\r\n|\r/g, "\n"), this.blockTokens(t, this.tokens); e = this.inlineQueue.shift();)this.inlineTokens(e.src, e.tokens);
+            return this.tokens;
+        }
+        blockTokens(t, e = []) {
+            let n, i, s, r;
+            for(t = this.options.pedantic ? t.replace(/\t/g, "    ").replace(/^ +$/gm, "") : t.replace(/^( *)(\t+)/gm, (t, e, n)=>e + "    ".repeat(n.length)); t;)if (!(this.options.extensions && this.options.extensions.block && this.options.extensions.block.some((i)=>!!(n = i.call({
+                    lexer: this
+                }, t, e)) && (t = t.substring(n.raw.length), e.push(n), !0)))) {
+                if (n = this.tokenizer.space(t)) t = t.substring(n.raw.length), 1 === n.raw.length && e.length > 0 ? e[e.length - 1].raw += "\n" : e.push(n);
+                else if (n = this.tokenizer.code(t)) t = t.substring(n.raw.length), i = e[e.length - 1], !i || "paragraph" !== i.type && "text" !== i.type ? e.push(n) : (i.raw += "\n" + n.raw, i.text += "\n" + n.text, this.inlineQueue[this.inlineQueue.length - 1].src = i.text);
+                else if (n = this.tokenizer.fences(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.heading(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.hr(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.blockquote(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.list(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.html(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.def(t)) t = t.substring(n.raw.length), i = e[e.length - 1], !i || "paragraph" !== i.type && "text" !== i.type ? this.tokens.links[n.tag] || (this.tokens.links[n.tag] = {
+                    href: n.href,
+                    title: n.title
+                }) : (i.raw += "\n" + n.raw, i.text += "\n" + n.raw, this.inlineQueue[this.inlineQueue.length - 1].src = i.text);
+                else if (n = this.tokenizer.table(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.lheading(t)) t = t.substring(n.raw.length), e.push(n);
+                else {
+                    if (s = t, this.options.extensions && this.options.extensions.startBlock) {
+                        let e = 1 / 0;
+                        const n = t.slice(1);
+                        let i;
+                        this.options.extensions.startBlock.forEach(function(t) {
+                            i = t.call({
+                                lexer: this
+                            }, n), "number" == typeof i && i >= 0 && (e = Math.min(e, i));
+                        }), e < 1 / 0 && e >= 0 && (s = t.substring(0, e + 1));
+                    }
+                    if (this.state.top && (n = this.tokenizer.paragraph(s))) i = e[e.length - 1], r && "paragraph" === i.type ? (i.raw += "\n" + n.raw, i.text += "\n" + n.text, this.inlineQueue.pop(), this.inlineQueue[this.inlineQueue.length - 1].src = i.text) : e.push(n), r = s.length !== t.length, t = t.substring(n.raw.length);
+                    else if (n = this.tokenizer.text(t)) t = t.substring(n.raw.length), i = e[e.length - 1], i && "text" === i.type ? (i.raw += "\n" + n.raw, i.text += "\n" + n.text, this.inlineQueue.pop(), this.inlineQueue[this.inlineQueue.length - 1].src = i.text) : e.push(n);
+                    else if (t) {
+                        const e = "Infinite loop on byte: " + t.charCodeAt(0);
+                        if (this.options.silent) {
+                            console.error(e);
+                            break;
+                        }
+                        throw new Error(e);
+                    }
+                }
+            }
+            return this.state.top = !0, e;
+        }
+        inline(t, e = []) {
+            return this.inlineQueue.push({
+                src: t,
+                tokens: e
+            }), e;
+        }
+        inlineTokens(t, e = []) {
+            let n, i, s, r, a, o, l = t;
+            if (this.tokens.links) {
+                const t = Object.keys(this.tokens.links);
+                if (t.length > 0) for(; null != (r = this.tokenizer.rules.inline.reflinkSearch.exec(l));)t.includes(r[0].slice(r[0].lastIndexOf("[") + 1, -1)) && (l = l.slice(0, r.index) + "[" + S("a", r[0].length - 2) + "]" + l.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex));
+            }
+            for(; null != (r = this.tokenizer.rules.inline.blockSkip.exec(l));)l = l.slice(0, r.index) + "[" + S("a", r[0].length - 2) + "]" + l.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+            for(; null != (r = this.tokenizer.rules.inline.escapedEmSt.exec(l));)l = l.slice(0, r.index + r[0].length - 2) + "++" + l.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex), this.tokenizer.rules.inline.escapedEmSt.lastIndex--;
+            for(; t;)if (a || (o = ""), a = !1, !(this.options.extensions && this.options.extensions.inline && this.options.extensions.inline.some((i)=>!!(n = i.call({
+                    lexer: this
+                }, t, e)) && (t = t.substring(n.raw.length), e.push(n), !0)))) {
+                if (n = this.tokenizer.escape(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.tag(t)) t = t.substring(n.raw.length), i = e[e.length - 1], i && "text" === n.type && "text" === i.type ? (i.raw += n.raw, i.text += n.text) : e.push(n);
+                else if (n = this.tokenizer.link(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.reflink(t, this.tokens.links)) t = t.substring(n.raw.length), i = e[e.length - 1], i && "text" === n.type && "text" === i.type ? (i.raw += n.raw, i.text += n.text) : e.push(n);
+                else if (n = this.tokenizer.emStrong(t, l, o)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.codespan(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.br(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.del(t)) t = t.substring(n.raw.length), e.push(n);
+                else if (n = this.tokenizer.autolink(t, A)) t = t.substring(n.raw.length), e.push(n);
+                else if (this.state.inLink || !(n = this.tokenizer.url(t, A))) {
+                    if (s = t, this.options.extensions && this.options.extensions.startInline) {
+                        let e = 1 / 0;
+                        const n = t.slice(1);
+                        let i;
+                        this.options.extensions.startInline.forEach(function(t) {
+                            i = t.call({
+                                lexer: this
+                            }, n), "number" == typeof i && i >= 0 && (e = Math.min(e, i));
+                        }), e < 1 / 0 && e >= 0 && (s = t.substring(0, e + 1));
+                    }
+                    if (n = this.tokenizer.inlineText(s, E)) t = t.substring(n.raw.length), "_" !== n.raw.slice(-1) && (o = n.raw.slice(-1)), a = !0, i = e[e.length - 1], i && "text" === i.type ? (i.raw += n.raw, i.text += n.text) : e.push(n);
+                    else if (t) {
+                        const e = "Infinite loop on byte: " + t.charCodeAt(0);
+                        if (this.options.silent) {
+                            console.error(e);
+                            break;
+                        }
+                        throw new Error(e);
+                    }
+                } else t = t.substring(n.raw.length), e.push(n);
+            }
+            return e;
+        }
+    }
+    class L {
+        constructor(t){
+            this.options = t || e;
+        }
+        code(t, e, n) {
+            const i = (e || "").match(/\S*/)[0];
+            if (this.options.highlight) {
+                const e = this.options.highlight(t, i);
+                null != e && e !== t && (n = !0, t = e);
+            }
+            return t = t.replace(/\n$/, "") + "\n", i ? '<pre><code class="' + this.options.langPrefix + l(i) + '">' + (n ? t : l(t, !0)) + "</code></pre>\n" : "<pre><code>" + (n ? t : l(t, !0)) + "</code></pre>\n";
+        }
+        blockquote(t) {
+            return `<blockquote>\n${t}</blockquote>\n`;
+        }
+        html(t) {
+            return t;
+        }
+        heading(t, e, n, i) {
+            if (this.options.headerIds) return `<h${e} id="${this.options.headerPrefix + i.slug(n)}">${t}</h${e}>\n`;
+            return `<h${e}>${t}</h${e}>\n`;
+        }
+        hr() {
+            return this.options.xhtml ? "<hr/>\n" : "<hr>\n";
+        }
+        list(t, e, n) {
+            const i = e ? "ol" : "ul";
+            return "<" + i + (e && 1 !== n ? ' start="' + n + '"' : "") + ">\n" + t + "</" + i + ">\n";
+        }
+        listitem(t) {
+            return `<li>${t}</li>\n`;
+        }
+        checkbox(t) {
+            return "<input " + (t ? 'checked="" ' : "") + 'disabled="" type="checkbox"' + (this.options.xhtml ? " /" : "") + "> ";
+        }
+        paragraph(t) {
+            return `<p>${t}</p>\n`;
+        }
+        table(t, e) {
+            return e && (e = `<tbody>${e}</tbody>`), "<table>\n<thead>\n" + t + "</thead>\n" + e + "</table>\n";
+        }
+        tablerow(t) {
+            return `<tr>\n${t}</tr>\n`;
+        }
+        tablecell(t, e) {
+            const n = e.header ? "th" : "td";
+            return (e.align ? `<${n} align="${e.align}">` : `<${n}>`) + t + `</${n}>\n`;
+        }
+        strong(t) {
+            return `<strong>${t}</strong>`;
+        }
+        em(t) {
+            return `<em>${t}</em>`;
+        }
+        codespan(t) {
+            return `<code>${t}</code>`;
+        }
+        br() {
+            return this.options.xhtml ? "<br/>" : "<br>";
+        }
+        del(t) {
+            return `<del>${t}</del>`;
+        }
+        link(t, e, n) {
+            if (null === (t = m(this.options.sanitize, this.options.baseUrl, t))) return n;
+            let i = '<a href="' + t + '"';
+            return e && (i += ' title="' + e + '"'), i += ">" + n + "</a>", i;
+        }
+        image(t, e, n) {
+            if (null === (t = m(this.options.sanitize, this.options.baseUrl, t))) return n;
+            let i = `<img src="${t}" alt="${n}"`;
+            return e && (i += ` title="${e}"`), i += this.options.xhtml ? "/>" : ">", i;
+        }
+        text(t) {
+            return t;
+        }
+    }
+    class I {
+        strong(t) {
+            return t;
+        }
+        em(t) {
+            return t;
+        }
+        codespan(t) {
+            return t;
+        }
+        del(t) {
+            return t;
+        }
+        html(t) {
+            return t;
+        }
+        text(t) {
+            return t;
+        }
+        link(t, e, n) {
+            return "" + n;
+        }
+        image(t, e, n) {
+            return "" + n;
+        }
+        br() {
+            return "";
+        }
+    }
+    class M {
+        constructor(){
+            this.seen = {};
+        }
+        serialize(t) {
+            return t.toLowerCase().trim().replace(/<[!\/a-z].*?>/gi, "").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, "").replace(/\s/g, "-");
+        }
+        getNextSafeSlug(t, e) {
+            let n = t, i = 0;
+            if (this.seen.hasOwnProperty(n)) {
+                i = this.seen[t];
+                do i++, n = t + "-" + i;
+                while (this.seen.hasOwnProperty(n));
+            }
+            return e || (this.seen[t] = i, this.seen[n] = 0), n;
+        }
+        slug(t, e = {}) {
+            const n = this.serialize(t);
+            return this.getNextSafeSlug(n, e.dryrun);
+        }
+    }
+    class C {
+        constructor(t){
+            this.options = t || e, this.options.renderer = this.options.renderer || new L, this.renderer = this.options.renderer, this.renderer.options = this.options, this.textRenderer = new I, this.slugger = new M;
+        }
+        static parse(t, e) {
+            return new C(e).parse(t);
+        }
+        static parseInline(t, e) {
+            return new C(e).parseInline(t);
+        }
+        parse(t, e = !0) {
+            let n, i, s, r, a, o, l, c, u, d, h, g, m, f, k, w, x, b, y, v = "";
+            const S = t.length;
+            for(n = 0; n < S; n++)if (d = t[n], this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[d.type] && (y = this.options.extensions.renderers[d.type].call({
+                parser: this
+            }, d), !1 !== y || ![
+                "space",
+                "hr",
+                "heading",
+                "code",
+                "table",
+                "blockquote",
+                "list",
+                "html",
+                "paragraph",
+                "text"
+            ].includes(d.type))) v += y || "";
+            else switch(d.type){
+                case "space":
+                    continue;
+                case "hr":
+                    v += this.renderer.hr();
+                    continue;
+                case "heading":
+                    v += this.renderer.heading(this.parseInline(d.tokens), d.depth, p(this.parseInline(d.tokens, this.textRenderer)), this.slugger);
+                    continue;
+                case "code":
+                    v += this.renderer.code(d.text, d.lang, d.escaped);
+                    continue;
+                case "table":
+                    for(c = "", l = "", r = d.header.length, i = 0; i < r; i++)l += this.renderer.tablecell(this.parseInline(d.header[i].tokens), {
+                        header: !0,
+                        align: d.align[i]
+                    });
+                    for(c += this.renderer.tablerow(l), u = "", r = d.rows.length, i = 0; i < r; i++){
+                        for(o = d.rows[i], l = "", a = o.length, s = 0; s < a; s++)l += this.renderer.tablecell(this.parseInline(o[s].tokens), {
+                            header: !1,
+                            align: d.align[s]
+                        });
+                        u += this.renderer.tablerow(l);
+                    }
+                    v += this.renderer.table(c, u);
+                    continue;
+                case "blockquote":
+                    u = this.parse(d.tokens), v += this.renderer.blockquote(u);
+                    continue;
+                case "list":
+                    for(h = d.ordered, g = d.start, m = d.loose, r = d.items.length, u = "", i = 0; i < r; i++)k = d.items[i], w = k.checked, x = k.task, f = "", k.task && (b = this.renderer.checkbox(w), m ? k.tokens.length > 0 && "paragraph" === k.tokens[0].type ? (k.tokens[0].text = b + " " + k.tokens[0].text, k.tokens[0].tokens && k.tokens[0].tokens.length > 0 && "text" === k.tokens[0].tokens[0].type && (k.tokens[0].tokens[0].text = b + " " + k.tokens[0].tokens[0].text)) : k.tokens.unshift({
+                        type: "text",
+                        text: b
+                    }) : f += b), f += this.parse(k.tokens, m), u += this.renderer.listitem(f, x, w);
+                    v += this.renderer.list(u, h, g);
+                    continue;
+                case "html":
+                    v += this.renderer.html(d.text);
+                    continue;
+                case "paragraph":
+                    v += this.renderer.paragraph(this.parseInline(d.tokens));
+                    continue;
+                case "text":
+                    for(u = d.tokens ? this.parseInline(d.tokens) : d.text; n + 1 < S && "text" === t[n + 1].type;)d = t[++n], u += "\n" + (d.tokens ? this.parseInline(d.tokens) : d.text);
+                    v += e ? this.renderer.paragraph(u) : u;
+                    continue;
+                default:
+                    {
+                        const t = 'Token with "' + d.type + '" type was not found.';
+                        if (this.options.silent) return void console.error(t);
+                        throw new Error(t);
+                    }
+            }
+            return v;
+        }
+        parseInline(t, e) {
+            e = e || this.renderer;
+            let n, i, s, r = "";
+            const a = t.length;
+            for(n = 0; n < a; n++)if (i = t[n], this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[i.type] && (s = this.options.extensions.renderers[i.type].call({
+                parser: this
+            }, i), !1 !== s || ![
+                "escape",
+                "html",
+                "link",
+                "image",
+                "strong",
+                "em",
+                "codespan",
+                "br",
+                "del",
+                "text"
+            ].includes(i.type))) r += s || "";
+            else switch(i.type){
+                case "escape":
+                case "text":
+                    r += e.text(i.text);
+                    break;
+                case "html":
+                    r += e.html(i.text);
+                    break;
+                case "link":
+                    r += e.link(i.href, i.title, this.parseInline(i.tokens, e));
+                    break;
+                case "image":
+                    r += e.image(i.href, i.title, i.text);
+                    break;
+                case "strong":
+                    r += e.strong(this.parseInline(i.tokens, e));
+                    break;
+                case "em":
+                    r += e.em(this.parseInline(i.tokens, e));
+                    break;
+                case "codespan":
+                    r += e.codespan(i.text);
+                    break;
+                case "br":
+                    r += e.br();
+                    break;
+                case "del":
+                    r += e.del(this.parseInline(i.tokens, e));
+                    break;
+                default:
+                    {
+                        const t = 'Token with "' + i.type + '" type was not found.';
+                        if (this.options.silent) return void console.error(t);
+                        throw new Error(t);
+                    }
+            }
+            return r;
+        }
+    }
+    class q {
+        constructor(t){
+            this.options = t || e;
+        }
+        static passThroughHooks = new Set([
+            "preprocess",
+            "postprocess"
+        ]);
+        preprocess(t) {
+            return t;
+        }
+        postprocess(t) {
+            return t;
+        }
+    }
+    function P(t, e) {
+        return (n, i, s)=>{
+            "function" == typeof i && (s = i, i = null);
+            const r = {
+                ...i
+            }, a = function(t, e, n) {
+                return (i)=>{
+                    if (i.message += "\nPlease report this to https://github.com/markedjs/marked.", t) {
+                        const t = "<p>An error occurred:</p><pre>" + l(i.message + "", !0) + "</pre>";
+                        return e ? Promise.resolve(t) : n ? void n(null, t) : t;
+                    }
+                    if (e) return Promise.reject(i);
+                    if (!n) throw i;
+                    n(i);
+                };
+            }((i = {
+                ...N.defaults,
+                ...r
+            }).silent, i.async, s);
+            if (null == n) return a(new Error("marked(): input parameter is undefined or null"));
+            if ("string" != typeof n) return a(new Error("marked(): input parameter is of type " + Object.prototype.toString.call(n) + ", string expected"));
+            if (function(t) {
+                t && t.sanitize && !t.silent && console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options");
+            }(i), i.hooks && (i.hooks.options = i), s) {
+                const r = i.highlight;
+                let o;
+                try {
+                    i.hooks && (n = i.hooks.preprocess(n)), o = t(n, i);
+                } catch (t) {
+                    return a(t);
+                }
+                const l = function(t) {
+                    let n;
+                    if (!t) try {
+                        i.walkTokens && N.walkTokens(o, i.walkTokens), n = e(o, i), i.hooks && (n = i.hooks.postprocess(n));
+                    } catch (e) {
+                        t = e;
+                    }
+                    return i.highlight = r, t ? a(t) : s(null, n);
+                };
+                if (!r || r.length < 3) return l();
+                if (delete i.highlight, !o.length) return l();
+                let c = 0;
+                return N.walkTokens(o, function(t) {
+                    "code" === t.type && (c++, setTimeout(()=>{
+                        r(t.text, t.lang, function(e, n) {
+                            if (e) return l(e);
+                            null != n && n !== t.text && (t.text = n, t.escaped = !0), c--, 0 === c && l();
+                        });
+                    }, 0));
+                }), void (0 === c && l());
+            }
+            if (i.async) return Promise.resolve(i.hooks ? i.hooks.preprocess(n) : n).then((e)=>t(e, i)).then((t)=>i.walkTokens ? Promise.all(N.walkTokens(t, i.walkTokens)).then(()=>t) : t).then((t)=>e(t, i)).then((t)=>i.hooks ? i.hooks.postprocess(t) : t).catch(a);
+            try {
+                i.hooks && (n = i.hooks.preprocess(n));
+                const s = t(n, i);
+                i.walkTokens && N.walkTokens(s, i.walkTokens);
+                let r = e(s, i);
+                return i.hooks && (r = i.hooks.postprocess(r)), r;
+            } catch (t) {
+                return a(t);
+            }
+        };
+    }
+    function N(t, e, n) {
+        return P(R.lex, C.parse)(t, e, n);
+    }
+    N.options = N.setOptions = function(t) {
+        var n;
+        return N.defaults = {
+            ...N.defaults,
+            ...t
+        }, n = N.defaults, e = n, N;
+    }, N.getDefaults = t, N.defaults = e, N.use = function(...t) {
+        const e = N.defaults.extensions || {
+            renderers: {},
+            childTokens: {}
+        };
+        t.forEach((t)=>{
+            const n = {
+                ...t
+            };
+            if (n.async = N.defaults.async || n.async || !1, t.extensions && (t.extensions.forEach((t)=>{
+                if (!t.name) throw new Error("extension name required");
+                if (t.renderer) {
+                    const n = e.renderers[t.name];
+                    e.renderers[t.name] = n ? function(...e) {
+                        let i = t.renderer.apply(this, e);
+                        return !1 === i && (i = n.apply(this, e)), i;
+                    } : t.renderer;
+                }
+                if (t.tokenizer) {
+                    if (!t.level || "block" !== t.level && "inline" !== t.level) throw new Error("extension level must be 'block' or 'inline'");
+                    e[t.level] ? e[t.level].unshift(t.tokenizer) : e[t.level] = [
+                        t.tokenizer
+                    ], t.start && ("block" === t.level ? e.startBlock ? e.startBlock.push(t.start) : e.startBlock = [
+                        t.start
+                    ] : "inline" === t.level && (e.startInline ? e.startInline.push(t.start) : e.startInline = [
+                        t.start
+                    ]));
+                }
+                t.childTokens && (e.childTokens[t.name] = t.childTokens);
+            }), n.extensions = e), t.renderer) {
+                const e = N.defaults.renderer || new L;
+                for(const n in t.renderer){
+                    const i = e[n];
+                    e[n] = (...s)=>{
+                        let r = t.renderer[n].apply(e, s);
+                        return !1 === r && (r = i.apply(e, s)), r;
+                    };
+                }
+                n.renderer = e;
+            }
+            if (t.tokenizer) {
+                const e = N.defaults.tokenizer || new _;
+                for(const n in t.tokenizer){
+                    const i = e[n];
+                    e[n] = (...s)=>{
+                        let r = t.tokenizer[n].apply(e, s);
+                        return !1 === r && (r = i.apply(e, s)), r;
+                    };
+                }
+                n.tokenizer = e;
+            }
+            if (t.hooks) {
+                const e = N.defaults.hooks || new q;
+                for(const n in t.hooks){
+                    const i = e[n];
+                    q.passThroughHooks.has(n) ? e[n] = (s)=>{
+                        if (N.defaults.async) return Promise.resolve(t.hooks[n].call(e, s)).then((t)=>i.call(e, t));
+                        const r = t.hooks[n].call(e, s);
+                        return i.call(e, r);
+                    } : e[n] = (...s)=>{
+                        let r = t.hooks[n].apply(e, s);
+                        return !1 === r && (r = i.apply(e, s)), r;
+                    };
+                }
+                n.hooks = e;
+            }
+            if (t.walkTokens) {
+                const e = N.defaults.walkTokens;
+                n.walkTokens = function(n) {
+                    let i = [];
+                    return i.push(t.walkTokens.call(this, n)), e && (i = i.concat(e.call(this, n))), i;
+                };
+            }
+            N.setOptions(n);
+        });
+    }, N.walkTokens = function(t, e) {
+        let n = [];
+        for (const i of t)switch(n = n.concat(e.call(N, i)), i.type){
+            case "table":
+                for (const t of i.header)n = n.concat(N.walkTokens(t.tokens, e));
+                for (const t of i.rows)for (const i of t)n = n.concat(N.walkTokens(i.tokens, e));
+                break;
+            case "list":
+                n = n.concat(N.walkTokens(i.items, e));
+                break;
+            default:
+                N.defaults.extensions && N.defaults.extensions.childTokens && N.defaults.extensions.childTokens[i.type] ? N.defaults.extensions.childTokens[i.type].forEach(function(t) {
+                    n = n.concat(N.walkTokens(i[t], e));
+                }) : i.tokens && (n = n.concat(N.walkTokens(i.tokens, e)));
+        }
+        return n;
+    }, N.parseInline = P(R.lexInline, C.parseInline), N.Parser = C, N.parser = C.parse, N.Renderer = L, N.TextRenderer = I, N.Lexer = R, N.lexer = R.lex, N.Tokenizer = _, N.Slugger = M, N.Hooks = q, N.parse = N, N.options, N.setOptions, N.use, N.walkTokens, N.parseInline, C.parse, R.lex;
+    return ()=>{
+        let t, e, n = null;
+        function i() {
+            if (n && !n.closed) n.focus();
+            else {
+                if (n = window.open("about:blank", "reveal.js - Notes", "width=1100,height=700"), n.marked = N, n.document.write("<!--\n	NOTE: You need to build the notes plugin after making changes to this file.\n-->\n<html lang=\"en\">\n	<head>\n		<meta charset=\"utf-8\">\n\n		<title>reveal.js - Speaker View</title>\n\n		<style>\n			body {\n				font-family: Helvetica;\n				font-size: 18px;\n			}\n\n			#current-slide,\n			#upcoming-slide,\n			#speaker-controls {\n				padding: 6px;\n				box-sizing: border-box;\n				-moz-box-sizing: border-box;\n			}\n\n			#current-slide iframe,\n			#upcoming-slide iframe {\n				width: 100%;\n				height: 100%;\n				border: 1px solid #ddd;\n			}\n\n			#current-slide .label,\n			#upcoming-slide .label {\n				position: absolute;\n				top: 10px;\n				left: 10px;\n				z-index: 2;\n			}\n\n			#connection-status {\n				position: absolute;\n				top: 0;\n				left: 0;\n				width: 100%;\n				height: 100%;\n				z-index: 20;\n				padding: 30% 20% 20% 20%;\n				font-size: 18px;\n				color: #222;\n				background: #fff;\n				text-align: center;\n				box-sizing: border-box;\n				line-height: 1.4;\n			}\n\n			.overlay-element {\n				height: 34px;\n				line-height: 34px;\n				padding: 0 10px;\n				text-shadow: none;\n				background: rgba( 220, 220, 220, 0.8 );\n				color: #222;\n				font-size: 14px;\n			}\n\n			.overlay-element.interactive:hover {\n				background: rgba( 220, 220, 220, 1 );\n			}\n\n			#current-slide {\n				position: absolute;\n				width: 60%;\n				height: 100%;\n				top: 0;\n				left: 0;\n				padding-right: 0;\n			}\n\n			#upcoming-slide {\n				position: absolute;\n				width: 40%;\n				height: 40%;\n				right: 0;\n				top: 0;\n			}\n\n			/* Speaker controls */\n			#speaker-controls {\n				position: absolute;\n				top: 40%;\n				right: 0;\n				width: 40%;\n				height: 60%;\n				overflow: auto;\n				font-size: 18px;\n			}\n\n				.speaker-controls-time.hidden,\n				.speaker-controls-notes.hidden {\n					display: none;\n				}\n\n				.speaker-controls-time .label,\n				.speaker-controls-pace .label,\n				.speaker-controls-notes .label {\n					text-transform: uppercase;\n					font-weight: normal;\n					font-size: 0.66em;\n					color: #666;\n					margin: 0;\n				}\n\n				.speaker-controls-time, .speaker-controls-pace {\n					border-bottom: 1px solid rgba( 200, 200, 200, 0.5 );\n					margin-bottom: 10px;\n					padding: 10px 16px;\n					padding-bottom: 20px;\n					cursor: pointer;\n				}\n\n				.speaker-controls-time .reset-button {\n					opacity: 0;\n					float: right;\n					color: #666;\n					text-decoration: none;\n				}\n				.speaker-controls-time:hover .reset-button {\n					opacity: 1;\n				}\n\n				.speaker-controls-time .timer,\n				.speaker-controls-time .clock {\n					width: 50%;\n				}\n\n				.speaker-controls-time .timer,\n				.speaker-controls-time .clock,\n				.speaker-controls-time .pacing .hours-value,\n				.speaker-controls-time .pacing .minutes-value,\n				.speaker-controls-time .pacing .seconds-value {\n					font-size: 1.9em;\n				}\n\n				.speaker-controls-time .timer {\n					float: left;\n				}\n\n				.speaker-controls-time .clock {\n					float: right;\n					text-align: right;\n				}\n\n				.speaker-controls-time span.mute {\n					opacity: 0.3;\n				}\n\n				.speaker-controls-time .pacing-title {\n					margin-top: 5px;\n				}\n\n				.speaker-controls-time .pacing.ahead {\n					color: blue;\n				}\n\n				.speaker-controls-time .pacing.on-track {\n					color: green;\n				}\n\n				.speaker-controls-time .pacing.behind {\n					color: red;\n				}\n\n				.speaker-controls-notes {\n					padding: 10px 16px;\n				}\n\n				.speaker-controls-notes .value {\n					margin-top: 5px;\n					line-height: 1.4;\n					font-size: 1.2em;\n				}\n\n			/* Layout selector\xa0*/\n			#speaker-layout {\n				position: absolute;\n				top: 10px;\n				right: 10px;\n				color: #222;\n				z-index: 10;\n			}\n				#speaker-layout select {\n					position: absolute;\n					width: 100%;\n					height: 100%;\n					top: 0;\n					left: 0;\n					border: 0;\n					box-shadow: 0;\n					cursor: pointer;\n					opacity: 0;\n\n					font-size: 1em;\n					background-color: transparent;\n\n					-moz-appearance: none;\n					-webkit-appearance: none;\n					-webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n				}\n\n				#speaker-layout select:focus {\n					outline: none;\n					box-shadow: none;\n				}\n\n			.clear {\n				clear: both;\n			}\n\n			/* Speaker layout: Wide */\n			body[data-speaker-layout=\"wide\"] #current-slide,\n			body[data-speaker-layout=\"wide\"] #upcoming-slide {\n				width: 50%;\n				height: 45%;\n				padding: 6px;\n			}\n\n			body[data-speaker-layout=\"wide\"] #current-slide {\n				top: 0;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"wide\"] #upcoming-slide {\n				top: 0;\n				left: 50%;\n			}\n\n			body[data-speaker-layout=\"wide\"] #speaker-controls {\n				top: 45%;\n				left: 0;\n				width: 100%;\n				height: 50%;\n				font-size: 1.25em;\n			}\n\n			/* Speaker layout: Tall */\n			body[data-speaker-layout=\"tall\"] #current-slide,\n			body[data-speaker-layout=\"tall\"] #upcoming-slide {\n				width: 45%;\n				height: 50%;\n				padding: 6px;\n			}\n\n			body[data-speaker-layout=\"tall\"] #current-slide {\n				top: 0;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"tall\"] #upcoming-slide {\n				top: 50%;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"tall\"] #speaker-controls {\n				padding-top: 40px;\n				top: 0;\n				left: 45%;\n				width: 55%;\n				height: 100%;\n				font-size: 1.25em;\n			}\n\n			/* Speaker layout: Notes only */\n			body[data-speaker-layout=\"notes-only\"] #current-slide,\n			body[data-speaker-layout=\"notes-only\"] #upcoming-slide {\n				display: none;\n			}\n\n			body[data-speaker-layout=\"notes-only\"] #speaker-controls {\n				padding-top: 40px;\n				top: 0;\n				left: 0;\n				width: 100%;\n				height: 100%;\n				font-size: 1.25em;\n			}\n\n			@media screen and (max-width: 1080px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 16px;\n				}\n			}\n\n			@media screen and (max-width: 900px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 14px;\n				}\n			}\n\n			@media screen and (max-width: 800px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 12px;\n				}\n			}\n\n		</style>\n	</head>\n\n	<body>\n\n		<div id=\"connection-status\">Loading speaker view...</div>\n\n		<div id=\"current-slide\"></div>\n		<div id=\"upcoming-slide\"><span class=\"overlay-element label\">Upcoming</span></div>\n		<div id=\"speaker-controls\">\n			<div class=\"speaker-controls-time\">\n				<h4 class=\"label\">Time <span class=\"reset-button\">Click to Reset</span></h4>\n				<div class=\"clock\">\n					<span class=\"clock-value\">0:00 AM</span>\n				</div>\n				<div class=\"timer\">\n					<span class=\"hours-value\">00</span><span class=\"minutes-value\">:00</span><span class=\"seconds-value\">:00</span>\n				</div>\n				<div class=\"clear\"></div>\n\n				<h4 class=\"label pacing-title\" style=\"display: none\">Pacing \u2013 Time to finish current slide</h4>\n				<div class=\"pacing\" style=\"display: none\">\n					<span class=\"hours-value\">00</span><span class=\"minutes-value\">:00</span><span class=\"seconds-value\">:00</span>\n				</div>\n			</div>\n\n			<div class=\"speaker-controls-notes hidden\">\n				<h4 class=\"label\">Notes</h4>\n				<div class=\"value\"></div>\n			</div>\n		</div>\n		<div id=\"speaker-layout\" class=\"overlay-element interactive\">\n			<span class=\"speaker-layout-label\"></span>\n			<select class=\"speaker-layout-dropdown\"></select>\n		</div>\n\n		<script>\n\n			(function() {\n\n				var notes,\n					notesValue,\n					currentState,\n					currentSlide,\n					upcomingSlide,\n					layoutLabel,\n					layoutDropdown,\n					pendingCalls = {},\n					lastRevealApiCallId = 0,\n					connected = false\n\n				var connectionStatus = document.querySelector( '#connection-status' );\n\n				var SPEAKER_LAYOUTS = {\n					'default': 'Default',\n					'wide': 'Wide',\n					'tall': 'Tall',\n					'notes-only': 'Notes only'\n				};\n\n				setupLayout();\n\n				let openerOrigin;\n\n				try {\n					openerOrigin = window.opener.location.origin;\n				}\n				catch ( error ) { console.warn( error ) }\n\n				// In order to prevent XSS, the speaker view will only run if its\n				// opener has the same origin as itself\n				if( window.location.origin !== openerOrigin ) {\n					connectionStatus.innerHTML = 'Cross origin error.<br>The speaker window can only be opened from the same origin.';\n					return;\n				}\n\n				var connectionTimeout = setTimeout( function() {\n					connectionStatus.innerHTML = 'Error connecting to main window.<br>Please try closing and reopening the speaker view.';\n				}, 5000 );\n\n				window.addEventListener( 'message', function( event ) {\n\n					// Validate the origin of all messages to avoid parsing messages\n					// that aren't meant for us. Ignore when running off file:// so\n					// that the speaker view continues to work without a web server.\n					if( window.location.origin !== event.origin && window.location.origin !== 'file://' ) {\n						return\n					}\n\n					clearTimeout( connectionTimeout );\n					connectionStatus.style.display = 'none';\n\n					var data = JSON.parse( event.data );\n\n					// The overview mode is only useful to the reveal.js instance\n					// where navigation occurs so we don't sync it\n					if( data.state ) delete data.state.overview;\n\n					// Messages sent by the notes plugin inside of the main window\n					if( data && data.namespace === 'reveal-notes' ) {\n						if( data.type === 'connect' ) {\n							handleConnectMessage( data );\n						}\n						else if( data.type === 'state' ) {\n							handleStateMessage( data );\n						}\n						else if( data.type === 'return' ) {\n							pendingCalls[data.callId](data.result);\n							delete pendingCalls[data.callId];\n						}\n					}\n					// Messages sent by the reveal.js inside of the current slide preview\n					else if( data && data.namespace === 'reveal' ) {\n						const supportedEvents = [\n							'slidechanged',\n							'fragmentshown',\n							'fragmenthidden',\n							'paused',\n							'resumed',\n							'previewiframe',\n							'previewimage',\n							'previewvideo',\n							'closeoverlay'\n						];\n\n						if( /ready/.test( data.eventName ) ) {\n							// Send a message back to notify that the handshake is complete\n							window.opener.postMessage( JSON.stringify({ namespace: 'reveal-notes', type: 'connected'} ), '*' );\n						}\n						else if( supportedEvents.includes( data.eventName ) && currentState !== JSON.stringify( data.state ) ) {\n							dispatchStateToMainWindow( data.state );\n						}\n					}\n\n				} );\n\n				/**\n				 * Updates the presentation in the main window to match the state\n				 * of the presentation in the notes window.\n				 */\n				const dispatchStateToMainWindow = debounce(( state ) => {\n					window.opener.postMessage( JSON.stringify({ method: 'setState', args: [ state ]} ), '*' );\n				}, 500);\n\n				/**\n				 * Asynchronously calls the Reveal.js API of the main frame.\n				 */\n				function callRevealApi( methodName, methodArguments, callback ) {\n\n					var callId = ++lastRevealApiCallId;\n					pendingCalls[callId] = callback;\n					window.opener.postMessage( JSON.stringify( {\n						namespace: 'reveal-notes',\n						type: 'call',\n						callId: callId,\n						methodName: methodName,\n						arguments: methodArguments\n					} ), '*' );\n\n				}\n\n				/**\n				 * Called when the main window is trying to establish a\n				 * connection.\n				 */\n				function handleConnectMessage( data ) {\n\n					if( connected === false ) {\n						connected = true;\n\n						setupIframes( data );\n						setupKeyboard();\n						setupNotes();\n						setupTimer();\n						setupHeartbeat();\n					}\n\n				}\n\n				/**\n				 * Called when the main window sends an updated state.\n				 */\n				function handleStateMessage( data ) {\n\n					// Store the most recently set state to avoid circular loops\n					// applying the same state\n					currentState = JSON.stringify( data.state );\n\n					// No need for updating the notes in case of fragment changes\n					if ( data.notes ) {\n						notes.classList.remove( 'hidden' );\n						notesValue.style.whiteSpace = data.whitespace;\n						if( data.markdown ) {\n							notesValue.innerHTML = marked( data.notes );\n						}\n						else {\n							notesValue.innerHTML = data.notes;\n						}\n					}\n					else {\n						notes.classList.add( 'hidden' );\n					}\n\n					// Don't show lightboxes in the upcoming slide\n					const { previewVideo, previewImage, previewIframe, ...upcomingState } = data.state;\n\n					// Update the note slides\n					currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ data.state ] }), '*' );\n					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ upcomingState ] }), '*' );\n					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'next' }), '*' );\n\n				}\n\n				// Limit to max one state update per X ms\n				handleStateMessage = debounce( handleStateMessage, 200 );\n\n				/**\n				 * Forward keyboard events to the current slide window.\n				 * This enables keyboard events to work even if focus\n				 * isn't set on the current slide iframe.\n				 *\n				 * Block F5 default handling, it reloads and disconnects\n				 * the speaker notes window.\n				 */\n				function setupKeyboard() {\n\n					document.addEventListener( 'keydown', function( event ) {\n						if( event.keyCode === 116 || ( event.metaKey && event.keyCode === 82 ) ) {\n							event.preventDefault();\n							return false;\n						}\n						currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );\n					} );\n\n				}\n\n				/**\n				 * Creates the preview iframes.\n				 */\n				function setupIframes( data ) {\n\n					var params = [\n						'receiver',\n						'progress=false',\n						'history=false',\n						'transition=none',\n						'autoSlide=0',\n						'backgroundTransition=none'\n					].join( '&' );\n\n					var urlSeparator = /\\?/.test(data.url) ? '&' : '?';\n					var hash = '#/' + data.state.indexh + '/' + data.state.indexv;\n					var currentURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&postMessageEvents=true' + hash;\n					var upcomingURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&controls=false' + hash;\n\n					currentSlide = document.createElement( 'iframe' );\n					currentSlide.setAttribute( 'width', 1280 );\n					currentSlide.setAttribute( 'height', 1024 );\n					currentSlide.setAttribute( 'src', currentURL );\n					document.querySelector( '#current-slide' ).appendChild( currentSlide );\n\n					upcomingSlide = document.createElement( 'iframe' );\n					upcomingSlide.setAttribute( 'width', 640 );\n					upcomingSlide.setAttribute( 'height', 512 );\n					upcomingSlide.setAttribute( 'src', upcomingURL );\n					document.querySelector( '#upcoming-slide' ).appendChild( upcomingSlide );\n\n				}\n\n				/**\n				 * Setup the notes UI.\n				 */\n				function setupNotes() {\n\n					notes = document.querySelector( '.speaker-controls-notes' );\n					notesValue = document.querySelector( '.speaker-controls-notes .value' );\n\n				}\n\n				/**\n				 * We send out a heartbeat at all times to ensure we can\n				 * reconnect with the main presentation window after reloads.\n				 */\n				function setupHeartbeat() {\n\n					setInterval( () => {\n						window.opener.postMessage( JSON.stringify({ namespace: 'reveal-notes', type: 'heartbeat'} ), '*' );\n					}, 1000 );\n\n				}\n\n				function getTimings( callback ) {\n\n					callRevealApi( 'getSlidesAttributes', [], function ( slideAttributes ) {\n						callRevealApi( 'getConfig', [], function ( config ) {\n							var totalTime = config.totalTime;\n							var minTimePerSlide = config.minimumTimePerSlide || 0;\n							var defaultTiming = config.defaultTiming;\n							if ((defaultTiming == null) && (totalTime == null)) {\n								callback(null);\n								return;\n							}\n							// Setting totalTime overrides defaultTiming\n							if (totalTime) {\n								defaultTiming = 0;\n							}\n							var timings = [];\n							for ( var i in slideAttributes ) {\n								var slide = slideAttributes[ i ];\n								var timing = defaultTiming;\n								if( slide.hasOwnProperty( 'data-timing' )) {\n									var t = slide[ 'data-timing' ];\n									timing = parseInt(t);\n									if( isNaN(timing) ) {\n										console.warn(\"Could not parse timing '\" + t + \"' of slide \" + i + \"; using default of \" + defaultTiming);\n										timing = defaultTiming;\n									}\n								}\n								timings.push(timing);\n							}\n							if ( totalTime ) {\n								// After we've allocated time to individual slides, we summarize it and\n								// subtract it from the total time\n								var remainingTime = totalTime - timings.reduce( function(a, b) { return a + b; }, 0 );\n								// The remaining time is divided by the number of slides that have 0 seconds\n								// allocated at the moment, giving the average time-per-slide on the remaining slides\n								var remainingSlides = (timings.filter( function(x) { return x == 0 }) ).length\n								var timePerSlide = Math.round( remainingTime / remainingSlides, 0 )\n								// And now we replace every zero-value timing with that average\n								timings = timings.map( function(x) { return (x==0 ? timePerSlide : x) } );\n							}\n							var slidesUnderMinimum = timings.filter( function(x) { return (x < minTimePerSlide) } ).length\n							if ( slidesUnderMinimum ) {\n								message = \"The pacing time for \" + slidesUnderMinimum + \" slide(s) is under the configured minimum of \" + minTimePerSlide + \" seconds. Check the data-timing attribute on individual slides, or consider increasing the totalTime or minimumTimePerSlide configuration options (or removing some slides).\";\n								alert(message);\n							}\n							callback( timings );\n						} );\n					} );\n\n				}\n\n				/**\n				 * Return the number of seconds allocated for presenting\n				 * all slides up to and including this one.\n				 */\n				function getTimeAllocated( timings, callback ) {\n\n					callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n						var allocated = 0;\n						for (var i in timings.slice(0, currentSlide + 1)) {\n							allocated += timings[i];\n						}\n						callback( allocated );\n					} );\n\n				}\n\n				/**\n				 * Create the timer and clock and start updating them\n				 * at an interval.\n				 */\n				function setupTimer() {\n\n					var start = new Date(),\n					timeEl = document.querySelector( '.speaker-controls-time' ),\n					clockEl = timeEl.querySelector( '.clock-value' ),\n					hoursEl = timeEl.querySelector( '.hours-value' ),\n					minutesEl = timeEl.querySelector( '.minutes-value' ),\n					secondsEl = timeEl.querySelector( '.seconds-value' ),\n					pacingTitleEl = timeEl.querySelector( '.pacing-title' ),\n					pacingEl = timeEl.querySelector( '.pacing' ),\n					pacingHoursEl = pacingEl.querySelector( '.hours-value' ),\n					pacingMinutesEl = pacingEl.querySelector( '.minutes-value' ),\n					pacingSecondsEl = pacingEl.querySelector( '.seconds-value' );\n\n					var timings = null;\n					getTimings( function ( _timings ) {\n\n						timings = _timings;\n						if (_timings !== null) {\n							pacingTitleEl.style.removeProperty('display');\n							pacingEl.style.removeProperty('display');\n						}\n\n						// Update once directly\n						_updateTimer();\n\n						// Then update every second\n						setInterval( _updateTimer, 1000 );\n\n					} );\n\n\n					function _resetTimer() {\n\n						if (timings == null) {\n							start = new Date();\n							_updateTimer();\n						}\n						else {\n							// Reset timer to beginning of current slide\n							getTimeAllocated( timings, function ( slideEndTimingSeconds ) {\n								var slideEndTiming = slideEndTimingSeconds * 1000;\n								callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n									var currentSlideTiming = timings[currentSlide] * 1000;\n									var previousSlidesTiming = slideEndTiming - currentSlideTiming;\n									var now = new Date();\n									start = new Date(now.getTime() - previousSlidesTiming);\n									_updateTimer();\n								} );\n							} );\n						}\n\n					}\n\n					timeEl.addEventListener( 'click', function() {\n						_resetTimer();\n						return false;\n					} );\n\n					function _displayTime( hrEl, minEl, secEl, time) {\n\n						var sign = Math.sign(time) == -1 ? \"-\" : \"\";\n						time = Math.abs(Math.round(time / 1000));\n						var seconds = time % 60;\n						var minutes = Math.floor( time / 60 ) % 60 ;\n						var hours = Math.floor( time / ( 60 * 60 )) ;\n						hrEl.innerHTML = sign + zeroPadInteger( hours );\n						if (hours == 0) {\n							hrEl.classList.add( 'mute' );\n						}\n						else {\n							hrEl.classList.remove( 'mute' );\n						}\n						minEl.innerHTML = ':' + zeroPadInteger( minutes );\n						if (hours == 0 && minutes == 0) {\n							minEl.classList.add( 'mute' );\n						}\n						else {\n							minEl.classList.remove( 'mute' );\n						}\n						secEl.innerHTML = ':' + zeroPadInteger( seconds );\n					}\n\n					function _updateTimer() {\n\n						var diff, hours, minutes, seconds,\n						now = new Date();\n\n						diff = now.getTime() - start.getTime();\n\n						clockEl.innerHTML = now.toLocaleTimeString( 'en-US', { hour12: true, hour: '2-digit', minute:'2-digit' } );\n						_displayTime( hoursEl, minutesEl, secondsEl, diff );\n						if (timings !== null) {\n							_updatePacing(diff);\n						}\n\n					}\n\n					function _updatePacing(diff) {\n\n						getTimeAllocated( timings, function ( slideEndTimingSeconds ) {\n							var slideEndTiming = slideEndTimingSeconds * 1000;\n\n							callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n								var currentSlideTiming = timings[currentSlide] * 1000;\n								var timeLeftCurrentSlide = slideEndTiming - diff;\n								if (timeLeftCurrentSlide < 0) {\n									pacingEl.className = 'pacing behind';\n								}\n								else if (timeLeftCurrentSlide < currentSlideTiming) {\n									pacingEl.className = 'pacing on-track';\n								}\n								else {\n									pacingEl.className = 'pacing ahead';\n								}\n								_displayTime( pacingHoursEl, pacingMinutesEl, pacingSecondsEl, timeLeftCurrentSlide );\n							} );\n						} );\n					}\n\n				}\n\n				/**\n				 * Sets up the speaker view layout and layout selector.\n				 */\n				function setupLayout() {\n\n					layoutDropdown = document.querySelector( '.speaker-layout-dropdown' );\n					layoutLabel = document.querySelector( '.speaker-layout-label' );\n\n					// Render the list of available layouts\n					for( var id in SPEAKER_LAYOUTS ) {\n						var option = document.createElement( 'option' );\n						option.setAttribute( 'value', id );\n						option.textContent = SPEAKER_LAYOUTS[ id ];\n						layoutDropdown.appendChild( option );\n					}\n\n					// Monitor the dropdown for changes\n					layoutDropdown.addEventListener( 'change', function( event ) {\n\n						setLayout( layoutDropdown.value );\n\n					}, false );\n\n					// Restore any currently persisted layout\n					setLayout( getLayout() );\n\n				}\n\n				/**\n				 * Sets a new speaker view layout. The layout is persisted\n				 * in local storage.\n				 */\n				function setLayout( value ) {\n\n					var title = SPEAKER_LAYOUTS[ value ];\n\n					layoutLabel.innerHTML = 'Layout' + ( title ? ( ': ' + title ) : '' );\n					layoutDropdown.value = value;\n\n					document.body.setAttribute( 'data-speaker-layout', value );\n\n					// Persist locally\n					if( supportsLocalStorage() ) {\n						window.localStorage.setItem( 'reveal-speaker-layout', value );\n					}\n\n				}\n\n				/**\n				 * Returns the ID of the most recently set speaker layout\n				 * or our default layout if none has been set.\n				 */\n				function getLayout() {\n\n					if( supportsLocalStorage() ) {\n						var layout = window.localStorage.getItem( 'reveal-speaker-layout' );\n						if( layout ) {\n							return layout;\n						}\n					}\n\n					// Default to the first record in the layouts hash\n					for( var id in SPEAKER_LAYOUTS ) {\n						return id;\n					}\n\n				}\n\n				function supportsLocalStorage() {\n\n					try {\n						localStorage.setItem('test', 'test');\n						localStorage.removeItem('test');\n						return true;\n					}\n					catch( e ) {\n						return false;\n					}\n\n				}\n\n				function zeroPadInteger( num ) {\n\n					var str = '00' + parseInt( num );\n					return str.substring( str.length - 2 );\n\n				}\n\n				/**\n				 * Limits the frequency at which a function can be called.\n				 */\n				function debounce( fn, ms ) {\n\n					var lastTime = 0,\n						timeout;\n\n					return function() {\n\n						var args = arguments;\n						var context = this;\n\n						clearTimeout( timeout );\n\n						var timeSinceLastCall = Date.now() - lastTime;\n						if( timeSinceLastCall > ms ) {\n							fn.apply( context, args );\n							lastTime = Date.now();\n						}\n						else {\n							timeout = setTimeout( function() {\n								fn.apply( context, args );\n								lastTime = Date.now();\n							}, ms - timeSinceLastCall );\n						}\n\n					}\n\n				}\n\n			})();\n\n		</script>\n	</body>\n</html>"), !n) return void alert("Speaker view popup failed to open. Please make sure popups are allowed and reopen the speaker view.");
+                !function() {
+                    const i = e.getConfig().url, s = "string" == typeof i ? i : window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search;
+                    t = setInterval(function() {
+                        n.postMessage(JSON.stringify({
+                            namespace: "reveal-notes",
+                            type: "connect",
+                            state: e.getState(),
+                            url: s
+                        }), "*");
+                    }, 500), window.addEventListener("message", r);
+                }();
+            }
+        }
+        function s(t) {
+            let i = e.getCurrentSlide(), s = i.querySelectorAll("aside.notes"), r = i.querySelector(".current-fragment"), a = {
+                namespace: "reveal-notes",
+                type: "state",
+                notes: "",
+                markdown: !1,
+                whitespace: "normal",
+                state: e.getState()
+            };
+            if (i.hasAttribute("data-notes") && (a.notes = i.getAttribute("data-notes"), a.whitespace = "pre-wrap"), r) {
+                let t = r.querySelector("aside.notes");
+                t ? (a.notes = t.innerHTML, a.markdown = "string" == typeof t.getAttribute("data-markdown"), s = null) : r.hasAttribute("data-notes") && (a.notes = r.getAttribute("data-notes"), a.whitespace = "pre-wrap", s = null);
+            }
+            s && s.length && (s = Array.from(s).filter((t)=>null === t.closest(".fragment")), a.notes = s.map((t)=>t.innerHTML).join("\n"), a.markdown = s[0] && "string" == typeof s[0].getAttribute("data-markdown")), n.postMessage(JSON.stringify(a), "*");
+        }
+        function r(i) {
+            if (function(t) {
+                try {
+                    return window.location.origin === t.source.location.origin;
+                } catch (t) {
+                    return !1;
+                }
+            }(i)) try {
+                let s = JSON.parse(i.data);
+                s && "reveal-notes" === s.namespace && "connected" === s.type ? (clearInterval(t), a()) : s && "reveal-notes" === s.namespace && "call" === s.type && function(t, i, s) {
+                    let r = e[t].apply(e, i);
+                    n.postMessage(JSON.stringify({
+                        namespace: "reveal-notes",
+                        type: "return",
+                        result: r,
+                        callId: s
+                    }), "*");
+                }(s.methodName, s.arguments, s.callId);
+            } catch (t) {}
+        }
+        function a() {
+            e.on("slidechanged", s), e.on("fragmentshown", s), e.on("fragmenthidden", s), e.on("overviewhidden", s), e.on("overviewshown", s), e.on("paused", s), e.on("resumed", s), e.on("previewiframe", s), e.on("previewimage", s), e.on("previewvideo", s), e.on("closeoverlay", s), s();
+        }
+        return {
+            id: "notes",
+            init: function(t) {
+                e = t, /receiver/i.test(window.location.search) || (null !== window.location.search.match(/(\?|\&)notes/gi) ? i() : window.addEventListener("message", (t)=>{
+                    if (!n && "string" == typeof t.data) {
+                        let i;
+                        try {
+                            i = JSON.parse(t.data);
+                        } catch (t) {}
+                        i && "reveal-notes" === i.namespace && "heartbeat" === i.type && (e = t.source, n && !n.closed ? n.focus() : (n = e, window.addEventListener("message", r), a()));
+                    }
+                    var e;
+                }), e.addKeyBinding({
+                    keyCode: 83,
+                    key: "S",
+                    description: "Speaker notes view"
+                }, function() {
+                    i();
+                }));
+            },
+            open: i
+        };
+    };
+});
+
+
+/**
+ * Handles opening of and synchronization with the reveal.js
+ * notes window.
+ *
+ * Handshake process:
+ * 1. This window posts 'connect' to notes window
+ *    - Includes URL of presentation to show
+ * 2. Notes window responds with 'connected' when it is available
+ * 3. This window proceeds to send the current presentation state
+ *    to the notes window
+ * 
+ * Copyright (c) 2025 Emiliano "pixu1980" Pisu
+ */ const $4ded6e671b4245a5$var$HeaderPlugin = ()=>{
+    let deck;
+    const headerPlugin = {
+        id: 'header',
+        init: (reveal)=>{
+            deck = reveal;
+            deck.addEventListener('slidechanged', (e)=>{
+                if (e.previousSlide) {
+                    const prevHeaderElement = e.previousSlide.querySelector('header');
+                    if (!!prevHeaderElement) {
+                        prevHeaderElement.style.position = 'fixed';
+                        prevHeaderElement.style.top = 0;
+                        prevHeaderElement.style.left = 0;
+                        prevHeaderElement.style.right = 0;
+                        prevHeaderElement.style.opacity = 0;
+                        prevHeaderElement.style.width = '100vw';
+                    }
+                }
+                if (e.currentSlide) {
+                    const headerElement = e.currentSlide.querySelector('header');
+                    if (!!headerElement) {
+                        headerElement.style.position = 'fixed !important';
+                        headerElement.style.top = '0 !important';
+                        headerElement.style.left = '0 !important';
+                        headerElement.style.right = '0 !important';
+                        headerElement.style.width = '100vw !important';
+                        headerElement.style.opacity = !e.previousSlide;
+                        headerElement.style.transition = 'opacity .2s ease-in-out';
+                    }
+                }
+            });
+            deck.addEventListener('slidetransitionend', (e)=>{
+                const headerElement = e.currentSlide.querySelector('header');
+                if (!!headerElement) headerElement.style.opacity = 1;
+            });
+        },
+        update: (e)=>{}
+    };
+    return headerPlugin;
+};
+var $4ded6e671b4245a5$export$2e2bcd8739ae039 = $4ded6e671b4245a5$var$HeaderPlugin;
+
+
+/*
+ * Reveal.js menu plugin
+ * MIT licensed
+ * 
+ * Copyright (c) 2025 Emiliano "pixu1980" Pisu
+ */ const $a7e48133286c7321$var$defaults = {
+    side: 'right',
+    numbers: false,
+    titleSelector: 'h1, h2, h3, h4, h5',
+    hideMissingTitles: false,
+    useTextContentForMissingTitles: false,
+    markers: true,
+    transitions: [
+        'None',
+        'Fade',
+        'Slide',
+        'Convex',
+        'Concave',
+        'Zoom'
+    ],
+    openButton: true,
+    openSlideNumber: false,
+    keyboard: true,
+    sticky: false,
+    autoOpen: true,
+    delayInit: false,
+    openOnInit: false
+};
+class $a7e48133286c7321$var$Menu {
+    deck;
+    dom = {
+        reveal: null,
+        toolbar: null,
+        menu: null,
+        buttons: []
+    };
+    settings = {};
+    create(tagName, attrs, content) {
+        var el = document.createElement(tagName);
+        if (attrs) Object.getOwnPropertyNames(attrs).forEach((n)=>el.setAttribute(n, attrs[n]));
+        if (content) el.innerHTML = content;
+        return el;
+    }
+    //#region Mouse & Keyboard handling
+    mouseSelectionEnabled = true;
+    disableMouseSelection() {
+        this.mouseSelectionEnabled = false;
+    }
+    reenableMouseSelection() {
+        // wait until the mouse has moved before re-enabling mouse selection
+        // to avoid selections on scroll
+        const tempMouseMoveEventHandler = (e)=>{
+            this.dom.menu.querySelector('nav.slide-menu').removeEventListener('mousemove', tempMouseMoveEventHandler);
+            //XXX this should select the item under the mouse
+            this.mouseSelectionEnabled = true;
+        };
+        this.dom.menu.querySelector('nav.slide-menu').addEventListener('mousemove', tempMouseMoveEventHandler);
+    }
+    keepVisible(el) {
+        var offset = window.uiuxEngineering.visibleOffset(el);
+        if (offset) {
+            this.disableMouseSelection();
+            el.scrollIntoView(offset > 0);
+            this.reenableMouseSelection();
+        }
+    }
+    scrollItemToTop(el) {
+        this.disableMouseSelection();
+        el.offsetParent.scrollTop = el.offsetTop;
+        this.reenableMouseSelection();
+    }
+    scrollItemToBottom(el) {
+        this.disableMouseSelection();
+        el.offsetParent.scrollTop = el.offsetTop - el.offsetParent.offsetHeight + el.offsetHeight;
+        this.reenableMouseSelection();
+    }
+    selectItem(el) {
+        el.classList.add('selected');
+        this.keepVisible(el);
+        if (this.settings.sticky && this.settings.autoOpen) this.openItem(el);
+    }
+    onDocumentKeyDown(event) {
+        // opening menu is handled by registering key binding with Reveal below
+        if (this.isOpen()) {
+            event.stopImmediatePropagation();
+            switch(event.keyCode){
+                // case 77:
+                // 	closeMenu();
+                // 	break;
+                // h, left - change panel
+                case 72:
+                case 37:
+                    this.prevPanel();
+                    break;
+                // l, right - change panel
+                case 76:
+                case 39:
+                    this.nextPanel();
+                    break;
+                // k, up
+                case 75:
+                case 38:
+                    var currItem = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li.selected') || this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li.active');
+                    if (currItem) {
+                        this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').forEach((item)=>{
+                            item.classList.remove('selected');
+                        });
+                        var nextItem = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li[data-item="' + (parseInt(currItem.getAttribute('data-item')) - 1) + '"]') || currItem;
+                        this.selectItem(nextItem);
+                    } else {
+                        var item = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li.slide-menu-item');
+                        if (item) this.selectItem(item);
+                    }
+                    break;
+                // j, down
+                case 74:
+                case 40:
+                    var currItem = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li.selected') || this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li.active');
+                    if (currItem) {
+                        this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').forEach((item)=>{
+                            item.classList.remove('selected');
+                        });
+                        var nextItem = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li[data-item="' + (parseInt(currItem.getAttribute('data-item')) + 1) + '"]') || currItem;
+                        this.selectItem(nextItem);
+                    } else {
+                        var item = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li.slide-menu-item');
+                        if (item) this.selectItem(item);
+                    }
+                    break;
+                // pageup, u
+                case 33:
+                case 85:
+                    var itemsAbove = this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').filter((item)=>window.uiuxEngineering.visibleOffset(item) > 0);
+                    var visibleItems = this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').filter((item)=>window.uiuxEngineering.visibleOffset(item) == 0);
+                    var firstVisible = itemsAbove.length > 0 && Math.abs(window.uiuxEngineering.visibleOffset(itemsAbove[itemsAbove.length - 1])) < itemsAbove[itemsAbove.length - 1].clientHeight ? itemsAbove[itemsAbove.length - 1] : visibleItems[0];
+                    if (firstVisible) {
+                        if (firstVisible.classList.contains('selected') && itemsAbove.length > 0) {
+                            // at top of viewport already, page scroll (if not at start)
+                            // ...move selected item to bottom, and change selection to last fully visible item at top
+                            this.scrollItemToBottom(firstVisible);
+                            visibleItems = this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').filter((item)=>window.uiuxEngineering.visibleOffset(item) == 0);
+                            if (visibleItems[0] == firstVisible) // prev item is still beyond the viewport (for custom panels)
+                            firstVisible = itemsAbove[itemsAbove.length - 1];
+                            else firstVisible = visibleItems[0];
+                        }
+                        this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').forEach((item)=>{
+                            item.classList.remove('selected');
+                        });
+                        this.selectItem(firstVisible);
+                        // ensure selected item is positioned at the top of the viewport
+                        this.scrollItemToTop(firstVisible);
+                    }
+                    break;
+                // pagedown, d
+                case 34:
+                case 68:
+                    var visibleItems = this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').filter((item)=>window.uiuxEngineering.visibleOffset(item) == 0);
+                    var itemsBelow = this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').filter((item)=>window.uiuxEngineering.visibleOffset(item) < 0);
+                    var lastVisible = itemsBelow.length > 0 && Math.abs(window.uiuxEngineering.visibleOffset(itemsBelow[0])) < itemsBelow[0].clientHeight ? itemsBelow[0] : visibleItems[visibleItems.length - 1];
+                    if (lastVisible) {
+                        if (lastVisible.classList.contains('selected') && itemsBelow.length > 0) {
+                            // at bottom of viewport already, page scroll (if not at end)
+                            // ...move selected item to top, and change selection to last fully visible item at bottom
+                            this.scrollItemToTop(lastVisible);
+                            visibleItems = this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').filter((item)=>window.uiuxEngineering.visibleOffset(item) == 0);
+                            if (visibleItems[visibleItems.length - 1] == lastVisible) // next item is still beyond the viewport (for custom panels)
+                            lastVisible = itemsBelow[0];
+                            else lastVisible = visibleItems[visibleItems.length - 1];
+                        }
+                        this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').forEach((item)=>{
+                            item.classList.remove('selected');
+                        });
+                        this.selectItem(lastVisible);
+                        // ensure selected item is positioned at the bottom of the viewport
+                        this.scrollItemToBottom(lastVisible);
+                    }
+                    break;
+                // home
+                case 36:
+                    this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').forEach((item)=>{
+                        item.classList.remove('selected');
+                    });
+                    var item = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li:first-of-type');
+                    if (item) {
+                        item.classList.add('selected');
+                        this.keepVisible(item);
+                    }
+                    break;
+                // end
+                case 35:
+                    this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li').forEach((item)=>{
+                        item.classList.remove('selected');
+                    });
+                    var item = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items:last-of-type li:last-of-type');
+                    if (item) {
+                        item.classList.add('selected');
+                        this.keepVisible(item);
+                    }
+                    break;
+                // space, return
+                case 32:
+                case 13:
+                    var currItem = this.dom.menu.querySelector('.active-menu-panel .slide-menu-items li.selected');
+                    if (currItem) this.openItem(currItem, true);
+                    break;
+                // esc
+                case 27:
+                    this.closeMenu(null, true);
+                    break;
+            }
+        }
+    }
+    //#endregion
+    //#region Plugin Methods
+    openMenu(event) {
+        if (event) event.preventDefault();
+        if (!this.isOpen()) {
+            document.querySelector('body').classList.add('slide-menu-active');
+            this.dom.reveal.classList.add('has-' + this.settings.effect + '-' + this.settings.side);
+            this.dom.menu.querySelector('.slide-menu').classList.add('active');
+            this.dom.menu.querySelector('.slide-menu-overlay').classList.add('active');
+            // identify active theme
+            // if (this.settings.themes) {
+            //   this.dom.menu.querySelectorAll('div[data-panel="Themes"] li').forEach((i) => {
+            //     i.classList.remove('active');
+            //   });
+            //   this.dom.menu.querySelectorAll(
+            //     'li[data-theme="' + this.dom.menu.querySelector('link#theme').getAttribute('href') + '"]'
+            //   ).forEach((i) => {
+            //     i.classList.add('active');
+            //   });
+            // }
+            // identify active transition
+            if (this.settings.transitions) {
+                this.dom.menu.querySelectorAll('div[data-panel="Transitions"] li').forEach((i)=>{
+                    i.classList.remove('active');
+                });
+                this.dom.menu.querySelectorAll('li[data-transition="' + this.settings.transition + '"]').forEach((i)=>{
+                    i.classList.add('active');
+                });
+            }
+            // set item selections to match active items
+            var items = this.dom.menu.querySelectorAll('.slide-menu-panel li.active');
+            items.forEach((i)=>{
+                i.classList.add('selected');
+                this.keepVisible(i);
+            });
+        }
+    }
+    closeMenu(event, force) {
+        if (event) event.preventDefault();
+        if (!this.settings.sticky || force) {
+            document.querySelector('body').classList.remove('slide-menu-active');
+            this.dom.reveal.classList.remove('has-' + this.settings.effect + '-' + this.settings.side);
+            this.dom.menu.querySelector('.slide-menu').classList.remove('active');
+            this.dom.menu.querySelector('.slide-menu-overlay').classList.remove('active');
+            this.dom.menu.querySelectorAll('.slide-menu-panel li.selected').forEach((i)=>{
+                i.classList.remove('selected');
+            });
+        }
+    }
+    toggle(event) {
+        if (this.isOpen()) this.closeMenu(event, true);
+        else this.openMenu(event);
+    }
+    isOpen() {
+        return document.querySelector('body').classList.contains('slide-menu-active');
+    }
+    openPanel(event, ref) {
+        this.openMenu(event);
+        var panel = ref;
+        if (typeof ref !== 'string') panel = event.currentTarget.getAttribute('data-panel');
+        this.dom.menu.querySelector('.slide-menu-toolbar > li.active-toolbar-button').classList.remove('active-toolbar-button');
+        this.dom.menu.querySelector('li[data-panel="' + panel + '"]').classList.add('active-toolbar-button');
+        this.dom.menu.querySelector('.slide-menu-panel.active-menu-panel').classList.remove('active-menu-panel');
+        this.dom.menu.querySelector('div[data-panel="' + panel + '"]').classList.add('active-menu-panel');
+    }
+    nextPanel() {
+        var next = (parseInt(this.dom.menu.querySelector('.active-toolbar-button').getAttribute('data-button')) + 1) % this.dom.buttons.length;
+        this.openPanel(null, this.dom.menu.querySelector('.toolbar-panel-button[data-button="' + next + '"]').getAttribute('data-panel'));
+    }
+    prevPanel() {
+        var next = parseInt(this.dom.menu.querySelector('.active-toolbar-button').getAttribute('data-button')) - 1;
+        if (next < 0) next = this.dom.buttons.length - 1;
+        this.openPanel(null, this.dom.menu.querySelector('.toolbar-panel-button[data-button="' + next + '"]').getAttribute('data-panel'));
+    }
+    openItem(item, force) {
+        var h = parseInt(item.getAttribute('data-slide-h'));
+        var v = parseInt(item.getAttribute('data-slide-v'));
+        // var theme = item.getAttribute('data-theme');
+        var highlightTheme = item.getAttribute('data-highlight-theme');
+        var transition = item.getAttribute('data-transition');
+        if (!isNaN(h) && !isNaN(v)) this.deck.slide(h, v);
+        // if (theme) {
+        //   this.changeStylesheet('theme', theme);
+        // }
+        // if (highlightTheme) {
+        //   this.changeStylesheet('highlight-theme', highlightTheme);
+        // }
+        if (transition) this.deck.configure({
+            transition: transition
+        });
+        var link = this.dom.menu.querySelector('a', item);
+        if (link) {
+            if (force || !this.settings.sticky || this.settings.autoOpen && link.href.startsWith('#') || link.href.startsWith(window.location.origin + window.location.pathname + '#')) link.click();
+        }
+        this.closeMenu();
+    }
+    clicked(event) {
+        if (event.target.nodeName !== 'A') event.preventDefault();
+        this.openItem(event.currentTarget);
+    }
+    highlightCurrentSlide() {
+        var state = this.deck.getState();
+        this.dom.menu.querySelectorAll('li.slide-menu-item, li.slide-menu-item-vertical').forEach((item)=>{
+            item.classList.remove('past');
+            item.classList.remove('active');
+            item.classList.remove('future');
+            var h = parseInt(item.getAttribute('data-slide-h'));
+            var v = parseInt(item.getAttribute('data-slide-v'));
+            if (h < state.indexh || h === state.indexh && v < state.indexv) item.classList.add('past');
+            else if (h === state.indexh && v === state.indexv) item.classList.add('active');
+            else item.classList.add('future');
+        });
+    }
+    // matchRevealStyle() {
+    //   var revealStyle = window.getComputedStyle(this.dom.reveal);
+    //   var element = this.dom.menu.querySelector('.slide-menu');
+    //   element.style.fontFamily = revealStyle.fontFamily;
+    //   //XXX could adjust the complete menu style to match the theme, ie colors, etc
+    // }
+    addToolbarButton(title, ref, icon, style, fn, active) {
+        var attrs = {
+            'data-button': '' + this.dom.buttons.length + 1,
+            class: 'toolbar-panel-button' + (active ? ' active-toolbar-button' : '')
+        };
+        if (ref) attrs['data-panel'] = ref;
+        var button = this.create('li', attrs);
+        if (icon.startsWith('fa-')) button.appendChild(this.create('i', {
+            class: style + ' ' + icon
+        }));
+        else button.innerHTML = icon + '</i>';
+        button.appendChild(this.create('br'), this.dom.menu.querySelector('i', button));
+        button.appendChild(this.create('span', {
+            class: 'slide-menu-toolbar-label'
+        }, title), this.dom.menu.querySelector('i', button));
+        button.onclick = fn;
+        this.dom.buttons.push(button);
+        this.dom.toolbar.appendChild(button);
+        return button;
+    }
+    //
+    // Slide links
+    //
+    text(selector, parent) {
+        if (selector === '') return null;
+        var el = parent ? parent.querySelector(selector) : this.dom.menu.querySelector(selector);
+        if (el) return el.textContent;
+        return null;
+    }
+    generateItem(type, section, i, h, v) {
+        var link = '/#/' + h;
+        if (typeof v === 'number' && !isNaN(v)) link += '/' + v;
+        var title = this.text('[data-menu-title]', section) || this.text('[data-id="slide-title"]', section) || this.text('.menu-title', section) || this.text(this.settings.titleSelector, section);
+        if (!title && this.settings.useTextContentForMissingTitles) {
+            // attempt to figure out a title based on the text in the slide
+            title = section.textContent.trim();
+            if (title) title = title.split('\n').map((t)=>t.trim()).join(' ').trim().replace(/^(.{16}[^\s]*).*/, '$1') // limit to 16 chars plus any consecutive non-whitespace chars (to avoid breaking words)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;') + '...';
+        }
+        if (!title) {
+            if (this.settings.hideMissingTitles) return '';
+            type += ' no-title';
+            title = 'Slide ' + (i + 1);
+        }
+        var item = this.create('li', {
+            class: type,
+            'data-item': i,
+            'data-slide-h': h,
+            'data-slide-v': v === undefined ? 0 : v
+        });
+        if (this.settings.markers) {
+            item.appendChild(this.create('i', {
+                class: 'fas fa-check-circle fa-fw past'
+            }));
+            item.appendChild(this.create('i', {
+                class: 'fas fa-arrow-alt-circle-right fa-fw active'
+            }));
+            item.appendChild(this.create('i', {
+                class: 'far fa-circle fa-fw future'
+            }));
+        }
+        if (this.settings.numbers) {
+            // Number formatting taken from reveal.js
+            var value = [];
+            var format = 'h.v';
+            // Check if a custom number format is available
+            if (typeof this.settings.numbers === 'string') format = this.settings.numbers;
+            else if (typeof this.settings.slideNumber === 'string') // Take user defined number format for slides
+            format = this.settings.slideNumber;
+            switch(format){
+                case 'c':
+                    value.push(i + 1);
+                    break;
+                case 'c/t':
+                    value.push(i + 1, '/', this.deck.getTotalSlides());
+                    break;
+                case 'h/v':
+                    value.push(h + 1);
+                    if (typeof v === 'number' && !isNaN(v)) value.push('/', v + 1);
+                    break;
+                default:
+                    value.push(h + 1);
+                    if (typeof v === 'number' && !isNaN(v)) value.push('.', v + 1);
+            }
+            item.appendChild(this.create('span', {
+                class: 'slide-menu-item-number'
+            }, value.join('') + '. '));
+        }
+        item.appendChild(this.create('span', {
+            class: 'slide-menu-item-title'
+        }, title));
+        return item;
+    }
+    createSlideMenu() {
+        if (!this.dom.menu.querySelector('section[data-markdown]:not([data-markdown-parsed])')) {
+            var panel = this.create('div', {
+                'data-panel': 'Slides',
+                class: 'slide-menu-panel active-menu-panel'
+            });
+            panel.appendChild(this.create('ul', {
+                class: 'slide-menu-items'
+            }));
+            this.dom.panels.appendChild(panel);
+            var items = this.dom.menu.querySelector('.slide-menu-panel[data-panel="Slides"] > .slide-menu-items');
+            var slideCount = 0;
+            this.dom.reveal.querySelectorAll('.slides > section').forEach((section, h)=>{
+                var subsections = section.querySelectorAll('section');
+                if (subsections.length > 0) subsections.forEach((subsection, v)=>{
+                    var type = v === 0 ? 'slide-menu-item' : 'slide-menu-item-vertical';
+                    var item = this.generateItem(type, subsection, slideCount, h, v);
+                    if (item) items.appendChild(item);
+                    slideCount++;
+                });
+                else {
+                    var item = this.generateItem('slide-menu-item', section, slideCount, h);
+                    if (item) items.appendChild(item);
+                    slideCount++;
+                }
+            });
+            this.dom.menu.querySelectorAll('.slide-menu-item, .slide-menu-item-vertical').forEach((i)=>{
+                i.onclick = (e)=>this.clicked(e);
+            });
+            this.highlightCurrentSlide();
+        } else // wait for markdown to be loaded and parsed
+        setTimeout(this.createSlideMenu, 100);
+    }
+    handleMouseHighlight(event) {
+        if (this.mouseSelectionEnabled) {
+            this.dom.menu.querySelectorAll('.active-menu-panel .slide-menu-items li.selected').forEach((i)=>{
+                i.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+        }
+    }
+    initMenu() {
+        // if (!initialized) {
+        this.dom.panels = this.create('nav', {
+            class: 'slide-menu slide-menu--' + this.settings.side
+        });
+        if (typeof this.settings.width === 'string') {
+            if ([
+                'normal',
+                'wide',
+                'third',
+                'half',
+                'full'
+            ].indexOf(this.settings.width) != -1) this.dom.panels.classList.add('slide-menu--' + this.settings.width);
+            else {
+                this.dom.panels.classList.add('slide-menu--custom');
+                this.dom.panels.style.width = this.settings.width;
+            }
+        }
+        this.dom.menu.appendChild(this.dom.panels);
+        // this.matchRevealStyle();
+        var overlay = this.create('div', {
+            class: 'slide-menu-overlay'
+        });
+        this.dom.menu.appendChild(overlay);
+        overlay.onclick = ()=>{
+            this.closeMenu(null, true);
+        };
+        this.dom.toolbar = this.create('ol', {
+            class: 'slide-menu-toolbar'
+        });
+        this.dom.menu.querySelector('.slide-menu').appendChild(this.dom.toolbar);
+        this.addToolbarButton('Slides', 'Slides', 'fa-images', 'fas', this.openPanel.bind(this), true);
+        // if (this.settings.custom) {
+        //   this.settings.custom.forEach((element, index, array) => {
+        //     this.addToolbarButton(
+        //       element.title,
+        //       'Custom' + index,
+        //       element.icon,
+        //       null,
+        //       openPanel
+        //     );
+        //   });
+        // }
+        // if (this.settings.themes) {
+        //   this.addToolbarButton('Themes', 'Themes', 'fa-adjust', 'fas', openPanel);
+        // }
+        if (this.settings.transitions) this.addToolbarButton('Transitions', 'Transitions', 'fa-sticky-note', 'fas', this.openPanel.bind(this));
+        var button = this.create('li', {
+            id: 'close',
+            class: 'toolbar-panel-button'
+        });
+        button.appendChild(this.create('i', {
+            class: 'fas fa-times'
+        }));
+        button.appendChild(this.create('br'));
+        button.appendChild(this.create('span', {
+            class: 'slide-menu-toolbar-label'
+        }, 'Close'));
+        button.onclick = ()=>{
+            this.closeMenu(null, true);
+        };
+        // TODO: add button in this.dom.buttons?
+        this.dom.toolbar.appendChild(button);
+        this.createSlideMenu();
+        this.deck.addEventListener('slidechanged', (e)=>this.highlightCurrentSlide(e));
+        //
+        // Custom menu panels
+        //
+        // if (this.settings.custom) {
+        //   function xhrSuccess() {
+        //     if (this.status >= 200 && this.status < 300) {
+        //       this.panel.innerHTML = this.responseText;
+        //       this.enableCustomLinks(this.panel);
+        //     } else {
+        //       this.showErrorMsg(this);
+        //     }
+        //   }
+        //   function xhrError() {
+        //     this.showErrorMsg(this);
+        //   }
+        //   function loadCustomPanelContent(panel, sURL) {
+        //     var oReq = new XMLHttpRequest();
+        //     oReq.panel = panel;
+        //     oReq.arguments = Array.prototype.slice.call(arguments, 2);
+        //     oReq.onload = xhrSuccess;
+        //     oReq.onerror = xhrError;
+        //     oReq.open('get', sURL, true);
+        //     oReq.send(null);
+        //   }
+        //   function enableCustomLinks(panel) {
+        //     this.dom.menu.querySelectorAll('ul.slide-menu-items li.slide-menu-item', panel).forEach(
+        //       function (item, i) {
+        //         item.setAttribute('data-item', i + 1);
+        //         item.onclick = clicked;
+        //         item.addEventListener('mouseenter', handleMouseHighlight);
+        //       }
+        //     );
+        //   }
+        //   function showErrorMsg(response) {
+        //     var msg =
+        //       '<p>ERROR: The attempt to fetch ' +
+        //       response.responseURL +
+        //       ' failed with HTTP status ' +
+        //       response.status +
+        //       ' (' +
+        //       response.statusText +
+        //       ').</p>' +
+        //       '<p>Remember that you need to serve the presentation HTML from a HTTP server.</p>';
+        //     response.panel.innerHTML = msg;
+        //   }
+        //   this.settings.custom.forEach(function (element, index, array) {
+        //     var panel = this.create('div', {
+        //       'data-panel': 'Custom' + index,
+        //       class: 'slide-menu-panel slide-menu-custom-panel'
+        //     });
+        //     if (element.content) {
+        //       panel.innerHTML = element.content;
+        //       this.enableCustomLinks(panel);
+        //     } else if (element.src) {
+        //       this.loadCustomPanelContent(panel, element.src);
+        //     }
+        //     panels.appendChild(panel);
+        //   });
+        // }
+        //
+        // Themes
+        //
+        // if (this.settings.themes) {
+        //   var panel = this.create('div', {
+        //     class: 'slide-menu-panel',
+        //     'data-panel': 'Themes'
+        //   });
+        //   panels.appendChild(panel);
+        //   var menu = this.create('ul', { class: 'slide-menu-items' });
+        //   panel.appendChild(menu);
+        //   this.settings.themes.forEach(function (t, i) {
+        //     var attrs = {
+        //       class: 'slide-menu-item',
+        //       'data-item': '' + (i + 1)
+        //     };
+        //     if (t.theme) {
+        //       attrs['data-theme'] = t.theme;
+        //     }
+        //     if (t.highlightTheme) {
+        //       attrs['data-highlight-theme'] = t.highlightTheme;
+        //     }
+        //     var item = this.create('li', attrs, t.name);
+        //     menu.appendChild(item);
+        //     item.onclick = clicked;
+        //   });
+        // }
+        //
+        // Transitions
+        //
+        if (this.settings.transitions) {
+            var panel = this.create('div', {
+                class: 'slide-menu-panel',
+                'data-panel': 'Transitions'
+            });
+            this.dom.panels.appendChild(panel);
+            var menu = this.create('ul', {
+                class: 'slide-menu-items'
+            });
+            panel.appendChild(menu);
+            this.settings.transitions.forEach((name, i)=>{
+                var item = this.create('li', {
+                    class: 'slide-menu-item',
+                    'data-transition': name.toLowerCase(),
+                    'data-item': '' + (i + 1)
+                }, name);
+                menu.appendChild(item);
+                item.onclick = (e)=>this.clicked(e);
+            });
+        }
+        //
+        // Open menu options
+        //
+        if (this.settings.openButton) {
+            // add menu button
+            var div = this.create('div', {
+                class: 'slide-menu-button'
+            });
+            var link = this.create('a', {
+                href: '#'
+            });
+            link.appendChild(this.create('i', {
+                class: 'fas fa-bars'
+            }));
+            div.appendChild(link);
+            this.dom.reveal.appendChild(div);
+            div.onclick = (e)=>this.openMenu(e);
+        }
+        if (this.settings.openSlideNumber) {
+            var slideNumber = this.dom.menu.querySelector('div.slide-number');
+            slideNumber.onclick = (e)=>this.openMenu(e);
+        }
+        //
+        // Handle mouse overs
+        //
+        this.dom.menu.querySelectorAll('.slide-menu-panel .slide-menu-items li').forEach((item)=>{
+            item.addEventListener('mouseenter', (e)=>this.handleMouseHighlight(e));
+        });
+        // }
+        if (this.settings.keyboard) {
+            //XXX add keyboard option for custom key codes, etc.
+            document.addEventListener('keydown', (e)=>this.onDocumentKeyDown(e), false);
+            // handle key presses within speaker notes
+            window.addEventListener('message', (event)=>{
+                var data;
+                try {
+                    data = JSON.parse(event.data);
+                } catch (e) {}
+                if (data && data.method === 'triggerKey') this.onDocumentKeyDown({
+                    keyCode: data.args[0],
+                    stopImmediatePropagation: ()=>{}
+                });
+            });
+            // Prevent reveal from processing keyboard events when the menu is open
+            if (this.settings.keyboardCondition && typeof this.settings.keyboardCondition === 'function') // combine user defined keyboard condition with the menu's own condition
+            this.settings.keyboardCondition = (event)=>this.settings.keyboardCondition(event) && (!this.isOpen() || event.keyCode == 77);
+            else this.settings.keyboardCondition = (event)=>!this.isOpen() || event.keyCode == 77;
+            this.deck.addKeyBinding({
+                keyCode: 77,
+                key: 'M',
+                description: 'Toggle menu'
+            }, (e)=>this.toggle(e));
+        }
+        if (this.settings.openOnInit) this.openMenu();
+    }
+    //#endregion
+    init() {
+        this.dom.menu = document.createElement('div');
+        this.dom.menu.classList.add('slide-menu-wrapper');
+        this.dom.reveal = document.querySelector('.reveal');
+        this.dom.reveal.parentElement.appendChild(this.dom.menu);
+        // do not load the menu in the upcoming slide panel in the speaker notes
+        if (!(this.deck.isSpeakerNotes() && window.location.search.endsWith('controls=false'))) {
+            if (!this.settings.delayInit) this.initMenu();
+            this.deck.dispatchEvent('menu-ready', this, true);
+        }
+    }
+    constructor(deck){
+        this.deck = deck;
+        this.settings = {
+            ...$a7e48133286c7321$var$defaults,
+            ...deck.getConfig()?.menu
+        };
+        this.init();
+    }
+}
+const $a7e48133286c7321$var$Plugin = ()=>{
+    let instance;
+    return {
+        id: 'menu',
+        init: (deck)=>{
+            instance = new $a7e48133286c7321$var$Menu(deck);
+        },
+        toggleMenu: ()=>{
+            instance.toggle();
+        }
+    };
+};
+var $a7e48133286c7321$export$2e2bcd8739ae039 = $a7e48133286c7321$var$Plugin;
+
+
+/*
+ * Reveal.js toolbar plugin
+ * MIT licensed
+ *
+ * Copyright (c) 2025 Emiliano "pixu1980" Pisu
+ */ /* TODO:
+ * - Notes ?
+ * - PDF export ?
+ * - tooltips
+ */ const $b03278a6677e60e6$var$defaults = {
+    position: 'top',
+    fullscreen: true,
+    colorScheme: true,
+    overview: true,
+    pause: false,
+    notes: false,
+    help: true,
+    menu: true
+};
+class $b03278a6677e60e6$var$Toolbar {
+    deck;
+    dom = {
+        reveal: null,
+        toolbar: null,
+        buttons: []
+    };
+    settings = {};
+    addActionButton(settings) {
+        const button = document.createElement('button');
+        button.setAttribute('type', 'button');
+        button.classList.add('reveal-toolbar-button');
+        settings.class && button.classList.add(settings.class);
+        settings.caption && (button.innerText = settings.caption);
+        settings.content && (button.innerHTML = settings.content);
+        settings.handler && button.addEventListener('click', settings.handler);
+        this.dom.buttons.push(button);
+        this.dom.toolbar.appendChild(button);
+    }
+    addAction(name, caption, options, handler) {
+        const defaults = {
+            class: `reveal-toolbar-button-${name}`,
+            caption: caption,
+            content: undefined
+        };
+        const settings = {
+            ...defaults,
+            ...Object.prototype.toString.call(options) === '[object Object]' && options,
+            handler: (e)=>{
+                handler && handler(e);
+                this.deck.dispatchEvent(`toolbar-${name}-action`, this, true);
+            }
+        };
+        this.addActionButton(settings);
+    }
+    toggleColorScheme() {
+        let meta = document.querySelector('meta[name="color-scheme"]');
+        if (!meta) {
+            document.head.insertAdjacentHTML('beforeend', '<meta name="color-scheme" content="light dark" />');
+            meta = document.querySelector('meta[name="color-scheme"]');
+        }
+        const values = [
+            'light',
+            'dark',
+            'light dark'
+        ];
+        const icons = Object.freeze({
+            light: 'sun',
+            dark: 'moon',
+            'light dark': 'computer'
+        });
+        const current = meta.content.trim();
+        // Applica il nuovo valore
+        meta.content = values[(values.indexOf(current) + 1) % values.length];
+        const icon = this.dom.toolbar.querySelector('button.reveal-toolbar-button-colorScheme icon');
+        icon.setAttribute('class', `draft-ui-icon-${icons[meta.content]}`);
+    }
+    init() {
+        this.dom.toolbar = document.createElement('div');
+        this.dom.toolbar.classList.add('reveal-toolbar');
+        this.dom.toolbar.classList.add(this.settings.position == 'top' ? 'reveal-toolbar-top' : 'reveal-toolbar-bottom');
+        this.dom.reveal = document.querySelector('.reveal');
+        this.dom.reveal.appendChild(this.dom.toolbar);
+        this.settings.menu && this.addAction('menu', 'M', this.settings.menu, (e)=>{
+            this.deck.getPlugin('menu')?.toggleMenu();
+        });
+        this.settings.help && this.addAction('help', '?', this.settings.help, (e)=>{
+            this.deck.toggleHelp();
+            this.dom.reveal.querySelector('.overlay-help header .close').remove();
+            this.dom.reveal.querySelector('.overlay-help table tr:nth-child(2) td:first-child').innerText = 'SPACE';
+            this.dom.reveal.querySelector('.overlay-help table tr:nth-child(3) td:first-child').innerText = 'BACKSPACE';
+            this.dom.reveal.querySelectorAll('.overlay-help header, .overlay-help .viewport').forEach((item)=>{
+                item.addEventListener('click', (e)=>{
+                    this.deck.toggleHelp();
+                }, {
+                    once: true
+                });
+            });
+        });
+        this.settings.colorScheme && this.addAction('colorScheme', 'C', this.settings.colorScheme, (e)=>{
+            this.toggleColorScheme();
+        });
+        this.settings.overview && this.addAction('overview', 'O', this.settings.overview, (e)=>{
+            this.deck.toggleOverview();
+        });
+        this.settings.notes && !this.deck.isSpeakerNotes() && this.addAction('notes', 'N', this.settings.notes, (e)=>{
+            this.deck.getPlugin('notes')?.open();
+        });
+        this.settings.fullscreen && this.addAction('fullscreen', 'F', this.settings.fullscreen, (e)=>{
+            var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+            !document.exitFullscreen && (document.exitFullscreen = document.mozExitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen);
+            fullscreenElement ? document.exitFullscreen() : this.deck.triggerKey(70);
+        });
+        this.settings.pause && this.addAction('pause', 'P', this.settings.pause, (e)=>{
+            this.deck.togglePause();
+            this.deck.addEventListener('paused', function() {
+            // var icon = dom.pauseButton.querySelector('i');
+            // icon.classList.remove('fa-eye-slash');
+            // icon.classList.add('fa-eye');
+            });
+            this.deck.addEventListener('resumed', function() {
+            // var icon = dom.pauseButton.querySelector('i');
+            // icon.classList.remove('fa-eye');
+            // icon.classList.add('fa-eye-slash');
+            });
+        });
+    }
+    constructor(deck){
+        this.deck = deck;
+        this.settings = {
+            ...$b03278a6677e60e6$var$defaults,
+            ...deck.getConfig()?.toolbar
+        };
+        this.init();
+        this.deck.dispatchEvent('toolbar-ready', this, true);
+    }
+}
+const $b03278a6677e60e6$var$Plugin = ()=>{
+    return {
+        id: 'toolbar',
+        init: (deck)=>{
+            new $b03278a6677e60e6$var$Toolbar(deck);
+        }
+    };
+};
+var $b03278a6677e60e6$export$2e2bcd8739ae039 = $b03278a6677e60e6$var$Plugin;
+
+
+
+
+// DiveIn stacked container component
 addEventListener('DOMContentLoaded', ()=>{
     const diveIn = document.querySelector('dive-in');
     const stackContainer = diveIn && diveIn.querySelector('stack-container');
@@ -49447,36 +51907,369 @@ addEventListener('DOMContentLoaded', ()=>{
 });
 
 
-// reveal.js initialization
-const $ce2ab6a3784a12d8$var$slides = (0, $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039)({
-    plugins: [
-        (0, (/*@__PURE__*/$parcel$interopDefault($d16eb09acf14544d$exports))),
-        (0, (/*@__PURE__*/$parcel$interopDefault($64e7f54992ce4b7d$exports)))
-    ],
-    // highlight.js options
-    highlight: {
-        highlightOnLoad: true,
-        tabReplace: '  '
-    },
-    navigationMode: 'linear',
-    ...window.location.href.includes('?print-pdf') && {
-        pdfSeparateFragments: false
-    },
-    hash: true,
-    // Flags if we should monitor the hash and change slides accordingly
-    respondToHashChanges: true,
-    // Push each slide change to the browser history.  Implies `hash: true`
-    history: true
-});
-// keyboard interaction configuration
-$ce2ab6a3784a12d8$var$slides.configure({
-    keyboard: {
-        8: 'prev',
-        // 27: null,
-        78: null
+// Stagger animation components
+addEventListener('DOMContentLoaded', ()=>{
+    const staggers = [
+        ...document.querySelectorAll('stagger')
+    ];
+    for (const stagger of staggers){
+        const staggerItems = [
+            ...stagger.querySelectorAll(':scope > *')
+        ];
+        for (const staggerItem of staggerItems)staggerItems.style.setProperty('--stagger--index', i);
     }
 });
-$ce2ab6a3784a12d8$var$slides.initialize();
 
 
-//# sourceMappingURL=lean-web-manifesto.e2bc8814.js.map
+// Tabs component
+addEventListener('DOMContentLoaded', ()=>{
+    const tabsComponents = document.querySelectorAll('tabs');
+    for (const tabsComponent of tabsComponents){
+        let currentTabIndex = 0;
+        const tabs = tabsComponent.querySelectorAll('tabs-list > a');
+        const tabsPanels = tabsComponent.querySelectorAll('tabs-panels > tab-panel');
+        const resetTabsTabIndex = ()=>{
+            // undo tab control selected state,
+            // and make them not selectable with the tab key
+            // (all tabs)
+            for (const tab1 of tabs){
+                tab1.setAttribute('tabindex', '-1');
+                tab1.setAttribute('aria-selected', 'false');
+            }
+        };
+        const resetTabsPanelsVisibility = ()=>{
+            // hide all tab panels.
+            for (const tabPanel of tabsPanels)tabPanel.setAttribute('aria-hidden', 'true');
+        };
+        const setCurrentTabTabIndex = ()=>{
+            // make the selected tab the selected one, shift focus to it
+            tabs[currentTabIndex].setAttribute('tabindex', '0');
+            tabs[currentTabIndex].setAttribute('aria-selected', 'true');
+            tabs[currentTabIndex].focus();
+        };
+        tabsComponent.addEventListener('keydown', (e)=>{
+            // on keydown,
+            // determine which tab to select
+            var LEFT_ARROW = 37;
+            var UP_ARROW = 38;
+            var RIGHT_ARROW = 39;
+            var DOWN_ARROW = 40;
+            var k = e.which || e.keyCode;
+            // if the key pressed was an arrow key
+            if (k >= LEFT_ARROW && k <= DOWN_ARROW) {
+                // move left one tab for left and up arrows
+                if (k === LEFT_ARROW || k === UP_ARROW) {
+                    if (currentTabIndex > 0) currentTabIndex--;
+                    else currentTabIndex = tabs.length - 1;
+                } else if (k === RIGHT_ARROW || k === DOWN_ARROW) {
+                    if (currentTabIndex < tabs.length - 1) currentTabIndex++;
+                    else currentTabIndex = 0;
+                }
+                // trigger a click event on the tab to move to
+                tabs[currentTabIndex].click();
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        });
+        tabsComponent.addEventListener('click', (e)=>{
+            // just make the clicked tab the selected one
+            currentTabIndex = [
+                ...tabs
+            ].indexOf(tab);
+            resetTabsTabIndex();
+            resetTabsPanelsVisibility();
+            setCurrentTabTabIndex();
+            // // handle parent <li> current class (for coloring the tabs)
+            // document.querySelector($tabs.get(index)).parent().siblings().removeClass('current');
+            // document.querySelector($tabs.get(index)).parent().addClass('current');
+            // add a current class also to the tab panel
+            // controlled by the clicked tab
+            document.querySelector(tab.getAttribute('href')).setAttribute('aria-hidden', 'false');
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    }
+});
+
+
+
+
+window.pixuTalks = {
+    /**
+   * Pass in an element and its CSS Custom Property that you want the value of.
+   * Optionally, you can determine what datatype you get back.
+   *
+   * @param {String} propKey
+   * @param {HTMLELement} element=document.documentElement
+   * @param {String} castAs='string'
+   * @returns {*}
+   */ getCustomProperty: (propKey, element = document.documentElement, castAs = 'string')=>{
+        let response = getComputedStyle(element).getPropertyValue(propKey);
+        // Tidy up the string if there's something to work with
+        if (response.length) response = response.replace(/\'|"/g, '').trim();
+        // Convert the response into a whatever type we wanted
+        switch(castAs){
+            case 'number':
+            case 'int':
+                return parseInt(response, 10);
+            case 'float':
+                return parseFloat(response, 10);
+            case 'boolean':
+            case 'bool':
+                return response === 'true' || response === '1';
+        }
+        // Return the string response by default
+        return response;
+    },
+    /**
+   * Dispatches an event of the specified type from the
+   * reveal DOM element.
+   */ dispatchEvent (type, args) {
+        var event = document.createEvent('HTMLEvents', 1, 2);
+        event.initEvent(type, true, true);
+        // extend(event, args);
+        document.querySelector('.reveal').dispatchEvent(event);
+        // If we're in an iframe, post each reveal.js event to the
+        // parent window. Used by the notes plugin
+        if (config.postMessageEvents && window.parent !== window.self) window.parent.postMessage(JSON.stringify({
+            namespace: 'reveal',
+            eventName: type,
+            state: getState()
+        }), '*');
+    },
+    getOffset (el) {
+        var _x = 0;
+        var _y = 0;
+        while(el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)){
+            _x += el.offsetLeft - el.scrollLeft;
+            _y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+        return {
+            top: _y,
+            left: _x
+        };
+    },
+    visibleOffset (el) {
+        var offsetFromTop = this.getOffset(el).top - el.offsetParent.offsetTop;
+        if (offsetFromTop < 0) return -offsetFromTop;
+        var offsetFromBottom = el.offsetParent.offsetHeight - (el.offsetTop - el.offsetParent.scrollTop + el.offsetHeight);
+        if (offsetFromBottom < 0) return offsetFromBottom;
+        return 0;
+    },
+    // modified from math plugin
+    loadResource (url, type, callback) {
+        var head = document.querySelector('head');
+        var resource;
+        if (type === 'script') {
+            resource = document.createElement('script');
+            resource.type = 'text/javascript';
+            resource.src = url;
+        } else if (type === 'stylesheet') {
+            resource = document.createElement('link');
+            resource.rel = 'stylesheet';
+            resource.href = url;
+        }
+        // Wrapper for callback to make sure it only fires once
+        var finish = function() {
+            if (typeof callback === 'function') {
+                callback.call();
+                callback = null;
+            }
+        };
+        resource.onload = finish;
+        // IE
+        resource.onreadystatechange = function() {
+            if (this.readyState === 'loaded') finish();
+        };
+        // Normal browsers
+        head.appendChild(resource);
+    },
+    select (selector, el) {
+        if (!el) el = document;
+        return el.querySelector(selector);
+    },
+    selectAll (selector, el) {
+        if (!el) el = document;
+        return Array.prototype.slice.call(el.querySelectorAll(selector));
+    },
+    create (tagName, attrs, content) {
+        var el = document.createElement(tagName);
+        if (attrs) Object.getOwnPropertyNames(attrs).forEach(function(n) {
+            el.setAttribute(n, attrs[n]);
+        });
+        if (content) el.innerHTML = content;
+        return el;
+    }
+};
+
+
+addEventListener('DOMContentLoaded', ()=>{
+    let deck = new (0, $346c5613899b7380$export$2e2bcd8739ae039)(document.querySelector('.reveal'), {
+        ...window.location.href.includes('?print-pdf') && {
+            pdfSeparateFragments: false
+        },
+        hash: true,
+        // plugins: [Markdown, Highlight, Zoom, Notes, Menu, Toolbar, Header],
+        // plugins: [Markdown, Highlight, Zoom, Notes, Toolbar, Menu],
+        plugins: [
+            (0, (/*@__PURE__*/$parcel$interopDefault($6830dfd5316b79a6$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($ad596da0cb293269$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($572835421783e995$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($15a5915d96260513$exports))),
+            (0, $b03278a6677e60e6$export$2e2bcd8739ae039)
+        ],
+        navigationMode: 'linear',
+        menu: {
+            // Specifies which side of the presentation the menu will
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
+            // Specifies the width of the menu.
+            // Can be one of the following:
+            // 'normal', 'wide', 'third', 'half', 'full', or
+            // any valid css length value
+            width: 'normal',
+            // Add slide numbers to the titles in the slide list.
+            // Use 'true' or format string (same as reveal.js slide numbers)
+            numbers: true,
+            // Specifies which slide elements will be used for generating
+            // the slide titles in the menu. The default selects the first
+            // heading element found in the slide, but you can specify any
+            // valid css selector and the text from the first matching
+            // element will be used.
+            // Note: that a section data-menu-title attribute or an element
+            // with a menu-title class will take precedence over this option
+            titleSelector: 'h1, h2, h3, h4, h5, h6',
+            // If slides do not have a matching title, attempt to use the
+            // start of the text content as the title instead
+            useTextContentForMissingTitles: false,
+            // Hide slides from the menu that do not have a title.
+            // Set to 'true' to only list slides with titles.
+            hideMissingTitles: true,
+            // Adds markers to the slide titles to indicate the
+            // progress through the presentation. Set to 'false'
+            // to hide the markers.
+            markers: true,
+            // Specify custom panels to be included in the menu, by
+            // providing an array of objects with 'title', 'icon'
+            // properties, and either a 'src' or 'content' property.
+            custom: false,
+            // // Specifies the themes that will be available in the themes
+            // // menu panel. Set to 'true' to show the themes menu panel
+            // // with the default themes list. Alternatively, provide an
+            // // array to specify the themes to make available in the
+            // // themes menu panel, for example...
+            // //
+            // // [
+            // //     { name: 'Black', theme: 'dist/theme/black.css' },
+            // //     { name: 'White', theme: 'dist/theme/white.css' },
+            // //     { name: 'League', theme: 'dist/theme/league.css' },
+            // //     {
+            // //       name: 'Dark',
+            // //       theme: 'lib/reveal.js/dist/theme/black.css',
+            // //       highlightTheme: 'lib/reveal.js/plugin/highlight/monokai.css'
+            // //     },
+            // //     {
+            // //       name: 'Code: Zenburn',
+            // //       highlightTheme: 'lib/reveal.js/plugin/highlight/zenburn.css'
+            // //     }
+            // // ]
+            // //
+            // // Note: specifying highlightTheme without a theme will
+            // // change the code highlight theme while leaving the
+            // // presentation theme unchanged.
+            // themes: false,
+            // // Specifies the path to the default theme files. If your
+            // // presentation uses a different path to the standard reveal
+            // // layout then you need to provide this option, but only
+            // // when 'themes' is set to 'true'. If you provide your own
+            // // list of themes or 'themes' is set to 'false' the
+            // // 'themesPath' option is ignored.
+            // themesPath: 'dist/theme/',
+            // Specifies if the transitions menu panel will be shown.
+            // Set to 'true' to show the transitions menu panel with
+            // the default transitions list. Alternatively, provide an
+            // array to specify the transitions to make available in
+            // the transitions panel, for example...
+            // ['None', 'Fade', 'Slide']
+            transitions: false,
+            // Adds a menu button to the slides to open the menu panel.
+            // Set to 'false' to hide the button.
+            openButton: false,
+            // If 'true' allows the slide number in the presentation to
+            // open the menu panel. The reveal.js slideNumber option must
+            // be displayed for this to take effect
+            openSlideNumber: false,
+            // If true allows the user to open and navigate the menu using
+            // the keyboard. Standard keyboard interaction with reveal
+            // will be disabled while the menu is open.
+            keyboard: true,
+            // Normally the menu will close on user actions such as
+            // selecting a menu item, or clicking the presentation area.
+            // If 'true', the sticky option will leave the menu open
+            // until it is explicitly closed, that is, using the close
+            // button or pressing the ESC or m key (when the keyboard
+            // interaction option is enabled).
+            sticky: false,
+            // If 'true' standard menu items will be automatically opened
+            // when navigating using the keyboard. Note: this only takes
+            // effect when both the 'keyboard' and 'sticky' options are enabled.
+            autoOpen: true,
+            // If 'true' the menu will not be created until it is explicitly
+            // requested by calling RevealMenu.init(). Note this will delay
+            // the creation of all menu panels, including custom panels, and
+            // the menu button.
+            delayInit: false,
+            // If 'true' the menu will be shown when the menu is initialised.
+            openOnInit: false
+        },
+        toolbar: {
+            // Specifies where the toolbar will be shown: 'top' or 'bottom'
+            position: 'top',
+            // // If true, the reveal.js-menu will be moved into the toolbar.
+            // // Set to false to leave the menu on its own.
+            // menu: {
+            //   content: '<icon class="draft-ui-icon-hamburger"></icon>',
+            // },
+            menu: false,
+            // Add button to show the help overlay
+            help: {
+                content: '<icon class="draft-ui-icon-circle-info"></icon>'
+            },
+            // Add button to toggle the overview mode on and off
+            colorScheme: {
+                content: '<icon class="draft-ui-icon-computer"></icon>'
+            },
+            // Add button to toggle the overview mode on and off
+            overview: {
+                content: '<icon class="draft-ui-icon-apps"></icon>'
+            },
+            // Add button to toggle fullscreen mode for the presentation
+            fullscreen: {
+                content: '<icon class="draft-ui-icon-zoom-in"></icon>'
+            },
+            // Add button to pause (hide) the presentation display
+            pause: false,
+            // Add button to show the speaker notes
+            notes: false
+        }
+    });
+    // keyboard nav configuration
+    deck.configure({
+        keyboard: {
+            8: 'prev',
+            // 27: null,
+            78: null
+        }
+    });
+    deck.initialize();
+    // Make the Reveal object globally available on the /demo page
+    window.Reveal = deck;
+});
+
+
+
+
+//# sourceMappingURL=lean-web-manifesto.2f831075.js.map

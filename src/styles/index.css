@@ -1,29 +1,60 @@
-@import 'npm:reveal.js/dist/reset.css' layer(reveal);
-@import 'npm:reveal.js/dist/reveal.css' layer(reveal);
-@import 'npm:reveal.js/dist/theme/black.css' layer(reveal);
-@import 'npm:reveal.js/plugin/highlight/monokai.css' layer(reveal);
+@import 'npm:@pixu-talks/fonts';
+@import 'npm:@pixu-talks/theme';
 
-@import './_reveal.css';
+@layer talk {
+  @layer reveal {
+    figure {
+      display: inline-flex;
+      flex-flow: column;
+      place-content: center;
+      place-items: center;
+      gap: 0.5rem;
 
-@import './_reset.css' layer(talk);
-@import './_palette.css' layer(talk);
-@import './_typography.css' layer(talk);
-@import './_code.css' layer(talk);
-@import './_comparison.css' layer(talk);
-@import './_pixu.css' layer(talk);
-@import './intro/index.css' layer(talk);
+      figcaption {
+        margin-block-start: 0.5em;
+        font-size: 0.6em;
+      }
+    }
 
-/* here goes the style of the talk slides */
+    blockquote {
+      padding: 1.5rem;
+      margin-inline: auto;
 
-@import './outro/index.css' layer(talk);
+      font-size: 0.7em;
+      text-align: left;
 
-.codepen {
-  height: 400px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid;
-  margin: 1em 0;
-  padding: 1em;
+      &::before {
+        content: '“';
+      }
+
+      &::after {
+        content: '”';
+      }
+
+      figure {
+        float: left;
+
+        inline-size: 25%;
+        margin-inline-end: 0.7em;
+      }
+
+      img {
+        display: block;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+  }
+  @layer codepen {
+    .codepen {
+      height: 400px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid;
+      margin: 1em 0;
+      padding: 1em;
+    }
+  }
 }
