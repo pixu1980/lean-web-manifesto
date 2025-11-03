@@ -1,7 +1,7 @@
 @import 'npm:@pixu-talks/fonts';
 @import 'npm:@pixu-talks/theme';
 
-@layer pixu-talk {
+@layer pixu-talks {
   @layer reveal {
     figure {
       display: inline-flex;
