@@ -59041,4 +59041,4 @@ addEventListener("DOMContentLoaded", ()=>{
 
 
 
-//# sourceMappingURL=lean-web-manifesto.bef91935.js.map
+//# sourceMappingURL=talk-lean-web-manifesto.94348161.js.map

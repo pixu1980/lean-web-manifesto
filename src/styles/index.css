@@ -1,76 +1,76 @@
-@import 'npm:@pixu-talks/fonts';
-@import 'npm:@pixu-talks/theme';
+@import "npm:@pixu-talks/fonts";
+@import "npm:@pixu-talks/theme";
 
 @layer pixu-talks {
-  @layer reveal {
-    figure {
-      display: inline-flex;
-      flex-flow: column;
-      place-content: center;
-      place-items: center;
-      gap: 0.5rem;
+	@layer reveal {
+		figure {
+			display: inline-flex;
+			flex-flow: column;
+			place-content: center;
+			place-items: center;
+			gap: 0.5rem;
 
-      figcaption {
-        margin-block-start: 0.5em;
-        font-size: 0.6em;
-      }
-    }
+			figcaption {
+				margin-block-start: 0.5em;
+				font-size: 0.6em;
+			}
+		}
 
-    blockquote {
-      padding: 1.5rem;
-      margin-inline: auto;
+		blockquote {
+			padding: 1.5rem;
+			margin-inline: auto;
 
-      font-size: 0.7em;
-      text-align: left;
+			font-size: 0.7em;
+			text-align: left;
 
-      &::before {
-        content: '“';
-      }
+			&::before {
+				content: "“";
+			}
 
-      &::after {
-        content: '”';
-      }
+			&::after {
+				content: "”";
+			}
 
-      figure {
-        float: left;
+			figure {
+				float: left;
 
-        inline-size: 25%;
-        margin-inline-end: 0.7em;
-      }
+				inline-size: 25%;
+				margin-inline-end: 0.7em;
+			}
 
-      img {
-        display: block;
-        aspect-ratio: 1;
-        object-fit: cover;
-      }
-    }
-  }
+			img {
+				display: block;
+				aspect-ratio: 1;
+				object-fit: cover;
+			}
+		}
+	}
 
-  @layer codepen {
-    .codepen {
-      height: 400px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid;
-      margin: 1em 0;
-      padding: 1em;
-    }
-  }
+	@layer codepen {
+		.codepen {
+			height: 400px;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid;
+			margin: 1em 0;
+			padding: 1em;
+		}
+	}
 
-  @layer brand {
-    [brand] {
-      position: fixed;
-      inset: auto auto 3rem 3rem;
+	@layer brand {
+		[brand] {
+			position: fixed;
+			inset: auto auto 3rem 3rem;
 
-      img {
-        inline-size: 15rem;
-        aspect-ratio: 1;
+			img {
+				inline-size: 15rem;
+				aspect-ratio: 1;
 
-        border: 2px rebeccapurple;
-        border-radius: 2rem;
-      }
-    }
-  }
+				border: 2px rebeccapurple;
+				border-radius: 2rem;
+			}
+		}
+	}
 }
